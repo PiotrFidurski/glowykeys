@@ -16,6 +16,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: eslint
+        run: npm run lint:eslint
+
       - name: Integration Tests
         run: npm run test
 
