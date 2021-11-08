@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
-}
+  env: {
+    BASE_URL: process.env.NODE_ENV === 'production' ? 'https://glowykeys.vercel.app' : 'http://localhost:3000',
+  },
+};
