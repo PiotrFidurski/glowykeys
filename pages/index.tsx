@@ -9,7 +9,7 @@ const HomePage: NextPage = () => (
       <meta name="description" content="shop for the best keyboards around" />
     </Head>
     <Navbar />
-    hello
+    Hello, Almost before we knew it, we had left the ground.
   </div>
 );
 
