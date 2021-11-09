@@ -1,8 +1,6 @@
-/* place global fonts here
-
 @font-face {
-  font-family: '';
-  src: ulr()
+  font-family: 'Comfortaa';
+  src: url('/assets/fonts/Comfortaa-Medium.woff2') format('woff2'),
+    url('/assets/fonts/Comfortaa-Medium.woff') format('woff');
   font-style: normal;
 }
-*/

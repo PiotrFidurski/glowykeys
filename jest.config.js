@@ -13,6 +13,7 @@ module.exports = {
   moduleDirectories: ['<rootDir>/node_modules', '<rootDir>'],
   moduleNameMapper: {
     '@pages/(.*)': '<rootDir>/pages/$1',
+    '@components/(.*)': '<rootDir>/components/$1',
   },
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['./**/*.{js,jsx,ts,tsx}', './**/*/*.{js,jsx,ts,tsx}'],
