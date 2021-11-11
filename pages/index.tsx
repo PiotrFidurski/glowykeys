@@ -1,13 +1,19 @@
 import Navbar from '@components/Navbar/Navbar';
 import {
+  A,
   Article,
   Button,
+  Credits,
+  Footer,
   H1,
   HeaderSection,
-  ImageWrapper,
   KeyboardsCategory,
   KeyCapsCategory,
+  Links,
   Main,
+  MidSection,
+  MidSectionFirstImageWrapper,
+  MidSectionSecondImageWrapper,
   Paragraph,
   ProductCategorySection,
   SwitchesCategory,
@@ -24,40 +30,54 @@ const HomePage: NextPage = () => (
     </Head>
     <Navbar />
     <Main>
-      <div style={{ position: 'relative', marginBottom: '2rem' }}>
-        <Article>
-          <HeaderSection>
-            <H1>Hello, Almost before we knew it, we had left the ground.</H1>
-            <Paragraph>Almost before we knew it, we had left the ground.</Paragraph>
-          </HeaderSection>
-          <Button>View Products</Button>
-        </Article>
-        <Image
-          src="/assets/images/blueish-keyboard.png"
-          alt="a black mechanical keyboard with red and blue lights"
-          priority
-          layout="responsive"
-          width="1920"
-          height="900"
-        />
-      </div>
+      <Article>
+        <HeaderSection>
+          <H1>Hello, Almost before we knew it, we had left the ground.</H1>
+          <Paragraph>Almost before we knew it, we had left the ground.</Paragraph>
+        </HeaderSection>
+        <Button>View Products</Button>
+      </Article>
+
       <ProductCategorySection>
         <KeyboardsCategory>
-          <ImageWrapper>
-            <Image src="/assets/images/blue-keyboard.png" layout="responsive" width="600" height="400" />
-          </ImageWrapper>
+          <H1>Keyboards</H1>
+          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
         </KeyboardsCategory>
         <KeyCapsCategory>
-          <ImageWrapper>
-            <Image src="/assets/images/blue-keyboard.png" layout="responsive" width="600" height="400" />
-          </ImageWrapper>
+          <H1>Keycaps</H1>
+          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
         </KeyCapsCategory>
         <SwitchesCategory>
-          <ImageWrapper>
-            <Image src="/assets/images/blue-keyboard.png" layout="responsive" width="600" height="400" />
-          </ImageWrapper>
+          <H1>Switches</H1>
+          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
         </SwitchesCategory>
       </ProductCategorySection>
+      <MidSection>
+        <MidSectionFirstImageWrapper>
+          <H1>Casual keyboards</H1>
+          <Paragraph>get your own</Paragraph>
+          <Image src="/assets/images/keyboard.png" priority layout="fill" objectFit="cover" />
+        </MidSectionFirstImageWrapper>
+        <MidSectionSecondImageWrapper>
+          <H1>Gaming keyboards</H1>
+          <Paragraph>get your own</Paragraph>
+          <Image src="/assets/images/keyboard2.png" priority layout="fill" objectFit="cover" />
+        </MidSectionSecondImageWrapper>
+      </MidSection>
+      <Footer>
+        <Links>
+          <A>somelink</A>
+          <A>somelink</A>
+          <A>somelink</A>
+          <A>somelink</A>
+        </Links>
+        <Credits>
+          <A>somelink</A>
+          <A>somelink</A>
+          <A>somelink</A>
+          <A>somelink</A>
+        </Credits>
+      </Footer>
     </Main>
   </div>
 );
