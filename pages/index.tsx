@@ -38,15 +38,15 @@ const HomePage: NextPage = () => (
       <ProductCategorySection>
         <KeyboardsCategory>
           <H1>Keyboards</H1>
-          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
+          <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
         </KeyboardsCategory>
         <KeyCapsCategory>
           <H1>Keycaps</H1>
-          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
+          <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
         </KeyCapsCategory>
         <SwitchesCategory>
           <H1>Switches</H1>
-          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
+          <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
         </SwitchesCategory>
       </ProductCategorySection>
       <MidSection>
