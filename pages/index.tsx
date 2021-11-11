@@ -1,15 +1,12 @@
+import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import {
-  A,
   Article,
   Button,
-  Credits,
-  Footer,
   H1,
   HeaderSection,
   KeyboardsCategory,
   KeyCapsCategory,
-  Links,
   Main,
   MidSection,
   MidSectionFirstImageWrapper,
@@ -64,20 +61,7 @@ const HomePage: NextPage = () => (
           <Image src="/assets/images/keyboard2.png" priority layout="fill" objectFit="cover" />
         </MidSectionSecondImageWrapper>
       </MidSection>
-      <Footer>
-        <Links>
-          <A>somelink</A>
-          <A>somelink</A>
-          <A>somelink</A>
-          <A>somelink</A>
-        </Links>
-        <Credits>
-          <A>somelink</A>
-          <A>somelink</A>
-          <A>somelink</A>
-          <A>somelink</A>
-        </Credits>
-      </Footer>
+      <Footer />
     </Main>
   </div>
 );

@@ -79,14 +79,14 @@ export const Button = styled.button`
     bottom: 0;
     right: 0;
     z-index: -1;
-    background-color: red;
+    background: linear-gradient(to left, #e91e63, #673ab7);
     content: '';
     transition: width 0.3s linear;
   }
 
   &:hover {
     cursor: pointer;
-    border-color: red;
+    border-color: #e91e63;
     &:before {
       width: 100%;
     }
@@ -99,7 +99,7 @@ export const ProductCategorySection = styled.section`
   width: 100%;
   gap: 1rem;
   display: grid;
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
@@ -143,6 +143,7 @@ export const KeyCapsCategory = styled.article`
   justify-content: center;
   align-items: center;
   position: relative;
+  min-height: 220px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   grid-area: keycaps;
@@ -165,6 +166,7 @@ export const SwitchesCategory = styled.article`
   border-radius: 5px;
   justify-content: center;
   align-items: center;
+  min-height: 220px;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
@@ -282,31 +284,4 @@ export const MidSectionSecondImageWrapper = styled.a`
     bottom: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
   }
-`;
-
-export const Footer = styled.footer`
-  grid-area: footer;
-  padding: 1rem 2rem;
-  border-top: 1px solid white;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
-  grid-template-areas: 'links . . credits';
-`;
-
-export const Links = styled.section`
-  grid-area: links;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-`;
-
-export const Credits = styled.section`
-  grid-area: credits;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-`;
-
-export const A = styled.a`
-  text-decoration: none;
 `;
