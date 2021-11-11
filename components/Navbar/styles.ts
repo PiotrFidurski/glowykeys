@@ -5,8 +5,9 @@ export const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 9999;
   display: flex;
+  background-color: red;
   align-items: center;
   width: 100%;
   max-height: 70px;
