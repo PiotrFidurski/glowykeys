@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
-import Logo from '../../public/assets/vector/logo.svg';
-import { Li, LogoSectionList, LogoText, Nav, Ul } from './styles';
+import LogoIcon from '../../public/assets/vector/logo.svg';
+import { Li, Logo, LogoSectionList, Nav, Ul } from './styles';
 
 function Navbar() {
   return (
@@ -10,10 +10,10 @@ function Navbar() {
       <LogoSectionList>
         <Li>
           <Link href="/" passHref>
-            <LogoText>
-              <Logo fill="white" width="35" height="35" />
+            <Logo>
+              <LogoIcon fill="white" width="35" height="35" />
               glowykeys
-            </LogoText>
+            </Logo>
           </Link>
         </Li>
       </LogoSectionList>

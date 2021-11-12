@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-// move later to some shared style utils
 const ListStyles = css`
   font-size: clamp(1rem, 2vw, 1.4rem);
   list-style: none;
@@ -41,7 +40,7 @@ export const LogoSectionList = styled.ul`
   }
 `;
 
-export const LogoText = styled.a`
+export const Logo = styled.a`
   display: flex;
   align-items: center;
   gap: 1rem;
