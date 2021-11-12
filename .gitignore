@@ -39,3 +39,5 @@ cypress/videos
 
 # typescript
 *.tsbuildinfo
+
+colorspace.md

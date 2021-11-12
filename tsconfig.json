@@ -20,7 +20,8 @@
       "@assets/*": ["public/*"],
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
-      "@styled/*": ["styled/*"]
+      "@styled/*": ["styled/*"],
+      "@utils/*": ["lib/*"]
     },
     "incremental": true
   },
