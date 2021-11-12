@@ -52,7 +52,9 @@ export const H1 = styled.h1`
   font-size: clamp(1.5rem, 2vw, 3rem);
 `;
 
-export const Paragraph = styled.p``;
+export const Paragraph = styled.p`
+  line-height: 1.7rem;
+`;
 
 export const Button = styled.button`
   padding: 1rem;
@@ -95,7 +97,7 @@ export const Button = styled.button`
 
 export const ProductCategorySection = styled.section`
   grid-area: categories;
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
   width: 100%;
   gap: 1rem;
   display: grid;
@@ -109,7 +111,7 @@ export const ProductCategorySection = styled.section`
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
     grid-template-areas: 'keyboards keycaps switches';
-    padding: 2rem 5rem;
+    padding: 5rem 5rem;
   }
 `;
 
@@ -208,7 +210,7 @@ export const ImageWrapper = styled.div`
 
 export const MidSection = styled.section`
   grid-area: midsection;
-  padding: 2rem 0;
+  padding: 5rem 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
@@ -284,4 +286,10 @@ export const MidSectionSecondImageWrapper = styled.a`
     bottom: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
   }
+`;
+
+export const MidSectionArticle = styled.article`
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
 `;
