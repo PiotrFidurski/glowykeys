@@ -41,3 +41,4 @@ cypress/videos
 *.tsbuildinfo
 
 colorspace.md
+todo.md
