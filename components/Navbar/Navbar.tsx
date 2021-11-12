@@ -1,17 +1,26 @@
+import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
 import Logo from '../../public/assets/vector/logo.svg';
-import { Li, LogoArea, LogoText, Nav, Ul } from './styles';
+import { Li, LogoSectionList, LogoText, Nav, Ul } from './styles';
 
 function Navbar() {
   return (
     <Nav>
-      <LogoArea>
-        <Logo fill="white" width="45" height="45" />
-        <LogoText>glowykeys</LogoText>
-      </LogoArea>
+      <LogoSectionList>
+        <Li>
+          <Link href="/" passHref>
+            <LogoText>
+              <Logo fill="white" width="35" height="35" />
+              glowykeys
+            </LogoText>
+          </Link>
+        </Li>
+      </LogoSectionList>
       <Ul>
-        <Li>Sign in</Li>
+        <Li>
+          <button type="button">Sign in</button>
+        </Li>
         <Li>
           <Cart fill="white" width="30" height="30" />
         </Li>
