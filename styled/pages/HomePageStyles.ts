@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  width: 100%;
-  height: 100vh;
   margin-top: 4rem;
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
@@ -13,13 +10,9 @@ export const Main = styled.main`
     'categories categories categories categories'
     'midsection midsection midsection midsection'
     'footer footer footer footer';
-
-  img {
-    filter: brightness(0.5);
-  }
 `;
 
-export const Article = styled.article`
+export const Header = styled.header`
   display: grid;
   grid-area: header;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
@@ -44,7 +37,6 @@ export const Article = styled.article`
 
 export const HeaderSection = styled.section`
   max-width: 600px;
-  max-height: 300px;
   grid-area: heading;
 `;
 
@@ -65,7 +57,7 @@ export const Button = styled.button`
   background-color: transparent;
   color: white;
   border: 2px solid white;
-  min-width: 300px;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,6 +99,10 @@ export const ProductCategorySection = styled.section`
   grid-template-areas:
     'keyboards keyboards keyboards keyboards'
     'keycaps keycaps switches switches';
+
+  img {
+    filter: brightness(0.5);
+  }
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
@@ -217,12 +213,16 @@ export const MidSection = styled.section`
     'first-image first-image first-image first-image'
     'second-image second-image second-image second-image';
 
+  img {
+    filter: brightness(0.5);
+  }
+
   @media (min-width: 768px) {
     grid-template-areas: 'first-image first-image second-image second-image';
   }
 `;
 
-export const MidSectionFirstImageWrapper = styled.a`
+export const MidSectionFirstImageWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -255,7 +255,7 @@ export const MidSectionFirstImageWrapper = styled.a`
   }
 `;
 
-export const MidSectionSecondImageWrapper = styled.a`
+export const MidSectionSecondImageWrapper = styled.div`
   bottom: 150px;
   position: relative;
   flex-direction: column;
@@ -288,7 +288,7 @@ export const MidSectionSecondImageWrapper = styled.a`
   }
 `;
 
-export const MidSectionArticle = styled.article`
+export const MidSectionText = styled.section`
   max-width: 50%;
   margin: 0 auto;
   text-align: center;
