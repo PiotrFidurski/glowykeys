@@ -3,9 +3,6 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
   grid-area: footer;
   padding: 1rem 2rem;
-  /* #030408 #323235 #5F6062 #919295 #C6C7CA
-random shades
-#030408 #68686B #0E0E11 #B5B6B9 #A3A3A6*/
   background: #000000;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
