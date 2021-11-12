@@ -1,4 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const CardLink = css`
+  max-width: 100%;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+
+  img {
+    z-index: -1;
+    transition: transform 0.9s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: scale(1.1, 1.1);
+    }
+  }
+`;
 
 export const Main = styled.main`
   margin-top: 4rem;
@@ -111,76 +136,19 @@ export const ProductCategorySection = styled.section`
   }
 `;
 
-export const KeyboardsCategory = styled.article`
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px;
-  position: relative;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const KeyboardsCategory = styled.a`
+  ${CardLink};
   grid-area: keyboards;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
-export const KeyCapsCategory = styled.article`
-  max-width: 100%;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  min-height: 220px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const KeyCapsCategory = styled.a`
+  ${CardLink};
   grid-area: keycaps;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
-export const SwitchesCategory = styled.article`
-  max-width: 100%;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  min-height: 220px;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const SwitchesCategory = styled.a`
+  ${CardLink};
   grid-area: switches;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
 export const BackgroundImageWrapper = styled.div`
