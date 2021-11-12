@@ -19,6 +19,7 @@ import {
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const HomePage: NextPage = () => {
@@ -42,18 +43,24 @@ const HomePage: NextPage = () => {
           <Button onClick={() => router.push('/products')}>View Products</Button>
         </Header>
         <ProductCategorySection>
-          <KeyboardsCategory tabIndex={0}>
-            <H1>Keyboards</H1>
-            <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
-          </KeyboardsCategory>
-          <KeyCapsCategory tabIndex={0}>
-            <H1>Keycaps</H1>
-            <Image src="/assets/images/keycaps.webp" priority layout="fill" objectFit="cover" />
-          </KeyCapsCategory>
-          <SwitchesCategory tabIndex={0}>
-            <H1>Switches</H1>
-            <Image src="/assets/images/switches.webp" priority layout="fill" objectFit="cover" />
-          </SwitchesCategory>
+          <Link href="/keyboards" passHref>
+            <KeyboardsCategory>
+              <H1>Keyboards</H1>
+              <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
+            </KeyboardsCategory>
+          </Link>
+          <Link href="/keycaps" passHref>
+            <KeyCapsCategory>
+              <H1>Keycaps</H1>
+              <Image src="/assets/images/keycaps.webp" priority layout="fill" objectFit="cover" />
+            </KeyCapsCategory>
+          </Link>
+          <Link href="/switches" passHref>
+            <SwitchesCategory>
+              <H1>Switches</H1>
+              <Image src="/assets/images/switches.webp" priority layout="fill" objectFit="cover" />
+            </SwitchesCategory>
+          </Link>
         </ProductCategorySection>
         <MidSection>
           <MidSectionFirstImageWrapper>
