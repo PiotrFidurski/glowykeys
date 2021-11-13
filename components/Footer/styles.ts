@@ -40,4 +40,23 @@ export const About = styled.section`
 
 export const A = styled.a`
   text-decoration: none;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    transition: width 0.4s ease;
+    position: absolute;
+    content: '';
+    top: 20px;
+    bottom: 0;
+    width: 0%;
+    background: #0091ff;
+    height: 2px;
+  }
 `;

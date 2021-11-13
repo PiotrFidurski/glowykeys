@@ -25,7 +25,7 @@ import { useRouter } from 'next/router';
 const HomePage: NextPage = () => {
   const router = useRouter();
   return (
-    <div>
+    <>
       <Head>
         <title>Find the perfect keyboard for you</title>
         <meta name="description" content="shop for the best keyboards" />
@@ -80,7 +80,7 @@ const HomePage: NextPage = () => {
         </MidSection>
         <Footer />
       </Main>
-    </div>
+    </>
   );
 };
 
