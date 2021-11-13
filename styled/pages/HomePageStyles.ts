@@ -8,8 +8,7 @@ const CardLink = css`
   align-items: center;
   min-height: 250px;
   position: relative;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid #171e2d;
   display: flex;
 
   img {
@@ -30,7 +29,6 @@ export const Main = styled.main`
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'nav nav nav nav'
     'header header header header'
     'categories categories categories categories'
     'midsection midsection midsection midsection'
