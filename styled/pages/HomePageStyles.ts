@@ -1,25 +1,41 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const CardLink = css`
+  max-width: 100%;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  position: relative;
+  border: 1px solid #171e2d;
+  display: flex;
+
+  img {
+    z-index: -1;
+    transition: transform 0.9s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: scale(1.1, 1.1);
+    }
+  }
+`;
 
 export const Main = styled.main`
-  width: 100%;
-  height: 100vh;
   margin-top: 4rem;
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'nav nav nav nav'
     'header header header header'
     'categories categories categories categories'
     'midsection midsection midsection midsection'
     'footer footer footer footer';
-
-  img {
-    filter: brightness(0.5);
-  }
 `;
 
-export const Article = styled.article`
+export const Header = styled.header`
   display: grid;
   grid-area: header;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
@@ -44,7 +60,6 @@ export const Article = styled.article`
 
 export const HeaderSection = styled.section`
   max-width: 600px;
-  max-height: 300px;
   grid-area: heading;
 `;
 
@@ -65,7 +80,7 @@ export const Button = styled.button`
   background-color: transparent;
   color: white;
   border: 2px solid white;
-  min-width: 300px;
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,6 +123,10 @@ export const ProductCategorySection = styled.section`
     'keyboards keyboards keyboards keyboards'
     'keycaps keycaps switches switches';
 
+  img {
+    filter: brightness(0.5);
+  }
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
     grid-template-areas: 'keyboards keycaps switches';
@@ -115,76 +134,19 @@ export const ProductCategorySection = styled.section`
   }
 `;
 
-export const KeyboardsCategory = styled.article`
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px;
-  position: relative;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const KeyboardsCategory = styled.a`
+  ${CardLink};
   grid-area: keyboards;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
-export const KeyCapsCategory = styled.article`
-  max-width: 100%;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  min-height: 220px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const KeyCapsCategory = styled.a`
+  ${CardLink};
   grid-area: keycaps;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
-export const SwitchesCategory = styled.article`
-  max-width: 100%;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  min-height: 220px;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+export const SwitchesCategory = styled.a`
+  ${CardLink};
   grid-area: switches;
-
-  img {
-    z-index: -1;
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 `;
 
 export const BackgroundImageWrapper = styled.div`
@@ -217,12 +179,16 @@ export const MidSection = styled.section`
     'first-image first-image first-image first-image'
     'second-image second-image second-image second-image';
 
+  img {
+    filter: brightness(0.5);
+  }
+
   @media (min-width: 768px) {
     grid-template-areas: 'first-image first-image second-image second-image';
   }
 `;
 
-export const MidSectionFirstImageWrapper = styled.a`
+export const MidSectionFirstImageWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -255,7 +221,7 @@ export const MidSectionFirstImageWrapper = styled.a`
   }
 `;
 
-export const MidSectionSecondImageWrapper = styled.a`
+export const MidSectionSecondImageWrapper = styled.div`
   bottom: 150px;
   position: relative;
   flex-direction: column;
@@ -288,7 +254,7 @@ export const MidSectionSecondImageWrapper = styled.a`
   }
 `;
 
-export const MidSectionArticle = styled.article`
+export const MidSectionText = styled.section`
   max-width: 50%;
   margin: 0 auto;
   text-align: center;

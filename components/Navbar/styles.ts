@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const ListStyles = css`
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  list-style: none;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+  gap: 1rem;
+`;
 
 export const Nav = styled.nav`
   position: fixed;
@@ -15,33 +25,41 @@ export const Nav = styled.nav`
   padding: 0 2rem;
 `;
 
-export const LogoArea = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+export const LogoSectionList = styled.ul`
+  ${ListStyles};
+  justify-content: flex-start;
+  width: auto;
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+  }
 
-  svg {
-    filter: drop-shadow(2px 2px 4px #673ab7);
+  li {
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 
-export const LogoText = styled.span`
+export const Logo = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
   font-weight: 600;
   background: linear-gradient(to left, #e91e63, #673ab7);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
 `;
 
 export const Ul = styled.ul`
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  list-style: none;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 1rem;
+  ${ListStyles};
   justify-content: flex-end;
 `;
 
-export const Li = styled.li``;
+export const Li = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
