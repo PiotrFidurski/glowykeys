@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const Article = styled.article`
-  border: 1px solid #171e2d;
   flex-direction: column;
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
   display: flex;
-  padding: 2rem;
 `;
 
 export const Heading = styled.header``;
@@ -24,6 +23,7 @@ export const Paragraph = styled.p`
 export const ProductImageWrapper = styled.div`
   width: 100%;
   height: 100%;
+  background: #171e2d;
   min-height: 250px;
   position: relative;
 
@@ -37,12 +37,4 @@ export const ProductImageWrapper = styled.div`
       transform: scale(1.1, 1.1);
     }
   }
-`;
-
-export const Description = styled.ul`
-  padding: 0 1rem;
-`;
-
-export const Bullet = styled.li`
-  padding: 0.5rem 0;
 `;

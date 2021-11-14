@@ -37,6 +37,7 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <div id="portal" data-testid="portalContainer" />
           <NextScript />
         </body>
       </Html>
