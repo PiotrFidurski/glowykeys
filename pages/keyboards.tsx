@@ -2,11 +2,16 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
-import { data } from 'data';
+import { Product as ProductType } from 'data';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import * as React from 'react';
 
-function KeyboardsPage() {
+interface Props {
+  keyboards: Array<ProductType & { id: string }>;
+}
+
+function KeyboardsPage({ keyboards }: Props) {
   return (
     <>
       <Head>
@@ -21,7 +26,7 @@ function KeyboardsPage() {
           </H1>
         </Header>
         <BrowseSection>
-          {data.map((product) => (
+          {keyboards.map((product) => (
             <Product product={product} key={product.id} />
           ))}
         </BrowseSection>
@@ -30,5 +35,14 @@ function KeyboardsPage() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await fetch('http://localhost:3000/api/keyboards');
+  const { data }: { data: Array<ProductType> } = await response.json();
+
+  return {
+    props: { keyboards: data },
+  };
+};
 
 export default KeyboardsPage;
