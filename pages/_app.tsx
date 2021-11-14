@@ -1,3 +1,4 @@
+import CartProvider from '@components/Cart/CartProvider';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import 'index.css';
@@ -10,8 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Normalize />
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
+        <CartProvider>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </CartProvider>
       </ThemeProvider>
     </>
   );
