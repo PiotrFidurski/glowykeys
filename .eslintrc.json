@@ -27,6 +27,8 @@
   },
   "plugins": ["@typescript-eslint", "cypress", "eslint-comments", "jest", "promise", "import", "prettier"],
   "rules": {
+    "global-require": "off",
+    "no-var-requires": "off",
     "import/no-extraneous-dependencies": "off",
     "jest/expect-expect": [
       "warn",
@@ -37,6 +39,7 @@
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "warn",
