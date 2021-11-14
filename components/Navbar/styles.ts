@@ -1,3 +1,4 @@
+import { LineOnHover } from '@utils/style-utils';
 import styled, { css } from 'styled-components';
 
 const ListStyles = css`
@@ -62,4 +63,33 @@ export const Li = styled.li`
   display: flex;
   align-items: center;
   gap: 1rem;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 9999px;
+  min-height: 40px;
+  height: 100%;
+  min-width: 40px;
+  width: 100%;
+  cursor: pointer;
+  max-width: 40px;
+
+  &:focus {
+    outline: 2px solid white;
+    background: #171e2d;
+  }
+`;
+
+export const SignInLink = styled.a`
+  color: white;
+  ${LineOnHover};
+
+  &:before {
+    top: 30px;
+  }
 `;

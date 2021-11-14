@@ -2,7 +2,7 @@ import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
-import { Li, Logo, LogoSectionList, Nav, Ul } from './styles';
+import { Button, Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
   return (
@@ -19,10 +19,14 @@ function Navbar() {
       </LogoSectionList>
       <Ul>
         <Li>
-          <button type="button">Sign in</button>
+          <Link href="/signin" passHref>
+            <SignInLink>Sign in</SignInLink>
+          </Link>
         </Li>
         <Li>
-          <Cart fill="white" width="30" height="30" />
+          <Button type="button">
+            <Cart fill="white" width="25" height="25" />
+          </Button>
         </Li>
       </Ul>
     </Nav>
