@@ -1,14 +1,19 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
+import { animations } from './animations';
 import { CardBackdrop, CartContainer } from './styles';
+import { actionTypes } from './types';
 import { useCart } from './useCart';
 
 interface Props {
   cartUi: React.ReactElement;
 }
 function CartRoot({ cartUi }: Props) {
-  const { open, setOpen } = useCart();
+  const {
+    state: { open },
+    dispatch,
+  } = useCart();
 
   const cartContainer = React.useRef<null | HTMLDivElement>(null);
 
@@ -30,7 +35,7 @@ function CartRoot({ cartUi }: Props) {
 
   const closeCart = (e: React.BaseSyntheticEvent) => {
     if (!cartContainer.current.contains(e.target)) {
-      setOpen(false);
+      dispatch({ type: actionTypes.closeMenu });
     }
   };
 
@@ -39,15 +44,7 @@ function CartRoot({ cartUi }: Props) {
         <AnimatePresence>
           {open ? (
             <CardBackdrop aria-label="Close cart" onClick={closeCart}>
-              <CartContainer
-                as={motion.div}
-                initial={{ opacity: 0, x: 1000, scale: 0.3 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: 200, scale: 0.5 }}
-                tabIndex={0}
-                ref={cartContainer}
-                aria-label="cart"
-              >
+              <CartContainer as={motion.div} {...animations} tabIndex={0} ref={cartContainer} aria-label="cart">
                 {cartUi}
               </CartContainer>
             </CardBackdrop>
