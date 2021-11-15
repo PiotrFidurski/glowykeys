@@ -1,5 +1,5 @@
 import HomePage from '@pages/index';
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { render } from '@utils/test-utils';
 
 const portalEl = document.createElement('div');
@@ -23,7 +23,7 @@ test('it opens cart menu when cart button is clicked', () => {
   expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
 });
 
-test('it closes cart menu when users clicks outside of cart container', () => {
+test('it closes cart menu when users clicks outside of cart container', async () => {
   render(<HomePage />, { container: document.querySelector('__next') });
 
   fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
@@ -32,10 +32,14 @@ test('it closes cart menu when users clicks outside of cart container', () => {
 
   fireEvent.click(screen.getByLabelText(/close cart/i));
 
-  expect(screen.getByLabelText(/^Cart menu$/).firstChild).toBe(null);
+  const cartMenu = screen.getByLabelText(/^Cart menu$/);
+
+  await waitForElementToBeRemoved(cartMenu.firstChild);
+
+  expect(cartMenu.firstChild).toBe(null);
 });
 
-test('it closes cart menu when users clicks close button inside of cart', () => {
+test('it closes cart menu when users clicks close button inside of cart', async () => {
   render(<HomePage />, { container: document.querySelector('__next') });
 
   fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
@@ -44,5 +48,9 @@ test('it closes cart menu when users clicks close button inside of cart', () => 
 
   fireEvent.click(screen.getByRole('button', { name: /close/i }));
 
-  expect(screen.getByLabelText(/^Cart menu$/).firstChild).toBe(null);
+  const cartMenu = screen.getByLabelText(/^Cart menu$/);
+
+  await waitForElementToBeRemoved(cartMenu.firstChild);
+
+  expect(cartMenu.firstChild).toBe(null);
 });

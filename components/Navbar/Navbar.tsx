@@ -1,3 +1,4 @@
+import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import { Button } from '@utils/style-utils';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import LogoIcon from '../../public/assets/vector/logo.svg';
 import { Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
-  const { setOpen } = useCart();
+  const { dispatch } = useCart();
   return (
     <Nav>
       <LogoSectionList>
@@ -27,7 +28,7 @@ function Navbar() {
           </Link>
         </Li>
         <Li>
-          <Button onClick={() => setOpen(true)} type="button" aria-label="open cart menu">
+          <Button onClick={() => dispatch({ type: actionTypes.openMenu })} type="button" aria-label="open cart menu">
             <Cart fill="white" width="25" height="25" />
           </Button>
         </Li>

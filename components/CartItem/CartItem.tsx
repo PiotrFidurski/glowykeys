@@ -1,5 +1,9 @@
+import { decrementQty, incrementQty } from '@components/Cart/CartContext';
+import { actionTypes } from '@components/Cart/types';
+import { useCart } from '@components/Cart/useCart';
 import { Button } from '@utils/style-utils';
 import { Product } from 'data';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
 import Delete from '../../public/assets/vector/delete.svg';
@@ -9,14 +13,16 @@ import * as S from './styles';
 
 interface Props {
   product: Product;
-  onItemRemove: (item: Product) => void;
-  onIncrementQty: (item: Product) => void;
-  onDecrementQty: (item: Product) => void;
 }
 
-function CartItem({ product, onIncrementQty, onDecrementQty, onItemRemove }: Props) {
+function CartItem({ product }: Props) {
+  const {
+    state: { items },
+    dispatch,
+  } = useCart();
+
   return (
-    <S.Container aria-label="cart item">
+    <S.Container aria-label="cart item" as={motion.article} layout>
       <S.Wrapper>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
@@ -25,7 +31,11 @@ function CartItem({ product, onIncrementQty, onDecrementQty, onItemRemove }: Pro
           <S.H2>{product.name}</S.H2>
           <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
           <S.Quantity>
-            <Button type="button" onClick={() => onIncrementQty(product)} aria-label="add quantity">
+            <Button
+              type="button"
+              onClick={() => incrementQty({ dispatch, updates: { items, product } })}
+              aria-label="add quantity"
+            >
               <Plus width="25" height="25" fill="white" />
             </Button>
             <S.QTY>{product.qty}</S.QTY>
@@ -34,9 +44,9 @@ function CartItem({ product, onIncrementQty, onDecrementQty, onItemRemove }: Pro
               type="button"
               onClick={() => {
                 if (product.qty > 0) {
-                  onDecrementQty(product);
+                  decrementQty({ dispatch, updates: { items, product } });
                 } else {
-                  onItemRemove(product);
+                  dispatch({ type: actionTypes.removeItem, payload: product });
                 }
               }}
               aria-label={product.qty > 0 ? 'subtract quantity' : 'remove item'}
@@ -50,7 +60,11 @@ function CartItem({ product, onIncrementQty, onDecrementQty, onItemRemove }: Pro
           </S.Quantity>
         </S.Details>
       </S.Wrapper>
-      <Button type="button" aria-label="remove item" onClick={() => onItemRemove(product)}>
+      <Button
+        type="button"
+        aria-label="remove item"
+        onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
+      >
         <Delete width="25" height="25" fill="white" />
       </Button>
     </S.Container>

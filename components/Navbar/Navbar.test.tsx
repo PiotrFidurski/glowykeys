@@ -1,6 +1,6 @@
-import KeyboardsPage from '@pages/keyboards';
 import { screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
+import Navbar from './Navbar';
 
 jest.mock('next/link', () => ({ children, href }: React.PropsWithChildren<{ href: string }>) => {
   const React = require('react');
@@ -10,7 +10,7 @@ jest.mock('next/link', () => ({ children, href }: React.PropsWithChildren<{ href
 });
 
 test('clicking on logo redirects back to HomePage', () => {
-  render(<KeyboardsPage keyboards={[]} />);
+  render(<Navbar />);
 
   const logoLink = screen.getByText(/glowykeys/).closest('a');
 
@@ -18,7 +18,7 @@ test('clicking on logo redirects back to HomePage', () => {
 });
 
 test('clicking on sign in link links to sign in page', () => {
-  render(<KeyboardsPage keyboards={[]} />);
+  render(<Navbar />);
 
   const signInLink = screen.getByText(/Sign in/i);
 

@@ -1,5 +1,6 @@
 import Cart from '@components/Cart/Cart';
 import CartProvider from '@components/Cart/CartProvider';
+import { reducer } from '@components/Cart/reducer';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import 'index.css';
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Normalize />
       <ThemeProvider theme={theme}>
-        <CartProvider ui={<Cart />}>
+        <CartProvider ui={<Cart />} reducer={reducer}>
           <GlobalStyles />
           <Component {...pageProps} />
         </CartProvider>

@@ -1,5 +1,6 @@
 import Cart from '@components/Cart/Cart';
 import CartProvider from '@components/Cart/CartProvider';
+import { reducer } from '@components/Cart/reducer';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import { render, RenderOptions } from '@testing-library/react';
@@ -8,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 
 const Providers = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <CartProvider ui={<Cart />}>
+    <CartProvider ui={<Cart />} reducer={reducer}>
       <GlobalStyles />
       {children}
     </CartProvider>
