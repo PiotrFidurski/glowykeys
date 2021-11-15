@@ -1,6 +1,7 @@
 import CartItem from '@components/CartItem/CartItem';
+import { getTotalPrice } from '@utils/getTotalPrice';
 import { Button } from '@utils/style-utils';
-import { data } from 'data';
+import { cartData, Product } from 'data';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
 import { Checkout, H2, Header, HR, Items, Paragraph, Wrapper } from './styles';
@@ -8,6 +9,31 @@ import { useCart } from './useCart';
 
 function Cart() {
   const { setOpen } = useCart();
+
+  const [items, setItems] = React.useState(cartData);
+
+  const total = getTotalPrice(items);
+
+  const incrementQty = (product: Product) => {
+    const index = items.findIndex((item) => item.id === product.id);
+    const newItem = { ...product, qty: product.qty + 1 };
+    const itemsCopy = [...items];
+    itemsCopy[index] = newItem;
+    setItems(itemsCopy);
+  };
+
+  const decrementQty = (product: Product) => {
+    const index = items.findIndex((item) => item.id === product.id);
+    const newItem = { ...product, qty: product.qty - 1 };
+    const itemsCopy = [...items];
+    itemsCopy[index] = newItem;
+    setItems(itemsCopy);
+  };
+
+  const removeItem = (product: Product) => {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== product.id));
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -17,13 +43,19 @@ function Cart() {
         </Button>
       </Header>
       <Items aria-label="cart items list">
-        {data.splice(0, 2).map((item) => (
-          <CartItem item={item} key={item.id} />
+        {items.map((item) => (
+          <CartItem
+            product={item}
+            onItemRemove={removeItem}
+            onIncrementQty={incrementQty}
+            onDecrementQty={decrementQty}
+            key={item.id}
+          />
         ))}
       </Items>
       <Checkout>
         <HR />
-        <Paragraph>Total $59.99</Paragraph>
+        <Paragraph>Total $ {total.toFixed(2)}</Paragraph>
         <HR />
       </Checkout>
     </Wrapper>
