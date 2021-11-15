@@ -5,6 +5,8 @@ export interface Product {
   variant?: 'gaming' | 'casual';
   name: string;
   price: number;
+  qty?: number;
+  id: string;
   brand: string;
   description: Array<string>;
   image: {
@@ -14,6 +16,7 @@ export interface Product {
 }
 
 const keyboard: Product = {
+  id: '',
   brand: 'roccat',
   type: 'Keyboard',
   variant: 'casual',
@@ -29,3 +32,5 @@ const keyboard: Product = {
 };
 
 export const data = new Array(20).fill(keyboard).map((item: Product) => ({ ...item, id: v4() }));
+
+export const cartData = data.splice(0, 2).map((item: Product) => ({ ...item, qty: 1, id: v4() }));
