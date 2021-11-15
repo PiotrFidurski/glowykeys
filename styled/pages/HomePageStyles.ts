@@ -1,14 +1,39 @@
 import styled, { css } from 'styled-components';
 
-const CardLink = css`
+const MidSectionStyles = css`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 600px;
+
+  span {
+    z-index: -1;
+  }
+
+  img {
+    transition: transform 0.9s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      transform: scale(1.1, 1.1);
+    }
+  }
+`;
+
+const CategoryLink = css`
   max-width: 100%;
   text-decoration: none;
-  color: white;
+  color: ${({ theme: { color } }) => color.primary};
   justify-content: center;
   align-items: center;
   min-height: 250px;
   position: relative;
-  border: 1px solid #171e2d;
+  border: 1px solid ${({ theme: { color } }) => color.accent};
   display: flex;
 
   img {
@@ -78,8 +103,8 @@ export const Button = styled.button`
   max-width: 350px;
   border: 0;
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: ${({ theme: { color } }) => color.primary};
+  border: 2px solid ${({ theme: { color } }) => color.primary};
   min-width: 200px;
   display: flex;
   align-items: center;
@@ -135,17 +160,17 @@ export const ProductCategorySection = styled.section`
 `;
 
 export const KeyboardsCategory = styled.a`
-  ${CardLink};
+  ${CategoryLink};
   grid-area: keyboards;
 `;
 
 export const KeyCapsCategory = styled.a`
-  ${CardLink};
+  ${CategoryLink};
   grid-area: keycaps;
 `;
 
 export const SwitchesCategory = styled.a`
-  ${CardLink};
+  ${CategoryLink};
   grid-area: switches;
 `;
 
@@ -165,6 +190,7 @@ export const ImageWrapper = styled.div`
   align-items: center;
   position: relative;
   height: 100%;
+
   span {
     z-index: -1;
   }
@@ -189,30 +215,9 @@ export const MidSection = styled.section`
 `;
 
 export const MidSectionFirstImageWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${MidSectionStyles};
   grid-area: first-image;
-  max-width: 100%;
-  min-height: 600px;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-
-  span {
-    z-index: -1;
-  }
-
-  img {
-    transition: transform 0.7s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 
   @media (min-width: 768px) {
     left: -10%;
@@ -222,31 +227,10 @@ export const MidSectionFirstImageWrapper = styled.div`
 `;
 
 export const MidSectionSecondImageWrapper = styled.div`
+  ${MidSectionStyles};
   bottom: 150px;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  max-width: 100%;
   grid-area: second-image;
-  min-height: 600px;
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-
-  span {
-    z-index: -1;
-  }
-
-  img {
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
 
   @media (min-width: 768px) {
     bottom: 0;
