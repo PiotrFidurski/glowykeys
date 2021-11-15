@@ -24,7 +24,7 @@ export const LineOnHover = css`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ transformOn?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,9 +37,16 @@ export const Button = styled.button`
   width: 100%;
   cursor: pointer;
   max-width: 50px;
-
+  transition: transform 0.5s ease, outline-color 0.5s ease;
+  transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
   &:focus {
-    outline: 2px solid white;
+    outline: 2px solid ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
     background: ${({ theme: { color } }) => color.accent};
+  }
+
+  svg {
+    transition: transform 0.5 ease, fill 0.5s ease;
+    transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
+    fill: ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
   }
 `;
