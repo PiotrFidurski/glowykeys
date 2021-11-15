@@ -3,7 +3,10 @@ import { createPortal } from 'react-dom';
 import { CardBackdrop, CartContainer } from './styles';
 import { useCart } from './useCart';
 
-function CartRoot() {
+interface Props {
+  cartUi: React.ReactElement;
+}
+function CartRoot({ cartUi }: Props) {
   const { open, setOpen } = useCart();
 
   const cartContainer = React.useRef<null | HTMLDivElement>(null);
@@ -17,8 +20,8 @@ function CartRoot() {
   return open
     ? createPortal(
         <CardBackdrop aria-label="Close cart" onClick={closeCart}>
-          <CartContainer ref={cartContainer} aria-label="cart">
-            <span>your cart items</span>
+          <CartContainer tabIndex={0} ref={cartContainer} aria-label="cart">
+            {cartUi}
           </CartContainer>
         </CardBackdrop>,
         document.getElementById('portal') || null
