@@ -1,9 +1,10 @@
 import { useCart } from '@components/Cart/useCart';
+import { Button } from '@utils/style-utils';
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
-import { Button, Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
+import { Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
   const { setOpen } = useCart();

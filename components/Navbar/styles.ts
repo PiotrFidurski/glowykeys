@@ -18,7 +18,7 @@ export const Nav = styled.nav`
   right: 0;
   z-index: 9999;
   display: flex;
-  background-color: black;
+  background: ${({ theme: { background } }) => background.secondary};
   align-items: center;
   width: 100%;
   max-height: 70px;
@@ -30,9 +30,6 @@ export const LogoSectionList = styled.ul`
   ${ListStyles};
   justify-content: flex-start;
   width: auto;
-  &:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-  }
 
   li {
     &:hover {
@@ -63,26 +60,6 @@ export const Li = styled.li`
   display: flex;
   align-items: center;
   gap: 1rem;
-`;
-
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 0;
-  border-radius: 9999px;
-  min-height: 40px;
-  height: 100%;
-  min-width: 40px;
-  width: 100%;
-  cursor: pointer;
-  max-width: 40px;
-
-  &:focus {
-    outline: 2px solid white;
-    background: #171e2d;
-  }
 `;
 
 export const SignInLink = styled.a`

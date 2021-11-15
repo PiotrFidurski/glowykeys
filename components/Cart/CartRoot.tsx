@@ -3,28 +3,25 @@ import { createPortal } from 'react-dom';
 import { CardBackdrop, CartContainer } from './styles';
 import { useCart } from './useCart';
 
-function CartRoot() {
+interface Props {
+  cartUi: React.ReactElement;
+}
+function CartRoot({ cartUi }: Props) {
   const { open, setOpen } = useCart();
 
-  const [mounted, setMounted] = React.useState(false);
-
-  const cartRef = React.useRef<null | HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const cartContainer = React.useRef<null | HTMLDivElement>(null);
 
   const closeCart = (e: React.BaseSyntheticEvent) => {
-    if (!cartRef.current.contains(e.target)) {
+    if (!cartContainer.current.contains(e.target)) {
       setOpen(false);
     }
   };
 
-  return open && mounted
+  return open
     ? createPortal(
-        <CardBackdrop onClick={closeCart}>
-          <CartContainer ref={cartRef}>
-            <span>your cart items</span>
+        <CardBackdrop aria-label="Close cart" onClick={closeCart}>
+          <CartContainer tabIndex={0} ref={cartContainer} aria-label="cart">
+            {cartUi}
           </CartContainer>
         </CardBackdrop>,
         document.getElementById('portal') || null

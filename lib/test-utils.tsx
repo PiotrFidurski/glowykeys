@@ -1,3 +1,4 @@
+import Cart from '@components/Cart/Cart';
 import CartProvider from '@components/Cart/CartProvider';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
@@ -7,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 
 const Providers = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <CartProvider>
+    <CartProvider ui={<Cart />}>
       <GlobalStyles />
       {children}
     </CartProvider>
