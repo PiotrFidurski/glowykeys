@@ -6,24 +6,18 @@ import { useCart } from './useCart';
 function CartRoot() {
   const { open, setOpen } = useCart();
 
-  const [mounted, setMounted] = React.useState(false);
-
-  const cartRef = React.useRef<null | HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const cartContainer = React.useRef<null | HTMLDivElement>(null);
 
   const closeCart = (e: React.BaseSyntheticEvent) => {
-    if (!cartRef.current.contains(e.target)) {
+    if (!cartContainer.current.contains(e.target)) {
       setOpen(false);
     }
   };
 
-  return open && mounted
+  return open
     ? createPortal(
-        <CardBackdrop onClick={closeCart}>
-          <CartContainer ref={cartRef}>
+        <CardBackdrop aria-label="Close cart" onClick={closeCart}>
+          <CartContainer ref={cartContainer} aria-label="cart">
             <span>your cart items</span>
           </CartContainer>
         </CardBackdrop>,
