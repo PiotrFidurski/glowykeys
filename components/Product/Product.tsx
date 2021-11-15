@@ -19,7 +19,7 @@ function Product({ product }: Props) {
         <Paragraph>{product.brand}</Paragraph>
         <Paragraph>{product.price}$</Paragraph>
       </Heading>
-      <Button>Add to cart</Button>
+      <Button type="button">Add to cart</Button>
     </Article>
   );
 }
