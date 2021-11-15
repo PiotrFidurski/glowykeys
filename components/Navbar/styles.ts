@@ -18,7 +18,7 @@ export const Nav = styled.nav`
   right: 0;
   z-index: 9999;
   display: flex;
-  background-color: black;
+  background: ${({ theme: { background } }) => background.secondary};
   align-items: center;
   width: 100%;
   max-height: 70px;
@@ -30,9 +30,6 @@ export const LogoSectionList = styled.ul`
   ${ListStyles};
   justify-content: flex-start;
   width: auto;
-  &:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-  }
 
   li {
     &:hover {
@@ -81,7 +78,7 @@ export const Button = styled.button`
 
   &:focus {
     outline: 2px solid white;
-    background: #171e2d;
+    background: ${({ theme: { color } }) => color.accent};
   }
 `;
 

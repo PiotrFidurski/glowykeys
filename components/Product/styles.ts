@@ -23,7 +23,7 @@ export const Paragraph = styled.p`
 export const ProductImageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background: #171e2d;
+  background: ${({ theme: { color } }) => color.accent};
   min-height: 250px;
   position: relative;
 

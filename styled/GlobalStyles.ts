@@ -7,8 +7,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Comfortaa', cursive;
-    background: #030408;
-    color: #ffffff;
+    background: ${({ theme: { background } }) => background.primary};
+    color: ${({ theme: { color } }) => color.primary};
   }
 `;
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const StyledFooter = styled.footer`
   grid-area: footer;
   padding: 1rem 2rem;
-  background: #000000;
+  background: ${({ theme: { background } }) => background.secondary};
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:

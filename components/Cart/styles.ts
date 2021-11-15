@@ -15,5 +15,5 @@ export const CartContainer = styled.div`
   right: 0;
   height: 100%;
   width: 20%;
-  background: red;
+  background: ${({ theme: { background } }) => background.secondary};
 `;

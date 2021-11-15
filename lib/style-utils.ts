@@ -5,7 +5,7 @@ export const LineOnHover = css`
   position: relative;
   transition: color 0.4s ease;
   &:hover {
-    color: #0091ff;
+    color: ${({ theme: { color } }) => color.highlight};
     cursor: pointer;
     &:before {
       width: 100%;
@@ -19,7 +19,7 @@ export const LineOnHover = css`
     top: 20px;
     bottom: 0;
     width: 0%;
-    background: #0091ff;
+    background: ${({ theme: { color } }) => color.highlight};
     height: 2px;
   }
 `;
