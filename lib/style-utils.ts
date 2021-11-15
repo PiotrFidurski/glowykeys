@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const LineOnHover = css`
   text-decoration: none;
@@ -21,5 +21,25 @@ export const LineOnHover = css`
     width: 0%;
     background: ${({ theme: { color } }) => color.highlight};
     height: 2px;
+  }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 9999px;
+  min-height: 50px;
+  height: 100%;
+  min-width: 50px;
+  width: 100%;
+  cursor: pointer;
+  max-width: 50px;
+
+  &:focus {
+    outline: 2px solid white;
+    background: ${({ theme: { color } }) => color.accent};
   }
 `;

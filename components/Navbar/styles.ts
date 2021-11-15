@@ -62,26 +62,6 @@ export const Li = styled.li`
   gap: 1rem;
 `;
 
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 0;
-  border-radius: 9999px;
-  min-height: 40px;
-  height: 100%;
-  min-width: 40px;
-  width: 100%;
-  cursor: pointer;
-  max-width: 40px;
-
-  &:focus {
-    outline: 2px solid white;
-    background: ${({ theme: { color } }) => color.accent};
-  }
-`;
-
 export const SignInLink = styled.a`
   color: white;
   ${LineOnHover};
