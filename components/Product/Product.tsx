@@ -18,6 +18,8 @@ function Product({ product }: Props) {
         <H2>{product.name}</H2>
         <Paragraph>{product.brand}</Paragraph>
         <Paragraph>{product.price}$</Paragraph>
+        <Paragraph>{product.connectivity}</Paragraph>
+        <Paragraph>{product.variant}</Paragraph>
       </Heading>
       <Button type="button">Add to cart</Button>
     </Article>
