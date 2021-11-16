@@ -3,6 +3,7 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
+import { filterByConnectivty, filterByVariant } from '@utils/filters';
 import { Product as ProductType } from 'data';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
@@ -16,7 +17,7 @@ interface Props {
 function KeyboardsPage({ keyboards }: Props) {
   const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
 
-  const [{ variant, connectivity }, setFilter] = React.useState({ variant: [], connectivity: [] });
+  const [{ variants, connectivity }, setFilter] = React.useState({ variants: [], connectivity: [] });
 
   return (
     <>
@@ -38,8 +39,8 @@ function KeyboardsPage({ keyboards }: Props) {
             </FiltersContainer>
             <BrowseSection>
               {keyboards
-                .filter((product) => (variant.length > 0 ? variant.includes(product.variant) : product))
-                .filter((product) => (connectivity.length > 0 ? connectivity.includes(product.connectivity) : product))
+                .filter((product) => filterByVariant({ product, variants }))
+                .filter((product) => filterByConnectivty({ product, connectivity }))
                 .sort((productA, productB) =>
                   sort.order === 'ASC'
                     ? productA[sort.type] - productB[sort.type]

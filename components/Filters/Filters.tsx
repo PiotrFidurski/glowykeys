@@ -4,7 +4,7 @@ import { CheckBox, Container, H3, Li, List, LiText, Separator } from './styles';
 interface Props {
   onFilter: React.Dispatch<
     React.SetStateAction<{
-      variant: string[];
+      variants: string[];
       connectivity: string[];
     }>
   >;
@@ -65,9 +65,9 @@ function Filters({ onFilter, onSort }: Props) {
             onChange={(e) => {
               onFilter((prevFilter) => ({
                 ...prevFilter,
-                variant: prevFilter.variant.includes(e.target.value)
-                  ? prevFilter.variant.filter((con) => con !== e.target.value)
-                  : [...prevFilter.variant, e.target.value],
+                variants: prevFilter.variants.includes(e.target.value)
+                  ? prevFilter.variants.filter((con) => con !== e.target.value)
+                  : [...prevFilter.variants, e.target.value],
               }));
             }}
             name="casual"
@@ -82,9 +82,9 @@ function Filters({ onFilter, onSort }: Props) {
             onChange={(e) => {
               onFilter((prevFilter) => ({
                 ...prevFilter,
-                variant: prevFilter.variant.includes(e.target.value)
-                  ? prevFilter.variant.filter((con) => con !== e.target.value)
-                  : [...prevFilter.variant, e.target.value],
+                variants: prevFilter.variants.includes(e.target.value)
+                  ? prevFilter.variants.filter((con) => con !== e.target.value)
+                  : [...prevFilter.variants, e.target.value],
               }));
             }}
             name="gaming"
