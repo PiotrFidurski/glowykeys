@@ -1,5 +1,6 @@
 import { Button } from '@styled/pages/HomePageStyles';
 import { Product as ProductType } from 'data';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
 import { Article, H2, Heading, Paragraph, ProductImageWrapper } from './styles';
@@ -10,7 +11,7 @@ interface Props {
 
 function Product({ product }: Props) {
   return (
-    <Article>
+    <Article as={motion.article} layout>
       <ProductImageWrapper>
         <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
       </ProductImageWrapper>

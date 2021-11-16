@@ -4,7 +4,7 @@ import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
 import { Product as ProductType } from 'data';
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import * as React from 'react';
@@ -35,7 +35,7 @@ function KeyboardsPage({ keyboards }: Props) {
             <FiltersContainer>
               <Filters onFilter={setFilter} onSort={setSort} />
             </FiltersContainer>
-            <BrowseSection as={motion.section} layout>
+            <BrowseSection>
               {keyboards
                 .filter((product) => (variant.length > 0 ? variant.includes(product.variant) : product))
                 .filter((product) => (connectivity.length > 0 ? connectivity.includes(product.connectivity) : product))
