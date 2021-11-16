@@ -1,4 +1,4 @@
-import { LineOnHover } from '@utils/style-utils';
+import { GradientText, LineOnHover } from '@utils/style-utils';
 import styled, { css } from 'styled-components';
 
 const ListStyles = css`
@@ -39,15 +39,12 @@ export const LogoSectionList = styled.ul`
 `;
 
 export const Logo = styled.a`
+  ${GradientText};
   display: flex;
   align-items: center;
   gap: 1rem;
   user-select: none;
   font-weight: 600;
-  background: linear-gradient(to left, #e91e63, #673ab7);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
   font-size: clamp(1rem, 2vw, 1.4rem);
 `;
 
