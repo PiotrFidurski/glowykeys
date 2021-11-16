@@ -50,3 +50,10 @@ export const Button = styled.button<{ transformOn?: boolean }>`
     fill: ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
   }
 `;
+
+export const GradientText = css`
+  background: linear-gradient(to left, #e91e63, #673ab7);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+`;

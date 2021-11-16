@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import { animations } from './animations';
+import { backgroundAnimations, menuAnimations } from './animations';
 import { CardBackdrop, CartContainer } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
@@ -43,8 +43,8 @@ function CartRoot({ cartUi }: Props) {
     ? createPortal(
         <AnimatePresence>
           {open ? (
-            <CardBackdrop aria-label="Close cart" onClick={closeCart}>
-              <CartContainer as={motion.div} {...animations} tabIndex={0} ref={cartContainer} aria-label="cart">
+            <CardBackdrop as={motion.div} {...backgroundAnimations} aria-label="Close cart" onClick={closeCart}>
+              <CartContainer as={motion.div} {...menuAnimations} tabIndex={0} ref={cartContainer} aria-label="cart">
                 {cartUi}
               </CartContainer>
             </CardBackdrop>
