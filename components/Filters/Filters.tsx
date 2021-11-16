@@ -62,14 +62,14 @@ function Filters({ onFilter, onSort }: Props) {
         <H3>VARIANTS</H3>
         <Li>
           <CheckBox
-            onChange={(e) =>
+            onChange={(e) => {
               onFilter((prevFilter) => ({
                 ...prevFilter,
                 variant: prevFilter.variant.includes(e.target.value)
                   ? prevFilter.variant.filter((con) => con !== e.target.value)
                   : [...prevFilter.variant, e.target.value],
-              }))
-            }
+              }));
+            }}
             name="casual"
             id="casual"
             value="casual"
@@ -79,17 +79,17 @@ function Filters({ onFilter, onSort }: Props) {
         </Li>
         <Li>
           <CheckBox
-            name="gaming"
-            id="gaming"
-            value="gaming"
-            onChange={(e) =>
+            onChange={(e) => {
               onFilter((prevFilter) => ({
                 ...prevFilter,
                 variant: prevFilter.variant.includes(e.target.value)
                   ? prevFilter.variant.filter((con) => con !== e.target.value)
                   : [...prevFilter.variant, e.target.value],
-              }))
-            }
+              }));
+            }}
+            name="gaming"
+            id="gaming"
+            value="gaming"
             type="checkbox"
           />
           <LiText>GAMING</LiText>

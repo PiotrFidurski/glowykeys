@@ -15,6 +15,7 @@ interface Props {
 
 function KeyboardsPage({ keyboards }: Props) {
   const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
+
   const [{ variant, connectivity }, setFilter] = React.useState({ variant: [], connectivity: [] });
 
   return (
