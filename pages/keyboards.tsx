@@ -3,6 +3,7 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
+import { compare } from '@utils/compare';
 import { filterByConnectivty, filterByVariant } from '@utils/filters';
 import { Product as ProductType } from 'data';
 import { AnimateSharedLayout } from 'framer-motion';
@@ -41,11 +42,7 @@ function KeyboardsPage({ keyboards }: Props) {
               {keyboards
                 .filter((product) => filterByVariant({ product, variants }))
                 .filter((product) => filterByConnectivty({ product, connectivity }))
-                .sort((productA, productB) =>
-                  sort.order === 'ASC'
-                    ? productA[sort.type] - productB[sort.type]
-                    : productB[sort.type] - productA[sort.type]
-                )
+                .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />
                 ))}
