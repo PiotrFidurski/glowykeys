@@ -24,9 +24,30 @@ export const Header = styled.header`
 
 export const H1 = styled.h1``;
 
-export const BrowseSection = styled.section`
+export const Container = styled.div`
+  display: grid;
   grid-area: browse;
+  max-width: 1440px;
   padding: 5rem 1rem;
+  width: 100%;
+  gap: 3rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-template-areas:
+    'filters filters filters filters'
+    'items items items items';
+
+  @media (min-width: 768px) {
+    grid-template-areas: 'filters items items items';
+  }
+`;
+
+export const FiltersContainer = styled.section`
+  grid-area: filters;
+`;
+
+export const BrowseSection = styled.section`
+  grid-area: items;
   display: grid;
   margin: 0 auto;
   max-width: 1440px;
