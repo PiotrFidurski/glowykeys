@@ -14,15 +14,10 @@ export interface Product {
   };
 }
 
-export interface FilterProps {
+export interface FilterFnProps {
   product: Product;
-  variants?: Array<string> | string;
-  connectivity?: Array<string> | string;
-}
-
-export interface QueryParams {
-  variants?: string | string[];
-  connectivity?: string | string[];
+  variants?: Array<string>;
+  connectivity?: Array<string>;
 }
 
 export interface CompareProps {

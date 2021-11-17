@@ -1,10 +1,10 @@
-import { FilterProps } from './types';
+import { FilterFnProps } from './types';
 
-function variant({ product, variants }: FilterProps) {
+function variant({ product, variants }: FilterFnProps) {
   return variants.length ? variants.includes(product.variant) : product;
 }
 
-function cable({ product, connectivity }: FilterProps) {
+function cable({ product, connectivity }: FilterFnProps) {
   return connectivity.length ? connectivity.includes(product.connectivity) : product;
 }
 

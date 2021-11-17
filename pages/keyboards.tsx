@@ -1,11 +1,11 @@
-import Filters from '@components/Filters/Filters';
+import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
-import { Product as ProductType, QueryParams } from '@utils/types';
+import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -13,20 +13,18 @@ import { useRouter } from 'next/router';
 import * as React from 'react';
 
 interface Props {
-  keyboards: Array<ProductType & { id: string }>;
+  keyboards: Array<ProductType>;
 }
 
-const initialState = (queryParams: QueryParams) => ({
-  variants: queryParams.variants ? [].concat(queryParams.variants) : [],
-  connectivity: queryParams.connectivity ? [].concat(queryParams.connectivity) : [],
-});
-
 function KeyboardsPage({ keyboards }: Props) {
-  const router = useRouter();
+  const { query } = useRouter();
 
   const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
 
-  const [filters, setFilters] = React.useState(() => initialState(router.query));
+  const [filters, setFilters] = React.useState(() => ({
+    variants: query.variants ? [].concat(query.variants) : [],
+    connectivity: query.connectivity ? [].concat(query.connectivity) : [],
+  }));
 
   return (
     <>
@@ -44,7 +42,7 @@ function KeyboardsPage({ keyboards }: Props) {
         <Container>
           <AnimateSharedLayout>
             <FiltersContainer>
-              <Filters filters={filters} onFilter={setFilters} onSort={setSort} />
+              <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
             </FiltersContainer>
             <BrowseSection>
               {keyboards
