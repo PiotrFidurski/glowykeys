@@ -1,4 +1,4 @@
-import { Product } from 'data';
+import { Product } from '@utils/types';
 import { Action, actionTypes, State } from './types';
 
 export function reducer(state: State, action: Action): State {
