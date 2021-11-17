@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { CheckBox, Container, H3, Li, List, LiText, Separator } from './styles';
 
 interface Props {
+  filters: { variants: Array<string> | string; connectivity: Array<string> | string };
   onFilter: React.Dispatch<
     React.SetStateAction<{
       variants: string[];
@@ -16,7 +18,14 @@ interface Props {
   >;
 }
 
-function Filters({ onFilter, onSort }: Props) {
+function Filters({ onFilter, onSort, filters }: Props) {
+  const { push } = useRouter();
+
+  React.useEffect(() => {
+    push({ pathname: 'keyboards', query: { ...filters } }, null, { scroll: false, shallow: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters]);
+
   return (
     <Container>
       <Separator />
@@ -32,6 +41,7 @@ function Filters({ onFilter, onSort }: Props) {
                   : [...prevFilter.connectivity, e.target.value],
               }))
             }
+            checked={filters.connectivity.includes('wired')}
             name="wired"
             id="wired"
             value="wired"
@@ -49,6 +59,7 @@ function Filters({ onFilter, onSort }: Props) {
                   : [...prevFilter.connectivity, e.target.value],
               }))
             }
+            checked={filters.connectivity.includes('wireless')}
             name="wireless"
             id="wireless"
             value="wireless"
@@ -70,6 +81,7 @@ function Filters({ onFilter, onSort }: Props) {
                   : [...prevFilter.variants, e.target.value],
               }));
             }}
+            checked={filters.variants.includes('casual')}
             name="casual"
             id="casual"
             value="casual"
@@ -89,6 +101,7 @@ function Filters({ onFilter, onSort }: Props) {
             }}
             name="gaming"
             id="gaming"
+            checked={filters.variants.includes('gaming')}
             value="gaming"
             type="checkbox"
           />
