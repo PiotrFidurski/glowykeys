@@ -5,7 +5,7 @@ function Four04Page() {
   return (
     <Container>
       <H1>404</H1>
-      <Paragraph>Looks like you stumbled upon not existing page, try checking that url.</Paragraph>
+      <Paragraph>Looks like you stumbled upon a not existing page, try checking that url.</Paragraph>
     </Container>
   );
 }

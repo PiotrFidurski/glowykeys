@@ -1,20 +1,5 @@
+import { Product as ProductType } from '@utils/types';
 import { v4 } from 'uuid';
-
-export interface Product {
-  type: 'Keyboard' | 'Keycap' | 'Switch';
-  variant?: string;
-  name: string;
-  price: number;
-  qty?: number;
-  connectivity: string;
-  id: string;
-  brand: string;
-  description: Array<string>;
-  image: {
-    thumbnail: string;
-    original: string;
-  };
-}
 
 const images = [
   'https://cdn.shopify.com/s/files/1/0508/6747/0494/products/Topshot_Vulcan-TKL-Pro_Doc-Edition_550x534.png?v=1631883325',
@@ -37,7 +22,7 @@ function getRandomElement(array: Array<string> | Array<number>) {
   return array[Math.floor(Math.random() * array.length - 1) + 1];
 }
 
-const keyboard: Product = {
+const keyboard: ProductType = {
   id: '',
   brand: 'roccat',
   connectivity: 'wireless',
@@ -54,7 +39,7 @@ const keyboard: Product = {
   description: ['Award Winning Design', '100 million keystroke life-cycle', '32-bit ARM Cortex-M0 based processor'],
 };
 
-export const data = new Array(20).fill(keyboard).map((item: Product) => ({
+export const data = new Array(20).fill(keyboard).map((item: ProductType) => ({
   ...item,
   id: v4(),
   variant: getRandomElement(variants) as string,
@@ -66,4 +51,4 @@ export const data = new Array(20).fill(keyboard).map((item: Product) => ({
   },
 }));
 
-export const cartData = data.splice(0, 3).map((item: Product) => ({ ...item, qty: 1, id: v4() }));
+export const cartData = data.splice(0, 3).map((item: ProductType) => ({ ...item, qty: 1, id: v4() }));

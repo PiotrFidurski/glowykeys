@@ -26,7 +26,10 @@ export const H3 = styled.h3`
 export const CheckBox = styled.input`
   width: 30px;
   height: 30px;
-  background: red;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const LiText = styled.span`

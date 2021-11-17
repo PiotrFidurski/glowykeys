@@ -1,4 +1,4 @@
-import { Product } from 'data';
+import { Product } from '@utils/types';
 
 export type Action = { type: string; payload?: unknown };
 

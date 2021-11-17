@@ -1,22 +1,30 @@
-import Filters from '@components/Filters/Filters';
+import FilterAndSort from '@components/FiltersAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
-import { Product as ProductType } from 'data';
+import { compare } from '@utils/compare';
+import { possibleFilters } from '@utils/filters';
+import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
 interface Props {
-  keyboards: Array<ProductType & { id: string }>;
+  keyboards: Array<ProductType>;
 }
 
 function KeyboardsPage({ keyboards }: Props) {
+  const { query } = useRouter();
+
   const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
 
-  const [{ variant, connectivity }, setFilter] = React.useState({ variant: [], connectivity: [] });
+  const [filters, setFilters] = React.useState(() => ({
+    variants: query.variants ? [].concat(query.variants) : [],
+    connectivity: query.connectivity ? [].concat(query.connectivity) : [],
+  }));
 
   return (
     <>
@@ -34,17 +42,12 @@ function KeyboardsPage({ keyboards }: Props) {
         <Container>
           <AnimateSharedLayout>
             <FiltersContainer>
-              <Filters onFilter={setFilter} onSort={setSort} />
+              <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
             </FiltersContainer>
             <BrowseSection>
               {keyboards
-                .filter((product) => (variant.length > 0 ? variant.includes(product.variant) : product))
-                .filter((product) => (connectivity.length > 0 ? connectivity.includes(product.connectivity) : product))
-                .sort((productA, productB) =>
-                  sort.order === 'ASC'
-                    ? productA[sort.type] - productB[sort.type]
-                    : productB[sort.type] - productA[sort.type]
-                )
+                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
+                .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />
                 ))}

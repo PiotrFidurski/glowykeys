@@ -2,7 +2,7 @@ import { decrementQty, incrementQty } from '@components/Cart/CartContext';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import { Button } from '@utils/style-utils';
-import { Product } from 'data';
+import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
