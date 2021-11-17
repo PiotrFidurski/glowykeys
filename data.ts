@@ -1,20 +1,5 @@
+import { Product } from '@utils/types';
 import { v4 } from 'uuid';
-
-export interface Product {
-  type: 'Keyboard' | 'Keycap' | 'Switch';
-  variant?: string;
-  name: string;
-  price: number;
-  qty?: number;
-  connectivity: string;
-  id: string;
-  brand: string;
-  description: Array<string>;
-  image: {
-    thumbnail: string;
-    original: string;
-  };
-}
 
 const images = [
   'https://cdn.shopify.com/s/files/1/0508/6747/0494/products/Topshot_Vulcan-TKL-Pro_Doc-Edition_550x534.png?v=1631883325',
