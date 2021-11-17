@@ -1,9 +1,11 @@
-import { Product } from 'data';
+import { FilterProps } from './types';
 
-export function filterByVariant({ product, variants }: { product: Product; variants: Array<string> }) {
+function variant({ product, variants }: FilterProps) {
   return variants.length ? variants.includes(product.variant) : product;
 }
 
-export function filterByConnectivty({ product, connectivity }: { product: Product; connectivity: Array<string> }) {
+function cable({ product, connectivity }: FilterProps) {
   return connectivity.length ? connectivity.includes(product.connectivity) : product;
 }
+
+export const possibleFilters = [variant, cable];

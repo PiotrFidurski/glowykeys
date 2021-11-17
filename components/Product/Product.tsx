@@ -1,5 +1,5 @@
 import { Button } from '@styled/pages/HomePageStyles';
-import { Product as ProductType } from 'data';
+import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';

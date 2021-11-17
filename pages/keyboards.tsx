@@ -4,21 +4,29 @@ import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
-import { filterByConnectivty, filterByVariant } from '@utils/filters';
-import { Product as ProductType } from 'data';
+import { possibleFilters } from '@utils/filters';
+import { Product as ProductType, QueryParams } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
 interface Props {
   keyboards: Array<ProductType & { id: string }>;
 }
 
+const initialState = (queryParams: QueryParams) => ({
+  variants: queryParams.variants ? [].concat(queryParams.variants) : [],
+  connectivity: queryParams.connectivity ? [].concat(queryParams.connectivity) : [],
+});
+
 function KeyboardsPage({ keyboards }: Props) {
+  const router = useRouter();
+
   const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
 
-  const [{ variants, connectivity }, setFilter] = React.useState({ variants: [], connectivity: [] });
+  const [filters, setFilters] = React.useState(() => initialState(router.query));
 
   return (
     <>
@@ -36,12 +44,11 @@ function KeyboardsPage({ keyboards }: Props) {
         <Container>
           <AnimateSharedLayout>
             <FiltersContainer>
-              <Filters onFilter={setFilter} onSort={setSort} />
+              <Filters filters={filters} onFilter={setFilters} onSort={setSort} />
             </FiltersContainer>
             <BrowseSection>
               {keyboards
-                .filter((product) => filterByVariant({ product, variants }))
-                .filter((product) => filterByConnectivty({ product, connectivity }))
+                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
                 .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />
