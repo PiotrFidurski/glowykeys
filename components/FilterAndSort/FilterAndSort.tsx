@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { CheckBox, Container, H3, Li, List, LiText, Separator } from './styles';
+import { CheckBox, H3, Label, Li, List, LiText, Nav, Separator } from './styles';
 import { FilterTypes, SortTypes } from './types';
 
 interface Props {
@@ -44,11 +44,12 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
   };
 
   return (
-    <Container>
+    <Nav aria-label="filter menu">
       <Separator />
+      <H3>CONNECTIVITY</H3>
       <List>
-        <H3>CONNECTIVITY</H3>
         <Li>
+          <Label htmlFor="wired" aria-label="wired" />
           <CheckBox
             onChange={onConnectivityChange}
             checked={filters.connectivity.includes('wired')}
@@ -60,6 +61,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
           <LiText>WIRED</LiText>
         </Li>
         <Li>
+          <Label htmlFor="wireless" aria-label="wireless" />
           <CheckBox
             onChange={onConnectivityChange}
             checked={filters.connectivity.includes('wireless')}
@@ -72,9 +74,10 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
         </Li>
       </List>
       <Separator />
+      <H3>VARIANTS</H3>
       <List>
-        <H3>VARIANTS</H3>
         <Li>
+          <Label htmlFor="casual" aria-label="casual" />
           <CheckBox
             onChange={onVariantsChange}
             checked={filters.variants.includes('casual')}
@@ -86,6 +89,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
           <LiText>CASUAL</LiText>
         </Li>
         <Li>
+          <Label htmlFor="gaming" aria-label="gaming" />
           <CheckBox
             onChange={onVariantsChange}
             name="gaming"
@@ -98,19 +102,21 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
         </Li>
       </List>
       <Separator />
+      <H3>PRICE</H3>
       <List>
-        <H3>PRICE</H3>
         <Li>
-          <CheckBox onChange={onSortChange} name="Ascending" id="Ascending" value="ASC" type="checkbox" />
+          <Label htmlFor="ascending" aria-label="ascending" />
+          <CheckBox onChange={onSortChange} name="ascending" id="ascending" value="ASC" type="checkbox" />
           <LiText>ASCENDING</LiText>
         </Li>
         <Li>
+          <Label htmlFor="descending" aria-label="descending" />
           <CheckBox onChange={onSortChange} name="descending" id="descending" value="DESC" type="checkbox" />
           <LiText>DESCENDING</LiText>
         </Li>
       </List>
       <Separator />
-    </Container>
+    </Nav>
   );
 }
 

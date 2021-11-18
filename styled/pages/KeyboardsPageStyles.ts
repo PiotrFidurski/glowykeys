@@ -42,7 +42,7 @@ export const ProductsSection = styled.section`
   }
 `;
 
-export const Aside = styled.aside`
+export const FilterSection = styled.section`
   grid-area: filters;
 `;
 

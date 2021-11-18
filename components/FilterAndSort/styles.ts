@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
 `;
@@ -13,20 +13,23 @@ export const List = styled.ul`
 export const Li = styled.li`
   display: flex;
   align-items: center;
-  gap: 1rem;
   padding: 0.3rem 0;
 `;
 
 export const H3 = styled.h3`
   font-size: 1rem;
+  margin: 1rem 0 0 0;
+  padding: 0 2rem;
   color: ${({ theme: { color } }) => color.highlight};
   letter-spacing: 0.2rem;
 `;
 
+export const Label = styled.label``;
+
 export const CheckBox = styled.input`
   width: 30px;
   height: 30px;
-
+  margin-right: 1rem;
   &:hover {
     cursor: pointer;
   }

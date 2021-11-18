@@ -2,7 +2,7 @@ import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
-import { Aside, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
+import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
@@ -43,10 +43,10 @@ function KeyboardsPage({ keyboards }: Props) {
         <ProductsSection>
           <VisuallyHiddenH2>Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
-            <Aside>
+            <FilterSection>
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
-            </Aside>
+            </FilterSection>
             <ProductsContainer>
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keyboards
