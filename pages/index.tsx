@@ -36,9 +36,9 @@ const HomePage: NextPage = () => {
       </Head>
       <Navbar />
       <Main>
-        <Header>
+        <Header role="heading" aria-labelledby="main-heading">
           <HeaderSection>
-            <H1>Hello, Get the best keyboard possible fitting to your needs.</H1>
+            <H1 id="main-heading">Hello, Get the best keyboard possible fitting to your needs.</H1>
             <Paragraph>
               A quality keyboard is vital for both work and play. Whether you’re a mechanical purist, a couch gamer, a
               freak for extra functions or someone who wants it all – we’ve got you covered.
@@ -48,11 +48,11 @@ const HomePage: NextPage = () => {
             View Products
           </Button>
         </Header>
-        <ProductCategorySection>
-          <VisuallyHiddenH2>Product Categories</VisuallyHiddenH2>
+        <ProductCategorySection role="region" aria-labelledby="product-category-label">
+          <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>
           <Nav>
             <Link href="/keyboards" passHref>
-              <KeyboardsCategory>
+              <KeyboardsCategory aria-label="go to keyboards page">
                 <H2>Keyboards</H2>
                 <Image
                   src="/assets/images/blueish-keyboard.png"
@@ -64,7 +64,7 @@ const HomePage: NextPage = () => {
               </KeyboardsCategory>
             </Link>
             <Link href="/keycaps" passHref>
-              <KeyCapsCategory>
+              <KeyCapsCategory aria-label="go to keycaps page">
                 <H2>Keycaps</H2>
                 <Image
                   alt="black keycap with hammer stuck to it"
@@ -76,7 +76,7 @@ const HomePage: NextPage = () => {
               </KeyCapsCategory>
             </Link>
             <Link href="/switches" passHref>
-              <SwitchesCategory>
+              <SwitchesCategory aria-label="go to switches page">
                 <H2>Switches</H2>
                 <Image
                   alt="colorful keyboard switches in a box"
@@ -89,9 +89,9 @@ const HomePage: NextPage = () => {
             </Link>
           </Nav>
         </ProductCategorySection>
-        <MidSection>
-          <VisuallyHiddenH2>Casual and Gaming Keyboards</VisuallyHiddenH2>
-          <MidSectionFirstImageWrapper href="/keyboards?variants=casual">
+        <MidSection role="region" aria-labelledby="casual-keyboards-label">
+          <VisuallyHiddenH2 id="casual-keyboards-label">Casual and Gaming Keyboards</VisuallyHiddenH2>
+          <MidSectionFirstImageWrapper href="/keyboards?variants=casual" aria-label="go to casual keyboards page">
             <MidSectionText>
               <H2>Casual keyboards</H2>
               <Paragraph>keyboards for casusal typers</Paragraph>
@@ -104,7 +104,7 @@ const HomePage: NextPage = () => {
               objectFit="cover"
             />
           </MidSectionFirstImageWrapper>
-          <MidSectionSecondImageWrapper href="/keyboards?variants=gaming">
+          <MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
             <MidSectionText>
               <H2>Gaming keyboards</H2>
               <Paragraph>keyboards for hardcore gamers</Paragraph>
