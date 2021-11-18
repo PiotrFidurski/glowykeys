@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 const MidSectionStyles = css`
   position: relative;
+  text-decoration: none;
+  color: ${({ theme: { color } }) => color.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +216,7 @@ export const MidSection = styled.section`
   }
 `;
 
-export const MidSectionFirstImageWrapper = styled.div`
+export const MidSectionFirstImageWrapper = styled.a`
   ${MidSectionStyles};
   grid-area: first-image;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
@@ -226,7 +228,7 @@ export const MidSectionFirstImageWrapper = styled.div`
   }
 `;
 
-export const MidSectionSecondImageWrapper = styled.div`
+export const MidSectionSecondImageWrapper = styled.a`
   ${MidSectionStyles};
   bottom: 150px;
   grid-area: second-image;

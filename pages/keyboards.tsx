@@ -1,4 +1,4 @@
-import FilterAndSort from '@components/FiltersAndSort/FilterAndSort';
+import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';

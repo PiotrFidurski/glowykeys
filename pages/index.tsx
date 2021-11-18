@@ -46,36 +46,66 @@ const HomePage: NextPage = () => {
           <Link href="/keyboards" passHref>
             <KeyboardsCategory>
               <H1>Keyboards</H1>
-              <Image src="/assets/images/blueish-keyboard.png" priority layout="fill" objectFit="cover" />
+              <Image
+                src="/assets/images/blueish-keyboard.png"
+                alt="black keyboard with water drops on it"
+                priority
+                layout="fill"
+                objectFit="cover"
+              />
             </KeyboardsCategory>
           </Link>
           <Link href="/keycaps" passHref>
             <KeyCapsCategory>
               <H1>Keycaps</H1>
-              <Image src="/assets/images/keycaps.webp" priority layout="fill" objectFit="cover" />
+              <Image
+                alt="black keycap with hammer stuck to it"
+                src="/assets/images/keycaps.webp"
+                priority
+                layout="fill"
+                objectFit="cover"
+              />
             </KeyCapsCategory>
           </Link>
           <Link href="/switches" passHref>
             <SwitchesCategory>
               <H1>Switches</H1>
-              <Image src="/assets/images/switches.webp" priority layout="fill" objectFit="cover" />
+              <Image
+                alt="colorful keyboard switches in a box"
+                src="/assets/images/switches.webp"
+                priority
+                layout="fill"
+                objectFit="cover"
+              />
             </SwitchesCategory>
           </Link>
         </ProductCategorySection>
         <MidSection>
-          <MidSectionFirstImageWrapper>
+          <MidSectionFirstImageWrapper href="/keyboards?variants=casual">
             <MidSectionText>
               <H1>Casual keyboards</H1>
               <Paragraph>keyboards for casusal typers</Paragraph>
             </MidSectionText>
-            <Image src="/assets/images/keyboard.png" priority layout="fill" objectFit="cover" />
+            <Image
+              alt="five keyboards next to each other"
+              src="/assets/images/keyboard.png"
+              priority
+              layout="fill"
+              objectFit="cover"
+            />
           </MidSectionFirstImageWrapper>
-          <MidSectionSecondImageWrapper>
+          <MidSectionSecondImageWrapper href="/keyboards?variants=gaming">
             <MidSectionText>
               <H1>Gaming keyboards</H1>
               <Paragraph>keyboards for hardcore gamers</Paragraph>
             </MidSectionText>
-            <Image src="/assets/images/keyboard2.png" priority layout="fill" objectFit="cover" />
+            <Image
+              alt="black keyboard with purple lights on"
+              src="/assets/images/keyboard2.png"
+              priority
+              layout="fill"
+              objectFit="cover"
+            />
           </MidSectionSecondImageWrapper>
         </MidSection>
         <Footer />
