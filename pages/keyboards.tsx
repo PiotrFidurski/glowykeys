@@ -40,14 +40,14 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <ProductsSection>
+        <ProductsSection aria-label="products section" role="region">
           <VisuallyHiddenH2>Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
-            <FilterSection>
+            <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
             </FilterSection>
-            <ProductsContainer>
+            <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keyboards
                 .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))

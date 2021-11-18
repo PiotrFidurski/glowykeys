@@ -47,7 +47,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
     <Nav aria-label="filter menu">
       <Separator />
       <H3>CONNECTIVITY</H3>
-      <List>
+      <List aria-label="connectivity filter options" role="list">
         <Li>
           <Label htmlFor="wired" aria-label="wired" />
           <CheckBox
@@ -75,7 +75,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
       </List>
       <Separator />
       <H3>VARIANTS</H3>
-      <List>
+      <List aria-label="variants filter options" role="list">
         <Li>
           <Label htmlFor="casual" aria-label="casual" />
           <CheckBox
@@ -103,7 +103,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
       </List>
       <Separator />
       <H3>PRICE</H3>
-      <List>
+      <List aria-label="sort by price" role="list">
         <Li>
           <Label htmlFor="ascending" aria-label="ascending" />
           <CheckBox onChange={onSortChange} name="ascending" id="ascending" value="ASC" type="checkbox" />
