@@ -11,19 +11,22 @@ const ListStyles = css`
   gap: 1rem;
 `;
 
-export const Nav = styled.nav`
+export const Header = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  display: flex;
-  background: ${({ theme: { background } }) => background.secondary};
-  align-items: center;
   width: 100%;
+`;
+
+export const Nav = styled.nav`
+  display: flex;
   max-height: 70px;
   min-height: 50px;
   padding: 0 2rem;
+  background: ${({ theme: { background } }) => background.secondary};
+  align-items: center;
 `;
 
 export const LogoSectionList = styled.ul`
