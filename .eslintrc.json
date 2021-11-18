@@ -27,6 +27,14 @@
   },
   "plugins": ["@typescript-eslint", "cypress", "eslint-comments", "jest", "promise", "import", "prettier"],
   "rules": {
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
     "global-require": "off",
     "no-var-requires": "off",
     "import/no-extraneous-dependencies": "off",

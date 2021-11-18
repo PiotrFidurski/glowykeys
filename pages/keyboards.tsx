@@ -1,10 +1,11 @@
-import FilterAndSort from '@components/FiltersAndSort/FilterAndSort';
+import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
-import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
+import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
+import { VisuallyHiddenH2 } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
@@ -39,21 +40,24 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <Container>
+        <ProductsSection aria-labelledby="products-section-label" role="region">
+          <VisuallyHiddenH2 id="products-section-label">Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
-            <FiltersContainer>
+            <FilterSection aria-label="filter products menu" role="region">
+              <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
-            </FiltersContainer>
-            <BrowseSection>
+            </FilterSection>
+            <ProductsContainer role="region" aria-label="list of products">
+              <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keyboards
                 .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
                 .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />
                 ))}
-            </BrowseSection>
+            </ProductsContainer>
           </AnimateSharedLayout>
-        </Container>
+        </ProductsSection>
         <Footer />
       </Main>
     </>

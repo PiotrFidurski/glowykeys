@@ -4,9 +4,11 @@ export const LineOnHover = css`
   text-decoration: none;
   position: relative;
   transition: color 0.4s ease;
+
   &:hover {
     color: ${({ theme: { color } }) => color.highlight};
     cursor: pointer;
+
     &:before {
       width: 100%;
     }
@@ -24,6 +26,13 @@ export const LineOnHover = css`
   }
 `;
 
+export const GradientText = css`
+  background: linear-gradient(to left, #e91e63, #673ab7);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+`;
+
 export const Button = styled.button<{ transformOn?: boolean }>`
   display: flex;
   align-items: center;
@@ -39,6 +48,7 @@ export const Button = styled.button<{ transformOn?: boolean }>`
   max-width: 50px;
   transition: transform 0.5s ease, outline-color 0.5s ease;
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
+
   &:focus {
     outline: 2px solid ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
     background: ${({ theme: { color } }) => color.accent};
@@ -51,9 +61,13 @@ export const Button = styled.button<{ transformOn?: boolean }>`
   }
 `;
 
-export const GradientText = css`
-  background: linear-gradient(to left, #e91e63, #673ab7);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+export const VisuallyHiddenH2 = styled.h2`
+  clip: rect(1px 1px 1px 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow: hidden;
 `;

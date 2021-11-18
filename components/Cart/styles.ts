@@ -9,11 +9,12 @@ export const CardBackdrop = styled.div`
   inset: 0;
 `;
 
-export const CartContainer = styled.div`
+export const CartDialog = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   overflow-y: auto;
+  margin-right: 0;
   height: 100%;
   width: 100%;
   background: ${({ theme: { background } }) => background.secondary};
@@ -23,7 +24,7 @@ export const CartContainer = styled.div`
   }
 `;
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   padding: 1rem;
   color: ${({ theme: { color } }) => color.primary};
 `;
@@ -35,7 +36,7 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
-export const Items = styled.section`
+export const ItemsSection = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -43,7 +44,7 @@ export const Items = styled.section`
   padding-bottom: 2rem;
 `;
 
-export const Checkout = styled.section`
+export const CheckoutSection = styled.section`
   display: flex;
   text-align: end;
   flex-direction: column;

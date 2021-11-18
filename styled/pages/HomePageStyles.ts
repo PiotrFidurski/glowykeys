@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 const MidSectionStyles = css`
   position: relative;
+  text-decoration: none;
+  color: ${({ theme: { color } }) => color.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,6 +94,10 @@ export const H1 = styled.h1`
   font-size: clamp(1.5rem, 2vw, 3rem);
 `;
 
+export const H2 = styled.h2`
+  font-size: clamp(1.5rem, 2vw, 3rem);
+`;
+
 export const Paragraph = styled.p`
   line-height: 1.7rem;
 `;
@@ -137,12 +143,16 @@ export const Button = styled.button`
 
 export const ProductCategorySection = styled.section`
   grid-area: categories;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
   padding: 5rem 1rem;
+`;
+
+export const Nav = styled.nav`
   width: 100%;
   gap: 1rem;
   display: grid;
-  max-width: 1440px;
-  margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'keyboards keyboards keyboards keyboards'
@@ -214,7 +224,7 @@ export const MidSection = styled.section`
   }
 `;
 
-export const MidSectionFirstImageWrapper = styled.div`
+export const MidSectionFirstImageWrapper = styled.a`
   ${MidSectionStyles};
   grid-area: first-image;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
@@ -226,7 +236,7 @@ export const MidSectionFirstImageWrapper = styled.div`
   }
 `;
 
-export const MidSectionSecondImageWrapper = styled.div`
+export const MidSectionSecondImageWrapper = styled.a`
   ${MidSectionStyles};
   bottom: 150px;
   grid-area: second-image;

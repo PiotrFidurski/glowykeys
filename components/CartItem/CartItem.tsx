@@ -22,23 +22,23 @@ function CartItem({ product }: Props) {
   } = useCart();
 
   return (
-    <S.Container aria-label="cart item" as={motion.article} layout>
+    <S.Article aria-label="cart item" role="article" as={motion.article} layout>
       <S.Wrapper>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
         </S.ImageWrapper>
         <S.Details>
-          <S.H2>{product.name}</S.H2>
+          <S.A href="/">{product.name}</S.A>
           <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
           <S.Quantity>
             <Button
               type="button"
               onClick={() => incrementQty({ dispatch, updates: { items, product } })}
-              aria-label="add quantity"
+              aria-label={`add one more ${product.name} to cart`}
             >
               <Plus width="25" height="25" fill="white" />
             </Button>
-            <S.QTY>{product.qty}</S.QTY>
+            <S.QTY aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
             <Button
               transformOn={product.qty === 0}
               type="button"
@@ -49,7 +49,7 @@ function CartItem({ product }: Props) {
                   dispatch({ type: actionTypes.removeItem, payload: product });
                 }
               }}
-              aria-label={product.qty > 0 ? 'subtract quantity' : 'remove item'}
+              aria-label={product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`}
             >
               {product.qty === 0 ? (
                 <Delete width="25" height="25" fill="white" />
@@ -62,12 +62,12 @@ function CartItem({ product }: Props) {
       </S.Wrapper>
       <Button
         type="button"
-        aria-label="remove item"
+        aria-label={`remove ${product.name} from cart`}
         onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
       >
         <Delete width="25" height="25" fill="white" />
       </Button>
-    </S.Container>
+    </S.Article>
   );
 }
 
