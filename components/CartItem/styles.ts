@@ -42,19 +42,22 @@ export const Quantity = styled.div`
   align-items: center;
 `;
 
-export const H2 = styled.h2`
+export const A = styled.a`
   font-size: clamp(1rem, 2vw, 1.4rem);
+  text-decoration: none;
+  color: ${({ theme: { color } }) => color.primary};
 `;
 
 export const Paragraph = styled.p`
   letter-spacing: 0.2rem;
 `;
 
-export const QTY = styled.span`
-  padding: 0 1rem;
+export const QTY = styled.input`
+  border: 0;
+  color: ${({ theme: { color } }) => color.primary};
   max-width: 30px;
+  background: transparent;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 `;
