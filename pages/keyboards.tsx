@@ -1,4 +1,4 @@
-import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
+import FiltersAndSort from '@components/FiltersAndSort/FiltersAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
@@ -45,7 +45,7 @@ function KeyboardsPage({ keyboards }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
+              <FiltersAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
