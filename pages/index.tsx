@@ -36,7 +36,7 @@ const HomePage: NextPage = () => {
       </Head>
       <Navbar />
       <Main>
-        <Header role="heading" aria-labelledby="main-heading">
+        <Header role="heading" aria-describedby="main-heading">
           <HeaderSection>
             <H1 id="main-heading">Hello, Get the best keyboard possible fitting to your needs.</H1>
             <Paragraph>
