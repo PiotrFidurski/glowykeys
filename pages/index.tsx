@@ -19,13 +19,12 @@ import {
   SwitchesCategory,
 } from '@styled/pages/HomePageStyles';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const HomePage: NextPage = () => {
+function HomePage() {
   const router = useRouter();
 
   return (
@@ -122,6 +121,6 @@ const HomePage: NextPage = () => {
       </Main>
     </>
   );
-};
+}
 
 export default HomePage;
