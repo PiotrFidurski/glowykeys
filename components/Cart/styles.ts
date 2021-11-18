@@ -9,11 +9,12 @@ export const CardBackdrop = styled.div`
   inset: 0;
 `;
 
-export const CartContainer = styled.div`
+export const CartDialog = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   overflow-y: auto;
+  margin-right: 0;
   height: 100%;
   width: 100%;
   background: ${({ theme: { background } }) => background.secondary};
@@ -23,12 +24,12 @@ export const CartContainer = styled.div`
   }
 `;
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   padding: 1rem;
   color: ${({ theme: { color } }) => color.primary};
 `;
 
-export const Header = styled.header`
+export const Header = styled.div`
   display: flex;
   padding-bottom: 2rem;
   align-items: center;

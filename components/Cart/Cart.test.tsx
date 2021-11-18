@@ -2,17 +2,17 @@ import HomePage from '@pages/index';
 import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { render } from '@utils/test-utils';
 
-const portalEl = document.createElement('div');
+const portalElement = document.createElement('div');
 
-portalEl.setAttribute('id', 'portal');
-portalEl.setAttribute('aria-label', 'Cart menu');
+portalElement.setAttribute('id', 'portal');
+portalElement.setAttribute('aria-label', 'Cart menu');
 
 beforeEach(() => {
-  document.body.appendChild(portalEl);
+  document.body.appendChild(portalElement);
 });
 
 afterEach(() => {
-  document.body.removeChild(portalEl);
+  document.body.removeChild(portalElement);
 });
 
 test('it opens cart menu when cart button is clicked', () => {

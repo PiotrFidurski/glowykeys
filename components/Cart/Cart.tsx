@@ -19,7 +19,7 @@ function Cart() {
   return (
     <Wrapper>
       <Header>
-        <H2>Shopping Cart (2 items)</H2>
+        <H2>Shopping Cart ({items.length} items)</H2>
         <Button aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
           <Close width="25" height="25" fill="white" />
         </Button>
