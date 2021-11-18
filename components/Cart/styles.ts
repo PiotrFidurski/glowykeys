@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   color: ${({ theme: { color } }) => color.primary};
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   padding-bottom: 2rem;
   align-items: center;

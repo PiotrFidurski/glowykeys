@@ -18,13 +18,13 @@ function Cart() {
 
   return (
     <Wrapper>
-      <Header>
+      <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
         <H2>Shopping Cart ({items.length} items)</H2>
         <Button aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
           <Close width="25" height="25" fill="white" />
         </Button>
       </Header>
-      <ItemsSection aria-label="cart items list">
+      <ItemsSection role="region" aria-label="items list">
         {items.map((item) => (
           <CartItem product={item} key={item.id} />
         ))}
