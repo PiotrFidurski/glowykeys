@@ -149,17 +149,6 @@ export const ProductCategorySection = styled.section`
   padding: 5rem 1rem;
 `;
 
-export const VisuallyHiddenH2 = styled.h2`
-  clip: rect(1px 1px 1px 1px);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  overflow: hidden;
-`;
-
 export const Nav = styled.nav`
   width: 100%;
   gap: 1rem;

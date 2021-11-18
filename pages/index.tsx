@@ -17,8 +17,8 @@ import {
   Paragraph,
   ProductCategorySection,
   SwitchesCategory,
-  VisuallyHiddenH2,
 } from '@styled/pages/HomePageStyles';
+import { VisuallyHiddenH2 } from '@utils/style-utils';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
