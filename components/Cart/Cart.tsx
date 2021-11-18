@@ -20,7 +20,7 @@ function Cart() {
     <Wrapper>
       <Header>
         <H2>Shopping Cart (2 items)</H2>
-        <Button aria-label="close" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
+        <Button aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
           <Close width="25" height="25" fill="white" />
         </Button>
       </Header>
@@ -31,7 +31,7 @@ function Cart() {
       </Items>
       <Checkout as={motion.section} layout>
         <HR />
-        <Paragraph>Total $ {total.toFixed(2)}</Paragraph>
+        <Paragraph>Subtotal $ {total.toFixed(2)}</Paragraph>
         <HR />
       </Checkout>
     </Wrapper>

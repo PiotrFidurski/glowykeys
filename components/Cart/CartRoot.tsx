@@ -44,7 +44,13 @@ function CartRoot({ cartUi }: Props) {
         <AnimatePresence>
           {open ? (
             <CardBackdrop as={motion.div} {...backgroundAnimations} aria-label="Close cart" onClick={closeCart}>
-              <CartContainer as={motion.div} {...menuAnimations} tabIndex={0} ref={cartContainer} aria-label="cart">
+              <CartContainer
+                as={motion.div}
+                {...menuAnimations}
+                tabIndex={0}
+                ref={cartContainer}
+                aria-label="cart menu"
+              >
                 {cartUi}
               </CartContainer>
             </CardBackdrop>
