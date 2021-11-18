@@ -35,7 +35,7 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
-export const Items = styled.section`
+export const ItemsSection = styled.section`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -43,7 +43,7 @@ export const Items = styled.section`
   padding-bottom: 2rem;
 `;
 
-export const Checkout = styled.section`
+export const CheckoutSection = styled.section`
   display: flex;
   text-align: end;
   flex-direction: column;

@@ -22,7 +22,7 @@ function CartItem({ product }: Props) {
   } = useCart();
 
   return (
-    <S.Container aria-label="cart item" as={motion.article} layout>
+    <S.Article aria-label="cart item" as={motion.article} layout>
       <S.Wrapper>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
@@ -49,9 +49,7 @@ function CartItem({ product }: Props) {
                   dispatch({ type: actionTypes.removeItem, payload: product });
                 }
               }}
-              aria-label={
-                product.qty > 0 ? `remove one more ${product.name} from cart` : `remove ${product.name} from cart`
-              }
+              aria-label={product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`}
             >
               {product.qty === 0 ? (
                 <Delete width="25" height="25" fill="white" />
@@ -69,7 +67,7 @@ function CartItem({ product }: Props) {
       >
         <Delete width="25" height="25" fill="white" />
       </Button>
-    </S.Container>
+    </S.Article>
   );
 }
 

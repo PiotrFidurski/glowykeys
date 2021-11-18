@@ -24,7 +24,7 @@ export const Header = styled.header`
 
 export const H1 = styled.h1``;
 
-export const Container = styled.div`
+export const ProductsSection = styled.section`
   display: grid;
   grid-area: browse;
   max-width: 1440px;
@@ -42,11 +42,11 @@ export const Container = styled.div`
   }
 `;
 
-export const FiltersContainer = styled.section`
+export const Aside = styled.aside`
   grid-area: filters;
 `;
 
-export const BrowseSection = styled.section`
+export const ProductsContainer = styled.section`
   grid-area: items;
   display: grid;
   margin: 0 auto;
@@ -57,7 +57,7 @@ export const BrowseSection = styled.section`
   grid-template-columns: minmax(330px, 1fr);
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, minmax(330px, 330px));
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
     grid-column-start: 2;
   }
 `;

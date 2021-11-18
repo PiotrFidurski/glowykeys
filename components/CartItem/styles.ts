@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.article`
+export const Article = styled.article`
   width: 100%;
   padding-bottom: 2rem;
   display: flex;

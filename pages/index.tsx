@@ -3,6 +3,7 @@ import Navbar from '@components/Navbar/Navbar';
 import {
   Button,
   H1,
+  H2,
   Header,
   HeaderSection,
   KeyboardsCategory,
@@ -12,9 +13,11 @@ import {
   MidSectionFirstImageWrapper,
   MidSectionSecondImageWrapper,
   MidSectionText,
+  Nav,
   Paragraph,
   ProductCategorySection,
   SwitchesCategory,
+  VisuallyHiddenH2,
 } from '@styled/pages/HomePageStyles';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -24,6 +27,7 @@ import { useRouter } from 'next/router';
 
 const HomePage: NextPage = () => {
   const router = useRouter();
+
   return (
     <>
       <Head>
@@ -40,50 +44,56 @@ const HomePage: NextPage = () => {
               freak for extra functions or someone who wants it all – we’ve got you covered.
             </Paragraph>
           </HeaderSection>
-          <Button onClick={() => router.push('/products')}>View Products</Button>
+          <Button type="button" onClick={() => router.push('/products')}>
+            View Products
+          </Button>
         </Header>
         <ProductCategorySection>
-          <Link href="/keyboards" passHref>
-            <KeyboardsCategory>
-              <H1>Keyboards</H1>
-              <Image
-                src="/assets/images/blueish-keyboard.png"
-                alt="black keyboard with water drops on it"
-                priority
-                layout="fill"
-                objectFit="cover"
-              />
-            </KeyboardsCategory>
-          </Link>
-          <Link href="/keycaps" passHref>
-            <KeyCapsCategory>
-              <H1>Keycaps</H1>
-              <Image
-                alt="black keycap with hammer stuck to it"
-                src="/assets/images/keycaps.webp"
-                priority
-                layout="fill"
-                objectFit="cover"
-              />
-            </KeyCapsCategory>
-          </Link>
-          <Link href="/switches" passHref>
-            <SwitchesCategory>
-              <H1>Switches</H1>
-              <Image
-                alt="colorful keyboard switches in a box"
-                src="/assets/images/switches.webp"
-                priority
-                layout="fill"
-                objectFit="cover"
-              />
-            </SwitchesCategory>
-          </Link>
+          <VisuallyHiddenH2>Product Categories</VisuallyHiddenH2>
+          <Nav>
+            <Link href="/keyboards" passHref>
+              <KeyboardsCategory>
+                <H2>Keyboards</H2>
+                <Image
+                  src="/assets/images/blueish-keyboard.png"
+                  alt="black keyboard with water drops on it"
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </KeyboardsCategory>
+            </Link>
+            <Link href="/keycaps" passHref>
+              <KeyCapsCategory>
+                <H2>Keycaps</H2>
+                <Image
+                  alt="black keycap with hammer stuck to it"
+                  src="/assets/images/keycaps.webp"
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </KeyCapsCategory>
+            </Link>
+            <Link href="/switches" passHref>
+              <SwitchesCategory>
+                <H2>Switches</H2>
+                <Image
+                  alt="colorful keyboard switches in a box"
+                  src="/assets/images/switches.webp"
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </SwitchesCategory>
+            </Link>
+          </Nav>
         </ProductCategorySection>
         <MidSection>
+          <VisuallyHiddenH2>Casual and Gaming Keyboards</VisuallyHiddenH2>
           <MidSectionFirstImageWrapper href="/keyboards?variants=casual">
             <MidSectionText>
-              <H1>Casual keyboards</H1>
+              <H2>Casual keyboards</H2>
               <Paragraph>keyboards for casusal typers</Paragraph>
             </MidSectionText>
             <Image
@@ -96,7 +106,7 @@ const HomePage: NextPage = () => {
           </MidSectionFirstImageWrapper>
           <MidSectionSecondImageWrapper href="/keyboards?variants=gaming">
             <MidSectionText>
-              <H1>Gaming keyboards</H1>
+              <H2>Gaming keyboards</H2>
               <Paragraph>keyboards for hardcore gamers</Paragraph>
             </MidSectionText>
             <Image

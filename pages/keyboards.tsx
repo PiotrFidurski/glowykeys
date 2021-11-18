@@ -2,7 +2,8 @@ import FilterAndSort from '@components/FilterAndSort/FilterAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
-import { BrowseSection, Container, FiltersContainer, H1, Header, Main } from '@styled/pages/KeyboardsPageStyles';
+import { VisuallyHiddenH2 } from '@styled/pages/HomePageStyles';
+import { Aside, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { Product as ProductType } from '@utils/types';
@@ -39,21 +40,24 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <Container>
+        <ProductsSection>
+          <VisuallyHiddenH2>Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
-            <FiltersContainer>
+            <Aside>
+              <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <FilterAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
-            </FiltersContainer>
-            <BrowseSection>
+            </Aside>
+            <ProductsContainer>
+              <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keyboards
                 .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
                 .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />
                 ))}
-            </BrowseSection>
+            </ProductsContainer>
           </AnimateSharedLayout>
-        </Container>
+        </ProductsSection>
         <Footer />
       </Main>
     </>

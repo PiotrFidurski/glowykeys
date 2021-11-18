@@ -1,10 +1,10 @@
 import CartItem from '@components/CartItem/CartItem';
-import { getTotalPrice } from '@utils/getTotalPrice';
+import { getSubTotalPrice } from '@utils/getTotalPrice';
 import { Button } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
-import { Checkout, H2, Header, HR, Items, Paragraph, Wrapper } from './styles';
+import { CheckoutSection, H2, Header, HR, ItemsSection, Paragraph, Wrapper } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -14,7 +14,7 @@ function Cart() {
     dispatch,
   } = useCart();
 
-  const total = getTotalPrice(items);
+  const subtotal = getSubTotalPrice(items);
 
   return (
     <Wrapper>
@@ -24,16 +24,16 @@ function Cart() {
           <Close width="25" height="25" fill="white" />
         </Button>
       </Header>
-      <Items aria-label="cart items list">
+      <ItemsSection aria-label="cart items list">
         {items.map((item) => (
           <CartItem product={item} key={item.id} />
         ))}
-      </Items>
-      <Checkout as={motion.section} layout>
+      </ItemsSection>
+      <CheckoutSection as={motion.section} layout>
         <HR />
-        <Paragraph>Subtotal $ {total.toFixed(2)}</Paragraph>
+        <Paragraph>Subtotal $ {subtotal.toFixed(2)}</Paragraph>
         <HR />
-      </Checkout>
+      </CheckoutSection>
     </Wrapper>
   );
 }

@@ -94,6 +94,10 @@ export const H1 = styled.h1`
   font-size: clamp(1.5rem, 2vw, 3rem);
 `;
 
+export const H2 = styled.h2`
+  font-size: clamp(1.5rem, 2vw, 3rem);
+`;
+
 export const Paragraph = styled.p`
   line-height: 1.7rem;
 `;
@@ -139,12 +143,27 @@ export const Button = styled.button`
 
 export const ProductCategorySection = styled.section`
   grid-area: categories;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
   padding: 5rem 1rem;
+`;
+
+export const VisuallyHiddenH2 = styled.h2`
+  clip: rect(1px 1px 1px 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+`;
+
+export const Nav = styled.nav`
   width: 100%;
   gap: 1rem;
   display: grid;
-  max-width: 1440px;
-  margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'keyboards keyboards keyboards keyboards'
