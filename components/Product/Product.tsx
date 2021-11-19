@@ -14,6 +14,7 @@ interface Props {
 
 function Product({ product }: Props) {
   const { dispatch } = useCart();
+
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
       <ProductImageWrapper>
