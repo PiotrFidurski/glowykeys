@@ -12,17 +12,26 @@ export const Main = styled.main`
 
 export const Header = styled.header`
   grid-area: header;
+  position: relative;
   text-align: center;
   display: flex;
   padding: 0 1rem;
+  min-height: 600px;
   justify-content: center;
-  max-width: 600px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
   align-items: center;
+  box-shadow: 0 2px 6px 0px rgb(255 255 255 / 15%);
+  img {
+    z-index: -1;
+    filter: brightness(0.5);
+  }
 `;
 
-export const H1 = styled.h1``;
+export const H1 = styled.h1`
+  max-width: 600px;
+`;
 
 export const ProductsSection = styled.section`
   display: grid;
