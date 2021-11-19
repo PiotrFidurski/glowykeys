@@ -1,5 +1,17 @@
 import styled, { css } from 'styled-components';
 
+export const ButtonStyles = css`
+  position: relative;
+  background-color: transparent;
+  color: ${({ theme: { color } }) => color.primary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+`;
+
 export const LineOnHover = css`
   text-decoration: none;
   position: relative;
@@ -33,11 +45,41 @@ export const GradientText = css`
   background-clip: text;
 `;
 
-export const Button = styled.button<{ transformOn?: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
+export const SquareButton = styled.button`
+  ${ButtonStyles};
+  padding: 1rem;
+  align-self: center;
+  grid-area: button;
+  max-width: 300px;
+  width: 100%;
+  color: ${({ theme: { color } }) => color.primary};
+  border: 2px solid ${({ theme: { color } }) => color.highlight};
+  min-width: 200px;
+  transition: border-color 0.3s linear;
+
+  &:before {
+    position: absolute;
+    width: 0%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: ${({ theme: { color } }) => color.highlight};
+    content: '';
+    transition: width 0.3s linear;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &:before {
+      width: 100%;
+    }
+  }
+`;
+
+export const RoundButton = styled.button<{ transformOn?: boolean }>`
+  ${ButtonStyles};
   border: 0;
   color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
@@ -45,13 +87,12 @@ export const Button = styled.button<{ transformOn?: boolean }>`
   height: 100%;
   min-width: 50px;
   width: 100%;
-  cursor: pointer;
   max-width: 50px;
   transition: transform 0.5s ease, outline-color 0.5s ease;
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
-    outline: 2px solid ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
+    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? '#F06071' : color.highlight)};
     background: ${({ theme: { color } }) => color.accent};
   }
 
