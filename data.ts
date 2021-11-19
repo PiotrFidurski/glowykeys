@@ -42,6 +42,7 @@ const keyboard: ProductType = {
 export const data = new Array(20).fill(keyboard).map((item: ProductType) => ({
   ...item,
   id: v4(),
+  qty: 1,
   variant: getRandomElement(variants) as string,
   price: getRandomElement(prices) as number,
   connectivity: getRandomElement(connectivity) as string,

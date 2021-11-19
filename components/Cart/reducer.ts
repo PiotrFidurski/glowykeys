@@ -13,6 +13,13 @@ export function reducer(state: State, action: Action): State {
         ...state,
         open: false,
       };
+    case actionTypes.addItem: {
+      const itemToBeAdded = action.payload as Product;
+      return {
+        ...state,
+        items: [itemToBeAdded, ...state.items],
+      };
+    }
     case actionTypes.removeItem: {
       const itemToBeRemoved = action.payload as Product;
       return {

@@ -1,31 +1,13 @@
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
-import {
-  Button,
-  H1,
-  H2,
-  Header,
-  HeaderSection,
-  KeyboardsCategory,
-  KeyCapsCategory,
-  Main,
-  MidSection,
-  MidSectionFirstImageWrapper,
-  MidSectionSecondImageWrapper,
-  MidSectionText,
-  Nav,
-  Paragraph,
-  ProductCategorySection,
-  SwitchesCategory,
-} from '@styled/pages/HomePageStyles';
+import * as S from '@styled/pages/HomePageStyles';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const HomePage: NextPage = () => {
+function HomePage() {
   const router = useRouter();
 
   return (
@@ -35,25 +17,25 @@ const HomePage: NextPage = () => {
         <meta name="description" content="shop for the best keyboards" />
       </Head>
       <Navbar />
-      <Main>
-        <Header role="heading" aria-labelledby="main-heading">
-          <HeaderSection>
-            <H1 id="main-heading">Hello, Get the best keyboard possible fitting to your needs.</H1>
-            <Paragraph>
+      <S.Main>
+        <S.Header role="heading" aria-describedby="main-heading">
+          <S.HeaderSection>
+            <S.H1 id="main-heading">Hello, Get the best keyboard possible fitting to your needs.</S.H1>
+            <S.Paragraph>
               A quality keyboard is vital for both work and play. Whether you’re a mechanical purist, a couch gamer, a
               freak for extra functions or someone who wants it all – we’ve got you covered.
-            </Paragraph>
-          </HeaderSection>
-          <Button type="button" onClick={() => router.push('/products')}>
+            </S.Paragraph>
+          </S.HeaderSection>
+          <S.Button type="button" onClick={() => router.push('/products')}>
             View Products
-          </Button>
-        </Header>
-        <ProductCategorySection role="region" aria-labelledby="product-category-label">
+          </S.Button>
+        </S.Header>
+        <S.ProductCategorySection role="region" aria-labelledby="product-category-label">
           <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>
-          <Nav>
+          <S.Nav>
             <Link href="/keyboards" passHref>
-              <KeyboardsCategory aria-label="go to keyboards page">
-                <H2>Keyboards</H2>
+              <S.KeyboardsCategory aria-label="go to keyboards page">
+                <S.H2>Keyboards</S.H2>
                 <Image
                   src="/assets/images/blueish-keyboard.png"
                   alt="black keyboard with water drops on it"
@@ -61,11 +43,11 @@ const HomePage: NextPage = () => {
                   layout="fill"
                   objectFit="cover"
                 />
-              </KeyboardsCategory>
+              </S.KeyboardsCategory>
             </Link>
             <Link href="/keycaps" passHref>
-              <KeyCapsCategory aria-label="go to keycaps page">
-                <H2>Keycaps</H2>
+              <S.KeyCapsCategory aria-label="go to keycaps page">
+                <S.H2>Keycaps</S.H2>
                 <Image
                   alt="black keycap with hammer stuck to it"
                   src="/assets/images/keycaps.webp"
@@ -73,11 +55,11 @@ const HomePage: NextPage = () => {
                   layout="fill"
                   objectFit="cover"
                 />
-              </KeyCapsCategory>
+              </S.KeyCapsCategory>
             </Link>
             <Link href="/switches" passHref>
-              <SwitchesCategory aria-label="go to switches page">
-                <H2>Switches</H2>
+              <S.SwitchesCategory aria-label="go to switches page">
+                <S.H2>Switches</S.H2>
                 <Image
                   alt="colorful keyboard switches in a box"
                   src="/assets/images/switches.webp"
@@ -85,17 +67,17 @@ const HomePage: NextPage = () => {
                   layout="fill"
                   objectFit="cover"
                 />
-              </SwitchesCategory>
+              </S.SwitchesCategory>
             </Link>
-          </Nav>
-        </ProductCategorySection>
-        <MidSection role="region" aria-labelledby="casual-keyboards-label">
+          </S.Nav>
+        </S.ProductCategorySection>
+        <S.MidSection role="region" aria-labelledby="casual-keyboards-label">
           <VisuallyHiddenH2 id="casual-keyboards-label">Casual and Gaming Keyboards</VisuallyHiddenH2>
-          <MidSectionFirstImageWrapper href="/keyboards?variants=casual" aria-label="go to casual keyboards page">
-            <MidSectionText>
-              <H2>Casual keyboards</H2>
-              <Paragraph>keyboards for casusal typers</Paragraph>
-            </MidSectionText>
+          <S.MidSectionFirstImageWrapper href="/keyboards?variants=casual" aria-label="go to casual keyboards page">
+            <S.MidSectionText>
+              <S.H2>Casual keyboards</S.H2>
+              <S.Paragraph>keyboards for casusal typers</S.Paragraph>
+            </S.MidSectionText>
             <Image
               alt="five keyboards next to each other"
               src="/assets/images/keyboard.png"
@@ -103,12 +85,12 @@ const HomePage: NextPage = () => {
               layout="fill"
               objectFit="cover"
             />
-          </MidSectionFirstImageWrapper>
-          <MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
-            <MidSectionText>
-              <H2>Gaming keyboards</H2>
-              <Paragraph>keyboards for hardcore gamers</Paragraph>
-            </MidSectionText>
+          </S.MidSectionFirstImageWrapper>
+          <S.MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
+            <S.MidSectionText>
+              <S.H2>Gaming keyboards</S.H2>
+              <S.Paragraph>keyboards for hardcore gamers</S.Paragraph>
+            </S.MidSectionText>
             <Image
               alt="black keyboard with purple lights on"
               src="/assets/images/keyboard2.png"
@@ -116,12 +98,12 @@ const HomePage: NextPage = () => {
               layout="fill"
               objectFit="cover"
             />
-          </MidSectionSecondImageWrapper>
-        </MidSection>
+          </S.MidSectionSecondImageWrapper>
+        </S.MidSection>
         <Footer />
-      </Main>
+      </S.Main>
     </>
   );
-};
+}
 
 export default HomePage;

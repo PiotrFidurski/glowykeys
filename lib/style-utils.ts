@@ -39,6 +39,7 @@ export const Button = styled.button<{ transformOn?: boolean }>`
   justify-content: center;
   background-color: transparent;
   border: 0;
+  color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
   min-height: 50px;
   height: 100%;
