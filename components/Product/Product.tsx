@@ -1,3 +1,5 @@
+import { actionTypes } from '@components/Cart/types';
+import { useCart } from '@components/Cart/useCart';
 import { Button } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
@@ -11,6 +13,7 @@ interface Props {
 }
 
 function Product({ product }: Props) {
+  const { dispatch } = useCart();
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
       <ProductImageWrapper>
@@ -19,7 +22,11 @@ function Product({ product }: Props) {
       <Heading>
         <H2>{product.name}</H2>
       </Heading>
-      <Button aria-label={`add ${product.name} to cart`} type="button">
+      <Button
+        onClick={() => dispatch({ type: actionTypes.addItem, payload: product })}
+        aria-label={`add ${product.name} to cart`}
+        type="button"
+      >
         <AddToCart width="30" height="30" fill="white" />
       </Button>
     </Article>
