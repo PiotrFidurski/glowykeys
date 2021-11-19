@@ -6,6 +6,7 @@ export const Main = styled.main`
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'header header header header'
+    'currentFilters currentFilters currentFilters currentFilters'
     'browse browse browse browse'
     'footer footer footer footer';
 `;
@@ -35,6 +36,18 @@ export const H1 = styled.h1`
   line-height: 2.45rem;
 `;
 
+export const FiltersContainer = styled.div`
+  max-width: 1440px;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  grid-area: currentFilters;
+  grid-column-start: 2;
+`;
+
 export const ProductsSection = styled.section`
   display: grid;
   grid-area: browse;
@@ -49,7 +62,7 @@ export const ProductsSection = styled.section`
     'items items items items';
 
   @media (min-width: 768px) {
-    padding: 5rem 0;
+    padding: 0;
     grid-template-areas: 'filters items items items';
   }
 `;

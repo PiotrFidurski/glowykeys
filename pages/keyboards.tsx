@@ -2,10 +2,18 @@ import FiltersAndSort from '@components/FiltersAndSort/FiltersAndSort';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
-import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
+import {
+  FiltersContainer,
+  FilterSection,
+  H1,
+  Header,
+  Main,
+  ProductsContainer,
+  ProductsSection,
+} from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
-import { VisuallyHiddenH2 } from '@utils/style-utils';
+import { SmallButton, VisuallyHiddenH2 } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
@@ -42,6 +50,15 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
+        <FiltersContainer>
+          {Object.values(filters).map((entry) =>
+            entry.map((filter) => (
+              <SmallButton key={filter} type="button">
+                {filter}
+              </SmallButton>
+            ))
+          )}
+        </FiltersContainer>
         <ProductsSection aria-labelledby="products-section" role="region">
           <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>

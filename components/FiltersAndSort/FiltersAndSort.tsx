@@ -58,7 +58,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
             value="wired"
             type="checkbox"
           />
-          <LiText>WIRED</LiText>
+          <LiText isSelected={filters.connectivity.includes('wired')}>WIRED</LiText>
         </Li>
         <Li>
           <Label htmlFor="wireless" aria-label="wireless" />
@@ -70,7 +70,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
             value="wireless"
             type="checkbox"
           />
-          <LiText>WIRELESS</LiText>
+          <LiText isSelected={filters.connectivity.includes('wireless')}>WIRELESS</LiText>
         </Li>
       </List>
       <Separator />
@@ -86,7 +86,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
             value="casual"
             type="checkbox"
           />
-          <LiText>CASUAL</LiText>
+          <LiText isSelected={filters.variants.includes('casual')}>CASUAL</LiText>
         </Li>
         <Li>
           <Label htmlFor="gaming" aria-label="gaming" />
@@ -98,7 +98,7 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
             value="gaming"
             type="checkbox"
           />
-          <LiText>GAMING</LiText>
+          <LiText isSelected={filters.variants.includes('gaming')}>GAMING</LiText>
         </Li>
       </List>
       <Separator />
