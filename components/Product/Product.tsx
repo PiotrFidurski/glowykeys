@@ -1,9 +1,10 @@
-import { Button } from '@styled/pages/HomePageStyles';
+import { Button } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
-import { Article, H2, Heading, Paragraph, ProductImageWrapper } from './styles';
+import AddToCart from '../../public/assets/vector/addtocart.svg';
+import { Article, H2, Heading, ProductImageWrapper } from './styles';
 
 interface Props {
   product: ProductType;
@@ -17,12 +18,10 @@ function Product({ product }: Props) {
       </ProductImageWrapper>
       <Heading>
         <H2>{product.name}</H2>
-        <Paragraph>{product.brand}</Paragraph>
-        <Paragraph>{product.price}$</Paragraph>
-        <Paragraph>{product.connectivity}</Paragraph>
-        <Paragraph>{product.variant}</Paragraph>
       </Heading>
-      <Button type="button">Add to cart</Button>
+      <Button aria-label={`add ${product.name} to cart`} type="button">
+        <AddToCart width="30" height="30" fill="white" />
+      </Button>
     </Article>
   );
 }

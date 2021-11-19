@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Article = styled.article`
   flex-direction: column;
   max-width: 600px;
+  border: 1px solid ${({ theme: { color } }) => color.primary};
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -11,7 +12,8 @@ export const Article = styled.article`
 export const Heading = styled.header``;
 
 export const H2 = styled.h2`
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  padding-left: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 `;
 
 export const Paragraph = styled.p`
@@ -24,7 +26,8 @@ export const ProductImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   background: ${({ theme: { color } }) => color.accent};
-  min-height: 250px;
+  min-height: 340px;
+  max-width: 100%;
   position: relative;
 
   img {
