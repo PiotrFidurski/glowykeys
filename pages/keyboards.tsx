@@ -37,7 +37,7 @@ function KeyboardsPage({ keyboards }: Props) {
       <Navbar />
       <Main>
         <Header>
-          <Image src="/assets/images/blueish-keyboard.png" layout="fill" objectFit="cover" />
+          <Image src="/assets/images/Banner_keyboard.png" layout="fill" objectFit="cover" />
           <H1>
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>

@@ -22,10 +22,10 @@ export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  box-shadow: 0 2px 6px 0px rgb(255 255 255 / 15%);
+  box-shadow: 0 1px 1px 0px rgb(255 255 255 / 5%);
   img {
     z-index: -1;
-    filter: brightness(0.5);
+    filter: brightness(0.2);
   }
 `;
 
