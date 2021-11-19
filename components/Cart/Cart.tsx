@@ -1,6 +1,6 @@
 import CartItem from '@components/CartItem/CartItem';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
-import { Button } from '@utils/style-utils';
+import { RoundButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
@@ -20,9 +20,9 @@ function Cart() {
     <Wrapper>
       <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
         <H2>Shopping Cart ({items.length} items)</H2>
-        <Button aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
+        <RoundButton aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
           <Close width="25" height="25" fill="white" />
-        </Button>
+        </RoundButton>
       </Header>
       <ItemsSection role="region" aria-label="items list">
         {items.map((item) => (

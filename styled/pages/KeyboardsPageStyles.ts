@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  margin-top: 5rem;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
@@ -22,7 +22,8 @@ export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  box-shadow: 0 1px 1px 0px rgb(255 255 255 / 5%);
+  box-shadow: 0 1px 1px 0px ${({ theme: { boxShadowColor } }) => boxShadowColor.primary};
+
   img {
     z-index: -1;
     filter: brightness(0.2);
@@ -31,6 +32,7 @@ export const Header = styled.header`
 
 export const H1 = styled.h1`
   max-width: 600px;
+  line-height: 2.45rem;
 `;
 
 export const ProductsSection = styled.section`

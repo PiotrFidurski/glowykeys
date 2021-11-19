@@ -102,45 +102,6 @@ export const Paragraph = styled.p`
   line-height: 1.7rem;
 `;
 
-export const Button = styled.button`
-  padding: 1rem;
-  grid-area: button;
-  position: relative;
-  max-width: 350px;
-  border: 0;
-  background-color: transparent;
-  color: ${({ theme: { color } }) => color.primary};
-  border: 2px solid ${({ theme: { color } }) => color.primary};
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  transition: border-color 0.3s linear;
-
-  &:before {
-    position: absolute;
-    width: 0%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    background: linear-gradient(to left, #e91e63, #673ab7);
-    content: '';
-    transition: width 0.3s linear;
-  }
-
-  &:hover {
-    cursor: pointer;
-    border-color: #e91e63;
-    &:before {
-      width: 100%;
-    }
-  }
-`;
-
 export const ProductCategorySection = styled.section`
   grid-area: categories;
   max-width: 1440px;
