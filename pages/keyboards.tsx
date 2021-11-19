@@ -40,8 +40,8 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <ProductsSection aria-labelledby="products-section-label" role="region">
-          <VisuallyHiddenH2 id="products-section-label">Products section</VisuallyHiddenH2>
+        <ProductsSection aria-labelledby="products-section" role="region">
+          <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>

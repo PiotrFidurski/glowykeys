@@ -38,6 +38,7 @@ export const ProductsSection = styled.section`
     'items items items items';
 
   @media (min-width: 768px) {
+    padding: 5rem 0;
     grid-template-areas: 'filters items items items';
   }
 `;
