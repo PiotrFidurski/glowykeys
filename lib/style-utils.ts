@@ -106,10 +106,25 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
 export const SmallButton = styled.button`
   ${ButtonStyles};
   border-radius: 9999px;
-  border: 1px solid ${({ theme: { color } }) => color.highlight};
+  border: 2px solid ${({ theme: { color } }) => color.highlight};
   font-size: 1rem;
+  gap: 1rem;
   color: ${({ theme: { color } }) => color.highlight};
   padding: 0.5rem 1rem;
+  transition: color 0.3s ease, border 0.3s ease;
+
+  svg {
+    fill: ${({ theme: { color } }) => color.highlight};
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    color: ${({ theme: { color } }) => color.danger};
+    border: 2px solid ${({ theme: { color } }) => color.danger};
+    svg {
+      fill: ${({ theme: { color } }) => color.danger};
+    }
+  }
 `;
 
 export const VisuallyHiddenH2 = styled.h2`
