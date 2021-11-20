@@ -9,7 +9,7 @@ interface Props {
   onFilter: React.Dispatch<React.SetStateAction<FilterTypes>>;
 }
 
-function FilterAndSort({ onFilter, filters }: Props) {
+function Filters({ onFilter, filters }: Props) {
   const { push } = useRouter();
 
   React.useEffect(() => {
@@ -37,4 +37,4 @@ function FilterAndSort({ onFilter, filters }: Props) {
   );
 }
 
-export default FilterAndSort;
+export default Filters;
