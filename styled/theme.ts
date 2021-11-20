@@ -16,6 +16,7 @@ const theme: DefaultTheme = {
     primary: '#ffffff',
     accent: '#171e2d',
     highlight: '#0091ff',
+    danger: '#F06071',
   },
 };
 
