@@ -1,4 +1,4 @@
-import { FilterTypes } from '@components/FiltersAndSort/types';
+import { FilterTypes } from '@components/Filters/types';
 import { SmallButton } from '@utils/style-utils';
 import * as React from 'react';
 import Cross from '../../public/assets/vector/cross.svg';

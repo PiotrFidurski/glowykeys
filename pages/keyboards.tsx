@@ -1,9 +1,10 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
-import FiltersAndSort from '@components/FiltersAndSort/FiltersAndSort';
-import { FilterTypes } from '@components/FiltersAndSort/types';
+import Filters from '@components/Filters/Filters';
+import { FilterTypes, SortTypes } from '@components/Filters/types';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
+import Sorts from '@components/Sorts/Sorts';
 import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
@@ -23,7 +24,7 @@ interface Props {
 function KeyboardsPage({ keyboards }: Props) {
   const { query } = useRouter();
 
-  const [sort, setSort] = React.useState({ order: 'ASC', type: 'price' });
+  const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
 
   const [filters, setFilters] = React.useState<FilterTypes>(() => ({
     variants: query.variants ? [].concat(query.variants) : [],
@@ -50,7 +51,8 @@ function KeyboardsPage({ keyboards }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <FiltersAndSort filters={filters} onFilter={setFilters} onSort={setSort} />
+              <Filters filters={filters} onFilter={setFilters} />
+              <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
