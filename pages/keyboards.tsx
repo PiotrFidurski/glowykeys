@@ -5,7 +5,6 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import {
-  FiltersContainer,
   FilterSection,
   H1,
   Header,
