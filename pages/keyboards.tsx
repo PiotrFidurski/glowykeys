@@ -52,7 +52,7 @@ function KeyboardsPage({ keyboards }: Props) {
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <Filters filters={filters} onFilter={setFilters} />
-              <Sorts onSort={setSort} />
+              <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
