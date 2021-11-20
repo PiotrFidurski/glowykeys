@@ -1,12 +1,11 @@
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { Button } from '@utils/style-utils';
+import { SquareButton } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
-import AddToCart from '../../public/assets/vector/addtocart.svg';
-import { Article, H2, Heading, ProductImageWrapper } from './styles';
+import { Article, H2, Heading, Paragraph, ProductImageWrapper } from './styles';
 
 interface Props {
   product: ProductType;
@@ -22,14 +21,15 @@ function Product({ product }: Props) {
       </ProductImageWrapper>
       <Heading>
         <H2>{product.name}</H2>
+        <Paragraph>{product.price}$</Paragraph>
       </Heading>
-      <Button
+      <SquareButton
         onClick={() => dispatch({ type: actionTypes.addItem, payload: product })}
         aria-label={`add ${product.name} to cart`}
         type="button"
       >
-        <AddToCart width="30" height="30" fill="white" />
-      </Button>
+        Shop now
+      </SquareButton>
     </Article>
   );
 }

@@ -1,7 +1,7 @@
 import { decrementQty, incrementQty } from '@components/Cart/CartContext';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { Button } from '@utils/style-utils';
+import { RoundButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -31,15 +31,15 @@ function CartItem({ product }: Props) {
           <S.A href="/">{product.name}</S.A>
           <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
           <S.Quantity>
-            <Button
+            <RoundButton
               type="button"
               onClick={() => incrementQty({ dispatch, updates: { items, product } })}
               aria-label={`add one more ${product.name} to cart`}
             >
               <Plus width="25" height="25" fill="white" />
-            </Button>
+            </RoundButton>
             <S.QTY aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
-            <Button
+            <RoundButton
               transformOn={product.qty === 0}
               type="button"
               onClick={() => {
@@ -56,17 +56,17 @@ function CartItem({ product }: Props) {
               ) : (
                 <Minus width="25" height="25" fill="white" />
               )}
-            </Button>
+            </RoundButton>
           </S.Quantity>
         </S.Details>
       </S.Wrapper>
-      <Button
+      <RoundButton
         type="button"
         aria-label={`remove ${product.name} from cart`}
         onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
       >
         <Delete width="25" height="25" fill="white" />
-      </Button>
+      </RoundButton>
     </S.Article>
   );
 }

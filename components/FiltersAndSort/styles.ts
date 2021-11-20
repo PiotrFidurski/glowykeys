@@ -35,8 +35,9 @@ export const CheckBox = styled.input`
   }
 `;
 
-export const LiText = styled.span`
+export const LiText = styled.span<{ isSelected?: boolean }>`
   letter-spacing: 0.2rem;
+  color: ${({ isSelected, theme: { color } }) => (isSelected ? color.highlight : color.primary)};
   font-size: 0.8rem;
 `;
 

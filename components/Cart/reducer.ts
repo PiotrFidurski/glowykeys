@@ -15,13 +15,17 @@ export function reducer(state: State, action: Action): State {
       };
     case actionTypes.addItem: {
       const itemToBeAdded = action.payload as Product;
+
+      const isItemInCart = state.items.find((item) => item.id === itemToBeAdded.id);
+
       return {
         ...state,
-        items: [itemToBeAdded, ...state.items],
+        items: isItemInCart ? state.items : [itemToBeAdded, ...state.items],
       };
     }
     case actionTypes.removeItem: {
       const itemToBeRemoved = action.payload as Product;
+
       return {
         ...state,
         items: state.items.filter((item) => item.id !== itemToBeRemoved.id),
@@ -29,10 +33,12 @@ export function reducer(state: State, action: Action): State {
     }
     case actionTypes.incrementQty: {
       const newItems = action.payload as Product[];
+
       return { ...state, items: newItems };
     }
     case actionTypes.decrementQty: {
       const newItems = action.payload as Product[];
+
       return { ...state, items: newItems };
     }
     default:

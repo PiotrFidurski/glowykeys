@@ -2,7 +2,7 @@ import { GradientText, LineOnHover } from '@utils/style-utils';
 import styled, { css } from 'styled-components';
 
 const ListStyles = css`
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   list-style: none;
   display: flex;
   width: 100%;
@@ -25,6 +25,7 @@ export const Nav = styled.nav`
   max-height: 70px;
   min-height: 50px;
   padding: 0 2rem;
+  box-shadow: 0 1px 1px 0px ${({ theme: { boxShadowColor } }) => boxShadowColor.primary};
   background: ${({ theme: { background } }) => background.secondary};
   align-items: center;
 `;
@@ -63,6 +64,7 @@ export const Li = styled.li`
 `;
 
 export const SignInLink = styled.a`
+  font-weight: 600;
   color: white;
   ${LineOnHover};
 

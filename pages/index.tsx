@@ -1,7 +1,7 @@
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import * as S from '@styled/pages/HomePageStyles';
-import { VisuallyHiddenH2 } from '@utils/style-utils';
+import { SquareButton, VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,9 +26,9 @@ function HomePage() {
               freak for extra functions or someone who wants it all – we’ve got you covered.
             </S.Paragraph>
           </S.HeaderSection>
-          <S.Button type="button" onClick={() => router.push('/products')}>
+          <SquareButton type="button" onClick={() => router.push('/products')}>
             View Products
-          </S.Button>
+          </SquareButton>
         </S.Header>
         <S.ProductCategorySection role="region" aria-labelledby="product-category-label">
           <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>

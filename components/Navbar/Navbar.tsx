@@ -1,6 +1,6 @@
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { Button } from '@utils/style-utils';
+import { RoundButton } from '@utils/style-utils';
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
@@ -29,9 +29,13 @@ function Navbar() {
             </Link>
           </Li>
           <Li>
-            <Button aria-label="open cart menu" onClick={() => dispatch({ type: actionTypes.openMenu })} type="button">
+            <RoundButton
+              aria-label="open cart menu"
+              onClick={() => dispatch({ type: actionTypes.openMenu })}
+              type="button"
+            >
               <Cart fill="white" width="25" height="25" />
-            </Button>
+            </RoundButton>
           </Li>
         </Ul>
       </Nav>

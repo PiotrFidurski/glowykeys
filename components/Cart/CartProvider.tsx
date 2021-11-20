@@ -18,6 +18,7 @@ function CartProvider({ children, ui, reducer }: React.PropsWithChildren<Props>)
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   const contextValue = React.useMemo(() => ({ state, dispatch }), [state]);
+
   return (
     <CartContext.Provider value={contextValue}>
       {children}
