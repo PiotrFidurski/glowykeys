@@ -27,14 +27,16 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
       <Separator />
       <H3>CONNECTIVITY</H3>
       <List aria-label="connectivity filter options" role="list">
-        <Filter name="wired" onFilter={onFilter} type="connectivity" filters={filters} />
-        <Filter name="wireless" onFilter={onFilter} type="connectivity" filters={filters} />
+        {['wired', 'wireless'].map((filter) => (
+          <Filter name={filter} onFilter={onFilter} type="connectivity" filters={filters} />
+        ))}
       </List>
       <Separator />
       <H3>VARIANTS</H3>
       <List aria-label="variants filter options" role="list">
-        <Filter name="casual" onFilter={onFilter} type="variants" filters={filters} />
-        <Filter name="gaming" onFilter={onFilter} type="variants" filters={filters} />
+        {['casual', 'gaming'].map((filter) => (
+          <Filter name={filter} onFilter={onFilter} type="variants" filters={filters} />
+        ))}
       </List>
       <Separator />
       <H3>PRICE</H3>
