@@ -92,14 +92,14 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
-    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? '#F06071' : color.highlight)};
+    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
     background: ${({ theme: { color } }) => color.accent};
   }
 
   svg {
     transition: transform 0.5 ease, fill 0.5s ease;
     transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
-    fill: ${({ transformOn }) => (transformOn ? '#F06071' : 'white')};
+    fill: ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : 'white')};
   }
 `;
 
