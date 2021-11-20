@@ -19,6 +19,7 @@ declare module 'styled-components' {
       primary: string;
       accent: string;
       highlight: string;
+      danger: string;
     };
   }
 }

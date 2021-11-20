@@ -36,23 +36,11 @@ export const H1 = styled.h1`
   line-height: 2.45rem;
 `;
 
-export const FiltersContainer = styled.div`
-  max-width: 1440px;
-  padding: 2rem 0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  margin: 0 auto;
-  grid-area: currentFilters;
-  grid-column-start: 2;
-`;
-
 export const ProductsSection = styled.section`
   display: grid;
   grid-area: browse;
   max-width: 1440px;
-  padding: 5rem 1rem;
+  padding: 1rem 1rem;
   width: 100%;
   gap: 3rem;
   margin: 0 auto;
@@ -62,7 +50,7 @@ export const ProductsSection = styled.section`
     'items items items items';
 
   @media (min-width: 768px) {
-    padding: 0;
+    padding: 1rem 1rem;
     grid-template-areas: 'filters items items items';
   }
 `;
