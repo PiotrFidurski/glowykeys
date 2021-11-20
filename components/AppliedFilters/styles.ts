@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 1rem;
   width: 100%;
+  min-height: 56px;
   margin: 0 auto;
   grid-area: currentFilters;
   grid-column-start: 1;

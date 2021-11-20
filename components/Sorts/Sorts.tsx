@@ -10,7 +10,7 @@ interface Props {
 
 function Sorts({ onSort, sort }: Props) {
   return (
-    <S.Nav aria-label="filter menu">
+    <S.Nav aria-label="sort menu">
       <S.Separator />
       <S.H3>PRICE</S.H3>
       <S.List aria-label="sort by price" role="list">
