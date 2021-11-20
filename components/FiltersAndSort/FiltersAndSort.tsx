@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import * as React from 'react';
+import Filter from './Filter';
 import { CheckBox, H3, Label, Li, List, LiText, Nav, Separator } from './styles';
 import { FilterTypes, SortTypes } from './types';
 
@@ -17,28 +18,6 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
-  const onConnectivityChange = (e: React.BaseSyntheticEvent) => {
-    const { value } = e.target;
-
-    onFilter((prevFilter) => ({
-      ...prevFilter,
-      connectivity: prevFilter.connectivity.includes(value)
-        ? prevFilter.connectivity.filter((con) => con !== value)
-        : [...prevFilter.connectivity, value],
-    }));
-  };
-
-  const onVariantsChange = (e: React.BaseSyntheticEvent) => {
-    const { value } = e.target;
-
-    onFilter((prevFilter) => ({
-      ...prevFilter,
-      variants: prevFilter.variants.includes(value)
-        ? prevFilter.variants.filter((con) => con !== value)
-        : [...prevFilter.variants, value],
-    }));
-  };
-
   const onSortChange = (e: React.BaseSyntheticEvent) => {
     onSort((prevSort) => ({ ...prevSort, order: e.target.value }));
   };
@@ -48,58 +27,14 @@ function FilterAndSort({ onFilter, onSort, filters }: Props) {
       <Separator />
       <H3>CONNECTIVITY</H3>
       <List aria-label="connectivity filter options" role="list">
-        <Li>
-          <Label htmlFor="wired" aria-label="wired" />
-          <CheckBox
-            onChange={onConnectivityChange}
-            checked={filters.connectivity.includes('wired')}
-            name="wired"
-            id="wired"
-            value="wired"
-            type="checkbox"
-          />
-          <LiText isSelected={filters.connectivity.includes('wired')}>WIRED</LiText>
-        </Li>
-        <Li>
-          <Label htmlFor="wireless" aria-label="wireless" />
-          <CheckBox
-            onChange={onConnectivityChange}
-            checked={filters.connectivity.includes('wireless')}
-            name="wireless"
-            id="wireless"
-            value="wireless"
-            type="checkbox"
-          />
-          <LiText isSelected={filters.connectivity.includes('wireless')}>WIRELESS</LiText>
-        </Li>
+        <Filter name="wired" onFilter={onFilter} type="connectivity" filters={filters} />
+        <Filter name="wireless" onFilter={onFilter} type="connectivity" filters={filters} />
       </List>
       <Separator />
       <H3>VARIANTS</H3>
       <List aria-label="variants filter options" role="list">
-        <Li>
-          <Label htmlFor="casual" aria-label="casual" />
-          <CheckBox
-            onChange={onVariantsChange}
-            checked={filters.variants.includes('casual')}
-            name="casual"
-            id="casual"
-            value="casual"
-            type="checkbox"
-          />
-          <LiText isSelected={filters.variants.includes('casual')}>CASUAL</LiText>
-        </Li>
-        <Li>
-          <Label htmlFor="gaming" aria-label="gaming" />
-          <CheckBox
-            onChange={onVariantsChange}
-            name="gaming"
-            id="gaming"
-            checked={filters.variants.includes('gaming')}
-            value="gaming"
-            type="checkbox"
-          />
-          <LiText isSelected={filters.variants.includes('gaming')}>GAMING</LiText>
-        </Li>
+        <Filter name="casual" onFilter={onFilter} type="variants" filters={filters} />
+        <Filter name="gaming" onFilter={onFilter} type="variants" filters={filters} />
       </List>
       <Separator />
       <H3>PRICE</H3>
