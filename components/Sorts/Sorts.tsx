@@ -12,6 +12,8 @@ function Sort({ onSort, sort }: Props) {
     onSort((prevSort) => ({ ...prevSort, order: e.target.value }));
   };
 
+  const isSelected = (value: string) => sort.order === value.slice(0, 3).toUpperCase();
+
   return (
     <S.Nav aria-label="filter menu">
       <S.Separator />
@@ -21,14 +23,14 @@ function Sort({ onSort, sort }: Props) {
           <S.Li>
             <S.Label htmlFor={order} aria-label={order} />
             <S.CheckBox
-              checked={sort.order === order.slice(0, 3).toUpperCase()}
+              checked={isSelected(order)}
               onChange={handleChange}
               name={order}
               id={order}
               value={order.slice(0, 3).toUpperCase()}
               type="checkbox"
             />
-            <S.LiText>{order.toUpperCase()}</S.LiText>
+            <S.LiText isSelected={isSelected(order)}>{order.toUpperCase()}</S.LiText>
           </S.Li>
         ))}
       </S.List>
