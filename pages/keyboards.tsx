@@ -4,14 +4,7 @@ import { FilterTypes } from '@components/FiltersAndSort/types';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
-import {
-  FilterSection,
-  H1,
-  Header,
-  Main,
-  ProductsContainer,
-  ProductsSection,
-} from '@styled/pages/KeyboardsPageStyles';
+import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
