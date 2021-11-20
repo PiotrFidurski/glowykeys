@@ -14,10 +14,10 @@ function Sorts({ onSort, sort }: Props) {
       <S.Separator />
       <S.H3>PRICE</S.H3>
       <S.List aria-label="sort by price" role="list">
-        {['ascending', 'descending'].map((order) => {
-          const isSelected = order.slice(0, 3).toUpperCase() === sort.order;
+        {['ascending', 'descending'].map((value) => {
+          const isSelected = value.slice(0, 3).toUpperCase() === sort.order;
 
-          return <Sort name={order} isSelected={isSelected} onSort={onSort} />;
+          return <Sort name={value} isSelected={isSelected} onSort={onSort} />;
         })}
       </S.List>
       <S.Separator />
