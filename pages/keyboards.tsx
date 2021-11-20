@@ -14,7 +14,7 @@ import {
 } from '@styled/pages/KeyboardsPageStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
-import { SmallButton, VisuallyHiddenH2 } from '@utils/style-utils';
+import { VisuallyHiddenH2 } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
