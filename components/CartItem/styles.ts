@@ -36,9 +36,7 @@ export const Details = styled.div`
 export const Quantity = styled.div`
   display: flex;
   max-width: 200px;
-  margin-right: -1rem;
   width: 100%;
-  justify-content: space-around;
   align-items: center;
 `;
 

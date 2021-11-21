@@ -29,7 +29,7 @@ function Cart() {
           <CartItem product={item} key={item.id} />
         ))}
       </ItemsSection>
-      <CheckoutSection as={motion.section} layout>
+      <CheckoutSection role="region" aria-label="checkout" as={motion.section} layout>
         <HR />
         <Paragraph>Subtotal $ {subtotal.toFixed(2)}</Paragraph>
         <HR />

@@ -14,7 +14,7 @@ function Navbar() {
       <Nav>
         <LogoSectionList aria-hidden="true">
           <Li>
-            <Link href="/" passHref>
+            <Link href="/" passHref aria-label="go to homepage">
               <Logo>
                 <LogoIcon fill="white" width="35" height="35" />
                 glowykeys
