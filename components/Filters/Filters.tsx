@@ -10,10 +10,10 @@ interface Props {
 }
 
 function Filters({ onFilter, filters }: Props) {
-  const { push } = useRouter();
+  const router = useRouter();
 
   React.useEffect(() => {
-    push({ pathname: 'keyboards', query: { ...filters } }, null, { scroll: false, shallow: true });
+    router.push({ pathname: 'keyboards', query: { ...filters } }, null, { scroll: false, shallow: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
