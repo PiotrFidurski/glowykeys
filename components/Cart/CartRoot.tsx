@@ -43,7 +43,7 @@ function CartRoot({ cartUi }: Props) {
     ? createPortal(
         <AnimatePresence>
           {open ? (
-            <CardBackdrop as={motion.div} {...backgroundAnimations} aria-label="Close cart" onClick={closeCart}>
+            <CardBackdrop as={motion.div} {...backgroundAnimations} aria-label="close cart" onClick={closeCart}>
               <CartDialog
                 as={motion.div}
                 role="dialog"
