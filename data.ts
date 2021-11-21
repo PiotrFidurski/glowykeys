@@ -1,7 +1,7 @@
 import { Product } from '@utils/types';
 import { v4 } from 'uuid';
 
-export const data = [
+export const data: Array<Product> = [
   {
     id: v4(),
     qty: 1,
