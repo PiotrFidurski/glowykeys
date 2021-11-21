@@ -23,14 +23,14 @@ function Filters({ onFilter, filters }: Props) {
       <H3>CONNECTIVITY</H3>
       <List aria-label="connectivity filter options" role="list">
         {['wired', 'wireless'].map((filter) => (
-          <Filter name={filter} onFilter={onFilter} type="connectivity" filters={filters} />
+          <Filter key={filter} name={filter} onFilter={onFilter} type="connectivity" filters={filters} />
         ))}
       </List>
       <Separator />
       <H3>VARIANTS</H3>
       <List aria-label="variants filter options" role="list">
         {['casual', 'gaming'].map((filter) => (
-          <Filter name={filter} onFilter={onFilter} type="variants" filters={filters} />
+          <Filter key={filter} name={filter} onFilter={onFilter} type="variants" filters={filters} />
         ))}
       </List>
     </Nav>
