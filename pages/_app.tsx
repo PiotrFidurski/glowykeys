@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Normalize />
       <ThemeProvider theme={theme}>
-        <CartProvider ui={<Cart />} reducer={reducer}>
+        <CartProvider ui={<Cart />} reducer={reducer} initialItems={[]}>
           <GlobalStyles />
           <Component {...pageProps} />
         </CartProvider>

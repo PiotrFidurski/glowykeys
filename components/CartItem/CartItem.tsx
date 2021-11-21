@@ -29,7 +29,7 @@ function CartItem({ product }: Props) {
         </S.ImageWrapper>
         <S.Details>
           <S.A href="/">{product.name}</S.A>
-          <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
+          <S.Paragraph>price: {(product.price * product.qty).toFixed(2)}$</S.Paragraph>
           <S.Quantity>
             <RoundButton
               type="button"

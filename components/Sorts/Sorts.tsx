@@ -17,7 +17,7 @@ function Sorts({ onSort, sort }: Props) {
         {['ascending', 'descending'].map((value) => {
           const isSelected = value.slice(0, 3).toUpperCase() === sort.order;
 
-          return <Sort name={value} isSelected={isSelected} onSort={onSort} />;
+          return <Sort key={value} name={value} isSelected={isSelected} onSort={onSort} />;
         })}
       </S.List>
       <S.Separator />
