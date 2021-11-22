@@ -18,6 +18,7 @@ export interface FilterFnProps {
   product: Product;
   variants?: Array<string>;
   connectivity?: Array<string>;
+  brands?: Array<string>;
 }
 
 export interface CompareProps {
