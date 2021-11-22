@@ -21,7 +21,7 @@ function Product({ product }: Props) {
       </ProductImageWrapper>
       <Heading>
         <H2>{product.name}</H2>
-        <Paragraph>{product.price}$</Paragraph>
+        <Paragraph>{product.price.toFixed(2)}$</Paragraph>
       </Heading>
       <SquareButton
         onClick={() => dispatch({ type: actionTypes.addItem, payload: product })}

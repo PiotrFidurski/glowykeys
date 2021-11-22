@@ -3,7 +3,7 @@ import { CheckBox, Label, Li, LiText } from './styles';
 import { FilterTypes } from './types';
 
 interface Props {
-  type: 'connectivity' | 'variants';
+  type: string;
   name: string;
   filters: FilterTypes;
   onFilter: React.Dispatch<React.SetStateAction<FilterTypes>>;
