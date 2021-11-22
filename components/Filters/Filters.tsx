@@ -14,7 +14,7 @@ function Filters({ onFilter, filters, filtersFor }: Props) {
   const router = useRouter();
 
   React.useEffect(() => {
-    router.push({ pathname: '', query: { ...filters } }, null, { scroll: false, shallow: true });
+    router.push({ pathname: router.pathname, query: { ...filters } }, null, { scroll: false, shallow: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
