@@ -13,7 +13,7 @@ export const keycapsData: Array<Product> = [
       original:
         'https://cdn.shopify.com/s/files/1/1473/3902/products/6_e9fa88b7-60d8-45b1-ad68-8d71f7673ec2_900x.jpg?v=1606868025',
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/6_e9fa88b7-60d8-45b1-ad68-8d71f7673ec2_900x.jpg?v=1606868025',
+        'https://spcgear.com/wp-content/uploads/2020/07/spg029-spcgear-kc104-black-dbl-shot-pbt-03-bgblack.png',
     },
   },
   {
@@ -27,7 +27,7 @@ export const keycapsData: Array<Product> = [
       original:
         'https://cdn.shopify.com/s/files/1/1473/3902/products/1_1afceb43-2260-407f-8a92-8153c1d82e02_900x.jpg?v=1610694428',
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/1_1afceb43-2260-407f-8a92-8153c1d82e02_900x.jpg?v=1610694428',
+        'https://spcgear.com/wp-content/uploads/2020/07/spg039-spcgear-kc13-crimson-dbl-shot-pbt-04-bgblack.png',
     },
   },
   {
@@ -41,7 +41,7 @@ export const keycapsData: Array<Product> = [
       original:
         'https://cdn.shopify.com/s/files/1/1473/3902/products/3_1800x1800_12eebb18-39ce-428f-a2f7-e07a4d892373_360x.jpg?v=1627006278',
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/3_1800x1800_12eebb18-39ce-428f-a2f7-e07a4d892373_360x.jpg?v=1627006278',
+        'https://spcgear.com/wp-content/uploads/2021/10/spg078-spcgear-kc104-pudding-onyx-white-dbl-shot-pbt-04-png-www.png',
     },
   },
   {
@@ -55,7 +55,7 @@ export const keycapsData: Array<Product> = [
       original:
         'https://cdn.shopify.com/s/files/1/1473/3902/products/8_aa58acc9-ca3c-410f-ba4b-d078030a5765_360x.jpg?v=1635324925',
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/8_aa58acc9-ca3c-410f-ba4b-d078030a5765_360x.jpg?v=1635324925',
+        'https://spcgear.com/wp-content/uploads/2020/07/spg030-spcgear-kc104-pudding-dbl-shot-pbt-04-bgblack.png',
     },
   },
 ];

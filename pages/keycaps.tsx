@@ -26,9 +26,11 @@ function KeycapsPage({ keycaps }: Props) {
 
   const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
 
-  const [filters, setFilters] = React.useState<FilterTypes>(() => ({
+  const [activeFilters, setActiveFilters] = React.useState<FilterTypes>(() => ({
     brands: query.brands ? [].concat(query.brands) : [],
   }));
+
+  const filters = { brands: ['M7', 'KBDfans'] };
 
   return (
     <>
@@ -42,19 +44,19 @@ function KeycapsPage({ keycaps }: Props) {
           <Image src="/assets/images/keycapsbanner.png" priority layout="fill" objectFit="cover" />
           <H1>Pick the most unique looking keycaps for your keyboards.</H1>
         </Header>
-        <AppliedFilters currentFilters={filters} setFilters={setFilters} />
+        <AppliedFilters currentFilters={activeFilters} setFilters={setActiveFilters} />
         <ProductsSection aria-labelledby="products-section" role="region">
           <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters filters={filters} filtersFor={{ brands: ['M7', 'KBDfans'] }} onFilter={setFilters} />
+              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keycaps
-                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
+                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...activeFilters })))
                 .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />

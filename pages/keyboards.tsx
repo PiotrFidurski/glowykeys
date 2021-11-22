@@ -26,10 +26,12 @@ function KeyboardsPage({ keyboards }: Props) {
 
   const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
 
-  const [filters, setFilters] = React.useState<FilterTypes>(() => ({
+  const [activeFilters, setActiveFilters] = React.useState<FilterTypes>(() => ({
     variants: query.variants ? [].concat(query.variants) : [],
     connectivity: query.connectivity ? [].concat(query.connectivity) : [],
   }));
+
+  const filters = { variants: ['gaming', 'casual'], connectivity: ['wired', 'wireless'] };
 
   return (
     <>
@@ -45,23 +47,19 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <AppliedFilters currentFilters={filters} setFilters={setFilters} />
+        <AppliedFilters currentFilters={activeFilters} setFilters={setActiveFilters} />
         <ProductsSection aria-labelledby="products-section" role="region">
           <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters
-                filters={filters}
-                filtersFor={{ variants: ['gaming', 'casual'], connectivity: ['wired', 'wireless'] }}
-                onFilter={setFilters}
-              />
+              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
               <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
               {keyboards
-                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...filters })))
+                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...activeFilters })))
                 .sort((productA, productB) => compare({ productA, productB, ...sort }))
                 .map((product) => (
                   <Product product={product} key={product.id} />

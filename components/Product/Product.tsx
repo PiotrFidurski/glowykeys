@@ -17,7 +17,7 @@ function Product({ product }: Props) {
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
       <ProductImageWrapper>
-        <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
+        <Image src={product.image.thumbnail} layout="fill" objectFit="cover" />
       </ProductImageWrapper>
       <Heading>
         <H2>{product.name}</H2>
