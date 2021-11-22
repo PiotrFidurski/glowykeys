@@ -7,10 +7,10 @@ import { FilterTypes } from './types';
 interface Props {
   activeFilters: FilterTypes;
   onFilter: React.Dispatch<React.SetStateAction<FilterTypes>>;
-  filtersFor: Record<string, Array<string>>;
+  filters: Record<string, Array<string>>;
 }
 
-function Filters({ onFilter, activeFilters, filtersFor }: Props) {
+function Filters({ onFilter, activeFilters, filters }: Props) {
   const router = useRouter();
 
   React.useEffect(() => {
@@ -20,7 +20,7 @@ function Filters({ onFilter, activeFilters, filtersFor }: Props) {
 
   return (
     <Nav aria-label="filter menu">
-      {Object.entries(filtersFor).map(([by, options]) => (
+      {Object.entries(filters).map(([by, options]) => (
         <div key={by}>
           <Separator />
           <H3>{by.toUpperCase()}</H3>

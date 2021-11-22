@@ -50,7 +50,7 @@ function KeycapsPage({ keycaps }: Props) {
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
               <Filters
                 activeFilters={activeFilters}
-                filtersFor={{ brands: ['M7', 'KBDfans'] }}
+                filters={{ brands: ['M7', 'KBDfans'] }}
                 onFilter={setActiveFilters}
               />
               <Sorts onSort={setSort} sort={sort} />
