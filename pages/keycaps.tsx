@@ -30,6 +30,8 @@ function KeycapsPage({ keycaps }: Props) {
     brands: query.brands ? [].concat(query.brands) : [],
   }));
 
+  const filters = { brands: ['M7', 'KBDfans'] };
+
   return (
     <>
       <Head>
@@ -48,11 +50,7 @@ function KeycapsPage({ keycaps }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters
-                activeFilters={activeFilters}
-                filters={{ brands: ['M7', 'KBDfans'] }}
-                onFilter={setActiveFilters}
-              />
+              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">

@@ -31,6 +31,8 @@ function KeyboardsPage({ keyboards }: Props) {
     connectivity: query.connectivity ? [].concat(query.connectivity) : [],
   }));
 
+  const filters = { variants: ['gaming', 'casual'], connectivity: ['wired', 'wireless'] };
+
   return (
     <>
       <Head>
@@ -51,11 +53,7 @@ function KeyboardsPage({ keyboards }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters
-                activeFilters={activeFilters}
-                filters={{ variants: ['gaming', 'casual'], connectivity: ['wired', 'wireless'] }}
-                onFilter={setActiveFilters}
-              />
+              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
