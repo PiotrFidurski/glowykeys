@@ -4,10 +4,10 @@ export interface Product {
   name: string;
   price: number;
   qty?: number;
-  connectivity: string;
+  connectivity?: string;
   id: string;
   brand: string;
-  description: Array<string>;
+  description?: Array<string>;
   image: {
     thumbnail: string;
     original: string;
