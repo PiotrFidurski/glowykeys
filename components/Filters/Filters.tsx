@@ -7,9 +7,10 @@ import { FilterTypes } from './types';
 interface Props {
   filters: FilterTypes;
   onFilter: React.Dispatch<React.SetStateAction<FilterTypes>>;
+  filtersFor: Record<string, Array<string>>;
 }
 
-function Filters({ onFilter, filters }: Props) {
+function Filters({ onFilter, filters, filtersFor }: Props) {
   const router = useRouter();
 
   React.useEffect(() => {
@@ -19,20 +20,17 @@ function Filters({ onFilter, filters }: Props) {
 
   return (
     <Nav aria-label="filter menu">
-      <Separator />
-      <H3>CONNECTIVITY</H3>
-      <List aria-label="connectivity filter options" role="list">
-        {['wired', 'wireless'].map((filter) => (
-          <Filter key={filter} name={filter} onFilter={onFilter} type="connectivity" filters={filters} />
-        ))}
-      </List>
-      <Separator />
-      <H3>VARIANTS</H3>
-      <List aria-label="variants filter options" role="list">
-        {['casual', 'gaming'].map((filter) => (
-          <Filter key={filter} name={filter} onFilter={onFilter} type="variants" filters={filters} />
-        ))}
-      </List>
+      {Object.entries(filtersFor).map(([by, options]) => (
+        <div key={by}>
+          <Separator />
+          <H3>{by.toUpperCase()}</H3>
+          <List aria-label={`${by} filter options`} role="list">
+            {options.map((filter) => (
+              <Filter key={filter} name={filter} onFilter={onFilter} type={by} filters={filters} />
+            ))}
+          </List>
+        </div>
+      ))}
     </Nav>
   );
 }

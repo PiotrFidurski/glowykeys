@@ -51,7 +51,11 @@ function KeyboardsPage({ keyboards }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters filters={filters} onFilter={setFilters} />
+              <Filters
+                filters={filters}
+                filtersFor={{ variants: ['gaming', 'casual'], connectivity: ['wired', 'wireless'] }}
+                onFilter={setFilters}
+              />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
