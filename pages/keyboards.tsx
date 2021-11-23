@@ -74,6 +74,8 @@ function KeyboardsPage({ keyboards }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=59');
+
   const response = await fetch(`${process.env.BASE_URL}/api/keyboards`);
 
   const { data }: { data: Array<ProductType> } = await response.json();
