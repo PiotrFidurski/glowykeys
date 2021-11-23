@@ -7,6 +7,7 @@ export const Article = styled.article`
   border: 1px solid ${({ theme: { border } }) => border.color.primary};
   margin: 0 auto;
   width: 100%;
+  justify-content: space-between;
   display: flex;
   transition: box-shadow 0.3s ease;
 
@@ -36,6 +37,7 @@ export const ProductImageWrapper = styled.div`
   height: 100%;
   background: ${({ theme: { background } }) => background.card};
   min-height: 340px;
+  max-height: 340px;
   max-width: 100%;
   position: relative;
 
