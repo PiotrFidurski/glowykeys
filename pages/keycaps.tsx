@@ -70,9 +70,12 @@ function KeycapsPage({ keycaps }: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const response = await fetch('http://localhost:3000/api/keycaps');
+
   const { data }: { data: Array<ProductType> } = await response.json();
+
+  res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
 
   return {
     props: { keycaps: data },
