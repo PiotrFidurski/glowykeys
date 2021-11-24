@@ -6,6 +6,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import KeyboardIcon from '../public/assets/vector/keyboard.svg';
+import KeycapIcon from '../public/assets/vector/keycap.svg';
+import SwitchIcon from '../public/assets/vector/switch.svg';
 
 function HomePage() {
   const router = useRouter();
@@ -36,37 +39,19 @@ function HomePage() {
             <Link href="/keyboards" passHref>
               <S.KeyboardsCategory aria-label="go to keyboards page">
                 <S.H2>Keyboards</S.H2>
-                <Image
-                  src="/assets/images/blueish-keyboard.png"
-                  alt="black keyboard with water drops on it"
-                  priority
-                  layout="fill"
-                  objectFit="cover"
-                />
+                <KeyboardIcon fill="white" width="150" height="150" />
               </S.KeyboardsCategory>
             </Link>
             <Link href="/keycaps" passHref>
               <S.KeyCapsCategory aria-label="go to keycaps page">
                 <S.H2>Keycaps</S.H2>
-                <Image
-                  alt="black keycap with hammer stuck to it"
-                  src="/assets/images/keycaps.webp"
-                  priority
-                  layout="fill"
-                  objectFit="cover"
-                />
+                <KeycapIcon fill="white" width="150" height="150" />
               </S.KeyCapsCategory>
             </Link>
             <Link href="/switches" passHref>
               <S.SwitchesCategory aria-label="go to switches page">
                 <S.H2>Switches</S.H2>
-                <Image
-                  alt="colorful keyboard switches in a box"
-                  src="/assets/images/switches.webp"
-                  priority
-                  layout="fill"
-                  objectFit="cover"
-                />
+                <SwitchIcon fill="white" width="150" height="150" />
               </S.SwitchesCategory>
             </Link>
           </S.Nav>
@@ -78,26 +63,32 @@ function HomePage() {
               <S.H2>Casual keyboards</S.H2>
               <S.Paragraph>keyboards for casusal typers</S.Paragraph>
             </S.MidSectionText>
-            <Image
-              alt="five keyboards next to each other"
-              src="/assets/images/keyboard.png"
-              priority
-              layout="fill"
-              objectFit="cover"
-            />
+            <div style={{ width: '100%' }}>
+              <Image
+                alt="five keyboards next to each other"
+                src="/assets/images/keyboard.png"
+                priority
+                layout="responsive"
+                width={800}
+                height={600}
+              />
+            </div>
           </S.MidSectionFirstImageWrapper>
           <S.MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
             <S.MidSectionText>
               <S.H2>Gaming keyboards</S.H2>
               <S.Paragraph>keyboards for hardcore gamers</S.Paragraph>
             </S.MidSectionText>
-            <Image
-              alt="black keyboard with purple lights on"
-              src="/assets/images/keyboard2.png"
-              priority
-              layout="fill"
-              objectFit="cover"
-            />
+            <div style={{ width: '100%' }}>
+              <Image
+                alt="black keyboard with purple lights on"
+                src="/assets/images/keyboard2.png"
+                priority
+                layout="responsive"
+                width={800}
+                height={600}
+              />
+            </div>
           </S.MidSectionSecondImageWrapper>
         </S.MidSection>
         <Footer />
