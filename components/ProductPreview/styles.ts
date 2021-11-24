@@ -1,0 +1,113 @@
+import styled from 'styled-components';
+
+export const Header = styled.header`
+  display: grid;
+  grid-area: header;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-template-areas:
+    'heading heading heading heading'
+    'button button button button';
+  width: 100%;
+  padding: 2rem 10rem;
+  align-items: flex-start;
+  justify-content: space-around;
+  z-index: 2;
+  gap: 0.5rem;
+
+  img {
+    z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      'product-preview product-preview hot-sales hot-sales'
+      'product-preview product-preview hot-sales hot-sales'
+      'product-preview product-preview hot-sales hot-sales'
+      'product-preview product-preview customers title';
+    margin-top: 100px;
+  }
+`;
+
+export const Preview = styled.div`
+  grid-area: product-preview;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  width: 100%;
+  min-height: 600px;
+  flex-direction: column;
+  z-index: -1;
+  background: linear-gradient(320deg, #080a12, #171a27);
+
+  img {
+    filter: brightness(0.7) drop-shadow(0px 15px 15px black) contrast(1.2);
+  }
+`;
+
+export const HotSales = styled.div`
+  grid-area: hot-sales;
+  padding: 5rem;
+  height: 100%;
+  background: #080a12;
+
+  h2 {
+    letter-spacing: 3px;
+  }
+
+  p:nth-child(2) {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  p {
+    letter-spacing: 3px;
+  }
+`;
+
+export const Customers = styled.div`
+  grid-area: customers;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  background: #080a12;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    letter-spacing: 1.5px;
+  }
+`;
+
+export const Title = styled.div`
+  padding: 2rem;
+  grid-area: title;
+  height: 100%;
+  text-align: center;
+  background: #080a12;
+  line-height: 1.525rem;
+
+  p {
+    letter-spacing: 1.5px;
+  }
+`;
+
+export const ButtonSeparator = styled.div`
+  min-height: 20px;
+  margin-bottom: 4px;
+  width: 2px;
+  background: ${({ theme: { color } }) => color.accent};
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  button {
+    color: white;
+    background: transparent;
+    letter-spacing: 2px;
+    border: 0;
+  }
+`;
