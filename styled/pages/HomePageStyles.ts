@@ -74,29 +74,6 @@ export const Main = styled.main`
     'footer footer footer footer';
 `;
 
-export const Header = styled.header`
-  display: grid;
-  grid-area: header;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
-  grid-template-areas:
-    'heading heading heading heading'
-    'button button button button';
-  width: 100%;
-  padding: 2rem 5rem;
-  align-items: flex-start;
-  justify-content: space-around;
-  z-index: 2;
-
-  img {
-    z-index: -1;
-  }
-
-  @media (min-width: 768px) {
-    grid-template-areas: 'heading heading heading button';
-    margin-top: 100px;
-  }
-`;
-
 export const HeaderSection = styled.section`
   max-width: 600px;
   grid-area: heading;
@@ -168,7 +145,6 @@ export const BackgroundImageWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
