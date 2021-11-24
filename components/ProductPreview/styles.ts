@@ -3,12 +3,15 @@ import styled from 'styled-components';
 export const PreviewSection = styled.section`
   display: grid;
   grid-area: preview;
+  max-width: 1440px;
+  margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'heading heading heading heading'
-    'button button button button';
+    'image image image image'
+    'hot-sales hot-sales hot-sales hot-sales'
+    'customers customers title title';
   width: 100%;
-  padding: 2rem 10rem;
+
   align-items: flex-start;
   justify-content: space-around;
   z-index: 2;
@@ -18,7 +21,8 @@ export const PreviewSection = styled.section`
     z-index: -1;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 968px) {
+    padding: 2rem 2rem;
     grid-template-areas:
       'image image hot-sales hot-sales'
       'image image hot-sales hot-sales'
@@ -30,8 +34,8 @@ export const PreviewSection = styled.section`
 
 export const Preview = styled.div`
   grid-area: image;
-  display: flex;
   padding: 1rem;
+  display: flex;
   justify-content: center;
   width: 100%;
   min-height: 600px;
@@ -49,8 +53,8 @@ export const ImageWrapper = styled.div`
 `;
 
 export const HotSales = styled.div`
+  padding: 2rem;
   grid-area: hot-sales;
-  padding: 5rem;
   height: 100%;
   background: ${({ theme: { background } }) => background.card};
 
@@ -70,8 +74,8 @@ export const HotSales = styled.div`
 
 export const Customers = styled.div`
   grid-area: customers;
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
   height: 100%;
   background: ${({ theme: { background } }) => background.card};
 
@@ -85,8 +89,8 @@ export const Customers = styled.div`
 `;
 
 export const Description = styled.div`
-  padding: 2rem;
   grid-area: title;
+  padding: 2rem;
   height: 100%;
   text-align: center;
   background: ${({ theme: { background } }) => background.card};
