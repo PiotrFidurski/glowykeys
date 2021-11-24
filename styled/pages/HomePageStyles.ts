@@ -32,11 +32,13 @@ const CategoryLink = css`
   text-decoration: none;
   color: ${({ theme: { color } }) => color.primary};
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 250px;
   position: relative;
-  border: 1px solid ${({ theme: { color } }) => color.accent};
+  border: 2px solid ${({ theme: { color } }) => color.accent};
   display: flex;
+  transition: border-color 0.3s ease;
 
   img {
     z-index: -1;
@@ -44,9 +46,19 @@ const CategoryLink = css`
   }
 
   &:hover {
+    border-color: ${({ theme: { color } }) => color.highlight};
     cursor: pointer;
+    h2 {
+      transition: color 0.3s ease;
+      color: ${({ theme: { color } }) => color.highlight};
+    }
+
     img {
       transform: scale(1.1, 1.1);
+    }
+    svg {
+      transition: fill 0.3s ease;
+      fill: ${({ theme: { color } }) => color.highlight};
     }
   }
 `;
@@ -192,6 +204,7 @@ export const MidSectionFirstImageWrapper = styled.a`
 
   @media (min-width: 768px) {
     left: -10%;
+    max-height: 600px;
     grid-column-end: 4;
     clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%);
   }
@@ -204,6 +217,7 @@ export const MidSectionSecondImageWrapper = styled.a`
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
 
   @media (min-width: 768px) {
+    max-height: 600px;
     bottom: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
   }
@@ -212,5 +226,6 @@ export const MidSectionSecondImageWrapper = styled.a`
 export const MidSectionText = styled.section`
   max-width: 50%;
   margin: 0 auto;
+  position: absolute;
   text-align: center;
 `;
