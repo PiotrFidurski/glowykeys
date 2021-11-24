@@ -68,7 +68,7 @@ export const Main = styled.main`
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'header header header header'
+    'preview preview preview preview'
     'categories categories categories categories'
     'midsection midsection midsection midsection'
     'footer footer footer footer';

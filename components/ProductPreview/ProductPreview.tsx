@@ -4,7 +4,7 @@ import * as S from './styles';
 
 function ProductPreview() {
   return (
-    <S.Header role="heading" aria-describedby="main-heading">
+    <S.PreviewSection role="heading" aria-describedby="main-heading">
       <S.Preview>
         <S.ImageWrapper>
           <Image
@@ -37,7 +37,7 @@ function ProductPreview() {
           sound, feel, and aesthetics.
         </p>
       </S.Title>
-    </S.Header>
+    </S.PreviewSection>
   );
 }
 

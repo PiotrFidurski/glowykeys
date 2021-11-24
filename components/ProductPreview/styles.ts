@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const PreviewSection = styled.section`
   display: grid;
-  grid-area: header;
+  grid-area: preview;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'heading heading heading heading'
