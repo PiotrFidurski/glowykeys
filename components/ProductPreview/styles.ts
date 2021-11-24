@@ -20,16 +20,16 @@ export const PreviewSection = styled.section`
 
   @media (min-width: 768px) {
     grid-template-areas:
-      'product-preview product-preview hot-sales hot-sales'
-      'product-preview product-preview hot-sales hot-sales'
-      'product-preview product-preview hot-sales hot-sales'
-      'product-preview product-preview customers title';
+      'image image hot-sales hot-sales'
+      'image image hot-sales hot-sales'
+      'image image hot-sales hot-sales'
+      'image image customers title';
     margin-top: 100px;
   }
 `;
 
 export const Preview = styled.div`
-  grid-area: product-preview;
+  grid-area: image;
   display: flex;
   padding: 1rem;
   justify-content: center;
@@ -40,7 +40,7 @@ export const Preview = styled.div`
   background: ${({ theme: { background } }) => background.card};
 
   img {
-    filter: brightness(0.7) drop-shadow(0px 15px 15px black) contrast(1.2);
+    filter: brightness(0.9) drop-shadow(0px 15px 15px black) contrast(1.2);
   }
 `;
 
@@ -84,7 +84,7 @@ export const Customers = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Description = styled.div`
   padding: 2rem;
   grid-area: title;
   height: 100%;
@@ -107,11 +107,17 @@ export const ButtonSeparator = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   button {
     color: white;
     background: transparent;
     letter-spacing: 2px;
     border: 0;
+    transition: color 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      color: ${({ theme: { color } }) => color.highlight};
+    }
   }
 `;
