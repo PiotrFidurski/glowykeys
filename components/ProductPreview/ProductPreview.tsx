@@ -22,12 +22,15 @@ function ProductPreview() {
           <button type="button">NEXT</button>
         </S.ButtonContainer>
       </S.Preview>
-      <S.HotSales>
+      <S.HotSales role="region" aria-label="hot sales">
         <h2>HOT SALES</h2>
         <p>GMMK Pro might be the option you’re looking for.</p>
-        <p>299.99$</p>
+        <S.BuyNowWrapper>
+          <p>299.99$</p>
+          <button type="button">BUY NOW</button>
+        </S.BuyNowWrapper>
       </S.HotSales>
-      <S.Customers>
+      <S.Customers role="region" aria-label="customers">
         <h1>356</h1>
         <p>customers</p>
       </S.Customers>

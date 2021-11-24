@@ -7,8 +7,8 @@ export const PreviewSection = styled.section`
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'image image image image'
     'hot-sales hot-sales hot-sales hot-sales'
+    'image image image image'
     'customers customers title title';
   width: 100%;
 
@@ -21,7 +21,7 @@ export const PreviewSection = styled.section`
     z-index: -1;
   }
 
-  @media (min-width: 968px) {
+  @media (min-width: 768px) {
     padding: 2rem 2rem;
     grid-template-areas:
       'image image hot-sales hot-sales'
@@ -52,7 +52,7 @@ export const ImageWrapper = styled.div`
   width: 100%;
 `;
 
-export const HotSales = styled.div`
+export const HotSales = styled.section`
   padding: 2rem;
   grid-area: hot-sales;
   height: 100%;
@@ -66,13 +66,33 @@ export const HotSales = styled.div`
     font-size: 3rem;
     letter-spacing: 3px;
   }
+`;
+
+export const BuyNowWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 
   p {
+    color: ${({ theme: { color } }) => color.highlight};
+    font-weight: 600;
     letter-spacing: 3px;
+  }
+
+  button {
+    transition: color 0.3s ease;
+    background: transparent;
+    border: 0;
+    color: ${({ theme: { color } }) => color.primary};
+    &:hover {
+      cursor: pointer;
+      color: ${({ theme: { color } }) => color.highlight};
+    }
   }
 `;
 
-export const Customers = styled.div`
+export const Customers = styled.section`
   grid-area: customers;
   text-align: center;
   padding: 2rem;
@@ -81,6 +101,7 @@ export const Customers = styled.div`
 
   h1 {
     font-size: 3rem;
+    color: ${({ theme: { color } }) => color.highlight};
   }
 
   p {
@@ -97,6 +118,7 @@ export const Description = styled.div`
   line-height: 1.525rem;
 
   p {
+    font-size: 1rem;
     letter-spacing: 1.5px;
   }
 `;
@@ -114,7 +136,7 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 
   button {
-    color: white;
+    color: ${({ theme: { color } }) => color.primary};
     background: transparent;
     letter-spacing: 2px;
     border: 0;
