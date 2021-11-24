@@ -4,7 +4,7 @@ import * as S from './styles';
 
 function ProductPreview() {
   return (
-    <S.PreviewSection role="heading" aria-describedby="main-heading">
+    <S.PreviewSection role="region" aria-label="hot sales product preview">
       <S.Preview>
         <S.ImageWrapper>
           <Image
@@ -31,12 +31,12 @@ function ProductPreview() {
         <h1>356</h1>
         <p>customers</p>
       </S.Customers>
-      <S.Title>
+      <S.Description>
         <p>
           For typing, the GMMK Pro is a dream. Made with the typing experience in mind, this keyboard offers satisfying
           sound, feel, and aesthetics.
         </p>
-      </S.Title>
+      </S.Description>
     </S.PreviewSection>
   );
 }
