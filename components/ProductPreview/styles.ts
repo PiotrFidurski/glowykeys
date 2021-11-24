@@ -37,18 +37,22 @@ export const Preview = styled.div`
   min-height: 600px;
   flex-direction: column;
   z-index: -1;
-  background: linear-gradient(320deg, #080a12, #171a27);
+  background: ${({ theme: { background } }) => background.card};
 
   img {
     filter: brightness(0.7) drop-shadow(0px 15px 15px black) contrast(1.2);
   }
 `;
 
+export const ImageWrapper = styled.div`
+  width: 100%;
+`;
+
 export const HotSales = styled.div`
   grid-area: hot-sales;
   padding: 5rem;
   height: 100%;
-  background: #080a12;
+  background: ${({ theme: { background } }) => background.card};
 
   h2 {
     letter-spacing: 3px;
@@ -69,7 +73,7 @@ export const Customers = styled.div`
   padding: 2rem;
   text-align: center;
   height: 100%;
-  background: #080a12;
+  background: ${({ theme: { background } }) => background.card};
 
   h1 {
     font-size: 3rem;
@@ -85,7 +89,7 @@ export const Title = styled.div`
   grid-area: title;
   height: 100%;
   text-align: center;
-  background: #080a12;
+  background: ${({ theme: { background } }) => background.card};
   line-height: 1.525rem;
 
   p {

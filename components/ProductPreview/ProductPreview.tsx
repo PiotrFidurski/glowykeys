@@ -1,4 +1,3 @@
-import { ImageWrapper } from '@styled/pages/HomePageStyles';
 import Image from 'next/image';
 import * as React from 'react';
 import * as S from './styles';
@@ -7,7 +6,7 @@ function ProductPreview() {
   return (
     <S.Header role="heading" aria-describedby="main-heading">
       <S.Preview>
-        <ImageWrapper>
+        <S.ImageWrapper>
           <Image
             src="/assets/images/gmmk-pro.png"
             priority
@@ -16,7 +15,7 @@ function ProductPreview() {
             width="800"
             height="600"
           />
-        </ImageWrapper>
+        </S.ImageWrapper>
         <S.ButtonContainer>
           <button type="button">PREV</button>
           <S.ButtonSeparator />
