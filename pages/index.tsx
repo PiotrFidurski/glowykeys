@@ -1,18 +1,16 @@
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
+import ProductPreview from '@components/ProductPreview/ProductPreview';
 import * as S from '@styled/pages/HomePageStyles';
-import { SquareButton, VisuallyHiddenH2 } from '@utils/style-utils';
+import { VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import KeyboardIcon from '../public/assets/vector/keyboard.svg';
 import KeycapIcon from '../public/assets/vector/keycap.svg';
 import SwitchIcon from '../public/assets/vector/switch.svg';
 
 function HomePage() {
-  const router = useRouter();
-
   return (
     <>
       <Head>
@@ -21,18 +19,7 @@ function HomePage() {
       </Head>
       <Navbar />
       <S.Main>
-        <S.Header role="heading" aria-describedby="main-heading">
-          <S.HeaderSection>
-            <S.H1 id="main-heading">Hello, Get the best keyboard possible fitting to your needs.</S.H1>
-            <S.Paragraph>
-              A quality keyboard is vital for both work and play. Whether you’re a mechanical purist, a couch gamer, a
-              freak for extra functions or someone who wants it all – we’ve got you covered.
-            </S.Paragraph>
-          </S.HeaderSection>
-          <SquareButton type="button" onClick={() => router.push('/products')}>
-            View Products
-          </SquareButton>
-        </S.Header>
+        <ProductPreview />
         <S.ProductCategorySection role="region" aria-labelledby="product-category-label">
           <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>
           <S.Nav>
