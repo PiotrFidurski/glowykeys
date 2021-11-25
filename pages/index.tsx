@@ -45,7 +45,7 @@ function HomePage() {
           </S.Nav>
           <S.Hr />
         </S.ProductCategorySection>
-        <S.PopularSection>
+        <S.PopularSection aria-label="popular section" role="region">
           <S.PopularKeycaps href="/">
             <p>Popular</p>
             <p>Keycaps</p>
@@ -66,12 +66,13 @@ function HomePage() {
               </ImageWrapper>
             </S.GamingKeyboards>
           </Link>
-          <S.SwitchesImage href="/">
+          <S.SwitchesImage href="/" aria-label="go to keycaps page">
+            <VisuallyHiddenH2>keycaps</VisuallyHiddenH2>
             <ImageWrapper>
               <Image src="/assets/images/keycaps-black.png" priority quality={100} layout="fill" objectFit="cover" />
             </ImageWrapper>
           </S.SwitchesImage>
-          <S.KeycapImage href="/">
+          <S.KeycapImage href="/" aria-label="go to keyboards page">
             <ImageWrapper>
               <Image src="/assets/images/halfkeyboard.png" priority quality={100} layout="fill" objectFit="cover" />
             </ImageWrapper>
