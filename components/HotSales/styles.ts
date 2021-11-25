@@ -11,7 +11,6 @@ export const PreviewSection = styled.section`
     'image image image image'
     'customers customers title title';
   width: 100%;
-
   align-items: flex-start;
   justify-content: space-around;
   z-index: 2;

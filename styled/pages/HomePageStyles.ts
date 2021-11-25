@@ -1,32 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const MidSectionStyles = css`
-  position: relative;
-  text-decoration: none;
-  color: ${({ theme: { color } }) => color.primary};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  min-height: 600px;
-
-  span {
-    z-index: -1;
-  }
-
-  img {
-    transition: transform 0.9s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    img {
-      transform: scale(1.1, 1.1);
-    }
-  }
-`;
-
 const CategoryLink = css`
   max-width: 100%;
   text-decoration: none;
@@ -74,21 +47,8 @@ export const Main = styled.main`
     'footer footer footer footer';
 `;
 
-export const HeaderSection = styled.section`
-  max-width: 600px;
-  grid-area: heading;
-`;
-
-export const H1 = styled.h1`
-  font-size: clamp(1.5rem, 2vw, 3rem);
-`;
-
 export const H2 = styled.h2`
   font-size: clamp(1.5rem, 2vw, 3rem);
-`;
-
-export const Paragraph = styled.p`
-  line-height: 1.7rem;
 `;
 
 export const ProductCategorySection = styled.section`
@@ -96,7 +56,7 @@ export const ProductCategorySection = styled.section`
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
-  padding: 5rem 1rem;
+  padding: 0 1rem;
 `;
 
 export const Nav = styled.nav`
@@ -134,74 +94,8 @@ export const SwitchesCategory = styled.a`
   grid-area: switches;
 `;
 
-export const BackgroundImageWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  top: 0;
-  width: 100%;
-`;
-
-export const ImageWrapper = styled.div`
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
-
-  span {
-    z-index: -1;
-  }
-`;
-
-export const MidSection = styled.section`
-  grid-area: midsection;
-  padding: 5rem 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
-  grid-template-areas:
-    'first-image first-image first-image first-image'
-    'second-image second-image second-image second-image';
-
-  img {
-    filter: brightness(0.5);
-  }
-
-  @media (min-width: 768px) {
-    grid-template-areas: 'first-image first-image second-image second-image';
-  }
-`;
-
-export const MidSectionFirstImageWrapper = styled.a`
-  ${MidSectionStyles};
-  grid-area: first-image;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-
-  @media (min-width: 768px) {
-    left: -10%;
-    max-height: 600px;
-    grid-column-end: 4;
-    clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%);
-  }
-`;
-
-export const MidSectionSecondImageWrapper = styled.a`
-  ${MidSectionStyles};
-  bottom: 150px;
-  grid-area: second-image;
-  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-
-  @media (min-width: 768px) {
-    max-height: 600px;
-    bottom: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
-  }
-`;
-
-export const MidSectionText = styled.section`
-  max-width: 50%;
-  margin: 0 auto;
-  position: absolute;
-  text-align: center;
+export const Hr = styled.hr`
+  border: 0;
+  margin: 5rem 0;
+  border-top: 1px dashed ${({ theme: { color } }) => color.accent};
 `;

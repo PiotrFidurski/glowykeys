@@ -4,7 +4,6 @@ import Navbar from '@components/Navbar/Navbar';
 import * as S from '@styled/pages/HomePageStyles';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import KeyboardIcon from '../public/assets/vector/keyboard.svg';
 import KeycapIcon from '../public/assets/vector/keycap.svg';
@@ -21,6 +20,7 @@ function HomePage() {
       <S.Main>
         <HotSales />
         <S.ProductCategorySection role="region" aria-labelledby="product-category">
+          <S.Hr />
           <VisuallyHiddenH2 id="product-category">Product Categories</VisuallyHiddenH2>
           <S.Nav>
             <Link href="/keyboards" passHref>
@@ -42,42 +42,9 @@ function HomePage() {
               </S.SwitchesCategory>
             </Link>
           </S.Nav>
+          <S.Hr />
         </S.ProductCategorySection>
-        <S.MidSection role="region" aria-labelledby="casual-keyboards-label">
-          <VisuallyHiddenH2 id="casual-keyboards-label">Casual and Gaming Keyboards</VisuallyHiddenH2>
-          <S.MidSectionFirstImageWrapper href="/keyboards?variants=casual" aria-label="go to casual keyboards page">
-            <S.MidSectionText>
-              <S.H2>Casual keyboards</S.H2>
-              <S.Paragraph>keyboards for casusal typers</S.Paragraph>
-            </S.MidSectionText>
-            <div style={{ width: '100%' }}>
-              <Image
-                alt="five keyboards next to each other"
-                src="/assets/images/keyboard.png"
-                priority
-                layout="responsive"
-                width={800}
-                height={600}
-              />
-            </div>
-          </S.MidSectionFirstImageWrapper>
-          <S.MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
-            <S.MidSectionText>
-              <S.H2>Gaming keyboards</S.H2>
-              <S.Paragraph>keyboards for hardcore gamers</S.Paragraph>
-            </S.MidSectionText>
-            <div style={{ width: '100%' }}>
-              <Image
-                alt="black keyboard with purple lights on"
-                src="/assets/images/keyboard2.png"
-                priority
-                layout="responsive"
-                width={800}
-                height={600}
-              />
-            </div>
-          </S.MidSectionSecondImageWrapper>
-        </S.MidSection>
+
         <Footer />
       </S.Main>
     </>
