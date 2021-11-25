@@ -13,7 +13,6 @@ import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
@@ -42,7 +41,6 @@ function KeyboardsPage({ keyboards }: Props) {
       <Navbar />
       <Main>
         <Header>
-          <Image src="/assets/images/Banner_keyboard.png" priority layout="fill" objectFit="cover" />
           <H1>
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>

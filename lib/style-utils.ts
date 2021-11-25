@@ -47,7 +47,6 @@ export const GradientText = css`
 
 export const ImageWrapper = styled.div`
   width: 100%;
-
   img {
     filter: brightness(0.9) drop-shadow(0px 2px 7px black) contrast(1.1);
   }

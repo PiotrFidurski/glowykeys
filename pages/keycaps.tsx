@@ -13,7 +13,6 @@ import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
@@ -41,7 +40,6 @@ function KeycapsPage({ keycaps }: Props) {
       <Navbar />
       <Main>
         <Header>
-          <Image src="/assets/images/keycapsbanner.png" priority layout="fill" objectFit="cover" />
           <H1>Pick the most unique looking keycaps for your keyboards.</H1>
         </Header>
         <AppliedFilters currentFilters={activeFilters} setFilters={setActiveFilters} />

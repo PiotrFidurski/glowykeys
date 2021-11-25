@@ -5,7 +5,8 @@ const GridAreasStyles = css`
   display: flex;
   position: relative;
   text-decoration: none;
-  padding: 5rem 1rem;
+  overflow: hidden;
+  padding: 3rem 1rem;
   justify-content: center;
   color: ${({ theme: { color } }) => color.primary};
   align-items: center;
@@ -155,7 +156,7 @@ export const PopularSection = styled.section`
   margin: 0 auto;
 
   @media (min-width: 1040px) {
-    grid-template-rows: repeat(4, minmax(auto, 1fr));
+    grid-template-rows: repeat(4, minmax(auto, 220px));
     grid-template-columns: repeat(6, minmax(auto, 1fr));
     grid-template-areas:
       'popular-keycaps popular-switches shop-all casual-keyboards casual-keyboards casual-keyboards'
