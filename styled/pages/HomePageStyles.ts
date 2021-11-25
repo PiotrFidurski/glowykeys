@@ -1,28 +1,39 @@
 import styled, { css } from 'styled-components';
 
-const MidSectionStyles = css`
+const GridAreasStyles = css`
+  flex-direction: column;
+  display: flex;
   position: relative;
   text-decoration: none;
-  color: ${({ theme: { color } }) => color.primary};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 5rem;
   justify-content: center;
-  max-width: 100%;
-  min-height: 600px;
-
-  span {
-    z-index: -1;
-  }
+  color: ${({ theme: { color } }) => color.primary};
+  align-items: center;
+  background: ${({ theme: { background } }) => background.card};
+  text-align: center;
 
   img {
-    transition: transform 0.9s ease;
+    transition: transform 0.3s ease;
+  }
+
+  p {
+    z-index: 1;
+    margin: 0.5rem;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+  }
+
+  p:nth-child(1) {
+    color: ${({ theme: { color } }) => color.highlight};
   }
 
   &:hover {
-    cursor: pointer;
     img {
-      transform: scale(1.1, 1.1);
+      transform: scale(1.2);
+    }
+
+    p {
+      text-decoration: underline;
     }
   }
 `;
@@ -68,27 +79,14 @@ export const Main = styled.main`
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
-    'preview preview preview preview'
+    'hot-sales hot-sales hot-sales hot-sales'
     'categories categories categories categories'
-    'midsection midsection midsection midsection'
+    'popular popular popular popular'
     'footer footer footer footer';
-`;
-
-export const HeaderSection = styled.section`
-  max-width: 600px;
-  grid-area: heading;
-`;
-
-export const H1 = styled.h1`
-  font-size: clamp(1.5rem, 2vw, 3rem);
 `;
 
 export const H2 = styled.h2`
   font-size: clamp(1.5rem, 2vw, 3rem);
-`;
-
-export const Paragraph = styled.p`
-  line-height: 1.7rem;
 `;
 
 export const ProductCategorySection = styled.section`
@@ -96,7 +94,7 @@ export const ProductCategorySection = styled.section`
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
-  padding: 5rem 1rem;
+  padding: 0 1rem;
 `;
 
 export const Nav = styled.nav`
@@ -134,74 +132,98 @@ export const SwitchesCategory = styled.a`
   grid-area: switches;
 `;
 
-export const BackgroundImageWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  top: 0;
-  width: 100%;
+export const Hr = styled.hr`
+  border: 0;
+  margin: 5rem 0;
+  border-top: 1px dashed ${({ theme: { color } }) => color.accent};
 `;
 
-export const ImageWrapper = styled.div`
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
-
-  span {
-    z-index: -1;
-  }
-`;
-
-export const MidSection = styled.section`
-  grid-area: midsection;
-  padding: 5rem 0;
+export const PopularSection = styled.section`
+  padding-bottom: 5rem;
+  grid-template-columns: repeat(6, minmax(auto, 1fr));
   display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-area: popular;
+  grid-template-rows: repeat(4, minmax(auto, 200px));
   grid-template-areas:
-    'first-image first-image first-image first-image'
-    'second-image second-image second-image second-image';
-
-  img {
-    filter: brightness(0.5);
-  }
-
-  @media (min-width: 768px) {
-    grid-template-areas: 'first-image first-image second-image second-image';
-  }
-`;
-
-export const MidSectionFirstImageWrapper = styled.a`
-  ${MidSectionStyles};
-  grid-area: first-image;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-
-  @media (min-width: 768px) {
-    left: -10%;
-    max-height: 600px;
-    grid-column-end: 4;
-    clip-path: polygon(0 0, 74% 0, 100% 100%, 0 100%);
-  }
-`;
-
-export const MidSectionSecondImageWrapper = styled.a`
-  ${MidSectionStyles};
-  bottom: 150px;
-  grid-area: second-image;
-  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-
-  @media (min-width: 768px) {
-    max-height: 600px;
-    bottom: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
-  }
-`;
-
-export const MidSectionText = styled.section`
-  max-width: 50%;
+    'casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards'
+    'popular-keycaps popular-keycaps popular-switches popular-switches shop-all shop-all'
+    'gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards'
+    'keycap-image keycap-image keycap-image switches-image switches-image switches-image';
+  max-width: 1660px;
+  gap: 0.3rem;
+  width: 100%;
   margin: 0 auto;
-  position: absolute;
-  text-align: center;
+
+  @media (min-width: 1040px) {
+    grid-template-rows: repeat(4, minmax(auto, 1fr));
+    grid-template-columns: repeat(6, minmax(auto, 1fr));
+    grid-template-areas:
+      'popular-keycaps popular-switches shop-all casual-keyboards casual-keyboards casual-keyboards'
+      'gaming-keyboards gaming-keyboards gaming-keyboards casual-keyboards casual-keyboards casual-keyboards'
+      'gaming-keyboards gaming-keyboards gaming-keyboards casual-keyboards casual-keyboards casual-keyboards'
+      'switches-image keycap-image stuff casual-keyboards casual-keyboards casual-keyboards';
+  }
+`;
+
+export const SeeAll = styled.a`
+  ${GridAreasStyles};
+  grid-area: shop-all;
+
+  p {
+    color: ${({ theme: { color } }) => color.highlight};
+  }
+`;
+
+export const GamingKeyboards = styled.a`
+  ${GridAreasStyles};
+  grid-area: gaming-keyboards;
+  text-decoration: none;
+
+  p {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem;
+    background-color: #020202b8;
+  }
+`;
+
+export const KeycapImage = styled.a`
+  ${GridAreasStyles};
+  grid-area: keycap-image;
+`;
+
+export const SwitchesImage = styled.a`
+  ${GridAreasStyles};
+  grid-area: switches-image;
+`;
+
+export const CasualKeyboards = styled.a`
+  ${GridAreasStyles};
+  grid-area: casual-keyboards;
+
+  p {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem;
+    background-color: #020202b8;
+  }
+`;
+
+export const PopularKeycaps = styled.a`
+  ${GridAreasStyles};
+  grid-area: popular-keycaps;
+`;
+
+export const PopularSwitches = styled.a`
+  ${GridAreasStyles};
+  grid-area: popular-switches;
+`;
+
+export const ImageWrapper = styled.a`
+  position: relative;
+  width: 100%;
 `;

@@ -1,8 +1,8 @@
 import Footer from '@components/Footer/Footer';
+import HotSales from '@components/HotSales/HotSales';
 import Navbar from '@components/Navbar/Navbar';
-import ProductPreview from '@components/ProductPreview/ProductPreview';
 import * as S from '@styled/pages/HomePageStyles';
-import { VisuallyHiddenH2 } from '@utils/style-utils';
+import { ImageWrapper, VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,9 +19,10 @@ function HomePage() {
       </Head>
       <Navbar />
       <S.Main>
-        <ProductPreview />
-        <S.ProductCategorySection role="region" aria-labelledby="product-category-label">
-          <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>
+        <HotSales />
+        <S.ProductCategorySection role="region" aria-labelledby="product-category">
+          <S.Hr />
+          <VisuallyHiddenH2 id="product-category">Product Categories</VisuallyHiddenH2>
           <S.Nav>
             <Link href="/keyboards" passHref>
               <S.KeyboardsCategory aria-label="go to keyboards page">
@@ -42,42 +43,48 @@ function HomePage() {
               </S.SwitchesCategory>
             </Link>
           </S.Nav>
+          <S.Hr />
         </S.ProductCategorySection>
-        <S.MidSection role="region" aria-labelledby="casual-keyboards-label">
-          <VisuallyHiddenH2 id="casual-keyboards-label">Casual and Gaming Keyboards</VisuallyHiddenH2>
-          <S.MidSectionFirstImageWrapper href="/keyboards?variants=casual" aria-label="go to casual keyboards page">
-            <S.MidSectionText>
-              <S.H2>Casual keyboards</S.H2>
-              <S.Paragraph>keyboards for casusal typers</S.Paragraph>
-            </S.MidSectionText>
-            <div style={{ width: '100%' }}>
-              <Image
-                alt="five keyboards next to each other"
-                src="/assets/images/keyboard.png"
-                priority
-                layout="responsive"
-                width={800}
-                height={600}
-              />
-            </div>
-          </S.MidSectionFirstImageWrapper>
-          <S.MidSectionSecondImageWrapper href="/keyboards?variants=gaming" aria-label="go to gaming keyboards page">
-            <S.MidSectionText>
-              <S.H2>Gaming keyboards</S.H2>
-              <S.Paragraph>keyboards for hardcore gamers</S.Paragraph>
-            </S.MidSectionText>
-            <div style={{ width: '100%' }}>
-              <Image
-                alt="black keyboard with purple lights on"
-                src="/assets/images/keyboard2.png"
-                priority
-                layout="responsive"
-                width={800}
-                height={600}
-              />
-            </div>
-          </S.MidSectionSecondImageWrapper>
-        </S.MidSection>
+        <S.PopularSection>
+          <S.PopularKeycaps href="/">
+            <p>Popular</p>
+            <p>Keycaps</p>
+          </S.PopularKeycaps>
+          <S.PopularSwitches href="/">
+            <p>Popular</p>
+            <p>Switches</p>
+          </S.PopularSwitches>
+          <S.SeeAll href="/">
+            <p>SHOP</p>
+            <p>ALL</p>
+          </S.SeeAll>
+          <Link href="/keyboards?variants=gaming" passHref>
+            <S.GamingKeyboards aria-label="go to gaming keyboards page">
+              <p>Gaming Keyboards</p>
+              <ImageWrapper>
+                <Image src="/assets/images/razerornata.png" objectFit="contain" priority quality={100} layout="fill" />
+              </ImageWrapper>
+            </S.GamingKeyboards>
+          </Link>
+          <S.SwitchesImage href="/">
+            <ImageWrapper>
+              <Image src="/assets/images/keycaps-black.png" priority quality={100} layout="fill" objectFit="cover" />
+            </ImageWrapper>
+          </S.SwitchesImage>
+          <S.KeycapImage href="/">
+            <ImageWrapper>
+              <Image src="/assets/images/halfkeyboard.png" priority quality={100} layout="fill" objectFit="cover" />
+            </ImageWrapper>
+          </S.KeycapImage>
+          <Link href="/keyboards?variants=casual" passHref>
+            <S.CasualKeyboards aria-label="go to casual keyboards page">
+              <p>Casual Keyboards</p>
+              <ImageWrapper>
+                <Image src="/assets/images/kbblue.png" priority quality={100} layout="fill" objectFit="contain" />
+              </ImageWrapper>
+            </S.CasualKeyboards>
+          </Link>
+        </S.PopularSection>
         <Footer />
       </S.Main>
     </>
