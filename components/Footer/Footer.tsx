@@ -10,7 +10,7 @@ function Footer() {
   return (
     <S.StyledFooter>
       <S.FooterWrapper>
-        <S.ContactUs>
+        <S.ContactUs aria-label="contact us" role="region">
           <h2>Contact Us</h2>
           <p>
             Here at Glowykeys it&apos;s all about keyboards and keyboard things. We share the same passion that you do,
@@ -22,15 +22,15 @@ function Footer() {
             <TwitterIcon fill={theme.color.primary} width="40" height="40" />
           </S.IconsContainer>
           <S.ContactFormContainer>
-            <input type="text" />
-            <S.Button>
+            <input type="text" aria-label="enter email address" />
+            <S.Button aria-label="submit your information">
               <span>contact</span>
             </S.Button>
           </S.ContactFormContainer>
         </S.ContactUs>
-        <S.Help>
+        <S.Help role="region" aria-label="Customer Service">
           <VisuallyHiddenH2>Help</VisuallyHiddenH2>
-          <S.Nav role="navigation" aria-label="customer service">
+          <S.Nav>
             <h2>Customer Service</h2>
             <S.A href="/">Frequently Asked Questions</S.A>
             <S.A href="/">Reviews</S.A>
@@ -38,7 +38,7 @@ function Footer() {
             <S.A href="/">Contact Us</S.A>
           </S.Nav>
         </S.Help>
-        <S.About>
+        <S.About role="region" aria-label="About">
           <VisuallyHiddenH2>Other Links</VisuallyHiddenH2>
           <S.Nav>
             <h2>About</h2>
