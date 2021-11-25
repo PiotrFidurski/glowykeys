@@ -5,7 +5,7 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import Sorts from '@components/Sorts/Sorts';
-import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
+import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/SharedStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
