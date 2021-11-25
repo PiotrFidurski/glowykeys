@@ -1,4 +1,4 @@
-import { VisuallyHiddenH2 } from '@utils/style-utils';
+import { ImageWrapper, VisuallyHiddenH2 } from '@utils/style-utils';
 import Image from 'next/image';
 import * as React from 'react';
 import * as S from './styles';
@@ -8,7 +8,7 @@ function HotSales() {
     <S.PreviewSection role="region" aria-label="hot sales product preview">
       <VisuallyHiddenH2>Hot Sales Product Preview</VisuallyHiddenH2>
       <S.Preview>
-        <S.ImageWrapper>
+        <ImageWrapper>
           <Image
             src="/assets/images/saviotempest.png"
             priority
@@ -17,7 +17,7 @@ function HotSales() {
             width="800"
             height="600"
           />
-        </S.ImageWrapper>
+        </ImageWrapper>
         <S.ButtonContainer>
           <button type="button" aria-label="go to previous product">
             PREV
