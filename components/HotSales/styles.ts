@@ -14,7 +14,7 @@ export const PreviewSection = styled.section`
   align-items: flex-start;
   justify-content: space-around;
   z-index: 2;
-  gap: 0.5rem;
+  gap: 0.3rem;
 
   img {
     z-index: -1;
