@@ -5,7 +5,7 @@ import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
 import Sorts from '@components/Sorts/Sorts';
-import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/KeyboardsPageStyles';
+import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/SharedStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
@@ -13,7 +13,6 @@ import { Product as ProductType } from '@utils/types';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
@@ -41,7 +40,6 @@ function KeycapsPage({ keycaps }: Props) {
       <Navbar />
       <Main>
         <Header>
-          <Image src="/assets/images/keycapsbanner.png" priority layout="fill" objectFit="cover" />
           <H1>Pick the most unique looking keycaps for your keyboards.</H1>
         </Header>
         <AppliedFilters currentFilters={activeFilters} setFilters={setActiveFilters} />
@@ -71,7 +69,7 @@ function KeycapsPage({ keycaps }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=59');
+  res.setHeader('Cache-Control', 'public, s-maxage=172800, stale-while-revalidate=59');
 
   const response = await fetch(`${process.env.BASE_URL}/api/keycaps`);
 

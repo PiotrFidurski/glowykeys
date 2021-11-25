@@ -24,11 +24,6 @@ export const Header = styled.header`
   margin: 0 auto;
   align-items: center;
   box-shadow: 0 1px 1px 0px ${({ theme: { boxShadowColor } }) => boxShadowColor.primary};
-
-  img {
-    z-index: -1;
-    filter: brightness(0.2);
-  }
 `;
 
 export const H1 = styled.h1`
@@ -66,7 +61,6 @@ export const ProductsContainer = styled.section`
   max-width: 1440px;
   width: 100%;
   gap: 2rem;
-
   grid-template-columns: minmax(330px, 1fr);
 
   @media (min-width: 768px) {

@@ -11,8 +11,10 @@ function HotSales() {
         <ImageWrapper>
           <Image
             src="/assets/images/saviotempest.png"
-            priority
+            loading="eager"
             quality={100}
+            blurDataURL="/assets/images/saviotempest.png"
+            placeholder="blur"
             layout="responsive"
             width="800"
             height="600"

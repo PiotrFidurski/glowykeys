@@ -25,8 +25,7 @@ export const Nav = styled.nav`
   max-height: 70px;
   min-height: 50px;
   padding: 0 2rem;
-  box-shadow: 0 1px 1px 0px ${({ theme: { boxShadowColor } }) => boxShadowColor.primary};
-  background: ${({ theme: { background } }) => background.secondary};
+  background: ${({ theme: { background } }) => background.primary};
   align-items: center;
 `;
 

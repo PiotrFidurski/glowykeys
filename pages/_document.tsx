@@ -31,8 +31,20 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="/assets/fonts/Comfortaa-Medium.woff" rel="preload" as="font" type="font/woff" />
-          <link href="/assets/fonts/Comfortaa-Medium.woff2" rel="preload" as="font" type="font/woff2" />
+          <link
+            href="/assets/fonts/Comfortaa-Medium.woff"
+            crossOrigin="anonymous"
+            rel="preload"
+            as="font"
+            type="font/woff"
+          />
+          <link
+            href="/assets/fonts/Comfortaa-Medium.woff2"
+            crossOrigin="anonymous"
+            rel="preload"
+            as="font"
+            type="font/woff2"
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>

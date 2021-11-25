@@ -47,6 +47,7 @@ export const ProductImageWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
+
     img {
       transform: translateY(-1rem);
     }

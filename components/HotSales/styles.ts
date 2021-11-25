@@ -76,6 +76,7 @@ export const BuyNowWrapper = styled.div`
     background: transparent;
     border: 0;
     color: ${({ theme: { color } }) => color.primary};
+
     &:hover {
       cursor: pointer;
       color: ${({ theme: { color } }) => color.highlight};
@@ -132,6 +133,7 @@ export const ButtonContainer = styled.div`
     letter-spacing: 2px;
     border: 0;
     transition: color 0.3s ease;
+
     &:hover {
       cursor: pointer;
       color: ${({ theme: { color } }) => color.highlight};
