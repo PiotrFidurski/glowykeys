@@ -5,10 +5,11 @@ export const StyledFooter = styled.footer`
   background: ${({ theme: { background } }) => background.secondary};
   width: 100%;
   grid-area: footer;
+  margin-top: 5rem;
 `;
 
 export const FooterWrapper = styled.div`
-  padding: 1rem 3rem;
+  padding: 5rem 3rem;
   min-height: 500px;
   max-width: 1700px;
   margin: 0 auto;
