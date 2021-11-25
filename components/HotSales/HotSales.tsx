@@ -1,14 +1,16 @@
+import { VisuallyHiddenH2 } from '@utils/style-utils';
 import Image from 'next/image';
 import * as React from 'react';
 import * as S from './styles';
 
-function ProductPreview() {
+function HotSales() {
   return (
     <S.PreviewSection role="region" aria-label="hot sales product preview">
+      <VisuallyHiddenH2>Hot Sales Product Preview</VisuallyHiddenH2>
       <S.Preview>
         <S.ImageWrapper>
           <Image
-            src="/assets/images/gmmk-pro.png"
+            src="/assets/images/saviotempest.png"
             priority
             quality={100}
             layout="responsive"
@@ -17,14 +19,18 @@ function ProductPreview() {
           />
         </S.ImageWrapper>
         <S.ButtonContainer>
-          <button type="button">PREV</button>
+          <button type="button" aria-label="go to previous product">
+            PREV
+          </button>
           <S.ButtonSeparator />
-          <button type="button">NEXT</button>
+          <button type="button" aria-label="go to next product">
+            NEXT
+          </button>
         </S.ButtonContainer>
       </S.Preview>
       <S.HotSales role="region" aria-label="hot sales">
         <h2>HOT SALES</h2>
-        <p>GMMK Pro might be the option you’re looking for.</p>
+        <p>Cooler Master sk620 might be the option you’re looking for.</p>
         <S.BuyNowWrapper>
           <p>299.99$</p>
           <button type="button">BUY NOW</button>
@@ -36,7 +42,7 @@ function ProductPreview() {
       </S.Customers>
       <S.Description>
         <p>
-          For typing, the GMMK Pro is a dream. Made with the typing experience in mind, this keyboard offers satisfying
+          For typing, the sk620 is a dream. Made with the typing experience in mind, this keyboard offers satisfying
           sound, feel, and aesthetics.
         </p>
       </S.Description>
@@ -44,4 +50,4 @@ function ProductPreview() {
   );
 }
 
-export default ProductPreview;
+export default HotSales;

@@ -21,8 +21,8 @@ export const PreviewSection = styled.section`
     z-index: -1;
   }
 
-  @media (min-width: 768px) {
-    padding: 2rem 2rem;
+  @media (min-width: 1024px) {
+    padding: 2rem 0;
     grid-template-areas:
       'image image hot-sales hot-sales'
       'image image hot-sales hot-sales'
@@ -42,14 +42,14 @@ export const Preview = styled.div`
   flex-direction: column;
   z-index: -1;
   background: ${({ theme: { background } }) => background.card};
-
-  img {
-    filter: brightness(0.9) drop-shadow(0px 15px 15px black) contrast(1.2);
-  }
 `;
 
 export const ImageWrapper = styled.div`
   width: 100%;
+
+  img {
+    filter: brightness(0.9) drop-shadow(0px 15px 15px black) contrast(1.1);
+  }
 `;
 
 export const HotSales = styled.section`

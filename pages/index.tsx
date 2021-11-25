@@ -1,6 +1,6 @@
 import Footer from '@components/Footer/Footer';
+import HotSales from '@components/HotSales/HotSales';
 import Navbar from '@components/Navbar/Navbar';
-import ProductPreview from '@components/ProductPreview/ProductPreview';
 import * as S from '@styled/pages/HomePageStyles';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
@@ -19,9 +19,9 @@ function HomePage() {
       </Head>
       <Navbar />
       <S.Main>
-        <ProductPreview />
-        <S.ProductCategorySection role="region" aria-labelledby="product-category-label">
-          <VisuallyHiddenH2 id="product-category-label">Product Categories</VisuallyHiddenH2>
+        <HotSales />
+        <S.ProductCategorySection role="region" aria-labelledby="product-category">
+          <VisuallyHiddenH2 id="product-category">Product Categories</VisuallyHiddenH2>
           <S.Nav>
             <Link href="/keyboards" passHref>
               <S.KeyboardsCategory aria-label="go to keyboards page">
