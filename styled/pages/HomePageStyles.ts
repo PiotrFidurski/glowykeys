@@ -13,7 +13,6 @@ const GridAreasStyles = css`
   text-align: center;
 
   img {
-    will-change: contents;
     transition: transform 0.3s ease;
   }
 
@@ -30,7 +29,7 @@ const GridAreasStyles = css`
 
   &:hover {
     img {
-      transform: scale(1.2);
+      transform: translateY(-10%);
     }
 
     p {
