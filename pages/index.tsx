@@ -58,12 +58,14 @@ function HomePage() {
             <p>SHOP</p>
             <p>ALL</p>
           </S.SeeAll>
-          <S.GamingKeyboards href="/">
-            <p>Gaming Keyboards</p>
-            <ImageWrapper>
-              <Image src="/assets/images/razerornata.png" objectFit="contain" priority quality={100} layout="fill" />
-            </ImageWrapper>
-          </S.GamingKeyboards>
+          <Link href="/keyboards?variants=gaming" passHref>
+            <S.GamingKeyboards aria-label="go to gaming keyboards page">
+              <p>Gaming Keyboards</p>
+              <ImageWrapper>
+                <Image src="/assets/images/razerornata.png" objectFit="contain" priority quality={100} layout="fill" />
+              </ImageWrapper>
+            </S.GamingKeyboards>
+          </Link>
           <S.SwitchesImage href="/">
             <ImageWrapper>
               <Image src="/assets/images/keycaps-black.png" priority quality={100} layout="fill" objectFit="cover" />
@@ -74,12 +76,14 @@ function HomePage() {
               <Image src="/assets/images/halfkeyboard.png" priority quality={100} layout="fill" objectFit="cover" />
             </ImageWrapper>
           </S.KeycapImage>
-          <S.CasualKeyboards href="/">
-            <p>Casual Keyboards</p>
-            <ImageWrapper>
-              <Image src="/assets/images/kbblue.png" priority quality={100} layout="fill" objectFit="contain" />
-            </ImageWrapper>
-          </S.CasualKeyboards>
+          <Link href="/keyboards?variants=casual" passHref>
+            <S.CasualKeyboards aria-label="go to casual keyboards page">
+              <p>Casual Keyboards</p>
+              <ImageWrapper>
+                <Image src="/assets/images/kbblue.png" priority quality={100} layout="fill" objectFit="contain" />
+              </ImageWrapper>
+            </S.CasualKeyboards>
+          </Link>
         </S.PopularSection>
         <Footer />
       </S.Main>
