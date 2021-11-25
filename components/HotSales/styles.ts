@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const PreviewSection = styled.section`
   display: grid;
-  grid-area: preview;
+  grid-area: hot-sales;
   max-width: 1440px;
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
