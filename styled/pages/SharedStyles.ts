@@ -61,7 +61,6 @@ export const ProductsContainer = styled.section`
   max-width: 1440px;
   width: 100%;
   gap: 2rem;
-
   grid-template-columns: minmax(330px, 1fr);
 
   @media (min-width: 768px) {

@@ -52,6 +52,7 @@ export const IconsContainer = styled.div`
 
   svg {
     transition: fill 0.3s ease;
+
     &:hover {
       cursor: pointer;
       fill: ${({ theme: { color } }) => color.highlight};

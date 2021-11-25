@@ -30,6 +30,7 @@ export const CheckBox = styled.input`
   width: 30px;
   height: 30px;
   margin-right: 1rem;
+
   &:hover {
     cursor: pointer;
   }

@@ -60,6 +60,7 @@ const CategoryLink = css`
   &:hover {
     border-color: ${({ theme: { color } }) => color.highlight};
     cursor: pointer;
+
     h2 {
       transition: color 0.3s ease;
       color: ${({ theme: { color } }) => color.highlight};
@@ -68,6 +69,7 @@ const CategoryLink = css`
     img {
       transform: scale(1.1, 1.1);
     }
+
     svg {
       transition: fill 0.3s ease;
       fill: ${({ theme: { color } }) => color.highlight};
