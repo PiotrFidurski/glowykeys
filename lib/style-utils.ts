@@ -45,6 +45,14 @@ export const GradientText = css`
   background-clip: text;
 `;
 
+export const ImageWrapper = styled.div`
+  width: 100%;
+
+  img {
+    filter: brightness(0.9) drop-shadow(0px 2px 7px black) contrast(1.1);
+  }
+`;
+
 export const SquareButton = styled.button`
   ${ButtonStyles};
   padding: 1rem;
@@ -53,7 +61,7 @@ export const SquareButton = styled.button`
   max-width: 300px;
   width: 100%;
   color: ${({ theme: { color } }) => color.primary};
-  border: 2px solid ${({ theme: { color } }) => color.highlight};
+  border: 3px solid ${({ theme: { color } }) => color.highlight};
   min-width: 200px;
   transition: border-color 0.3s linear;
 
@@ -92,7 +100,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
-    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
+    outline: 3px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
     background: ${({ theme: { color } }) => color.accent};
   }
 
@@ -106,7 +114,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
 export const SmallButton = styled.button`
   ${ButtonStyles};
   border-radius: 9999px;
-  border: 2px solid ${({ theme: { color } }) => color.highlight};
+  border: 3px solid ${({ theme: { color } }) => color.highlight};
   font-size: 1rem;
   gap: 1rem;
   color: ${({ theme: { color } }) => color.highlight};
@@ -120,7 +128,7 @@ export const SmallButton = styled.button`
 
   &:hover {
     color: ${({ theme: { color } }) => color.danger};
-    border: 2px solid ${({ theme: { color } }) => color.danger};
+    border: 3px solid ${({ theme: { color } }) => color.danger};
     svg {
       fill: ${({ theme: { color } }) => color.danger};
     }
