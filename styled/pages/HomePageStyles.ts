@@ -13,6 +13,7 @@ const GridAreasStyles = css`
   text-align: center;
 
   img {
+    will-change: contents;
     transition: transform 0.3s ease;
   }
 
