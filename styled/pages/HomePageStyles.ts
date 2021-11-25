@@ -5,7 +5,7 @@ const GridAreasStyles = css`
   display: flex;
   position: relative;
   text-decoration: none;
-  padding: 5rem;
+  padding: 5rem 1rem;
   justify-content: center;
   color: ${({ theme: { color } }) => color.primary};
   align-items: center;
