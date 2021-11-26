@@ -20,16 +20,30 @@ interface Props {
   keycaps: Array<ProductType>;
 }
 
+const allFilters = { brand: [], color: [], variant: [], connectivity: [] };
+
 function KeycapsPage({ keycaps }: Props) {
   const { query } = useRouter();
 
   const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
 
   const [activeFilters, setActiveFilters] = React.useState<FilterTypes>(() => ({
-    brands: query.brands ? [].concat(query.brands) : [],
+    brand: query.brand ? [].concat(query.brand) : [],
+    color: query.color ? [].concat(query.color) : [],
   }));
 
-  const filters = { brands: ['Razer', 'MXCherry', 'SteelSeries', 'Novelty'] };
+  keycaps.map((keycap) =>
+    Object.entries(keycap).map(([key, value]) => {
+      if (allFilters[key]) {
+        if (!allFilters[key].includes(value)) {
+          allFilters[key].push(value);
+        }
+      }
+      return null;
+    })
+  );
+
+  const filters = { brand: ['Razer', 'MXCherry', 'SteelSeries', 'Novelty'] };
 
   return (
     <>
@@ -48,7 +62,7 @@ function KeycapsPage({ keycaps }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
+              <Filters activeFilters={activeFilters} filters={allFilters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">
