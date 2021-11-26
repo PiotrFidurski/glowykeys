@@ -20,7 +20,7 @@ test('when queryParams are "?variants=gaming" it renders only filtered results',
   useRouter.mockImplementation(() => ({
     route: '/keyboards',
     pathname: '/keyboards',
-    query: { variants: ['gaming'] },
+    query: { variant: ['gaming'] },
     asPath: '',
     push: jest.fn(),
   }));

@@ -26,7 +26,7 @@ describe('Keyboards page tests', () => {
 
     cy.get('@productList').children().should('have.length', 2);
 
-    cy.url().should('equal', `${Cypress.config().baseUrl}/keyboards?variants=casual&connectivity=wired`);
+    cy.url().should('equal', `${Cypress.config().baseUrl}/keyboards?variant=casual&connectivity=wired`);
   });
 
   it('has a remove filter buttons if there are any applied', () => {
