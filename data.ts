@@ -4,8 +4,10 @@ import { v4 } from 'uuid';
 export const KeySwitchesData: Array<Product> = [
   {
     id: v4(),
+    color: 'white',
     brand: 'HyperX',
     type: 'Switch',
+    variant: 'HyperX Red',
     qty: 1,
     name: 'Alloy Origins - Red',
     price: 39.9,
@@ -16,8 +18,10 @@ export const KeySwitchesData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     brand: 'Idobao',
     type: 'Switch',
+    variant: 'CherryMx Red',
     qty: 1,
     name: 'Cherry Set',
     price: 39.9,
@@ -28,8 +32,10 @@ export const KeySwitchesData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'Idobao',
     type: 'Switch',
+    variant: 'Gateron Pink',
     qty: 1,
     name: 'Gateron - Pink',
     price: 39.9,
@@ -40,8 +46,10 @@ export const KeySwitchesData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'Kalih',
     type: 'Switch',
+    variant: 'CherryMx Brown',
     qty: 1,
     name: 'Kalih Brown',
     price: 39.9,
@@ -52,8 +60,10 @@ export const KeySwitchesData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'Kalih',
     type: 'Switch',
+    variant: 'CherryMx Blue',
     qty: 1,
     name: 'Kalih Set',
     price: 39.9,
@@ -64,8 +74,10 @@ export const KeySwitchesData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'Outemu',
     type: 'Switch',
+    variant: 'Outemu Red',
     qty: 1,
     name: 'Outemu Red',
     price: 39.9,
@@ -79,6 +91,7 @@ export const KeySwitchesData: Array<Product> = [
 export const keycapsData: Array<Product> = [
   {
     id: v4(),
+    color: 'white',
     brand: 'Razer',
     type: 'Keycap',
     qty: 1,
@@ -91,6 +104,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     brand: 'Razer',
     type: 'Keycap',
     qty: 1,
@@ -103,6 +117,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'Razer',
     type: 'Keycap',
     qty: 1,
@@ -115,6 +130,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'pink',
     brand: 'Razer',
     type: 'Keycap',
     qty: 1,
@@ -127,6 +143,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'white',
     brand: 'SteelSeries',
     type: 'Keycap',
     qty: 1,
@@ -139,6 +156,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     brand: 'MXCherry',
     type: 'Keycap',
     qty: 1,
@@ -151,6 +169,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'brown',
     brand: 'Novelty',
     type: 'Keycap',
     qty: 1,
@@ -163,6 +182,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'green',
     brand: 'Novelty',
     type: 'Keycap',
     qty: 1,
@@ -175,6 +195,7 @@ export const keycapsData: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     brand: 'Novelty',
     type: 'Keycap',
     qty: 1,
@@ -190,6 +211,7 @@ export const keycapsData: Array<Product> = [
 export const data: Array<Product> = [
   {
     id: v4(),
+    color: 'black',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wired',
@@ -207,6 +229,7 @@ export const data: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wired',
@@ -224,6 +247,7 @@ export const data: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wireless',
@@ -241,6 +265,7 @@ export const data: Array<Product> = [
   },
   {
     id: v4(),
+    color: 'black',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wireless',
@@ -261,6 +286,7 @@ export const data: Array<Product> = [
 export const cartData: Array<Product> = [
   {
     id: v4(),
+    color: 'black',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wireless',
