@@ -1,7 +1,7 @@
 export interface FilterTypes {
   variants?: Array<string>;
   connectivity?: Array<string>;
-  brands?: Array<string>;
+  brand?: Array<string>;
 }
 
 export interface SortTypes {
