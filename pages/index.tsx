@@ -58,7 +58,7 @@ function HomePage() {
             <p>SHOP</p>
             <p>ALL</p>
           </S.SeeAll>
-          <Link href="/keyboards?variants=gaming" passHref>
+          <Link href="/keyboards?variant=gaming" passHref>
             <S.GamingKeyboards aria-label="go to gaming keyboards page">
               <p>Gaming Keyboards</p>
               <ImageWrapper>
@@ -101,7 +101,7 @@ function HomePage() {
               />
             </ImageWrapper>
           </S.KeycapImage>
-          <Link href="/keyboards?variants=casual" passHref>
+          <Link href="/keyboards?variant=casual" passHref>
             <S.CasualKeyboards aria-label="go to casual keyboards page">
               <p>Casual Keyboards</p>
               <ImageWrapper>

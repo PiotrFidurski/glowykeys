@@ -17,9 +17,10 @@ export interface Product {
 
 export interface FilterFnProps {
   product: Product;
-  variants?: Array<string>;
+  variant?: Array<string>;
   connectivity?: Array<string>;
-  brands?: Array<string>;
+  brand?: Array<string>;
+  color?: Array<string>;
 }
 
 export interface CompareProps {

@@ -1,6 +1,6 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import Filters from '@components/Filters/Filters';
-import { FilterTypes, SortTypes } from '@components/Filters/types';
+import { SortTypes } from '@components/Filters/types';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
@@ -10,10 +10,10 @@ import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
+import { useFilters } from '@utils/useFilters';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import * as React from 'react';
 
 interface Props {
@@ -21,15 +21,9 @@ interface Props {
 }
 
 function KeycapsPage({ keycaps }: Props) {
-  const { query } = useRouter();
+  const [activeFilters, setActiveFilters, filters] = useFilters(keycaps);
 
   const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
-
-  const [activeFilters, setActiveFilters] = React.useState<FilterTypes>(() => ({
-    brands: query.brands ? [].concat(query.brands) : [],
-  }));
-
-  const filters = { brands: ['Razer', 'MXCherry', 'SteelSeries', 'Novelty'] };
 
   return (
     <>
