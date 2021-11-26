@@ -12,6 +12,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Alloy Origins - Red',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/hyperx_alloy_origins_red.png',
     },
@@ -26,6 +27,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Cherry Set',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/idobao_cherry_switch.png',
     },
@@ -40,6 +42,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Gateron - Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/idobao_gateron_pink_switch.png',
     },
@@ -54,6 +57,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Kalih Brown',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kalih_brown.png',
     },
@@ -68,6 +72,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Kalih Set',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kalih_switch_set.png',
     },
@@ -82,6 +87,7 @@ export const KeySwitchesData: Array<Product> = [
     name: 'Outemu Red',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/outemu_red_switch.png',
     },
@@ -98,6 +104,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -111,6 +118,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -124,6 +132,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -137,6 +146,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -150,6 +160,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -163,6 +174,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -176,6 +188,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -189,6 +202,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -202,6 +216,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -215,6 +230,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -228,6 +244,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -241,6 +258,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -254,6 +272,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -267,6 +286,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -280,6 +300,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -293,6 +314,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -306,6 +328,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -319,6 +342,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -332,6 +356,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -345,6 +370,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -358,6 +384,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -371,6 +398,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -384,6 +412,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -397,6 +426,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -410,6 +440,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -423,6 +454,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -436,6 +468,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -449,6 +482,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -462,6 +496,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -475,6 +510,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -488,6 +524,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -501,6 +538,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -514,6 +552,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -527,6 +566,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -540,6 +580,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -553,6 +594,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -566,6 +608,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -579,6 +622,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -592,6 +636,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -605,6 +650,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -618,6 +664,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -631,6 +678,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -644,6 +692,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -657,6 +706,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -670,6 +720,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -683,6 +734,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
@@ -696,6 +748,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer Phantom Keycap - Black',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
@@ -709,6 +762,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Mercury White',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
@@ -722,6 +776,7 @@ export const keycapsData: Array<Product> = [
     name: 'Razer PBT Keycap - Quartz Pink',
     price: 39.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
     },
@@ -735,6 +790,7 @@ export const keycapsData: Array<Product> = [
     name: 'PRISMCAPS',
     price: 29.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/steelseries_prismcaps_white.png',
     },
@@ -748,6 +804,7 @@ export const keycapsData: Array<Product> = [
     name: 'Dota 2 Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/dota_2_keycap_black.png',
     },
@@ -761,6 +818,7 @@ export const keycapsData: Array<Product> = [
     name: 'Kiwi Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/kiwi_keycap.png',
     },
@@ -774,6 +832,7 @@ export const keycapsData: Array<Product> = [
     name: 'Melon Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/melon_keycap.png',
     },
@@ -787,6 +846,7 @@ export const keycapsData: Array<Product> = [
     name: 'Capsmith Keycap',
     price: 99.9,
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original: '',
       thumbnail: '/assets/images/capsmith_keycap.png',
     },
@@ -805,6 +865,7 @@ export const data: Array<Product> = [
     price: 199.99,
     name: 'Vulcan Pro',
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original:
         'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477',
       thumbnail: '/assets/images/roccat_vulcan_pro.png',
@@ -822,6 +883,7 @@ export const data: Array<Product> = [
     price: 59.99,
     name: 'Magma',
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original:
         'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477',
       thumbnail: '/assets/images/roccat_magma.png',
@@ -839,6 +901,7 @@ export const data: Array<Product> = [
     price: 99.99,
     name: 'Pyro',
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original:
         'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477',
       thumbnail: '/assets/images/roccat_pyro.png',
@@ -856,6 +919,7 @@ export const data: Array<Product> = [
     price: 159.99,
     name: 'Vulcan 122 AIMO',
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original:
         'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477',
       thumbnail: '/assets/images/roccat_vulcan_122_aimo.png',
@@ -876,10 +940,10 @@ export const cartData: Array<Product> = [
     price: 199.99,
     name: 'Vulcan Pro',
     image: {
+      placeholder: '/assets/images/roccat_pyro.png',
       original:
         'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477',
-      thumbnail:
-        'https://cdn.shopify.com/s/files/1/0505/5912/3609/products/Vulcan-Pro-US_2x_4f123e32-2ae5-4a64-9b4b-dd8414da7441_550x534.png?v=1615353477',
+      thumbnail: '/assets/images/roccat_vulcan_pro.png',
     },
     description: ['Award Winning Design', '100 million keystroke life-cycle', '32-bit ARM Cortex-M0 based processor'],
   },

@@ -12,6 +12,7 @@ export interface Product {
   image: {
     thumbnail: string;
     original: string;
+    placeholder?: string;
   };
 }
 
