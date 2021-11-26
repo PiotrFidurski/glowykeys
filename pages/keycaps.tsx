@@ -1,6 +1,6 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import Filters from '@components/Filters/Filters';
-import { FilterTypes, SortTypes } from '@components/Filters/types';
+import { SortTypes } from '@components/Filters/types';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
 import Product from '@components/Product/Product';
@@ -10,40 +10,20 @@ import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
 import { VisuallyHiddenH2 } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
+import { useFilters } from '@utils/useFilters';
 import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import * as React from 'react';
 
 interface Props {
   keycaps: Array<ProductType>;
 }
 
-const allFilters = { brand: [], color: [], variant: [], connectivity: [] };
-
 function KeycapsPage({ keycaps }: Props) {
-  const { query } = useRouter();
+  const [activeFilters, setActiveFilters, filters] = useFilters(keycaps);
 
   const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
-
-  const [activeFilters, setActiveFilters] = React.useState<FilterTypes>(() => ({
-    brand: query.brand ? [].concat(query.brand) : [],
-    color: query.color ? [].concat(query.color) : [],
-  }));
-
-  keycaps.map((keycap) =>
-    Object.entries(keycap).map(([key, value]) => {
-      if (allFilters[key]) {
-        if (!allFilters[key].includes(value)) {
-          allFilters[key].push(value);
-        }
-      }
-      return null;
-    })
-  );
-
-  const filters = { brand: ['Razer', 'MXCherry', 'SteelSeries', 'Novelty'] };
 
   return (
     <>
@@ -62,7 +42,7 @@ function KeycapsPage({ keycaps }: Props) {
           <AnimateSharedLayout>
             <FilterSection aria-label="filter products menu" role="region">
               <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters activeFilters={activeFilters} filters={allFilters} onFilter={setActiveFilters} />
+              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
               <Sorts onSort={setSort} sort={sort} />
             </FilterSection>
             <ProductsContainer role="region" aria-label="list of products">

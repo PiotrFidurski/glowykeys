@@ -65,6 +65,7 @@ export const ProductsContainer = styled.section`
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, 1fr));
     grid-column-start: 2;
   }
 `;
