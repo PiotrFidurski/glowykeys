@@ -3,6 +3,7 @@ export interface Product {
   variant?: string;
   name: string;
   price: number;
+  color: string;
   qty?: number;
   connectivity?: string;
   id: string;
