@@ -20,7 +20,7 @@ test('when removed filters buttons are clicked filters are removed', () => {
   useRouter.mockImplementation(() => ({
     route: '/keyboards',
     pathname: '/keyboards',
-    query: { variants: ['gaming'], connectivity: ['wired'] },
+    query: { variant: ['gaming'], connectivity: ['wired'] },
     asPath: '',
     push: jest.fn(),
   }));
