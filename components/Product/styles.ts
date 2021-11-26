@@ -43,6 +43,7 @@ export const ProductImageWrapper = styled.div`
 
   img {
     transition: transform 0.3s ease;
+    filter: brightness(0.9) drop-shadow(0px 2px 7px black) contrast(1.1) !important;
   }
 
   &:hover {
