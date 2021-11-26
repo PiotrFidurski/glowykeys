@@ -8,7 +8,7 @@ import * as React from 'react';
 import { Article, H2, Heading, Paragraph, ProductImageWrapper } from './styles';
 
 interface Props {
-  product: ProductType;
+  product: ProductType & { image: { original: string; thumbnail: string; placeholder?: string } };
 }
 
 function Product({ product }: Props) {
@@ -20,10 +20,11 @@ function Product({ product }: Props) {
         <Image
           src={product.image.thumbnail}
           loading="lazy"
-          blurDataURL="/assets/images/keycaps-black.png"
+          blurDataURL={product.image.placeholder}
           placeholder="blur"
-          layout="fill"
-          objectFit="contain"
+          width={300}
+          layout="responsive"
+          height={300}
         />
       </ProductImageWrapper>
       <Heading>
