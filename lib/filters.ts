@@ -10,8 +10,8 @@ function connectivity(props: FilterFnProps) {
     : props.product;
 }
 
-function brand({ product, brands }: FilterFnProps) {
-  return brands && brands.length ? brands.includes(product.brand) : product;
+function brands({ product, brand }: FilterFnProps) {
+  return brand && brand.length ? brand.includes(product.brand) : product;
 }
 
-export const possibleFilters = [variant, connectivity, brand];
+export const possibleFilters = [variant, connectivity, brands];
