@@ -17,15 +17,7 @@ function Product({ product }: Props) {
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
       <ProductImageWrapper>
-        <Image
-          src={product.image.thumbnail}
-          loading="lazy"
-          blurDataURL={product.image.placeholder}
-          placeholder="blur"
-          width={300}
-          layout="responsive"
-          height={300}
-        />
+        <Image src={product.image.thumbnail} loading="lazy" width={300} layout="responsive" height={300} />
       </ProductImageWrapper>
       <Heading>
         <H2>{product.name}</H2>
