@@ -29,7 +29,7 @@ function KeycapsPage({ keycaps }: Props) {
     brands: query.brands ? [].concat(query.brands) : [],
   }));
 
-  const filters = { brands: ['M7', 'KBDfans'] };
+  const filters = { brands: ['Razer', 'MXCherry', 'SteelSeries', 'Novelty'] };
 
   return (
     <>

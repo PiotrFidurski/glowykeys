@@ -1,61 +1,188 @@
 import { Product } from '@utils/types';
 import { v4 } from 'uuid';
 
+export const KeySwitchesData: Array<Product> = [
+  {
+    id: v4(),
+    brand: 'HyperX',
+    type: 'Switch',
+    qty: 1,
+    name: 'Alloy Origins - Red',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/hyperx_alloy_origins_red.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Idobao',
+    type: 'Switch',
+    qty: 1,
+    name: 'Cherry Set',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/idobao_cherry_switch.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Idobao',
+    type: 'Switch',
+    qty: 1,
+    name: 'Gateron - Pink',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/idobao_gateron_pink_switch.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Kalih',
+    type: 'Switch',
+    qty: 1,
+    name: 'Kalih Brown',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/kalih_brown.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Kalih',
+    type: 'Switch',
+    qty: 1,
+    name: 'Kalih Set',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/kalih_switch_set.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Outemu',
+    type: 'Switch',
+    qty: 1,
+    name: 'Outemu Red',
+    price: 39.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/outemu_red_switch.png',
+    },
+  },
+];
+
 export const keycapsData: Array<Product> = [
   {
     id: v4(),
-    brand: 'M7',
+    brand: 'Razer',
     type: 'Keycap',
     qty: 1,
-    name: 'M7 GAME CONSOLE ARTISAN KEYCAPS',
-    price: 26.9,
+    name: 'Razer Phantom Keycap - White',
+    price: 39.9,
     image: {
-      original:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/6_e9fa88b7-60d8-45b1-ad68-8d71f7673ec2_900x.jpg?v=1606868025',
-      thumbnail:
-        'https://spcgear.com/wp-content/uploads/2020/07/spg029-spcgear-kc104-black-dbl-shot-pbt-03-bgblack.png',
+      original: '',
+      thumbnail: '/assets/images/razer_phantom_keycap_white.png',
     },
   },
   {
     id: v4(),
-    brand: 'M7',
+    brand: 'Razer',
     type: 'Keycap',
     qty: 1,
-    name: 'M.7 ALUMINUM TAB ARTISAN KEYCAP',
-    price: 32.0,
+    name: 'Razer Phantom Keycap - Black',
+    price: 39.9,
     image: {
-      original:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/1_1afceb43-2260-407f-8a92-8153c1d82e02_900x.jpg?v=1610694428',
-      thumbnail:
-        'https://spcgear.com/wp-content/uploads/2020/07/spg039-spcgear-kc13-crimson-dbl-shot-pbt-04-bgblack.png',
+      original: '',
+      thumbnail: '/assets/images/razer_phantom_keycap_black.png',
     },
   },
   {
     id: v4(),
-    brand: 'KBDfans',
+    brand: 'Razer',
     type: 'Keycap',
     qty: 1,
-    name: 'KBDFANS NP PROFILE NUMPAD KEYCAPS 28 KEYS',
-    price: 12.9,
+    name: 'Razer PBT Keycap - Mercury White',
+    price: 39.9,
     image: {
-      original:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/3_1800x1800_12eebb18-39ce-428f-a2f7-e07a4d892373_360x.jpg?v=1627006278',
-      thumbnail:
-        'https://spcgear.com/wp-content/uploads/2021/10/spg078-spcgear-kc104-pudding-onyx-white-dbl-shot-pbt-04-png-www.png',
+      original: '',
+      thumbnail: '/assets/images/razer_pbt_keycap_mercury_white.png',
     },
   },
   {
     id: v4(),
-    qty: 1,
+    brand: 'Razer',
     type: 'Keycap',
-    name: 'PAC MAN ARTISAN KEYCAPS',
-    price: 26.6,
-    brand: 'KBDfans',
+    qty: 1,
+    name: 'Razer PBT Keycap - Quartz Pink',
+    price: 39.9,
     image: {
-      original:
-        'https://cdn.shopify.com/s/files/1/1473/3902/products/8_aa58acc9-ca3c-410f-ba4b-d078030a5765_360x.jpg?v=1635324925',
-      thumbnail:
-        'https://spcgear.com/wp-content/uploads/2020/07/spg030-spcgear-kc104-pudding-dbl-shot-pbt-04-bgblack.png',
+      original: '',
+      thumbnail: '/assets/images/razer_pbt_keycap_quartz_pink.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'SteelSeries',
+    type: 'Keycap',
+    qty: 1,
+    name: 'PRISMCAPS',
+    price: 29.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/steelseries_prismcaps_white.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'MXCherry',
+    type: 'Keycap',
+    qty: 1,
+    name: 'Dota 2 Keycap',
+    price: 99.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/dota_2_keycap_black.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Novelty',
+    type: 'Keycap',
+    qty: 1,
+    name: 'Kiwi Keycap',
+    price: 99.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/kiwi_keycap.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Novelty',
+    type: 'Keycap',
+    qty: 1,
+    name: 'Melon Keycap',
+    price: 99.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/melon_keycap.png',
+    },
+  },
+  {
+    id: v4(),
+    brand: 'Novelty',
+    type: 'Keycap',
+    qty: 1,
+    name: 'Capsmith Keycap',
+    price: 99.9,
+    image: {
+      original: '',
+      thumbnail: '/assets/images/capsmith_keycap.png',
     },
   },
 ];
