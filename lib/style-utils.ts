@@ -99,7 +99,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
-    outline: 3px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
+    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
     background: ${({ theme: { color } }) => color.accent};
   }
 
@@ -113,7 +113,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
 export const SmallButton = styled.button`
   ${ButtonStyles};
   border-radius: 9999px;
-  border: 3px solid ${({ theme: { color } }) => color.highlight};
+  border: 2px solid ${({ theme: { color } }) => color.highlight};
   font-size: 1rem;
   gap: 1rem;
   color: ${({ theme: { color } }) => color.highlight};
@@ -127,7 +127,7 @@ export const SmallButton = styled.button`
 
   &:hover {
     color: ${({ theme: { color } }) => color.danger};
-    border: 3px solid ${({ theme: { color } }) => color.danger};
+    border: 2px solid ${({ theme: { color } }) => color.danger};
     svg {
       fill: ${({ theme: { color } }) => color.danger};
     }

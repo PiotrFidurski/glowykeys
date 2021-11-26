@@ -9,7 +9,8 @@ export const PreviewSection = styled.section`
   grid-template-areas:
     'hot-sales hot-sales hot-sales hot-sales'
     'image image image image'
-    'customers customers title title';
+    'customers customers customers customers'
+    'description description description description';
   width: 100%;
   align-items: flex-start;
   justify-content: space-around;
@@ -26,7 +27,7 @@ export const PreviewSection = styled.section`
       'image image hot-sales hot-sales'
       'image image hot-sales hot-sales'
       'image image hot-sales hot-sales'
-      'image image customers title';
+      'image image customers description';
     margin-top: 100px;
   }
 `;
@@ -54,7 +55,7 @@ export const HotSales = styled.section`
   }
 
   p:nth-child(2) {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 2vw, 3rem);
     letter-spacing: 3px;
   }
 `;
@@ -102,7 +103,7 @@ export const Customers = styled.section`
 `;
 
 export const Description = styled.div`
-  grid-area: title;
+  grid-area: description;
   padding: 2rem;
   height: 100%;
   text-align: center;

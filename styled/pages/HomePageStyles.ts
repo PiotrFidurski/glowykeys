@@ -107,7 +107,8 @@ export const Nav = styled.nav`
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'keyboards keyboards keyboards keyboards'
-    'keycaps keycaps switches switches';
+    'keycaps keycaps keycaps keycaps'
+    'switches switches switches switches';
 
   img {
     filter: brightness(0.5);
@@ -144,22 +145,25 @@ export const Hr = styled.hr`
 export const PopularSection = styled.section`
   padding-bottom: 5rem;
   grid-template-columns: repeat(6, minmax(auto, 1fr));
+  grid-template-rows: repeat(7, minmax(auto, 300px));
   display: grid;
   grid-area: popular;
-  grid-template-rows: repeat(4, minmax(auto, 200px));
   grid-template-areas:
     'casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards'
-    'popular-keycaps popular-keycaps popular-switches popular-switches shop-all shop-all'
+    'popular-keycaps popular-keycaps popular-keycaps popular-keycaps popular-keycaps popular-keycaps'
+    'popular-switches popular-switches popular-switches popular-switches popular-switches popular-switches '
+    'shop-all shop-all shop-all shop-all shop-all shop-all '
     'gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards'
-    'keycap-image keycap-image keycap-image switches-image switches-image switches-image';
+    'keycap-image keycap-image keycap-image keycap-image keycap-image keycap-image'
+    'switches-image switches-image switches-image  switches-image switches-image switches-image';
   max-width: 1660px;
   gap: 0.3rem;
   width: 100%;
   margin: 0 auto;
 
   @media (min-width: 1040px) {
-    grid-template-rows: repeat(4, minmax(auto, 220px));
     grid-template-columns: repeat(6, minmax(auto, 1fr));
+    grid-template-rows: repeat(4, minmax(auto, 200px));
     grid-template-areas:
       'popular-keycaps popular-switches shop-all casual-keyboards casual-keyboards casual-keyboards'
       'gaming-keyboards gaming-keyboards gaming-keyboards casual-keyboards casual-keyboards casual-keyboards'

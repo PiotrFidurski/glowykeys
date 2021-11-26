@@ -23,7 +23,7 @@ function Product({ product }: Props) {
           blurDataURL="/assets/images/keycaps-black.png"
           placeholder="blur"
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
         />
       </ProductImageWrapper>
       <Heading>
