@@ -20,17 +20,19 @@ function Filters({ onFilter, activeFilters, filters }: Props) {
 
   return (
     <Nav aria-label="filter menu">
-      {Object.entries(filters).map(([by, options]) => (
-        <div key={by}>
-          <Separator />
-          <H3>{by.toUpperCase()}</H3>
-          <List aria-label={`${by} filter options`} role="list">
-            {options.map((filter) => (
-              <Filter key={filter} name={filter} onFilter={onFilter} type={by} filters={activeFilters} />
-            ))}
-          </List>
-        </div>
-      ))}
+      {Object.entries(filters)
+        .filter(([, value]) => value.length)
+        .map(([by, options]) => (
+          <div key={by}>
+            <Separator />
+            <H3>{by.toUpperCase()}</H3>
+            <List aria-label={`${by} filter options`} role="list">
+              {options.map((filter) => (
+                <Filter key={filter} name={filter} onFilter={onFilter} type={by} filters={activeFilters} />
+              ))}
+            </List>
+          </div>
+        ))}
     </Nav>
   );
 }
