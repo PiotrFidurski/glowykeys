@@ -1,17 +1,8 @@
-import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
-import Filters from '@components/Filters/Filters';
-import { SortTypes } from '@components/Filters/types';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
-import Product from '@components/Product/Product';
-import Sorts from '@components/Sorts/Sorts';
-import { FilterSection, H1, Header, Main, ProductsContainer, ProductsSection } from '@styled/pages/SharedStyles';
-import { compare } from '@utils/compare';
-import { possibleFilters } from '@utils/filters';
-import { VisuallyHiddenH2 } from '@utils/style-utils';
+import Products from '@components/Products/Products';
+import { H1, Header, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
-import { useFilters } from '@utils/useFilters';
-import { AnimateSharedLayout } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import * as React from 'react';
@@ -21,10 +12,6 @@ interface Props {
 }
 
 function KeyboardsPage({ keyboards }: Props) {
-  const [activeFilters, setActiveFilters, filters] = useFilters(keyboards);
-
-  const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
-
   return (
     <>
       <Head>
@@ -38,26 +25,10 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <AppliedFilters currentFilters={activeFilters} setFilters={setActiveFilters} />
-        <ProductsSection aria-labelledby="products-section" role="region">
-          <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
-          <AnimateSharedLayout>
-            <FilterSection aria-label="filter products menu" role="region">
-              <VisuallyHiddenH2>Product filters</VisuallyHiddenH2>
-              <Filters activeFilters={activeFilters} filters={filters} onFilter={setActiveFilters} />
-              <Sorts onSort={setSort} sort={sort} />
-            </FilterSection>
-            <ProductsContainer role="region" aria-label="list of products">
-              <VisuallyHiddenH2>Product list</VisuallyHiddenH2>
-              {keyboards
-                .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...activeFilters })))
-                .sort((productA, productB) => compare({ productA, productB, ...sort }))
-                .map((product) => (
-                  <Product product={product} key={product.id} />
-                ))}
-            </ProductsContainer>
-          </AnimateSharedLayout>
-        </ProductsSection>
+        <Products products={keyboards}>
+          <Products.AppliedFilters />
+          <Products.List />
+        </Products>
         <Footer />
       </Main>
     </>
