@@ -1,7 +1,7 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
-import Filters from '@components/Filters/Filters';
+import Filter from '@components/Filter/Filter';
 import Product from '@components/Product/Product';
-import Sorts from '@components/Sorts/Sorts';
+import Sort from '@components/Sort/Sort';
 import { FilterContainer, ProductsContainer, ProductsSection } from '@styled/pages/SharedStyles';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
@@ -9,6 +9,7 @@ import { VisuallyHiddenH2 } from '@utils/style-utils';
 import { AnimateSharedLayout } from 'framer-motion';
 import { useRouter } from 'next/router';
 import * as React from 'react';
+import * as S from '../Filter/styles';
 import { DispatchContext } from './DispatchContext';
 import { initialState } from './initialState';
 import { reducer } from './reducer';
@@ -43,10 +44,38 @@ function List({ children }: ListProps) {
 }
 
 function FilterAndSort() {
+  const { sort, filters, activeFilters } = useProducts();
+
   return (
     <FilterContainer aria-label="product filters" role="region">
-      <Filters />
-      <Sorts />
+      <S.Nav aria-label="filter menu">
+        {Object.entries(filters)
+          .filter(([, value]) => value.length)
+          .map(([by, options]) => (
+            <div key={by}>
+              <S.Separator />
+              <S.H3>{by.toUpperCase()}</S.H3>
+              <S.List aria-label={`${by} filter options`} role="list">
+                {options.map((filter) => {
+                  const isActive = activeFilters[by].includes(filter);
+                  return <Filter key={filter} isSelected={isActive} name={filter} type={by} />;
+                })}
+              </S.List>
+            </div>
+          ))}
+      </S.Nav>
+      <S.Nav aria-label="sort menu">
+        <S.Separator />
+        <S.H3>PRICE</S.H3>
+        <S.List aria-label="sort by price" role="list">
+          {['ascending', 'descending'].map((value) => {
+            const isSelected = value.slice(0, 3).toUpperCase() === sort.order;
+
+            return <Sort key={value} name={value} isSelected={isSelected} />;
+          })}
+        </S.List>
+        <S.Separator />
+      </S.Nav>
     </FilterContainer>
   );
 }

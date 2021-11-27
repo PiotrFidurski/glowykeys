@@ -1,4 +1,4 @@
-import { FilterTypes, SortTypes } from '@components/Filters/types';
+import { FilterTypes, SortTypes } from '@components/Filter/types';
 import { Product } from '@utils/types';
 import * as React from 'react';
 

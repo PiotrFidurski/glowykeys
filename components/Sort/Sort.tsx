@@ -1,7 +1,7 @@
 import { actionTypes } from '@components/Products/types';
 import { useDispatch } from '@components/Products/useDispatch';
 import * as React from 'react';
-import * as S from '../Filters/styles';
+import * as S from '../Filter/styles';
 
 interface Props {
   name: string;
