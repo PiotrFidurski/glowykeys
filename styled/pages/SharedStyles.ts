@@ -6,7 +6,7 @@ export const Main = styled.main`
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   grid-template-areas:
     'header header header header'
-    'product-list product-list product-list product-list '
+    'products products products products '
     'footer footer footer footer';
 `;
 
@@ -35,7 +35,7 @@ export const ProductsSection = styled.section`
   max-width: 1440px;
   padding: 1rem 1rem;
   width: 100%;
-  grid-area: product-list;
+  grid-area: products;
   grid-column-gap: 3rem;
   grid-row-gap: 1rem;
   margin: 0 auto;
@@ -53,11 +53,11 @@ export const ProductsSection = styled.section`
   }
 `;
 
-export const FilterSection = styled.section`
+export const FilterContainer = styled.div`
   grid-area: filters;
 `;
 
-export const ProductsContainer = styled.section`
+export const ProductsContainer = styled.div`
   grid-area: items;
   display: grid;
   margin: 0 auto;
