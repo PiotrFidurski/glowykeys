@@ -12,10 +12,6 @@ interface Props {
 }
 
 function KeycapsPage({ keycaps }: Props) {
-  // const [activeFilters, setActiveFilters, filters] = useFilters(keycaps);
-
-  // const [sort, setSort] = React.useState<SortTypes>({ order: 'ASC', type: 'price' });
-
   return (
     <>
       <Head>

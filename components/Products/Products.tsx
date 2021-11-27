@@ -53,7 +53,6 @@ function FilterAndSort() {
 
 function Cards() {
   const { sort, activeFilters, products } = useProducts();
-
   return (
     <ProductsContainer aria-label="list of products" role="region">
       {products
