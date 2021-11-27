@@ -42,7 +42,7 @@ export const switchesData: Array<Product> = [
     name: 'Gateron - Pink',
     price: 139.9,
     image: {
-      placeholder: '/assets/images/idobao_gateron_pink_switch.pngg',
+      placeholder: '/assets/images/idobao_gateron_pink_switch.png',
       original: '',
       thumbnail: '/assets/images/idobao_gateron_pink_switch.png',
     },
