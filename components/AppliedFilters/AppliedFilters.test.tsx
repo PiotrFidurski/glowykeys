@@ -27,13 +27,13 @@ test('when removed filters buttons are clicked filters are removed', () => {
 
   render(<KeyboardsPage keyboards={data} />);
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(2);
+  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(1);
 
   fireEvent.click(screen.getByRole('button', { name: /remove wired filter/i }));
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(3);
+  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(2);
 
   fireEvent.click(screen.getByRole('button', { name: /remove gaming filter/i }));
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(5);
+  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(4);
 });
