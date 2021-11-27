@@ -21,7 +21,10 @@ function SwitchesPage({ switches }) {
         </Header>
         <Products products={switches}>
           <Products.AppliedFilters />
-          <Products.List />
+          <Products.List>
+            <Products.Filterss />
+            <Products.Cards />
+          </Products.List>
         </Products>
         <Footer />
       </Main>
