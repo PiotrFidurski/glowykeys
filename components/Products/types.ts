@@ -22,7 +22,6 @@ export type Action = { type: string; payload?: unknown };
 type PossibleTypes = 'orderByPrice' | 'setFilter' | 'unsetFilter';
 
 export const actionTypes: Record<PossibleTypes, string> = {
-  // openMenu: 'OPEN_MENU',
   orderByPrice: 'ORDER_BY_PRICE',
   setFilter: 'SET_FILTER',
   unsetFilter: 'UNSET_FILTER',

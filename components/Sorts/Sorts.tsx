@@ -5,6 +5,7 @@ import Sort from './Sort';
 
 function Sorts() {
   const { sort } = useProducts();
+
   return (
     <S.Nav aria-label="sort menu">
       <S.Separator />

@@ -21,10 +21,6 @@ export function reducer(state: State, action: Action): State {
           : { ...state.activeFilters, [type]: [...state.activeFilters[type], value] },
       };
     }
-    // setActiveFilters((prevFilters) => ({
-    //   ...prevFilters,
-    //   [type]: (prevFilters[type] as string[]).filter((value: string) => value !== filter),
-    // }));
     case actionTypes.unsetFilter: {
       const { filter, type } = action.payload as { filter: string; type: string };
       return {

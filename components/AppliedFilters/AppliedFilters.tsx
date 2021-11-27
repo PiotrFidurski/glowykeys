@@ -8,7 +8,9 @@ import { Container } from './styles';
 
 function AppliedFilters() {
   const { activeFilters } = useProducts();
+
   const dispatch = useDispatch();
+
   const handleClick = (filter: string, type: string) => {
     dispatch({ type: actionTypes.unsetFilter, payload: { filter, type } });
   };

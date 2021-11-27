@@ -5,6 +5,7 @@ import { H3, List, Nav, Separator } from './styles';
 
 function Filters() {
   const { filters } = useProducts();
+
   return (
     <Nav aria-label="filter menu">
       {Object.entries(filters)

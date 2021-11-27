@@ -11,7 +11,9 @@ interface Props {
 
 function Filter({ type, name }: Props) {
   const dispatch = useDispatch();
+
   const { activeFilters } = useProducts();
+
   const handleChange = (e: React.BaseSyntheticEvent) => {
     const { value } = e.target;
     dispatch({ type: actionTypes.setFilter, payload: { value, type } });
