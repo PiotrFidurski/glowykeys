@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ProductsContext } from './ProductsContext';
+import { StateContext } from './StateContext';
 
 const useProducts = () => {
-  const context = React.useContext(ProductsContext);
+  const context = React.useContext(StateContext);
 
   if (!context) throw new Error('You are using ProductListContext outside of ProductListProvider');
 
