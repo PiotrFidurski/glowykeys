@@ -1,3 +1,5 @@
+import { actionTypes } from '@components/Products/types';
+import { useDispatch } from '@components/Products/useDispatch';
 import { useProducts } from '@components/Products/useProducts';
 import { SmallButton } from '@utils/style-utils';
 import * as React from 'react';
@@ -5,13 +7,10 @@ import Cross from '../../public/assets/vector/cross.svg';
 import { Container } from './styles';
 
 function AppliedFilters() {
-  const { activeFilters, setActiveFilters } = useProducts();
-
+  const { activeFilters } = useProducts();
+  const dispatch = useDispatch();
   const handleClick = (filter: string, type: string) => {
-    setActiveFilters((prevFilters) => ({
-      ...prevFilters,
-      [type]: (prevFilters[type] as string[]).filter((value: string) => value !== filter),
-    }));
+    dispatch({ type: actionTypes.unsetFilter, payload: { filter, type } });
   };
 
   return (
