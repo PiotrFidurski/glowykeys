@@ -22,9 +22,8 @@ function Product({ product }: Props) {
           loading="lazy"
           blurDataURL={product.image.placeholder}
           placeholder="blur"
-          width={300}
-          layout="responsive"
-          height={300}
+          objectFit="contain"
+          layout="fill"
         />
       </ProductImageWrapper>
       <Heading>
