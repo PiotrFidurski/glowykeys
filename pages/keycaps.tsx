@@ -30,7 +30,7 @@ function KeycapsPage({ keycaps }: Props) {
         <Products products={keycaps}>
           <Products.AppliedFilters />
           <Products.List>
-            <Products.Filterss />
+            <Products.FilterAndSort />
             <Products.Cards />
           </Products.List>
         </Products>

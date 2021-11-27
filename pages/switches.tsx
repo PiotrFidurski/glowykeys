@@ -22,7 +22,7 @@ function SwitchesPage({ switches }) {
         <Products products={switches}>
           <Products.AppliedFilters />
           <Products.List>
-            <Products.Filterss />
+            <Products.FilterAndSort />
             <Products.Cards />
           </Products.List>
         </Products>

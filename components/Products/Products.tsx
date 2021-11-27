@@ -42,7 +42,7 @@ function List({ children }: ListProps) {
   return <AnimateSharedLayout>{children}</AnimateSharedLayout>;
 }
 
-function Filterss() {
+function FilterAndSort() {
   return (
     <FilterContainer aria-label="product filters" role="region">
       <Filters />
@@ -67,7 +67,7 @@ function Cards() {
 
 Products.AppliedFilters = AppliedFilters;
 Products.List = List;
-Products.Filterss = Filterss;
+Products.FilterAndSort = FilterAndSort;
 Products.Cards = Cards;
 
 export default Products;
