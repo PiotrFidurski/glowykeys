@@ -8,7 +8,6 @@ export interface Props {
 
 export interface ProductListComposition {
   AppliedFilters?: React.FunctionComponent;
-  List?: React.FunctionComponent;
   FilterAndSort?: React.FunctionComponent;
   Cards?: React.FunctionComponent;
 }

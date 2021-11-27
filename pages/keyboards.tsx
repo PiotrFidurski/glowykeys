@@ -27,10 +27,8 @@ function KeyboardsPage({ keyboards }: Props) {
         </Header>
         <Products products={keyboards}>
           <Products.AppliedFilters />
-          <Products.List>
-            <Products.FilterAndSort />
-            <Products.Cards />
-          </Products.List>
+          <Products.FilterAndSort />
+          <Products.Cards />
         </Products>
         <Footer />
       </Main>

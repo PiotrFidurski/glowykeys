@@ -14,7 +14,7 @@ import { DispatchContext } from './DispatchContext';
 import { initialState } from './initialState';
 import { reducer } from './reducer';
 import { StateContext } from './StateContext';
-import { ListProps, ProductListComposition, Props } from './types';
+import { ProductListComposition, Props } from './types';
 import { useProducts } from './useProducts';
 
 function Products({ products, children }: Props & ProductListComposition) {
@@ -32,15 +32,11 @@ function Products({ products, children }: Props & ProductListComposition) {
       <DispatchContext.Provider value={dispatch}>
         <ProductsSection aria-labelledby="products-section" role="region">
           <VisuallyHiddenH2 id="products-section">Products section</VisuallyHiddenH2>
-          {children}
+          <AnimateSharedLayout>{children}</AnimateSharedLayout>
         </ProductsSection>
       </DispatchContext.Provider>
     </StateContext.Provider>
   );
-}
-
-function List({ children }: ListProps) {
-  return <AnimateSharedLayout>{children}</AnimateSharedLayout>;
 }
 
 function FilterAndSort() {
@@ -96,7 +92,6 @@ function Cards() {
 }
 
 Products.AppliedFilters = AppliedFilters;
-Products.List = List;
 Products.FilterAndSort = FilterAndSort;
 Products.Cards = Cards;
 

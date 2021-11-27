@@ -2,6 +2,7 @@ import { actionTypes } from '@components/Products/types';
 import { useDispatch } from '@components/Products/useDispatch';
 import { useProducts } from '@components/Products/useProducts';
 import { SmallButton } from '@utils/style-utils';
+import { motion } from 'framer-motion';
 import * as React from 'react';
 import Cross from '../../public/assets/vector/cross.svg';
 import { Container } from './styles';
@@ -20,6 +21,8 @@ function AppliedFilters() {
       {Object.entries<Array<string>>(activeFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
         filters.map((filter) => (
           <SmallButton
+            as={motion.button}
+            layout
             aria-label={`remove ${filter} filter`}
             onClick={() => handleClick(filter, type)}
             key={filter}
