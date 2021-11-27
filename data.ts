@@ -1,7 +1,7 @@
 import { Product } from '@utils/types';
 import { v4 } from 'uuid';
 
-export const KeySwitchesData: Array<Product> = [
+export const switchesData: Array<Product> = [
   {
     id: v4(),
     color: 'white',
@@ -25,7 +25,7 @@ export const KeySwitchesData: Array<Product> = [
     variant: 'CherryMx Red',
     qty: 1,
     name: 'Cherry Set',
-    price: 39.9,
+    price: 99.9,
     image: {
       placeholder: '/assets/images/idobao_cherry_switch.png',
       original: '',
@@ -40,9 +40,9 @@ export const KeySwitchesData: Array<Product> = [
     variant: 'Gateron Pink',
     qty: 1,
     name: 'Gateron - Pink',
-    price: 39.9,
+    price: 139.9,
     image: {
-      placeholder: '/assets/images/idobao_gateron_pink_switch.pngg',
+      placeholder: '/assets/images/idobao_gateron_pink_switch.png',
       original: '',
       thumbnail: '/assets/images/idobao_gateron_pink_switch.png',
     },
@@ -55,7 +55,7 @@ export const KeySwitchesData: Array<Product> = [
     variant: 'CherryMx Brown',
     qty: 1,
     name: 'Kalih Brown',
-    price: 39.9,
+    price: 299.9,
     image: {
       placeholder: '/assets/images/kalih_brown.png',
       original: '',
@@ -70,7 +70,7 @@ export const KeySwitchesData: Array<Product> = [
     variant: 'CherryMx Blue',
     qty: 1,
     name: 'Kalih Set',
-    price: 39.9,
+    price: 19.9,
     image: {
       placeholder: '/assets/images/kalih_switch_set.png',
       original: '',
@@ -85,7 +85,7 @@ export const KeySwitchesData: Array<Product> = [
     variant: 'Outemu Red',
     qty: 1,
     name: 'Outemu Red',
-    price: 39.9,
+    price: 399.9,
     image: {
       placeholder: '/assets/images/outemu_red_switch.png',
       original: '',
