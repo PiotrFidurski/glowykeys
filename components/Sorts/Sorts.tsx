@@ -1,14 +1,10 @@
-import { SortTypes } from '@components/Filters/types';
+import { useProducts } from '@components/Products/useProducts';
 import * as React from 'react';
 import * as S from '../Filters/styles';
 import Sort from './Sort';
 
-interface Props {
-  sort: SortTypes;
-  onSort: React.Dispatch<React.SetStateAction<SortTypes>>;
-}
-
-function Sorts({ onSort, sort }: Props) {
+function Sorts() {
+  const { sort } = useProducts();
   return (
     <S.Nav aria-label="sort menu">
       <S.Separator />
@@ -17,7 +13,7 @@ function Sorts({ onSort, sort }: Props) {
         {['ascending', 'descending'].map((value) => {
           const isSelected = value.slice(0, 3).toUpperCase() === sort.order;
 
-          return <Sort key={value} name={value} isSelected={isSelected} onSort={onSort} />;
+          return <Sort key={value} name={value} isSelected={isSelected} />;
         })}
       </S.List>
       <S.Separator />

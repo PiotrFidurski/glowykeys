@@ -1,24 +1,20 @@
+import { actionTypes } from '@components/Products/types';
+import { useDispatch } from '@components/Products/useDispatch';
+import { useProducts } from '@components/Products/useProducts';
 import * as React from 'react';
 import { CheckBox, Label, Li, LiText } from './styles';
-import { FilterTypes } from './types';
 
 interface Props {
   type: string;
   name: string;
-  filters: FilterTypes;
-  onFilter: React.Dispatch<React.SetStateAction<FilterTypes>>;
 }
 
-function Filter({ type, name, onFilter, filters }: Props) {
+function Filter({ type, name }: Props) {
+  const dispatch = useDispatch();
+  const { activeFilters } = useProducts();
   const handleChange = (e: React.BaseSyntheticEvent) => {
     const { value } = e.target;
-
-    onFilter((prevFilter) => ({
-      ...prevFilter,
-      [type]: prevFilter[type].includes(value)
-        ? prevFilter[type].filter((con) => con !== value)
-        : [...prevFilter[type], value],
-    }));
+    dispatch({ type: actionTypes.setFilter, payload: { value, type } });
   };
 
   return (
@@ -26,13 +22,13 @@ function Filter({ type, name, onFilter, filters }: Props) {
       <Label htmlFor={name} aria-label={name} />
       <CheckBox
         onChange={handleChange}
-        checked={filters[type].includes(name)}
+        checked={activeFilters[type].includes(name)}
         name={name}
         id={name}
         value={name}
         type="checkbox"
       />
-      <LiText isSelected={filters[type].includes(name)}>{name.toUpperCase()}</LiText>
+      <LiText isSelected={activeFilters[type].includes(name)}>{name.toUpperCase()}</LiText>
     </Li>
   );
 }
