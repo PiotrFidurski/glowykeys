@@ -4,7 +4,7 @@ import Filter from './Filter';
 import { H3, List, Nav, Separator } from './styles';
 
 function Filters() {
-  const { filters } = useProducts();
+  const { filters, activeFilters } = useProducts();
 
   return (
     <Nav aria-label="filter menu">
@@ -15,9 +15,10 @@ function Filters() {
             <Separator />
             <H3>{by.toUpperCase()}</H3>
             <List aria-label={`${by} filter options`} role="list">
-              {options.map((filter) => (
-                <Filter key={filter} name={filter} type={by} />
-              ))}
+              {options.map((filter) => {
+                const isActive = activeFilters[by].includes(filter);
+                return <Filter key={filter} isSelected={isActive} name={filter} type={by} />;
+              })}
             </List>
           </div>
         ))}
