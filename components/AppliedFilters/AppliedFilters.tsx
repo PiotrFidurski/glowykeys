@@ -1,17 +1,14 @@
-import { FilterTypes } from '@components/Filters/types';
+import { useProducts } from '@components/Products/useProducts';
 import { SmallButton } from '@utils/style-utils';
 import * as React from 'react';
 import Cross from '../../public/assets/vector/cross.svg';
 import { Container } from './styles';
 
-interface Props {
-  currentFilters: FilterTypes;
-  setFilters: React.Dispatch<React.SetStateAction<FilterTypes>>;
-}
+function AppliedFilters() {
+  const { activeFilters, setActiveFilters } = useProducts();
 
-function AppliedFilters({ currentFilters, setFilters }: Props) {
   const handleClick = (filter: string, type: string) => {
-    setFilters((prevFilters) => ({
+    setActiveFilters((prevFilters) => ({
       ...prevFilters,
       [type]: (prevFilters[type] as string[]).filter((value: string) => value !== filter),
     }));
@@ -19,7 +16,7 @@ function AppliedFilters({ currentFilters, setFilters }: Props) {
 
   return (
     <Container>
-      {Object.entries<Array<string>>(currentFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
+      {Object.entries<Array<string>>(activeFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
         filters.map((filter) => (
           <SmallButton
             aria-label={`remove ${filter} filter`}
