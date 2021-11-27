@@ -15,7 +15,7 @@ function FilterComponent({ type, name, isSelected }: Props) {
   const handleChange = (e: React.BaseSyntheticEvent) => {
     const { value } = e.target;
 
-    dispatch({ type: actionTypes.setFilter, payload: { value, type } });
+    dispatch({ type: actionTypes.setFilter, payload: { filter: value, type } });
   };
 
   return (
