@@ -1,6 +1,9 @@
+import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
+import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
-import Products from '@components/Products/Products';
+import ProductList from '@components/ProductList/ProductList';
+import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
 import { GetServerSideProps } from 'next';
@@ -25,11 +28,11 @@ function KeyboardsPage({ keyboards }: Props) {
             Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
           </H1>
         </Header>
-        <Products products={keyboards}>
-          <Products.AppliedFilters />
-          <Products.FilterAndSort />
-          <Products.Cards />
-        </Products>
+        <ProductShelfProvider products={keyboards}>
+          <AppliedFilters />
+          <FilterList />
+          <ProductList />
+        </ProductShelfProvider>
         <Footer />
       </Main>
     </>

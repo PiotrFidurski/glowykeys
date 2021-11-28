@@ -1,5 +1,5 @@
-import { actionTypes } from '@components/Products/types';
-import { useDispatch } from '@components/Products/useDispatch';
+import { actionTypes } from '@components/ProductShelf/types';
+import { useDispatch } from '@components/ProductShelf/useDispatch';
 import * as React from 'react';
 import * as S from '../Filter/styles';
 

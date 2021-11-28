@@ -1,6 +1,9 @@
+import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
+import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
-import Products from '@components/Products/Products';
+import ProductList from '@components/ProductList/ProductList';
+import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
 import { GetServerSideProps } from 'next';
@@ -23,11 +26,11 @@ function KeycapsPage({ keycaps }: Props) {
         <Header>
           <H1>Pick the most unique looking keycaps for your keyboards.</H1>
         </Header>
-        <Products products={keycaps}>
-          <Products.AppliedFilters />
-          <Products.FilterAndSort />
-          <Products.Cards />
-        </Products>
+        <ProductShelfProvider products={keycaps}>
+          <AppliedFilters />
+          <FilterList />
+          <ProductList />
+        </ProductShelfProvider>
         <Footer />
       </Main>
     </>

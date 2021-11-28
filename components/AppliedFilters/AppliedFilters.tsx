@@ -1,6 +1,6 @@
-import { actionTypes } from '@components/Products/types';
-import { useDispatch } from '@components/Products/useDispatch';
-import { useProducts } from '@components/Products/useProducts';
+import { actionTypes } from '@components/ProductShelf/types';
+import { useDispatch } from '@components/ProductShelf/useDispatch';
+import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import { SmallButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
@@ -8,7 +8,7 @@ import Cross from '../../public/assets/vector/cross.svg';
 import { Container } from './styles';
 
 function AppliedFilters() {
-  const { activeFilters } = useProducts();
+  const { activeFilters } = useProductShelf();
 
   const dispatch = useDispatch();
 

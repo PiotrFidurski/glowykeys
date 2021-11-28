@@ -1,6 +1,9 @@
+import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
+import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
 import Navbar from '@components/Navbar/Navbar';
-import Products from '@components/Products/Products';
+import ProductList from '@components/ProductList/ProductList';
+import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
 import { GetServerSideProps } from 'next';
@@ -19,11 +22,11 @@ function SwitchesPage({ switches }) {
         <Header>
           <H1>Level up your workflow or gaming with the best mechanical key switches</H1>
         </Header>
-        <Products products={switches}>
-          <Products.AppliedFilters />
-          <Products.FilterAndSort />
-          <Products.Cards />
-        </Products>
+        <ProductShelfProvider products={switches}>
+          <AppliedFilters />
+          <FilterList />
+          <ProductList />
+        </ProductShelfProvider>
         <Footer />
       </Main>
     </>
