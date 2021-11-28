@@ -6,8 +6,11 @@ import { theme } from '@styled/theme';
 import 'index.css';
 import type { AppProps } from 'next/app';
 import NextNprogress from 'nextjs-progressbar';
+import Modal from 'react-modal';
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
+
+Modal.setAppElement('#__next');
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

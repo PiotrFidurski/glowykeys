@@ -49,7 +49,6 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <div id="portal" role="dialog" aria-label="Cart menu" />
           <NextScript />
         </body>
       </Html>

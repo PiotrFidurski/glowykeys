@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardBackdrop = styled.div`
+export const CartOverlay = styled.div`
   position: fixed;
   z-index: 10000;
   height: 100vh;
