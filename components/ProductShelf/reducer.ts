@@ -1,4 +1,4 @@
-import { Action, actionTypes, State } from './types';
+import { Action, actionTypes, Filter, State } from './types';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -11,7 +11,7 @@ export function reducer(state: State, action: Action): State {
       };
     }
     case actionTypes.setFilter: {
-      const { filter, type } = action.payload as { filter: string; type: string };
+      const { filter, type } = action.payload as { filter: string; type: Filter };
 
       const isSelected = state.activeFilters[type].includes(filter);
 
@@ -25,7 +25,7 @@ export function reducer(state: State, action: Action): State {
       };
     }
     case actionTypes.unsetFilter: {
-      const { filter, type } = action.payload as { filter: string; type: string };
+      const { filter, type } = action.payload as { filter: string; type: Filter };
 
       const filterToBeUpdated: Array<string> = state.activeFilters[type];
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StateContext } from './StateContext';
 
-const useProducts = () => {
+const useProductShelf = () => {
   const context = React.useContext(StateContext);
 
   if (!context) throw new Error('You are using ProductListContext outside of ProductListProvider');
@@ -9,4 +9,4 @@ const useProducts = () => {
   return context;
 };
 
-export { useProducts };
+export { useProductShelf };

@@ -1,4 +1,3 @@
-import { FilterTypes, SortTypes } from '@components/Filter/types';
 import { Product } from '@utils/types';
 
 export interface Props {
@@ -6,14 +5,20 @@ export interface Props {
   products: Array<Product>;
 }
 
-export interface ProductListComposition {
-  AppliedFilters?: React.FunctionComponent;
-  FilterAndSort?: React.FunctionComponent;
-  Cards?: React.FunctionComponent;
+export type Filter = 'brand' | 'connectivity' | 'color' | 'variant';
+
+export type FiltersType = Record<Filter, Array<string>>;
+
+export interface SortTypes {
+  order: string;
+  type: string;
 }
 
-export interface ListProps {
-  children?: React.ReactNode;
+export interface StateContextProps {
+  products: Array<Product>;
+  filters: FiltersType;
+  sort: SortTypes;
+  activeFilters: FiltersType;
 }
 
 export type Action = { type: string; payload?: unknown };
@@ -28,7 +33,7 @@ export const actionTypes: Record<PossibleTypes, string> = {
 
 export interface State {
   products: Array<Product>;
-  filters: Record<string, Array<string>>;
+  filters: FiltersType;
   sort: SortTypes;
-  activeFilters: FilterTypes;
+  activeFilters: FiltersType;
 }
