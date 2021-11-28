@@ -12,7 +12,7 @@ import { Props } from './types';
 function ProductShelfProvider({ products, children }: Props) {
   const { push, query, pathname } = useRouter();
 
-  const [state, dispatch] = React.useReducer(reducer, { ...initialState({ query, products }), products });
+  const [state, dispatch] = React.useReducer(reducer, { ...initialState({ query, products }) });
 
   React.useEffect(() => {
     push({ pathname, query: { ...state.activeFilters } }, null, { scroll: false, shallow: true });
