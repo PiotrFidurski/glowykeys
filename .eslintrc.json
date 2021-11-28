@@ -51,6 +51,8 @@
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "warn",
+    "react/no-unused-prop-types": 0,
+    "react/require-default-props": 0,
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",

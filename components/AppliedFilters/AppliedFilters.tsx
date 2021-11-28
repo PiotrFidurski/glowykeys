@@ -1,27 +1,28 @@
-import { FilterTypes } from '@components/Filters/types';
+import { actionTypes } from '@components/ProductShelf/types';
+import { useDispatch } from '@components/ProductShelf/useDispatch';
+import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import { SmallButton } from '@utils/style-utils';
+import { motion } from 'framer-motion';
 import * as React from 'react';
 import Cross from '../../public/assets/vector/cross.svg';
 import { Container } from './styles';
 
-interface Props {
-  currentFilters: FilterTypes;
-  setFilters: React.Dispatch<React.SetStateAction<FilterTypes>>;
-}
+function AppliedFilters() {
+  const { activeFilters } = useProductShelf();
 
-function AppliedFilters({ currentFilters, setFilters }: Props) {
+  const dispatch = useDispatch();
+
   const handleClick = (filter: string, type: string) => {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [type]: (prevFilters[type] as string[]).filter((value: string) => value !== filter),
-    }));
+    dispatch({ type: actionTypes.unsetFilter, payload: { filter, type } });
   };
 
   return (
     <Container>
-      {Object.entries<Array<string>>(currentFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
+      {Object.entries<Array<string>>(activeFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
         filters.map((filter) => (
           <SmallButton
+            as={motion.button}
+            layout
             aria-label={`remove ${filter} filter`}
             onClick={() => handleClick(filter, type)}
             key={filter}

@@ -29,7 +29,7 @@ test('when queryParams are "?variants=gaming" it renders only filtered results',
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
-  expect(productList.children).toHaveLength(3);
+  expect(productList.children).toHaveLength(2);
 });
 
 test('when queryParams are "?connectivity=wired" it renders only filtered results', () => {
@@ -45,7 +45,7 @@ test('when queryParams are "?connectivity=wired" it renders only filtered result
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
-  expect(productList.children).toHaveLength(3);
+  expect(productList.children).toHaveLength(2);
 
   jest.restoreAllMocks();
 });

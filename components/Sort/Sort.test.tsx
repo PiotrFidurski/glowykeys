@@ -18,11 +18,11 @@ test('products can be sorted by ascending or descending price', () => {
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
-  expect(productList.children[1]).toHaveTextContent('Magma');
+  expect(productList.children[0]).toHaveTextContent('Magma');
 
   const descendingCheckbox = screen.getByRole('checkbox', { name: /descending/i });
 
   fireEvent.click(descendingCheckbox);
 
-  expect(productList.children[1]).toHaveTextContent('Vulcan Pro');
+  expect(productList.children[0]).toHaveTextContent('Vulcan Pro');
 });
