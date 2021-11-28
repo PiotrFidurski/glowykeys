@@ -1,59 +1,41 @@
 import HomePage from '@pages/index';
 import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { render } from '@utils/test-utils';
+import Modal from 'react-modal';
 import Cart from './Cart';
 
-const portalElement = document.createElement('div');
+const modalRoot = document.createElement('div');
 
-portalElement.setAttribute('id', 'portal');
-portalElement.setAttribute('aria-label', 'Cart menu');
+modalRoot.setAttribute('id', '__next');
 
 beforeEach(() => {
-  document.body.appendChild(portalElement);
+  document.body.appendChild(modalRoot);
+  Modal.setAppElement('#__next');
 });
 
-afterEach(() => {
-  document.body.removeChild(portalElement);
-});
-
-test('it opens cart menu when cart button is clicked', () => {
-  render(<HomePage />, { container: document.querySelector('__next') });
+test('it opens cart menu when open cart button is clicked', () => {
+  render(<HomePage />);
 
   fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
 
   expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
-});
-
-test('it closes cart menu when users clicks outside of cart container', async () => {
-  render(<HomePage />, { container: document.querySelector('__next') });
-
-  fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
-
-  expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
-
-  fireEvent.click(screen.getByLabelText(/close cart/i));
-
-  const cartMenu = screen.getByLabelText(/^Cart menu$/);
-
-  await waitForElementToBeRemoved(cartMenu.firstChild);
-
-  expect(cartMenu.firstChild).toBe(null);
+  expect(screen.getByText(/Subtotal/i)).toBeInTheDocument();
 });
 
 test('it closes cart menu when users clicks close button', async () => {
-  render(<HomePage />, { container: document.querySelector('__next') });
+  render(<HomePage />);
 
   fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
 
   expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
 
-  fireEvent.click(screen.getByRole('button', { name: /close/i }));
+  expect(document.body.className).toBe('ReactModal__Body--open');
 
-  const cartMenu = screen.getByLabelText(/^Cart menu$/);
+  fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
 
-  await waitForElementToBeRemoved(cartMenu.firstChild);
+  await waitForElementToBeRemoved(() => screen.getByText(/Shopping cart/i));
 
-  expect(cartMenu.firstChild).toBe(null);
+  expect(document.body.className).toBe('');
 });
 
 test('cart items quantity can be incremented and decremented', () => {

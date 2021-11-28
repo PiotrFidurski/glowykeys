@@ -10,7 +10,7 @@ import { useCart } from './useCart';
 
 function Cart() {
   const {
-    state: { items },
+    state: { items, open },
     dispatch,
   } = useCart();
 
@@ -20,7 +20,12 @@ function Cart() {
     <Wrapper>
       <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
         <H2>Shopping Cart ({items.length} items)</H2>
-        <RoundButton aria-label="close menu" onClick={() => dispatch({ type: actionTypes.closeMenu })}>
+        <RoundButton
+          aria-expanded={open ? 'true' : 'false'}
+          aria-controls="cart-dialog"
+          aria-label="close menu"
+          onClick={() => dispatch({ type: actionTypes.closeMenu })}
+        >
           <Close width="25" height="25" fill="white" />
         </RoundButton>
       </Header>
