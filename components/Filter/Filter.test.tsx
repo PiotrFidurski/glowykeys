@@ -18,13 +18,13 @@ test('products can be filtered by connectivity or variant', () => {
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
-  expect(productList.children).toHaveLength(5);
+  expect(productList.children).toHaveLength(4);
 
   const wiredFilter = screen.getByRole('checkbox', { name: /wired/i });
 
   fireEvent.click(wiredFilter);
 
-  expect(productList.children).toHaveLength(3);
+  expect(productList.children).toHaveLength(2);
 
   fireEvent.click(wiredFilter);
 
@@ -33,5 +33,5 @@ test('products can be filtered by connectivity or variant', () => {
   fireEvent.click(gamingFilter);
   fireEvent.click(wiredFilter);
 
-  expect(productList.children).toHaveLength(2);
+  expect(productList.children).toHaveLength(1);
 });

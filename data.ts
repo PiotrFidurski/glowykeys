@@ -280,7 +280,7 @@ export const data: Array<Product> = [
   },
   {
     id: v4(),
-    color: 'black',
+    color: 'white',
     qty: 1,
     brand: 'roccat',
     connectivity: 'wireless',

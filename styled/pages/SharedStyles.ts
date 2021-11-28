@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const Main = styled.main`
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
   grid-template-areas:
     'header header header header'
-    'currentFilters currentFilters currentFilters currentFilters'
-    'browse browse browse browse'
+    'products products products products '
     'footer footer footer footer';
 `;
 
@@ -33,39 +32,23 @@ export const H1 = styled.h1`
 
 export const ProductsSection = styled.section`
   display: grid;
-  grid-area: browse;
   max-width: 1440px;
   padding: 1rem 1rem;
   width: 100%;
-  gap: 3rem;
+  grid-area: products;
+  grid-column-gap: 3rem;
+  grid-row-gap: 1rem;
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
+    'currentFilters currentFilters currentFilters currentFilters'
     'filters filters filters filters'
     'items items items items';
 
   @media (min-width: 768px) {
     padding: 1rem 1rem;
-    grid-template-areas: 'filters items items items';
-  }
-`;
-
-export const FilterSection = styled.section`
-  grid-area: filters;
-`;
-
-export const ProductsContainer = styled.section`
-  grid-area: items;
-  display: grid;
-  margin: 0 auto;
-  max-width: 1440px;
-  width: 100%;
-  gap: 2rem;
-  grid-template-columns: minmax(330px, 1fr);
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, minmax(auto, 1fr));
-    grid-template-rows: repeat(3, minmax(200px, 1fr));
-    grid-column-start: 2;
+    grid-template-areas:
+      'currentFilters currentFilters currentFilters currentFilters'
+      'filters items items items';
   }
 `;

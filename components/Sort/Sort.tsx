@@ -1,16 +1,18 @@
-import { SortTypes } from '@components/Filters/types';
+import { actionTypes } from '@components/ProductShelf/types';
+import { useDispatch } from '@components/ProductShelf/useDispatch';
 import * as React from 'react';
-import * as S from '../Filters/styles';
+import * as S from '../Filter/styles';
 
 interface Props {
   name: string;
   isSelected: boolean;
-  onSort: React.Dispatch<React.SetStateAction<SortTypes>>;
 }
 
-function Sort({ name, isSelected, onSort }: Props) {
+function SortComponent({ name, isSelected }: Props) {
+  const dispatch = useDispatch();
+
   const handleChange = (e: React.BaseSyntheticEvent) => {
-    onSort((prevSort) => ({ ...prevSort, order: e.target.value }));
+    dispatch({ type: actionTypes.orderByPrice, payload: e.target.value });
   };
 
   return (
@@ -28,5 +30,7 @@ function Sort({ name, isSelected, onSort }: Props) {
     </S.Li>
   );
 }
+
+const Sort = React.memo(SortComponent);
 
 export default Sort;

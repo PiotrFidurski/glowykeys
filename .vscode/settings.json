@@ -2,7 +2,7 @@
   "files.eol": "\n",
   "editor.formatOnSave": true,
   "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 100,
+  "editor.wordWrapColumn": 90,
   "editor.guides.bracketPairs": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
