@@ -1,65 +1,61 @@
+import { theme } from '@styled/theme';
 import { AnimatePresence, motion } from 'framer-motion';
+import { HTMLMotionComponents } from 'framer-motion/types/render/html/types';
 import * as React from 'react';
-import { createPortal } from 'react-dom';
+import Modal from 'react-modal';
 import { backgroundAnimations, menuAnimations } from './animations';
-import { CardBackdrop, CartDialog } from './styles';
+import { CartDialog, CartOverlay } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
+
+type MotionComponentPropsWithRef = React.ComponentPropsWithRef<'div' & HTMLMotionComponents>;
+
+const customStyles = {
+  content: {
+    padding: '0',
+    margin: '0px',
+    background: theme.background.secondary,
+    border: 0,
+  },
+  overlay: {
+    background: 'rgba(255, 255, 255, 0.2)',
+  },
+};
 
 interface Props {
   cartUi: React.ReactElement;
 }
+
 function CartRoot({ cartUi }: Props) {
   const {
     state: { open },
     dispatch,
   } = useCart();
 
-  const cartContainer = React.useRef<null | HTMLDivElement>(null);
-
-  const [mounted, setIsMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  React.useEffect(() => {
-    const currentElement = document.activeElement as HTMLElement;
-
-    if (open) cartContainer.current.focus();
-
-    return () => {
-      currentElement.focus();
-    };
-  }, [open]);
-
-  const closeCart = (e: React.BaseSyntheticEvent) => {
-    if (!cartContainer.current.contains(e.target)) {
-      dispatch({ type: actionTypes.closeMenu });
-    }
-  };
-
-  return mounted
-    ? createPortal(
-        <AnimatePresence>
-          {open ? (
-            <CardBackdrop as={motion.div} {...backgroundAnimations} aria-label="close cart" onClick={closeCart}>
-              <CartDialog
-                as={motion.div}
-                role="dialog"
-                tabIndex={0}
-                {...menuAnimations}
-                ref={cartContainer}
-                aria-label="cart menu"
-              >
-                {cartUi}
-              </CartDialog>
-            </CardBackdrop>
-          ) : null}
-        </AnimatePresence>,
-        document.getElementById('portal') || document.createElement('div')
-      )
-    : null;
+  return (
+    <AnimatePresence>
+      {open ? (
+        <Modal
+          shouldCloseOnEsc
+          shouldCloseOnOverlayClick
+          onRequestClose={() => dispatch({ type: actionTypes.closeMenu })}
+          isOpen={open}
+          style={customStyles}
+          contentLabel="Shopping Cart"
+          overlayElement={(props: MotionComponentPropsWithRef, contentElement) => (
+            <CartOverlay {...props} as={motion.div} {...backgroundAnimations}>
+              {contentElement}
+            </CartOverlay>
+          )}
+          contentElement={(props: MotionComponentPropsWithRef) => (
+            <CartDialog {...props} as={motion.div} {...menuAnimations} style={{ ...customStyles.content }}>
+              {cartUi}
+            </CartDialog>
+          )}
+        />
+      ) : null}
+    </AnimatePresence>
+  );
 }
 
 export default CartRoot;
