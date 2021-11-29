@@ -1,5 +1,16 @@
 import styled, { css } from 'styled-components';
 
+const HideVisually = css`
+  clip: rect(1px 1px 1px 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+`;
+
 export const ButtonStyles = css`
   position: relative;
   background-color: transparent;
@@ -135,34 +146,13 @@ export const SmallButton = styled.button`
 `;
 
 export const VisuallyHiddenH2 = styled.h2`
-  clip: rect(1px 1px 1px 1px);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  overflow: hidden;
+  ${HideVisually};
 `;
 
 export const VisuallyHiddenSpan = styled.span`
-  clip: rect(1px 1px 1px 1px);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  overflow: hidden;
+  ${HideVisually};
 `;
 
 export const VisuallyHiddenH1 = styled.h1`
-  clip: rect(1px 1px 1px 1px);
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  overflow: hidden;
+  ${HideVisually};
 `;
