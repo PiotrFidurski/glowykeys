@@ -98,9 +98,10 @@ export const SquareButton = styled.button`
 
 export const RoundButton = styled.button<{ transformOn?: boolean }>`
   ${ButtonStyles};
-  border: 0;
   color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
+  position: relative;
+  border: 2px solid ${({ theme: { color } }) => color.primary};
   min-height: 50px;
   height: 100%;
   min-width: 50px;
@@ -145,14 +146,14 @@ export const SmallButton = styled.button`
   }
 `;
 
+export const VisuallyHiddenH1 = styled.h1`
+  ${HideVisually};
+`;
+
 export const VisuallyHiddenH2 = styled.h2`
   ${HideVisually};
 `;
 
 export const VisuallyHiddenSpan = styled.span`
-  ${HideVisually};
-`;
-
-export const VisuallyHiddenH1 = styled.h1`
   ${HideVisually};
 `;

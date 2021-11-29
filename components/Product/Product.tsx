@@ -31,8 +31,8 @@ function Product({ product }: Props) {
         <Paragraph>{product.price.toFixed(2)}$</Paragraph>
       </Heading>
       <SquareButton
-        onClick={() => dispatch({ type: actionTypes.addItem, payload: product })}
         aria-label={`add ${product.name} to cart`}
+        onClick={() => dispatch({ type: actionTypes.addItem, payload: product })}
         type="button"
       >
         Shop now

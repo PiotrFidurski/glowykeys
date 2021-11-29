@@ -68,7 +68,6 @@ function CartItem({ product }: Props) {
       </S.Container>
       <RoundButton
         type="button"
-        aria-controls="remove-item-announcer"
         aria-label={`remove ${product.name} from cart`}
         onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
       >
