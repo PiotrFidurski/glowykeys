@@ -6,7 +6,7 @@ export const Main = styled.main`
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   grid-template-areas:
     'header header header header'
-    'products products products products '
+    'products products products products'
     'footer footer footer footer';
 `;
 
