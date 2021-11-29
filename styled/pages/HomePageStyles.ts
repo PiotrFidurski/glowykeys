@@ -92,6 +92,10 @@ export const H2 = styled.h2`
   font-size: clamp(1.5rem, 2vw, 3rem);
 `;
 
+export const H3 = styled.h3`
+  font-size: clamp(1.5rem, 2vw, 3rem);
+`;
+
 export const ProductCategorySection = styled.section`
   grid-area: categories;
   max-width: 1440px;

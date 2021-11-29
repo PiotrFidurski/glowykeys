@@ -2,9 +2,9 @@ describe('Cart tests', () => {
   it('can properly close', () => {
     cy.visit('/keyboards');
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
-    cy.findByRole('button', { name: /close menu/i }).click();
+    cy.findByRole('button', { name: /close cart/i }).click();
 
     cy.findByRole('heading', { name: /shopping cart with 0 items/i }).should('not.match');
   });
@@ -14,7 +14,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
     cy.findByRole('heading', { name: /shopping cart with 1 items/i });
 
@@ -32,7 +32,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
     cy.findByRole('button', { name: /remove magma from cart/i }).click();
 
@@ -44,7 +44,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
     cy.findByRole('button', { name: /remove one magma from cart/i })
       .click()
@@ -58,7 +58,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
     cy.findByRole('button', { name: /add one more magma to cart/i })
       .click()

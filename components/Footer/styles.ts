@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
   margin-top: 5rem;
 `;
 
-export const FooterWrapper = styled.div`
+export const Container = styled.div`
   padding: 5rem 3rem;
   min-height: 500px;
   max-width: 1700px;
@@ -25,7 +25,7 @@ export const FooterWrapper = styled.div`
   }
 `;
 
-export const ContactUs = styled.section`
+export const ContactUsSection = styled.section`
   grid-area: contact-us;
   max-width: 455px;
 
@@ -83,7 +83,7 @@ export const ContactFormContainer = styled.div`
   }
 `;
 
-export const Help = styled.section`
+export const HelpSection = styled.section`
   grid-area: help;
 
   h2 {
@@ -95,7 +95,7 @@ export const Help = styled.section`
   }
 `;
 
-export const About = styled.section`
+export const AboutSection = styled.section`
   grid-area: about;
 
   h2 {
