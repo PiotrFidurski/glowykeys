@@ -1,7 +1,7 @@
 import KeyboardsPage from '@pages/keyboards';
 import { fireEvent, screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
-import { data } from 'data';
+import { testData } from 'data';
 
 jest.mock('next/router', () => ({
   useRouter() {
@@ -14,7 +14,7 @@ jest.mock('next/router', () => ({
 }));
 
 test('products can be sorted by ascending or descending price', () => {
-  render(<KeyboardsPage keyboards={data} />);
+  render(<KeyboardsPage keyboards={testData} />);
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
