@@ -1,6 +1,7 @@
 describe('HomePage tests', () => {
   it('has a link to "/keyboards"', () => {
     cy.visit('/');
+
     cy.findByRole('link', { name: /go to keyboards page/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/keyboards`);
@@ -8,6 +9,7 @@ describe('HomePage tests', () => {
 
   it('has a link to "/keycaps"', () => {
     cy.visit('/');
+
     cy.findByRole('link', { name: /go to keycaps page/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/keycaps`);
@@ -15,6 +17,7 @@ describe('HomePage tests', () => {
 
   it('has a link to "/switches"', () => {
     cy.visit('/');
+
     cy.findByRole('link', { name: /go to switches page/i }).click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/switches`);
