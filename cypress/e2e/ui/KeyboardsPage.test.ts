@@ -12,7 +12,7 @@ describe('Keyboards page tests', () => {
   });
 
   it('has a filter section that can filter list of products', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -30,7 +30,7 @@ describe('Keyboards page tests', () => {
   });
 
   it('has a remove filter buttons if there are any applied', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -44,7 +44,7 @@ describe('Keyboards page tests', () => {
   });
 
   it('has a sort section that can sort products by price', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
