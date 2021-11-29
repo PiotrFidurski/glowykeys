@@ -29,14 +29,14 @@ function CartItem({ product }: Props) {
       as={motion.article}
       layout
     >
-      <S.Wrapper>
+      <S.Container>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
         </S.ImageWrapper>
-        <S.Details>
+        <S.DetailsContainer>
           <S.A href="/">{product.name}</S.A>
           <S.Paragraph>price: {(product.price * product.qty).toFixed(2)}$</S.Paragraph>
-          <S.Quantity>
+          <S.QuantityContainer>
             <RoundButton
               type="button"
               onClick={() => incrementQty({ dispatch, updates: { items, product } })}
@@ -63,10 +63,9 @@ function CartItem({ product }: Props) {
                 <Minus width="25" height="25" fill="white" />
               )}
             </RoundButton>
-          </S.Quantity>
-        </S.Details>
-      </S.Wrapper>
-
+          </S.QuantityContainer>
+        </S.DetailsContainer>
+      </S.Container>
       <RoundButton
         type="button"
         aria-controls="remove-item-announcer"

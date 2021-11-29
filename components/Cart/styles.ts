@@ -24,7 +24,7 @@ export const CartContent = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const CartContainer = styled.div`
   padding: 1rem;
   color: ${({ theme: { color } }) => color.primary};
 `;

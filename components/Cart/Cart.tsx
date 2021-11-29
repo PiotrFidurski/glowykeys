@@ -4,7 +4,7 @@ import { RoundButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
-import { CheckoutContainer, H2, Header, HR, ItemListContainer, Paragraph, Wrapper } from './styles';
+import { CartContainer, CheckoutContainer, H2, Header, HR, ItemListContainer, Paragraph } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -17,7 +17,7 @@ function Cart() {
   const subtotal = getSubTotalPrice(items);
 
   return (
-    <Wrapper>
+    <CartContainer>
       <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
         <H2>Shopping Cart ({items.length} items)</H2>
         <RoundButton
@@ -42,7 +42,7 @@ function Cart() {
       <VisuallyHiddenSpan id="remove-item-announcer" aria-live={open ? 'assertive' : 'off'} aria-atomic="true">
         Removed, your shopping cart now has {items.length} items.
       </VisuallyHiddenSpan>
-    </Wrapper>
+    </CartContainer>
   );
 }
 
