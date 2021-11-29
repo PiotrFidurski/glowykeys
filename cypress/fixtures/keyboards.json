@@ -1,0 +1,151 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "color": "black",
+      "qty": 1,
+      "brand": "YKB",
+      "connectivity": "wired",
+      "type": "Keyboard",
+      "variant": "casual",
+      "price": 499.99,
+      "name": "YKB 3600",
+      "image": {
+        "placeholder": "/assets/images/ykb_3600_black.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/ykb_3600_black.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 2,
+      "color": "black",
+      "qty": 1,
+      "brand": "Gigabyte",
+      "connectivity": "wired",
+      "type": "Keyboard",
+      "variant": "casual",
+      "price": 169.99,
+      "name": "Gigabyte Force k81",
+      "image": {
+        "placeholder": "/assets/images/gigabyte_force_k81.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/gigabyte_force_k81.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 3,
+      "color": "black",
+      "qty": 1,
+      "brand": "Redragon",
+      "connectivity": "wired",
+      "type": "Keyboard",
+      "variant": "gaming",
+      "price": 99.99,
+      "name": "Redragon Devarajas 3600",
+      "image": {
+        "placeholder": "/assets/images/redragon_devarajas.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/redragon_devarajas.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 4,
+      "color": "black",
+      "qty": 1,
+      "brand": "roccat",
+      "connectivity": "wired",
+      "type": "Keyboard",
+      "variant": "casual",
+      "price": 199.99,
+      "name": "Vulcan Pro",
+      "image": {
+        "placeholder": "/assets/images/roccat_vulcan_pro.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/roccat_vulcan_pro.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 5,
+      "color": "black",
+      "qty": 1,
+      "brand": "roccat",
+      "connectivity": "wired",
+      "type": "Keyboard",
+      "variant": "gaming",
+      "price": 59.99,
+      "name": "Magma",
+      "image": {
+        "placeholder": "/assets/images/roccat_magma.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/roccat_magma.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 6,
+      "color": "black",
+      "qty": 1,
+      "brand": "roccat",
+      "connectivity": "wireless",
+      "type": "Keyboard",
+      "variant": "casual",
+      "price": 99.99,
+      "name": "Pyro",
+      "image": {
+        "placeholder": "/assets/images/roccat_pyro.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/roccat_pyro.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    },
+    {
+      "id": 7,
+      "color": "white",
+      "qty": 1,
+      "brand": "roccat",
+      "connectivity": "wireless",
+      "type": "Keyboard",
+      "variant": "gaming",
+      "price": 159.99,
+      "name": "Vulcan 122 AIMO",
+      "image": {
+        "placeholder": "/assets/images/roccat_vulcan_122_aimo.png",
+        "original": "https://cdn.shopify.com/s/files/1/0505/5912/3609/products/pdp_gallery_03_d0a9da7c-7102-477e-a401-f9cac8258a66_1200x@2x.png?v=1615353477",
+        "thumbnail": "/assets/images/roccat_vulcan_122_aimo.png"
+      },
+      "description": [
+        "Award Winning Design",
+        "100 million keystroke life-cycle",
+        "32-bit ARM Cortex-M0 based processor"
+      ]
+    }
+  ]
+}
