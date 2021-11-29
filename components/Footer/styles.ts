@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
   margin-top: 5rem;
 `;
 
-export const FooterWrapper = styled.div`
+export const Container = styled.div`
   padding: 5rem 3rem;
   min-height: 500px;
   max-width: 1700px;

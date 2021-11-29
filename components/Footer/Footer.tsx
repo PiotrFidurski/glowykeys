@@ -9,8 +9,8 @@ import * as S from './styles';
 function Footer() {
   return (
     <S.StyledFooter>
-      <S.FooterWrapper>
-        <S.ContactUs aria-label="contact us" role="region">
+      <S.Container>
+        <S.ContactUsSection aria-label="contact us" role="region">
           <h2>Contact Us</h2>
           <p>
             Here at Glowykeys it&apos;s all about keyboards and keyboard things. We share the same passion that you do,
@@ -27,8 +27,8 @@ function Footer() {
               <span>contact</span>
             </S.Button>
           </S.ContactFormContainer>
-        </S.ContactUs>
-        <S.Help role="region" aria-label="Customer Service">
+        </S.ContactUsSection>
+        <S.HelpSection role="region" aria-label="Customer Service">
           <VisuallyHiddenH2>Help</VisuallyHiddenH2>
           <S.Nav>
             <h3>Customer Service</h3>
@@ -37,8 +37,8 @@ function Footer() {
             <S.A href="/">My Account</S.A>
             <S.A href="/">Contact Us</S.A>
           </S.Nav>
-        </S.Help>
-        <S.About role="region" aria-label="About">
+        </S.HelpSection>
+        <S.AboutSection role="region" aria-label="About">
           <VisuallyHiddenH2>Other Links</VisuallyHiddenH2>
           <S.Nav>
             <h3>About</h3>
@@ -47,8 +47,8 @@ function Footer() {
             <S.A href="/">Products</S.A>
             <S.A href="/">Technology</S.A>
           </S.Nav>
-        </S.About>
-      </S.FooterWrapper>
+        </S.AboutSection>
+      </S.Container>
     </S.StyledFooter>
   );
 }

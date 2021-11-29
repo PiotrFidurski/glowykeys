@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FilterContainer = styled.div`
+export const Container = styled.div`
   grid-area: filters;
 `;
 
