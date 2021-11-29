@@ -42,11 +42,7 @@ export const switchesData: Array<Product> = [
     name: 'Gateron - Pink',
     price: 139.9,
     image: {
-<<<<<<< HEAD
       placeholder: '/assets/images/idobao_gateron_pink_switch.png',
-=======
-      placeholder: '/assets/images/idobao_gateron_pink_switch.pngg',
->>>>>>> b765d26... fix: use the same image as placeholder in products
       original: '',
       thumbnail: '/assets/images/idobao_gateron_pink_switch.png',
     },
