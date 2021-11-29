@@ -1,6 +1,7 @@
+import { ItemsAmountContainer } from '@components/Cart/styles';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { RoundButton } from '@utils/style-utils';
+import { RoundButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
@@ -9,6 +10,9 @@ import { Header, Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles
 
 function Navbar() {
   const { dispatch } = useCart();
+  const {
+    state: { items },
+  } = useCart();
   return (
     <Header>
       <Nav>
@@ -29,12 +33,12 @@ function Navbar() {
             </Link>
           </Li>
           <Li>
-            <RoundButton
-              aria-label="open cart menu"
-              onClick={() => dispatch({ type: actionTypes.openMenu })}
-              type="button"
-            >
+            <RoundButton aria-label="open cart" onClick={() => dispatch({ type: actionTypes.openMenu })} type="button">
               <Cart fill="white" width="25" height="25" />
+              {items.length > 0 ? <ItemsAmountContainer>{items.length}</ItemsAmountContainer> : null}
+              <VisuallyHiddenSpan aria-atomic="true" aria-live="polite">
+                Your cart has {items.length} items
+              </VisuallyHiddenSpan>
             </RoundButton>
           </Li>
         </Ul>

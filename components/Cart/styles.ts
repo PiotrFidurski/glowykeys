@@ -9,7 +9,7 @@ export const CartOverlay = styled.div`
   inset: 0;
 `;
 
-export const CartDialog = styled.div`
+export const CartContent = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -24,7 +24,7 @@ export const CartDialog = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const CartContainer = styled.div`
   padding: 1rem;
   color: ${({ theme: { color } }) => color.primary};
 `;
@@ -36,7 +36,7 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
-export const ItemsSection = styled.section`
+export const ItemListContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -44,7 +44,7 @@ export const ItemsSection = styled.section`
   padding-bottom: 2rem;
 `;
 
-export const CheckoutSection = styled.section`
+export const CheckoutContainer = styled.div`
   display: flex;
   text-align: end;
   flex-direction: column;
@@ -60,4 +60,20 @@ export const Paragraph = styled.p`
 
 export const HR = styled.hr`
   width: 100%;
+`;
+
+export const ItemsAmountContainer = styled.div`
+  width: 24px;
+  background: ${({ theme: { color } }) => color.highlight};
+  border-radius: 9999px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: -6px;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  right: -6px;
+  box-shadow: 0px 0px 2px 4px black;
 `;

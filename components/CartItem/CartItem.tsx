@@ -22,15 +22,21 @@ function CartItem({ product }: Props) {
   } = useCart();
 
   return (
-    <S.Article aria-label={`${product.name} cart item`} role="article" as={motion.article} layout>
-      <S.Wrapper>
+    <S.Article
+      id={`${product.name} article`}
+      aria-label={`${product.name} cart item`}
+      role="article"
+      as={motion.article}
+      layout
+    >
+      <S.Container>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
         </S.ImageWrapper>
-        <S.Details>
+        <S.DetailsContainer>
           <S.A href="/">{product.name}</S.A>
           <S.Paragraph>price: {(product.price * product.qty).toFixed(2)}$</S.Paragraph>
-          <S.Quantity>
+          <S.QuantityContainer>
             <RoundButton
               type="button"
               onClick={() => incrementQty({ dispatch, updates: { items, product } })}
@@ -57,9 +63,9 @@ function CartItem({ product }: Props) {
                 <Minus width="25" height="25" fill="white" />
               )}
             </RoundButton>
-          </S.Quantity>
-        </S.Details>
-      </S.Wrapper>
+          </S.QuantityContainer>
+        </S.DetailsContainer>
+      </S.Container>
       <RoundButton
         type="button"
         aria-label={`remove ${product.name} from cart`}

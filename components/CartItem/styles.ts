@@ -7,7 +7,7 @@ export const Article = styled.article`
   align-items: flex-start;
 `;
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
@@ -29,11 +29,11 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const Details = styled.div`
+export const DetailsContainer = styled.div`
   margin-left: 2rem;
 `;
 
-export const Quantity = styled.div`
+export const QuantityContainer = styled.div`
   display: flex;
   max-width: 200px;
   width: 100%;

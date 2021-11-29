@@ -26,19 +26,19 @@ function HomePage() {
           <S.Nav>
             <Link href="/keyboards" passHref>
               <S.KeyboardsCategory aria-label="go to keyboards page">
-                <S.H2>Keyboards</S.H2>
+                <S.H3>Keyboards</S.H3>
                 <KeyboardIcon fill="white" width="150" height="150" />
               </S.KeyboardsCategory>
             </Link>
             <Link href="/keycaps" passHref>
               <S.KeyCapsCategory aria-label="go to keycaps page">
-                <S.H2>Keycaps</S.H2>
+                <S.H3>Keycaps</S.H3>
                 <KeycapIcon fill="white" width="150" height="150" />
               </S.KeyCapsCategory>
             </Link>
             <Link href="/switches" passHref>
               <S.SwitchesCategory aria-label="go to switches page">
-                <S.H2>Switches</S.H2>
+                <S.H3>Switches</S.H3>
                 <SwitchIcon fill="white" width="150" height="150" />
               </S.SwitchesCategory>
             </Link>
@@ -46,6 +46,7 @@ function HomePage() {
           <S.Hr />
         </S.ProductCategorySection>
         <S.PopularSection aria-label="popular section" role="region">
+          <VisuallyHiddenH2>Popular products</VisuallyHiddenH2>
           <S.PopularKeycaps href="/">
             <p>Popular</p>
             <p>Keycaps</p>
@@ -76,7 +77,6 @@ function HomePage() {
             </S.GamingKeyboards>
           </Link>
           <S.SwitchesImage href="/" aria-label="keycaps">
-            <VisuallyHiddenH2>keycaps</VisuallyHiddenH2>
             <ImageWrapper>
               <Image
                 src="/assets/images/keycaps-black.png"
