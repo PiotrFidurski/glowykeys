@@ -29,11 +29,7 @@ function Navbar() {
             </Link>
           </Li>
           <Li>
-            <RoundButton
-              aria-label="open cart menu"
-              onClick={() => dispatch({ type: actionTypes.openMenu })}
-              type="button"
-            >
+            <RoundButton aria-label="open cart" onClick={() => dispatch({ type: actionTypes.openMenu })} type="button">
               <Cart fill="white" width="25" height="25" />
             </RoundButton>
           </Li>

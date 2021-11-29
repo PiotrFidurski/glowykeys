@@ -48,7 +48,13 @@ function CartRoot({ cartUi }: Props) {
             </CartOverlay>
           )}
           contentElement={(props: MotionComponentPropsWithRef) => (
-            <CartContent {...props} as={motion.div} {...menuAnimations} style={{ ...customStyles.content }}>
+            <CartContent
+              {...props}
+              as={motion.div}
+              {...menuAnimations}
+              style={{ ...customStyles.content }}
+              id="cart-dialog"
+            >
               {cartUi}
             </CartContent>
           )}

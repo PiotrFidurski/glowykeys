@@ -145,6 +145,17 @@ export const VisuallyHiddenH2 = styled.h2`
   overflow: hidden;
 `;
 
+export const VisuallyHiddenSpan = styled.span`
+  clip: rect(1px 1px 1px 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+`;
+
 export const VisuallyHiddenH1 = styled.h1`
   clip: rect(1px 1px 1px 1px);
   position: absolute;

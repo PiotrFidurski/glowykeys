@@ -1,6 +1,6 @@
 import CartItem from '@components/CartItem/CartItem';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
-import { RoundButton } from '@utils/style-utils';
+import { RoundButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
@@ -23,7 +23,7 @@ function Cart() {
         <RoundButton
           aria-expanded={open ? 'true' : 'false'}
           aria-controls="cart-dialog"
-          aria-label="close menu"
+          aria-label="close cart"
           onClick={() => dispatch({ type: actionTypes.closeMenu })}
         >
           <Close width="25" height="25" fill="white" />
@@ -39,6 +39,9 @@ function Cart() {
         <Paragraph>Subtotal $ {subtotal.toFixed(2)}</Paragraph>
         <HR />
       </CheckoutContainer>
+      <VisuallyHiddenSpan id="remove-item-announcer" aria-live={open ? 'assertive' : 'off'} aria-atomic="true">
+        Removed, your shopping cart now has {items.length} items.
+      </VisuallyHiddenSpan>
     </Wrapper>
   );
 }
