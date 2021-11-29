@@ -20,11 +20,11 @@ describe('Keyboards page tests', () => {
 
     cy.url().should('equal', `${Cypress.config().baseUrl}/keyboards?connectivity=wired`);
 
-    cy.get('@productList').children().should('have.length', 2);
+    cy.get('@productList').children().should('have.length', 5);
 
     cy.findByRole('checkbox', { name: /casual/i }).click();
 
-    cy.get('@productList').children().should('have.length', 1);
+    cy.get('@productList').children().should('have.length', 3);
 
     cy.url().should('equal', `${Cypress.config().baseUrl}/keyboards?variant=casual&connectivity=wired`);
   });
@@ -36,11 +36,11 @@ describe('Keyboards page tests', () => {
 
     cy.findByRole('checkbox', { name: /wired/i }).click();
 
-    cy.get('@productList').children().should('have.length', 2);
+    cy.get('@productList').children().should('have.length', 5);
 
     cy.findByRole('button', { name: /wired filter/i }).click();
 
-    cy.get('@productList').children().should('have.length', 4);
+    cy.get('@productList').children().should('have.length', 7);
   });
 
   it('has a sort section that can sort products by price', () => {
@@ -58,7 +58,7 @@ describe('Keyboards page tests', () => {
 
     cy.should('be.checked');
 
-    cy.get('@productList').children().eq(0).should('contain.text', '199.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', '499.99$');
 
     cy.get('@ascendingCheckbox').click();
 

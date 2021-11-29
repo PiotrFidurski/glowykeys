@@ -1,4 +1,4 @@
-import { data } from 'data';
+import { keyboardsData as data } from 'data';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
