@@ -5,7 +5,7 @@ import { SmallButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Cross from '../../public/assets/vector/cross.svg';
-import { Container } from './styles';
+import { AppliedFiltersContainer } from './styles';
 
 function AppliedFilters() {
   const { activeFilters } = useProductShelf();
@@ -17,7 +17,7 @@ function AppliedFilters() {
   };
 
   return (
-    <Container>
+    <AppliedFiltersContainer>
       {Object.entries<Array<string>>(activeFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
         filters.map((filter) => (
           <SmallButton
@@ -32,7 +32,7 @@ function AppliedFilters() {
           </SmallButton>
         ))
       )}
-    </Container>
+    </AppliedFiltersContainer>
   );
 }
 
