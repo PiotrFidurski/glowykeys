@@ -32,7 +32,7 @@ export const Paragraph = styled.p`
   line-height: 1.7rem;
 `;
 
-export const ProductImageWrapper = styled.div`
+export const ProductImageContainer = styled.div`
   width: 100%;
   height: 100%;
   background: ${({ theme: { background } }) => background.card};

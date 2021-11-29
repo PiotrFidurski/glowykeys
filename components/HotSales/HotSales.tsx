@@ -7,7 +7,7 @@ function HotSales() {
   return (
     <S.PreviewSection role="region" aria-label="hot sales product preview">
       <VisuallyHiddenH1>Hot Sales Product Preview</VisuallyHiddenH1>
-      <S.Preview>
+      <S.Container>
         <ImageWrapper>
           <Image
             src="/assets/images/saviotempest.png"
@@ -29,25 +29,25 @@ function HotSales() {
             NEXT
           </button>
         </S.ButtonContainer>
-      </S.Preview>
-      <S.HotSales role="region" aria-label="hot sales">
+      </S.Container>
+      <S.HotSalesSection role="region" aria-label="hot sales">
         <h2>HOT SALES</h2>
         <p>Cooler Master sk620 might be the option you’re looking for.</p>
-        <S.BuyNowWrapper>
+        <S.BuyNowContainer>
           <p>299.99$</p>
           <button type="button">BUY NOW</button>
-        </S.BuyNowWrapper>
-      </S.HotSales>
-      <S.Customers role="region" aria-label="customers">
+        </S.BuyNowContainer>
+      </S.HotSalesSection>
+      <S.CustomersSection role="region" aria-label="customers">
         <h2>356</h2>
         <p>customers</p>
-      </S.Customers>
-      <S.Description>
+      </S.CustomersSection>
+      <S.DescriptionContainer>
         <p>
           For typing, the sk620 is a dream. Made with the typing experience in mind, this keyboard offers satisfying
           sound, feel, and aesthetics.
         </p>
-      </S.Description>
+      </S.DescriptionContainer>
     </S.PreviewSection>
   );
 }

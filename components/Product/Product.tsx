@@ -5,7 +5,7 @@ import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
-import { Article, H2, Heading, Paragraph, ProductImageWrapper } from './styles';
+import { Article, H2, Heading, Paragraph, ProductImageContainer } from './styles';
 
 interface Props {
   product: ProductType & { image: { original: string; thumbnail: string; placeholder?: string } };
@@ -16,7 +16,7 @@ function Product({ product }: Props) {
 
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
-      <ProductImageWrapper>
+      <ProductImageContainer>
         <Image
           src={product.image.thumbnail}
           loading="lazy"
@@ -25,7 +25,7 @@ function Product({ product }: Props) {
           objectFit="contain"
           layout="fill"
         />
-      </ProductImageWrapper>
+      </ProductImageContainer>
       <Heading>
         <H2>{product.name}</H2>
         <Paragraph>{product.price.toFixed(2)}$</Paragraph>

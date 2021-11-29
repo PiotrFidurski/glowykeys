@@ -32,7 +32,7 @@ export const PreviewSection = styled.section`
   }
 `;
 
-export const Preview = styled.div`
+export const Container = styled.div`
   grid-area: image;
   padding: 1rem;
   display: flex;
@@ -44,7 +44,7 @@ export const Preview = styled.div`
   background: ${({ theme: { background } }) => background.card};
 `;
 
-export const HotSales = styled.section`
+export const HotSalesSection = styled.section`
   padding: 2rem;
   grid-area: hot-sales;
   height: 100%;
@@ -60,7 +60,7 @@ export const HotSales = styled.section`
   }
 `;
 
-export const BuyNowWrapper = styled.div`
+export const BuyNowContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -85,7 +85,7 @@ export const BuyNowWrapper = styled.div`
   }
 `;
 
-export const Customers = styled.section`
+export const CustomersSection = styled.section`
   grid-area: customers;
   text-align: center;
   display: flex;
@@ -106,7 +106,7 @@ export const Customers = styled.section`
   }
 `;
 
-export const Description = styled.div`
+export const DescriptionContainer = styled.div`
   grid-area: description;
   padding: 2rem;
   height: 100%;
