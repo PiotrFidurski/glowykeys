@@ -6,7 +6,7 @@ describe('Keyboards page tests', () => {
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
-    cy.findByRole('button', { name: /open cart menu/i }).click();
+    cy.findByRole('button', { name: /open cart/i }).click();
 
     cy.findByRole('article', { name: /cart item/i });
   });
