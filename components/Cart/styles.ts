@@ -61,3 +61,19 @@ export const Paragraph = styled.p`
 export const HR = styled.hr`
   width: 100%;
 `;
+
+export const ItemsAmountContainer = styled.div`
+  width: 24px;
+  background: ${({ theme: { color } }) => color.highlight};
+  border-radius: 9999px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: -6px;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  right: -6px;
+  box-shadow: 0px 0px 2px 4px black;
+`;
