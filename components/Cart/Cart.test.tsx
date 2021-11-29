@@ -16,24 +16,23 @@ beforeEach(() => {
 test('it opens cart menu when open cart button is clicked', () => {
   render(<HomePage />);
 
-  fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
+  fireEvent.click(screen.getByRole('button', { name: /open cart/i }));
 
-  expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
   expect(screen.getByText(/Subtotal/i)).toBeInTheDocument();
 });
 
 test('it closes cart menu when users clicks close button', async () => {
   render(<HomePage />);
 
-  fireEvent.click(screen.getByRole('button', { name: /open cart menu/ }));
+  fireEvent.click(screen.getByRole('button', { name: /open cart/ }));
 
-  expect(screen.getByText(/Shopping cart/i)).toBeInTheDocument();
+  expect(screen.getByText(/Subtotal/i)).toBeInTheDocument();
 
   expect(document.body.className).toBe('ReactModal__Body--open');
 
-  fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
+  fireEvent.click(screen.getByRole('button', { name: /close cart/i }));
 
-  await waitForElementToBeRemoved(() => screen.getByText(/Shopping cart/i));
+  await waitForElementToBeRemoved(() => screen.getByText(/Subtotal/i));
 
   expect(document.body.className).toBe('');
 });
