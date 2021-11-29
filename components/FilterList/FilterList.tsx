@@ -8,7 +8,7 @@ function FilterList() {
   const { filters, activeFilters, sort } = useProductShelf();
 
   return (
-    <S.FilterContainer aria-label="product filters" role="region">
+    <S.FilterContainer>
       <S.Nav aria-label="filter menu">
         {Object.entries(filters)
           .filter(([, value]) => value.length)

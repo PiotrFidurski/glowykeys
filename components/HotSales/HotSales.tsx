@@ -1,4 +1,4 @@
-import { ImageWrapper, VisuallyHiddenH2 } from '@utils/style-utils';
+import { ImageWrapper, VisuallyHiddenH1 } from '@utils/style-utils';
 import Image from 'next/image';
 import * as React from 'react';
 import * as S from './styles';
@@ -6,7 +6,7 @@ import * as S from './styles';
 function HotSales() {
   return (
     <S.PreviewSection role="region" aria-label="hot sales product preview">
-      <VisuallyHiddenH2>Hot Sales Product Preview</VisuallyHiddenH2>
+      <VisuallyHiddenH1>Hot Sales Product Preview</VisuallyHiddenH1>
       <S.Preview>
         <ImageWrapper>
           <Image
@@ -39,7 +39,7 @@ function HotSales() {
         </S.BuyNowWrapper>
       </S.HotSales>
       <S.Customers role="region" aria-label="customers">
-        <h1>356</h1>
+        <h2>356</h2>
         <p>customers</p>
       </S.Customers>
       <S.Description>

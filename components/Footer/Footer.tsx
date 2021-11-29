@@ -31,7 +31,7 @@ function Footer() {
         <S.Help role="region" aria-label="Customer Service">
           <VisuallyHiddenH2>Help</VisuallyHiddenH2>
           <S.Nav>
-            <h2>Customer Service</h2>
+            <h3>Customer Service</h3>
             <S.A href="/">Frequently Asked Questions</S.A>
             <S.A href="/">Reviews</S.A>
             <S.A href="/">My Account</S.A>
@@ -41,7 +41,7 @@ function Footer() {
         <S.About role="region" aria-label="About">
           <VisuallyHiddenH2>Other Links</VisuallyHiddenH2>
           <S.Nav>
-            <h2>About</h2>
+            <h3>About</h3>
             <S.A href="/">Press</S.A>
             <S.A href="/">Our Story</S.A>
             <S.A href="/">Products</S.A>

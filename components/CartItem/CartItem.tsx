@@ -22,7 +22,13 @@ function CartItem({ product }: Props) {
   } = useCart();
 
   return (
-    <S.Article aria-label={`${product.name} cart item`} role="article" as={motion.article} layout>
+    <S.Article
+      id={`${product.name} article`}
+      aria-label={`${product.name} cart item`}
+      role="article"
+      as={motion.article}
+      layout
+    >
       <S.Wrapper>
         <S.ImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
@@ -60,6 +66,7 @@ function CartItem({ product }: Props) {
           </S.Quantity>
         </S.Details>
       </S.Wrapper>
+
       <RoundButton
         type="button"
         aria-label={`remove ${product.name} from cart`}

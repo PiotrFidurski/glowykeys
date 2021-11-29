@@ -88,12 +88,16 @@ export const BuyNowWrapper = styled.div`
 export const Customers = styled.section`
   grid-area: customers;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+  justify-content: center;
   height: 100%;
   background: ${({ theme: { background } }) => background.card};
 
-  h1 {
+  h2 {
     font-size: 3rem;
+    margin: 0;
     color: ${({ theme: { color } }) => color.highlight};
   }
 
