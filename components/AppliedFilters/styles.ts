@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const AppliedFiltersContainer = styled.div`
   max-width: 1440px;
   padding: 1rem 0 0 1rem;
   display: flex;

@@ -9,7 +9,7 @@ export const CartOverlay = styled.div`
   inset: 0;
 `;
 
-export const CartDialog = styled.div`
+export const CartContent = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -36,7 +36,7 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
-export const ItemsSection = styled.section`
+export const ItemListContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -44,7 +44,7 @@ export const ItemsSection = styled.section`
   padding-bottom: 2rem;
 `;
 
-export const CheckoutSection = styled.section`
+export const CheckoutContainer = styled.div`
   display: flex;
   text-align: end;
   flex-direction: column;

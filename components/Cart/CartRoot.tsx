@@ -4,7 +4,7 @@ import { HTMLMotionComponents } from 'framer-motion/types/render/html/types';
 import * as React from 'react';
 import Modal from 'react-modal';
 import { backgroundAnimations, menuAnimations } from './animations';
-import { CartDialog, CartOverlay } from './styles';
+import { CartContent, CartOverlay } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -48,9 +48,9 @@ function CartRoot({ cartUi }: Props) {
             </CartOverlay>
           )}
           contentElement={(props: MotionComponentPropsWithRef) => (
-            <CartDialog {...props} as={motion.div} {...menuAnimations} style={{ ...customStyles.content }}>
+            <CartContent {...props} as={motion.div} {...menuAnimations} style={{ ...customStyles.content }}>
               {cartUi}
-            </CartDialog>
+            </CartContent>
           )}
         />
       ) : null}
