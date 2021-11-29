@@ -1,7 +1,7 @@
 import KeyboardsPage from '@pages/keyboards';
 import { screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
-import { data } from 'data';
+import { testData } from 'data';
 
 jest.mock('next/router', () => ({
   useRouter() {
@@ -25,7 +25,7 @@ test('when queryParams are "?variants=gaming" it renders only filtered results',
     push: jest.fn(),
   }));
 
-  render(<KeyboardsPage keyboards={data} />);
+  render(<KeyboardsPage keyboards={testData} />);
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
@@ -41,7 +41,7 @@ test('when queryParams are "?connectivity=wired" it renders only filtered result
     push: jest.fn(),
   }));
 
-  render(<KeyboardsPage keyboards={data} />);
+  render(<KeyboardsPage keyboards={testData} />);
 
   const productList = screen.getByRole('region', { name: /list of products/i });
 
