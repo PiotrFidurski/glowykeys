@@ -6,8 +6,8 @@ declare namespace Cypress {
      * Custom command to intercept a request and search
      * @params {string} url
      * @params {string} type
-     * @params {string} fixture
-     * @example cy.visitAndControlNextData({url:"/keyboards", type:'keyboards'})
+     * @params {string} fixture - string representing json file in fixtures folder e.g 'keycaps.json'
+     * @example cy.visitAndControlNextData({url:"/keyboards", type:'keyboards', fixture: 'keyboards.json'})
      */
     visitAndControlNextData({
       url,
