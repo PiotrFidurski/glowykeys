@@ -352,7 +352,7 @@ export const keyboardsData: Array<Product> = [
   },
 ];
 
-export const data: Array<Product> = [
+export const testData: Array<Product> = [
   {
     id: v4(),
     color: 'black',
