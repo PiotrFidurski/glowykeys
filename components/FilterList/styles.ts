@@ -1,7 +1,29 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const StickyContainer = styled.div`
+  position: sticky;
+  top: 70px;
+  background: rgba(0 0 0 / 80%);
+  color: white;
   grid-area: filters;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 100;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+  width: 100%;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Container = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    grid-area: filters;
+    display: block;
+  }
 `;
 
 export const Nav = styled.nav`
