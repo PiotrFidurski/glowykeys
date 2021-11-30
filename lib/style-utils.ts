@@ -101,7 +101,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
   position: relative;
-  border: 2px solid ${({ theme: { color } }) => color.primary};
+  border-color: transparent;
   min-height: 50px;
   height: 100%;
   min-width: 50px;
