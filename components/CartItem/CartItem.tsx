@@ -22,58 +22,63 @@ function CartItem({ product }: Props) {
   } = useCart();
 
   return (
-    <S.Article
-      id={`${product.name} article`}
-      aria-label={`${product.name} cart item`}
-      role="article"
-      as={motion.article}
-      layout
-    >
-      <S.Container>
-        <S.ImageWrapper>
-          <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
-        </S.ImageWrapper>
-        <S.DetailsContainer>
-          <S.A href="/">{product.name}</S.A>
-          <S.Paragraph>price: {(product.price * product.qty).toFixed(2)}$</S.Paragraph>
-          <S.QuantityContainer>
-            <RoundButton
-              type="button"
-              onClick={() => incrementQty({ dispatch, updates: { items, product } })}
-              aria-label={`add one more ${product.name} to cart`}
-            >
-              <Plus width="20" height="20" fill="white" />
-            </RoundButton>
-            <S.QTY aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
-            <RoundButton
-              transformOn={product.qty === 0}
-              type="button"
-              onClick={() => {
-                if (product.qty > 0) {
-                  decrementQty({ dispatch, updates: { items, product } });
-                } else {
-                  dispatch({ type: actionTypes.removeItem, payload: product });
-                }
-              }}
-              aria-label={product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`}
-            >
-              {product.qty === 0 ? (
-                <Delete width="20" height="20" fill="white" />
-              ) : (
-                <Minus width="20" height="20" fill="white" />
-              )}
-            </RoundButton>
-          </S.QuantityContainer>
-        </S.DetailsContainer>
-      </S.Container>
-      <RoundButton
-        type="button"
-        aria-label={`remove ${product.name} from cart`}
-        onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
+    <>
+      <S.Article
+        id={`${product.name} article`}
+        aria-label={`${product.name} cart item`}
+        role="article"
+        as={motion.article}
+        layout
       >
-        <Delete width="20" height="20" fill="white" />
-      </RoundButton>
-    </S.Article>
+        <S.Container>
+          <S.ImageWrapper>
+            <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
+          </S.ImageWrapper>
+          <S.DetailsContainer>
+            <S.A href="/">{product.name}</S.A>
+            <S.Paragraph>price: {(product.price * product.qty).toFixed(2)}$</S.Paragraph>
+            <S.QuantityContainer>
+              <S.QuantityButton
+                type="button"
+                onClick={() => incrementQty({ dispatch, updates: { items, product } })}
+                aria-label={`add one more ${product.name} to cart`}
+              >
+                <Plus width="20" height="20" fill="white" />
+              </S.QuantityButton>
+              <S.QTY tabIndex={-1} aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
+              <S.QuantityButton
+                reverseBorderRadius
+                transformOn={product.qty === 0}
+                type="button"
+                onClick={() => {
+                  if (product.qty > 0) {
+                    decrementQty({ dispatch, updates: { items, product } });
+                  } else {
+                    dispatch({ type: actionTypes.removeItem, payload: product });
+                  }
+                }}
+                aria-label={
+                  product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`
+                }
+              >
+                {product.qty === 0 ? (
+                  <Delete width="20" height="20" fill="white" />
+                ) : (
+                  <Minus width="20" height="20" fill="white" />
+                )}
+              </S.QuantityButton>
+            </S.QuantityContainer>
+          </S.DetailsContainer>
+        </S.Container>
+        <RoundButton
+          type="button"
+          aria-label={`remove ${product.name} from cart`}
+          onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
+        >
+          <Delete width="20" height="20" fill="white" />
+        </RoundButton>
+      </S.Article>
+    </>
   );
 }
 

@@ -1,3 +1,4 @@
+import { ButtonStyles } from '@utils/style-utils';
 import styled from 'styled-components';
 
 export const Article = styled.article`
@@ -35,6 +36,8 @@ export const DetailsContainer = styled.div`
 
 export const QuantityContainer = styled.div`
   display: flex;
+  border-radius: 9999px;
+  padding-left: 2px;
   max-width: 200px;
   width: 100%;
   align-items: center;
@@ -50,12 +53,36 @@ export const Paragraph = styled.p`
   letter-spacing: 0.2rem;
 `;
 
+export const QuantityButton = styled.button<{ reverseBorderRadius?: boolean; transformOn?: boolean }>`
+  ${ButtonStyles}
+  border-radius: ${({ reverseBorderRadius }) => (reverseBorderRadius ? '0 50% 50% 0' : '50% 0 0 50%;')};
+  min-width: 50px;
+  min-height: 50px;
+  border: 2px solid white;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border: 2px solid ${({ theme: { color } }) => color.highlight};
+    background: ${({ theme: { color } }) => color.accent};
+  }
+`;
+
 export const QTY = styled.input`
   border: 0;
   color: ${({ theme: { color } }) => color.primary};
-  max-width: 30px;
+  max-width: 50px;
+  padding: 0;
+  min-height: 50px;
+  height: 100%;
   background: transparent;
   width: 100%;
   display: flex;
   text-align: center;
+  border-top: 2px solid ${({ theme: { color } }) => color.primary};
+  border-bottom: 2px solid ${({ theme: { color } }) => color.primary};
+
+  &:focus {
+    outline: none;
+  }
 `;
