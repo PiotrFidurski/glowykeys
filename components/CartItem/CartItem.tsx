@@ -42,7 +42,7 @@ function CartItem({ product }: Props) {
               onClick={() => incrementQty({ dispatch, updates: { items, product } })}
               aria-label={`add one more ${product.name} to cart`}
             >
-              <Plus width="25" height="25" fill="white" />
+              <Plus width="20" height="20" fill="white" />
             </RoundButton>
             <S.QTY aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
             <RoundButton
@@ -58,9 +58,9 @@ function CartItem({ product }: Props) {
               aria-label={product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`}
             >
               {product.qty === 0 ? (
-                <Delete width="25" height="25" fill="white" />
+                <Delete width="20" height="20" fill="white" />
               ) : (
-                <Minus width="25" height="25" fill="white" />
+                <Minus width="20" height="20" fill="white" />
               )}
             </RoundButton>
           </S.QuantityContainer>
@@ -71,7 +71,7 @@ function CartItem({ product }: Props) {
         aria-label={`remove ${product.name} from cart`}
         onClick={() => dispatch({ type: actionTypes.removeItem, payload: product })}
       >
-        <Delete width="25" height="25" fill="white" />
+        <Delete width="20" height="20" fill="white" />
       </RoundButton>
     </S.Article>
   );
