@@ -10,7 +10,7 @@ describe('Cart tests', () => {
   });
 
   it('can increment and decrement product quantity', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -28,7 +28,7 @@ describe('Cart tests', () => {
   });
 
   it('can remove items from cart', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -40,7 +40,7 @@ describe('Cart tests', () => {
   });
 
   it('can remove items from cart by pressing decrement button twice', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -54,7 +54,7 @@ describe('Cart tests', () => {
   });
 
   it('proper subtotal value and proper product price when incrementing and decrementing quantity', () => {
-    cy.visit('/keyboards');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
