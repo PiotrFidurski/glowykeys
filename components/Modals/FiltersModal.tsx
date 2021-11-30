@@ -1,19 +1,31 @@
 import Filter from '@components/Filter/Filter';
-import FiltersModal from '@components/Modals/FiltersModal';
+import * as S from '@components/FilterList/styles';
 import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import Sort from '@components/Sort/Sort';
-import { SquareButton } from '@utils/style-utils';
 import * as React from 'react';
-import * as S from './styles';
+import Modal from 'react-modal';
+import { customStyles } from './customStyles';
 
-function FilterList() {
+interface Props {
+  isOpen: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function FiltersModal({ isOpen, setOpen }: Props) {
   const { filters, activeFilters, sort } = useProductShelf();
 
-  const [open, setOpen] = React.useState(false);
-
   return (
-    <>
-      <S.Container>
+    <Modal
+      isOpen={isOpen}
+      style={{
+        ...customStyles,
+        content: { ...customStyles.content, inset: 0 },
+      }}
+      shouldCloseOnEsc
+      shouldCloseOnOverlayClick
+      onRequestClose={() => setOpen(false)}
+    >
+      <div>
         <S.Nav aria-label="filter menu">
           {Object.entries(filters)
             .filter(([, value]) => value.length)
@@ -43,13 +55,9 @@ function FilterList() {
           </S.List>
           <S.Separator />
         </S.Nav>
-      </S.Container>
-      {open ? <FiltersModal setOpen={setOpen} isOpen={open} /> : null}
-      <S.StickyContainer>
-        <SquareButton onClick={() => setOpen(true)}>Product Filters</SquareButton>
-      </S.StickyContainer>
-    </>
+      </div>
+    </Modal>
   );
 }
 
-export default FilterList;
+export default FiltersModal;

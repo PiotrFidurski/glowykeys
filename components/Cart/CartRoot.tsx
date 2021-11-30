@@ -1,4 +1,4 @@
-import { theme } from '@styled/theme';
+import { customStyles } from '@components/Modals/customStyles';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HTMLMotionComponents } from 'framer-motion/types/render/html/types';
 import * as React from 'react';
@@ -9,18 +9,6 @@ import { actionTypes } from './types';
 import { useCart } from './useCart';
 
 type MotionComponentPropsWithRef = React.ComponentPropsWithRef<'div' & HTMLMotionComponents>;
-
-const customStyles = {
-  content: {
-    padding: '0',
-    margin: '0px',
-    background: theme.background.secondary,
-    border: 0,
-  },
-  overlay: {
-    background: 'rgba(255, 255, 255, 0.2)',
-  },
-};
 
 interface Props {
   cartUi: React.ReactElement;
