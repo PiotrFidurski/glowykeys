@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "color": "white",
+      "brand": "HyperX",
+      "type": "Switch",
+      "variant": "HyperX Red",
+      "qty": 1,
+      "name": "Alloy Origins - Red",
+      "price": 39.9,
+      "image": {
+        "placeholder": "/assets/images/hyperx_alloy_origins_red.png",
+        "original": "",
+        "thumbnail": "/assets/images/hyperx_alloy_origins_red.png"
+      }
+    },
+    {
+      "id": 2,
+      "color": "black",
+      "brand": "Idobao",
+      "type": "Switch",
+      "variant": "CherryMx Red",
+      "qty": 1,
+      "name": "Cherry Set",
+      "price": 99.9,
+      "image": {
+        "placeholder": "/assets/images/idobao_cherry_switch.png",
+        "original": "",
+        "thumbnail": "/assets/images/idobao_cherry_switch.png"
+      }
+    },
+    {
+      "id": 3,
+      "color": "white",
+      "brand": "Idobao",
+      "type": "Switch",
+      "variant": "Gateron Pink",
+      "qty": 1,
+      "name": "Gateron - Pink",
+      "price": 139.9,
+      "image": {
+        "placeholder": "/assets/images/idobao_gateron_pink_switch.png",
+        "original": "",
+        "thumbnail": "/assets/images/idobao_gateron_pink_switch.png"
+      }
+    },
+    {
+      "id": 4,
+      "color": "white",
+      "brand": "Kalih",
+      "type": "Switch",
+      "variant": "CherryMx Brown",
+      "qty": 1,
+      "name": "Kalih Brown",
+      "price": 299.9,
+      "image": {
+        "placeholder": "/assets/images/kalih_brown.png",
+        "original": "",
+        "thumbnail": "/assets/images/kalih_brown.png"
+      }
+    },
+    {
+      "id": 5,
+      "color": "white",
+      "brand": "Kalih",
+      "type": "Switch",
+      "variant": "CherryMx Blue",
+      "qty": 1,
+      "name": "Kalih Set",
+      "price": 19.9,
+      "image": {
+        "placeholder": "/assets/images/kalih_switch_set.png",
+        "original": "",
+        "thumbnail": "/assets/images/kalih_switch_set.png"
+      }
+    },
+    {
+      "id": 6,
+      "color": "white",
+      "brand": "Outemu",
+      "type": "Switch",
+      "variant": "Outemu Red",
+      "qty": 1,
+      "name": "Outemu Red",
+      "price": 399.9,
+      "image": {
+        "placeholder": "/assets/images/outemu_red_switch.png",
+        "original": "",
+        "thumbnail": "/assets/images/outemu_red_switch.png"
+      }
+    }
+  ]
+}
