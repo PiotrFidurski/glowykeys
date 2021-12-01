@@ -94,6 +94,21 @@ describe('Product Filters', () => {
 
     cy.get('@productList').children().eq(0).should('contain.text', 'Magma').should('contain.text', '59.99$');
   });
+
+  it('displays filters inside a dialog on smaller screens', () => {
+    cy.viewport('iphone-6');
+    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+
+    cy.findByRole('region', { name: /list of products/i }).as('productList');
+
+    cy.findByRole('button', { name: /open product filters/i }).click();
+
+    cy.findByRole('checkbox', { name: /roccat/i, hidden: true }).click({ force: true });
+
+    cy.findByRole('button', { name: /close filter dialog/i }).click();
+
+    cy.get('@productList').children().should('have.length', 4);
+  });
 });
 
 // eslint-disable-next-line jest/no-export

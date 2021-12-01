@@ -1,6 +1,7 @@
+import KeyboardsPage from '@pages/keyboards';
 import { screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
-import Navbar from './Navbar';
+import { testData } from 'data';
 
 jest.mock('next/link', () => ({ children, href }: React.PropsWithChildren<{ href: string }>) => {
   const React = require('react');
@@ -9,8 +10,29 @@ jest.mock('next/link', () => ({ children, href }: React.PropsWithChildren<{ href
   return clonedChildren;
 });
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '',
+      pathname: '',
+      query: '',
+      asPath: '',
+    };
+  },
+}));
+
+const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+
 test('clicking on logo redirects back to HomePage', () => {
-  render(<Navbar />);
+  useRouter.mockImplementation(() => ({
+    route: '/keyboards',
+    pathname: '/keyboards',
+    query: { variant: ['gaming'] },
+    asPath: '',
+    push: jest.fn(),
+  }));
+
+  render(<KeyboardsPage keyboards={testData} />);
 
   const logoLink = screen.getByText(/glowykeys/).closest('a');
 
@@ -18,9 +40,19 @@ test('clicking on logo redirects back to HomePage', () => {
 });
 
 test('clicking on sign in link links to sign in page', () => {
-  render(<Navbar />);
+  useRouter.mockImplementation(() => ({
+    route: '/keyboards',
+    pathname: '/keyboards',
+    query: { variant: ['gaming'] },
+    asPath: '',
+    push: jest.fn(),
+  }));
+
+  render(<KeyboardsPage keyboards={testData} />);
 
   const signInLink = screen.getByText(/Sign in/i);
 
   expect(signInLink).toHaveAttribute('href', '/signin');
+
+  jest.restoreAllMocks();
 });

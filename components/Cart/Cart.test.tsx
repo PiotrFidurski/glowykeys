@@ -44,17 +44,17 @@ test('cart items quantity can be incremented and decremented', () => {
 
   const decrementBtn = screen.getByRole('button', { name: /remove one vulcan pro from cart/i });
 
-  const price = screen.getByText(/price: 199.99/);
+  const price = screen.getAllByText(/199.99/);
 
   fireEvent.click(incrementBtn);
 
-  expect(price).toHaveTextContent('399.98$');
-  expect(screen.getByText(/subtotal/i)).toHaveTextContent('$ 399.98');
+  expect(price[0]).toHaveTextContent('399.98$');
 
   fireEvent.click(decrementBtn);
 
-  expect(price).toHaveTextContent('199.99$');
-  expect(screen.getByText(/subtotal/i)).toHaveTextContent('$ 199.99');
+  expect(price[0]).toHaveTextContent('199.99$');
+
+  expect(screen.getByRole('region', { name: /checkout/i })).toHaveTextContent('199.99');
 });
 
 test('items can be removed from cart by decrementing twice', () => {

@@ -2,9 +2,12 @@ import Filter from '@components/Filter/Filter';
 import * as S from '@components/FilterList/styles';
 import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import Sort from '@components/Sort/Sort';
+import { RoundButton } from '@utils/style-utils';
 import * as React from 'react';
 import Modal from 'react-modal';
+import Close from '../../public/assets/vector/close.svg';
 import { customStyles } from './customStyles';
+import { HeaderContainer } from './styles';
 
 interface Props {
   isOpen: boolean;
@@ -16,6 +19,7 @@ function FiltersModal({ isOpen, setOpen }: Props) {
 
   return (
     <Modal
+      id="filter-dialog"
       isOpen={isOpen}
       style={{
         ...customStyles,
@@ -25,7 +29,16 @@ function FiltersModal({ isOpen, setOpen }: Props) {
       shouldCloseOnOverlayClick
       onRequestClose={() => setOpen(false)}
     >
-      <div>
+      <div aria-label="filter menu">
+        <HeaderContainer>
+          <RoundButton
+            onClick={() => setOpen(false)}
+            aria-expanded={isOpen ? 'true' : 'false'}
+            aria-label="close filter dialog"
+          >
+            <Close width="20" height="20" fill="white" />
+          </RoundButton>
+        </HeaderContainer>
         <S.Nav aria-label="filter menu">
           {Object.entries(filters)
             .filter(([, value]) => value.length)

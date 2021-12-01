@@ -1,7 +1,6 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
-import Navbar from '@components/Navbar/Navbar';
 import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
@@ -17,7 +16,6 @@ function SwitchesPage({ switches }) {
         <title>Browse for Switches</title>
         <meta name="description" content="Find the latest mechanical key switches" />
       </Head>
-      <Navbar />
       <Main>
         <Header>
           <H1>Level up your workflow or gaming with the best mechanical key switches</H1>

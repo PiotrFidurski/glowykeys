@@ -1,6 +1,7 @@
 import Cart from '@components/Cart/Cart';
 import CartProvider from '@components/Cart/CartProvider';
 import { reducer } from '@components/Cart/reducer';
+import Navbar from '@components/Navbar/Navbar';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import 'index.css';
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <CartProvider ui={<Cart />} reducer={reducer} initialItems={[]}>
           <GlobalStyles />
           <NextNprogress color={theme.color.highlight} />
+          <Navbar />
           <Component {...pageProps} />
         </CartProvider>
       </ThemeProvider>

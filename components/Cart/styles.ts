@@ -41,13 +41,26 @@ export const ItemListContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  padding-bottom: 2rem;
 `;
 
 export const CheckoutContainer = styled.div`
   display: flex;
   text-align: end;
   flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const CheckoutWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+export const CenterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const H2 = styled.h2`
@@ -60,6 +73,9 @@ export const Paragraph = styled.p`
 
 export const HR = styled.hr`
   width: 100%;
+  height: 1px;
+  border: 0;
+  background: ${({ theme: { color } }) => color.accent};
 `;
 
 export const ItemsAmountContainer = styled.div`

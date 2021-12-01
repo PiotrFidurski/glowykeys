@@ -1,7 +1,6 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
-import Navbar from '@components/Navbar/Navbar';
 import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
@@ -21,7 +20,6 @@ function KeycapsPage({ keycaps }: Props) {
         <title>Browse for Keycaps</title>
         <meta name="description" content="Find all kinds of unique looking keycaps" />
       </Head>
-      <Navbar />
       <Main>
         <Header>
           <H1>Pick the most unique looking keycaps for your keyboards.</H1>

@@ -1,10 +1,20 @@
 import CartItem from '@components/CartItem/CartItem';
+import { Hr } from '@components/CartItem/styles';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
-import { RoundButton } from '@utils/style-utils';
+import { RoundButton, SquareButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
-import { CartContainer, CheckoutContainer, H2, Header, HR, ItemListContainer, Paragraph } from './styles';
+import {
+  CartContainer,
+  CenterContainer,
+  CheckoutContainer,
+  CheckoutWrapper,
+  H2,
+  Header,
+  ItemListContainer,
+  Paragraph,
+} from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -16,13 +26,20 @@ function Cart() {
 
   const subtotal = getSubTotalPrice(items);
 
+  const handleClick = () => {
+    if (items.length) {
+      // checkout
+    } else {
+      dispatch({ type: actionTypes.closeMenu });
+    }
+  };
+
   return (
     <CartContainer>
       <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
         <H2>Shopping Cart ({items.length} items)</H2>
         <RoundButton
           aria-expanded={open ? 'true' : 'false'}
-          aria-controls="cart-dialog"
           aria-label="close cart"
           onClick={() => dispatch({ type: actionTypes.closeMenu })}
         >
@@ -35,10 +52,23 @@ function Cart() {
         ))}
       </ItemListContainer>
       <CheckoutContainer role="region" aria-label="checkout" as={motion.section} layout>
-        <HR />
-        <Paragraph>Subtotal $ {subtotal.toFixed(2)}</Paragraph>
-        <HR />
+        {items.length ? (
+          <CheckoutWrapper>
+            <Paragraph>Subtotal</Paragraph>
+            <Paragraph>$ {subtotal.toFixed(2)}</Paragraph>
+          </CheckoutWrapper>
+        ) : (
+          <CenterContainer>
+            <Paragraph>Looks like your cart is empty!</Paragraph>
+          </CenterContainer>
+        )}
+        <Hr />
       </CheckoutContainer>
+      <CenterContainer as={motion.div} layout>
+        <SquareButton aria-label={items.length ? 'Go to Checkout' : 'Continue Shopping'} onClick={handleClick}>
+          {items.length ? 'Checkout' : 'Shop Now'}
+        </SquareButton>
+      </CenterContainer>
     </CartContainer>
   );
 }
