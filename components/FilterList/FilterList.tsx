@@ -46,7 +46,9 @@ function FilterList() {
       </S.Container>
       {open ? <FiltersModal setOpen={setOpen} isOpen={open} /> : null}
       <S.StickyContainer>
-        <SquareButton onClick={() => setOpen(true)}>Product Filters</SquareButton>
+        <SquareButton aria-label="open product filters" onClick={() => setOpen(true)}>
+          Product Filters
+        </SquareButton>
       </S.StickyContainer>
     </>
   );
