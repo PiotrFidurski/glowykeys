@@ -1,7 +1,6 @@
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
-import Navbar from '@components/Navbar/Navbar';
 import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { H1, Header, Main } from '@styled/pages/SharedStyles';
@@ -21,7 +20,6 @@ function KeyboardsPage({ keyboards }: Props) {
         <title>Browse for keyboards</title>
         <meta name="description" content="find the best keyboard for your own needs" />
       </Head>
-      <Navbar />
       <Main>
         <Header>
           <H1>
