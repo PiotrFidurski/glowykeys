@@ -40,7 +40,6 @@ function Cart() {
         <H2>Shopping Cart ({items.length} items)</H2>
         <RoundButton
           aria-expanded={open ? 'true' : 'false'}
-          aria-controls="cart-dialog"
           aria-label="close cart"
           onClick={() => dispatch({ type: actionTypes.closeMenu })}
         >
@@ -65,7 +64,7 @@ function Cart() {
         )}
         <Hr />
       </CheckoutContainer>
-      <CenterContainer>
+      <CenterContainer as={motion.div} layout>
         <SquareButton aria-label={items.length ? 'Go to Checkout' : 'Continue Shopping'} onClick={handleClick}>
           {items.length ? 'Checkout' : 'Shop Now'}
         </SquareButton>

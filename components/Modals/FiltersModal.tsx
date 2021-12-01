@@ -35,7 +35,6 @@ function FiltersModal({ isOpen, setOpen }: Props) {
             onClick={() => setOpen(false)}
             aria-expanded={isOpen ? 'true' : 'false'}
             aria-label="close filter dialog"
-            aria-controls="filter-dialog"
           >
             <Close width="20" height="20" fill="white" />
           </RoundButton>
