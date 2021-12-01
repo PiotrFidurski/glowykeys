@@ -104,8 +104,8 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   border-color: transparent;
   min-height: 50px;
   height: 100%;
-  min-width: 50px;
   width: 100%;
+  min-width: 50px;
   max-width: 50px;
   transition: transform 0.5s ease, outline-color 0.5s ease;
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};

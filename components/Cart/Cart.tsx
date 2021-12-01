@@ -1,10 +1,11 @@
 import CartItem from '@components/CartItem/CartItem';
+import { Hr } from '@components/CartItem/styles';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
 import { RoundButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
-import { CartContainer, CheckoutContainer, H2, Header, HR, ItemListContainer, Paragraph } from './styles';
+import { CartContainer, CheckoutContainer, CheckoutWrapper, H2, Header, ItemListContainer, Paragraph } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -35,9 +36,11 @@ function Cart() {
         ))}
       </ItemListContainer>
       <CheckoutContainer role="region" aria-label="checkout" as={motion.section} layout>
-        <HR />
-        <Paragraph>Subtotal $ {subtotal.toFixed(2)}</Paragraph>
-        <HR />
+        <CheckoutWrapper>
+          <Paragraph>Subtotal</Paragraph>
+          <Paragraph>$ {subtotal.toFixed(2)}</Paragraph>
+        </CheckoutWrapper>
+        <Hr />
       </CheckoutContainer>
     </CartContainer>
   );
