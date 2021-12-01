@@ -29,7 +29,7 @@ function FiltersModal({ isOpen, setOpen }: Props) {
       shouldCloseOnOverlayClick
       onRequestClose={() => setOpen(false)}
     >
-      <div>
+      <div aria-label="filter menu">
         <HeaderContainer>
           <RoundButton
             onClick={() => setOpen(false)}

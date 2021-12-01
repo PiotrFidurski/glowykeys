@@ -66,7 +66,9 @@ function Cart() {
         <Hr />
       </CheckoutContainer>
       <CenterContainer>
-        <SquareButton onClick={handleClick}>{items.length ? 'Checkout' : 'Shop Now'}</SquareButton>
+        <SquareButton aria-label={items.length ? 'Go to Checkout' : 'Continue Shopping'} onClick={handleClick}>
+          {items.length ? 'Checkout' : 'Shop Now'}
+        </SquareButton>
       </CenterContainer>
     </CartContainer>
   );
