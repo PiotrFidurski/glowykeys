@@ -1,11 +1,20 @@
 import CartItem from '@components/CartItem/CartItem';
 import { Hr } from '@components/CartItem/styles';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
-import { RoundButton } from '@utils/style-utils';
+import { RoundButton, SquareButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
-import { CartContainer, CheckoutContainer, CheckoutWrapper, H2, Header, ItemListContainer, Paragraph } from './styles';
+import {
+  CartContainer,
+  CenterContainer,
+  CheckoutContainer,
+  CheckoutWrapper,
+  H2,
+  Header,
+  ItemListContainer,
+  Paragraph,
+} from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
 
@@ -16,6 +25,14 @@ function Cart() {
   } = useCart();
 
   const subtotal = getSubTotalPrice(items);
+
+  const handleClick = () => {
+    if (items.length) {
+      // checkout
+    } else {
+      dispatch({ type: actionTypes.closeMenu });
+    }
+  };
 
   return (
     <CartContainer>
@@ -36,12 +53,21 @@ function Cart() {
         ))}
       </ItemListContainer>
       <CheckoutContainer role="region" aria-label="checkout" as={motion.section} layout>
-        <CheckoutWrapper>
-          <Paragraph>Subtotal</Paragraph>
-          <Paragraph>$ {subtotal.toFixed(2)}</Paragraph>
-        </CheckoutWrapper>
+        {items.length ? (
+          <CheckoutWrapper>
+            <Paragraph>Subtotal</Paragraph>
+            <Paragraph>$ {subtotal.toFixed(2)}</Paragraph>
+          </CheckoutWrapper>
+        ) : (
+          <CenterContainer>
+            <Paragraph>Looks like your cart is empty!</Paragraph>
+          </CenterContainer>
+        )}
         <Hr />
       </CheckoutContainer>
+      <CenterContainer>
+        <SquareButton onClick={handleClick}>{items.length ? 'Checkout' : 'Shop Now'}</SquareButton>
+      </CenterContainer>
     </CartContainer>
   );
 }

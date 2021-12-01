@@ -57,6 +57,12 @@ export const CheckoutWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const CenterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const H2 = styled.h2`
   font-size: clamp(1rem, 2vw, 1.4rem);
 `;
