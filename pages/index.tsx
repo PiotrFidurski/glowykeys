@@ -1,6 +1,5 @@
 import Footer from '@components/Footer/Footer';
 import HotSales from '@components/HotSales/HotSales';
-import Navbar from '@components/Navbar/Navbar';
 import * as S from '@styled/pages/HomePageStyles';
 import { ImageWrapper, VisuallyHiddenH2 } from '@utils/style-utils';
 import Head from 'next/head';
@@ -17,7 +16,6 @@ function HomePage() {
         <title>Find the perfect keyboard for you</title>
         <meta name="description" content="shop for the best keyboards" />
       </Head>
-      <Navbar />
       <S.Main>
         <HotSales />
         <S.ProductCategorySection role="region" aria-labelledby="product-category">
@@ -45,7 +43,7 @@ function HomePage() {
           </S.Nav>
           <S.Hr />
         </S.ProductCategorySection>
-        <S.PopularSection aria-label="popular section" role="region">
+        <S.PopularSection aria-label="popular products" role="region">
           <VisuallyHiddenH2>Popular products</VisuallyHiddenH2>
           <S.PopularKeycaps href="/">
             <p>Popular</p>

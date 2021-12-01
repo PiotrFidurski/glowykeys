@@ -14,6 +14,7 @@ const DetailsContainerStyles = css`
 export const Article = styled.article`
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
 `;
 
