@@ -46,8 +46,7 @@ function CartItem({ product }: Props) {
                 <Delete width="15" height="15" fill="white" />
               </RoundButton>
             </S.DetailsHeaderWrapper>
-
-            <S.DetailsHeaderWrapper>
+            <S.DetailsContentWrapper>
               <S.QuantityContainer>
                 <S.QuantityButton
                   type="button"
@@ -80,7 +79,7 @@ function CartItem({ product }: Props) {
                 </S.QuantityButton>
               </S.QuantityContainer>
               <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
-            </S.DetailsHeaderWrapper>
+            </S.DetailsContentWrapper>
           </S.DetailsContainer>
         </S.Container>
       </S.Article>

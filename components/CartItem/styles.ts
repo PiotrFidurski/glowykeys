@@ -1,5 +1,15 @@
 import { ButtonStyles } from '@utils/style-utils';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const DetailsContainerStyles = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0px;
+  padding: 0.2rem 0.5rem;
+  overflow: hidden;
+  width: auto;
+`;
 
 export const Article = styled.article`
   width: 100%;
@@ -38,18 +48,7 @@ export const DetailsContainer = styled.div`
 `;
 
 export const DetailsHeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 0px;
-  padding: 0.2rem 0.5rem;
-  overflow: hidden;
-  width: auto;
-
-  p {
-    color: ${({ theme: { color } }) => color.highlight};
-    font-size: clamp(1rem, 2vw, 1.4rem);
-  }
+  ${DetailsContainerStyles};
 
   a {
     text-overflow: ellipsis;
@@ -61,6 +60,15 @@ export const DetailsHeaderWrapper = styled.div`
     @media (min-width: 768px) {
       max-width: 100%;
     }
+  }
+`;
+
+export const DetailsContentWrapper = styled.div`
+  ${DetailsContainerStyles};
+
+  p {
+    color: ${({ theme: { color } }) => color.highlight};
+    font-size: clamp(1rem, 2vw, 1.4rem);
   }
 `;
 
