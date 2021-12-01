@@ -3,29 +3,18 @@ import { fireEvent, screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
 import { testData } from 'data';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      route: '',
-      pathname: '',
-      query: '',
-      asPath: '',
-    };
-  },
-}));
-
-const useRouter = jest.spyOn(require('next/router'), 'useRouter');
-
 test('when removed filters buttons are clicked filters are removed', () => {
-  useRouter.mockImplementation(() => ({
-    route: '/keyboards',
-    pathname: '/keyboards',
-    query: { variant: ['gaming'], connectivity: ['wired'] },
-    asPath: '',
-    push: jest.fn(),
-  }));
-
-  render(<KeyboardsPage keyboards={testData} />);
+  render(
+    <KeyboardsPage keyboards={testData} />,
+    {},
+    {
+      route: '/keyboards',
+      pathname: '/keyboards',
+      query: { variant: ['gaming'], connectivity: ['wired'] },
+      asPath: '',
+      push: jest.fn(),
+    }
+  );
 
   expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(1);
 

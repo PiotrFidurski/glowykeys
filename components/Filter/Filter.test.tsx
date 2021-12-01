@@ -3,16 +3,6 @@ import { fireEvent, screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
 import { testData } from 'data';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      route: '/keyboards',
-      query: {},
-      push: jest.fn(),
-    };
-  },
-}));
-
 test('products can be filtered by connectivity or variant', () => {
   render(<KeyboardsPage keyboards={testData} />);
 
