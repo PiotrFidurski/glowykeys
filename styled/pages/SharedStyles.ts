@@ -58,11 +58,6 @@ export const HeaderImageContainer = styled.div`
   }
 `;
 
-export const H1 = styled.h1`
-  max-width: 600px;
-  line-height: 2.45rem;
-`;
-
 export const ProductsSection = styled.section`
   display: grid;
   max-width: 1440px;

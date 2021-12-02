@@ -21,6 +21,7 @@ export const StickyContainer = styled.div`
 
 export const Container = styled.div`
   display: none;
+
   @media (min-width: 768px) {
     grid-area: filters;
     display: block;
