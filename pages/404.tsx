@@ -1,7 +1,7 @@
 import { Container, H1, Paragraph } from '@styled/pages/404PageStyles';
 import * as React from 'react';
 
-function Four04Page() {
+function Custom404() {
   return (
     <Container>
       <H1>404</H1>
@@ -10,4 +10,4 @@ function Four04Page() {
   );
 }
 
-export default Four04Page;
+export default Custom404;
