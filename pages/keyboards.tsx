@@ -3,10 +3,11 @@ import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
 import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
-import { H1, Header, Main } from '@styled/pages/SharedStyles';
+import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import * as React from 'react';
 
 interface Props {
@@ -22,9 +23,13 @@ function KeyboardsPage({ keyboards }: Props) {
       </Head>
       <Main>
         <Header>
-          <H1>
-            Discover the gaming keyboard for you - equipped with speed, precision and your preferred typing experience.
-          </H1>
+          <HeaderTextContentContainer>
+            <h1>Discover the gaming keyboard for you.</h1>
+            <h2>equipped with speed, precision and your preferred typing experience.</h2>
+          </HeaderTextContentContainer>
+          <HeaderImageContainer>
+            <Image src="/assets/images/keyboards_banner.png" layout="responsive" width={600} height={600} priority />
+          </HeaderImageContainer>
         </Header>
         <ProductShelfProvider products={keyboards}>
           <AppliedFilters />

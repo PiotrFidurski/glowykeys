@@ -13,16 +13,49 @@ export const Main = styled.main`
 export const Header = styled.header`
   grid-area: header;
   position: relative;
-  text-align: center;
   display: flex;
-  padding: 0 1rem;
+  text-align: center;
   min-height: 600px;
-  justify-content: center;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 0 1px 1px 0px ${({ theme: { boxShadowColor } }) => boxShadowColor.primary};
+  padding: 1rem;
+  background: ${({ theme: { background } }) => background.card};
+  justify-content: space-around;
+  width: 100%;
+  box-shadow: 0px 0px 1px ${({ theme: { color } }) => color.accent};
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+  }
+`;
+
+export const HeaderTextContentContainer = styled.div`
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+
+  h1 {
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    color: ${({ theme: { color } }) => color.highlight};
+  }
+
+  h2 {
+    line-height: clamp(1.525rem, 2vw, 1.825rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    color: ${({ theme: { color } }) => color.primary};
+  }
+`;
+
+export const HeaderImageContainer = styled.div`
+  max-width: 600px;
+  width: 100%;
+
+  img {
+    filter: drop-shadow(0px 1px 2px rgba(255 255 255 / 50%)) brightness(0.7);
+  }
 `;
 
 export const H1 = styled.h1`
@@ -36,8 +69,8 @@ export const ProductsSection = styled.section`
   padding: 1rem 1rem;
   width: 100%;
   grid-area: products;
-  grid-column-gap: 3rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.5rem;
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:

@@ -3,10 +3,11 @@ import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
 import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
-import { H1, Header, Main } from '@styled/pages/SharedStyles';
+import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import * as React from 'react';
 
 function SwitchesPage({ switches }) {
@@ -18,7 +19,13 @@ function SwitchesPage({ switches }) {
       </Head>
       <Main>
         <Header>
-          <H1>Level up your workflow or gaming with the best mechanical key switches</H1>
+          <HeaderTextContentContainer>
+            <h1>Level up your workflow with the best mechanical key switches</h1>
+            <h2>Quiet switches with tactile feedback, making it perfect for accurate typing</h2>
+          </HeaderTextContentContainer>
+          <HeaderImageContainer>
+            <Image src="/assets/images/switches_banner.png" layout="responsive" width={600} height={600} priority />
+          </HeaderImageContainer>
         </Header>
         <ProductShelfProvider products={switches}>
           <AppliedFilters />
