@@ -97,6 +97,7 @@ describe('Product Filters', () => {
 
   it('displays filters inside a dialog on smaller screens', () => {
     cy.viewport('iphone-6');
+
     cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');

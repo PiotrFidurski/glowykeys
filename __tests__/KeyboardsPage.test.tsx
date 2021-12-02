@@ -35,6 +35,4 @@ test('when queryParams are "?connectivity=wired" it renders only filtered result
   const productList = screen.getByRole('region', { name: /list of products/i });
 
   expect(productList.children).toHaveLength(2);
-
-  jest.restoreAllMocks();
 });

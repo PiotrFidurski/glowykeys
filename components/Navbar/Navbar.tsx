@@ -13,6 +13,7 @@ function Navbar() {
   const {
     state: { items },
   } = useCart();
+
   return (
     <Header>
       <Nav>

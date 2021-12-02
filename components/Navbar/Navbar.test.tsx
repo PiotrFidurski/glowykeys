@@ -5,6 +5,7 @@ import { testData } from 'data';
 
 jest.mock('next/link', () => ({ children, href }: React.PropsWithChildren<{ href: string }>) => {
   const React = require('react');
+
   const clonedChildren = React.cloneElement(React.Children.only(children), { href });
 
   return clonedChildren;
