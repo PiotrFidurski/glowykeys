@@ -26,7 +26,7 @@ describe('HomePage tests', () => {
   it('has a link to "/keyboards?variants=gaming"', () => {
     cy.visit('/');
 
-    cy.findByRole('link', { name: /go to gaming keyboards page/i }).click();
+    cy.findByRole('link', { name: /gaming keyboards/i }).click();
 
     cy.findByRole('checkbox', { name: /gaming/ });
 
@@ -38,7 +38,7 @@ describe('HomePage tests', () => {
   it('has a link to "/keyboards?variants=casual"', () => {
     cy.visit('/');
 
-    cy.findByRole('link', { name: /go to casual keyboards page/i }).click();
+    cy.findByRole('link', { name: /casual keyboards/i }).click();
 
     cy.findByRole('checkbox', { name: /casual/ });
 
