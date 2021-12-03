@@ -35,6 +35,7 @@ export const HeaderTextContentContainer = styled.div`
   display: flex;
   max-width: 500px;
   flex-direction: column;
+  padding: 4rem 2rem 0 2rem;
 
   h1 {
     font-size: clamp(1.5rem, 2vw, 3rem);
@@ -46,6 +47,10 @@ export const HeaderTextContentContainer = styled.div`
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 500;
     color: ${({ theme: { color } }) => color.primary};
+  }
+
+  @media (min-width: 768px) {
+    padding: 0;
   }
 `;
 

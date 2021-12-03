@@ -31,7 +31,7 @@ function KeycapsPage({ keycaps }: Props) {
             </h2>
           </HeaderTextContentContainer>
           <HeaderImageContainer>
-            <Image src="/assets/images/keycaps_banner.png" layout="responsive" width={800} height={600} priority />
+            <Image src="/assets/images/keycaps_banner.png" layout="responsive" width={600} height={600} priority />
           </HeaderImageContainer>
         </Header>
         <ProductShelfProvider products={keycaps}>

@@ -112,6 +112,7 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
+    outline-offset: 0px;
     outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
     background: ${({ theme: { color } }) => color.accent};
   }

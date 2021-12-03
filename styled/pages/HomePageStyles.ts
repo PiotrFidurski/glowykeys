@@ -50,7 +50,7 @@ const CategoryLink = css`
   position: relative;
   border: 2px solid ${({ theme: { color } }) => color.accent};
   display: flex;
-  transition: border-color 0.3s ease;
+  transition: border-color, color 0.3s ease;
 
   img {
     z-index: -1;
@@ -60,6 +60,7 @@ const CategoryLink = css`
   &:hover {
     border-color: ${({ theme: { color } }) => color.highlight};
     cursor: pointer;
+    color: ${({ theme: { color } }) => color.highlight};
 
     h2 {
       transition: color 0.3s ease;
