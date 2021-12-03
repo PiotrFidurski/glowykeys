@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Comfortaa';
-  src: url('/assets/fonts/Comfortaa-Medium.woff2') format('woff2'),
-    url('/assets/fonts/Comfortaa-Medium.woff') format('woff');
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url('/assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Montserrat-Regular.woff') format('woff');
   font-style: normal;
 }
