@@ -68,6 +68,6 @@ export const SignInLink = styled.a`
   ${LineOnHover};
 
   &:before {
-    top: 30px;
+    top: 25px;
   }
 `;

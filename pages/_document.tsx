@@ -32,14 +32,14 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="/assets/fonts/Comfortaa-Medium.woff"
+            href="/assets/fonts/Montserrat-Regular.woff"
             crossOrigin="anonymous"
             rel="preload"
             as="font"
-            type="font/woff"
+            type="font/woff2"
           />
           <link
-            href="/assets/fonts/Comfortaa-Medium.woff2"
+            href="/assets/fonts/Montserrat-Regular.woff2"
             crossOrigin="anonymous"
             rel="preload"
             as="font"
