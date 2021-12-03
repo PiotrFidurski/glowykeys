@@ -43,14 +43,12 @@ function HomePage() {
           </S.Nav>
           <S.Hr />
         </S.ProductCategorySection>
-        <S.PopularSection aria-label="popular products" role="region">
-          <VisuallyHiddenH2>Popular products</VisuallyHiddenH2>
+        <S.PopularSection aria-labelledby="popular-products" role="region">
+          <VisuallyHiddenH2 id="popular-products">Popular products</VisuallyHiddenH2>
           <S.PopularKeycaps href="/">
-            <p>Popular</p>
             <p>Keycaps</p>
           </S.PopularKeycaps>
           <S.PopularSwitches href="/">
-            <p>Popular</p>
             <p>Switches</p>
           </S.PopularSwitches>
           <S.SeeAll href="/">
@@ -58,7 +56,7 @@ function HomePage() {
             <p>ALL</p>
           </S.SeeAll>
           <Link href="/keyboards?variant=gaming" passHref>
-            <S.GamingKeyboards aria-label="go to gaming keyboards page">
+            <S.GamingKeyboards aria-label="gaming keyboards">
               <p>Gaming Keyboards</p>
               <ImageWrapper>
                 <Image
@@ -100,7 +98,7 @@ function HomePage() {
             </ImageWrapper>
           </S.KeycapImage>
           <Link href="/keyboards?variant=casual" passHref>
-            <S.CasualKeyboards aria-label="go to casual keyboards page">
+            <S.CasualKeyboards aria-label="casual keyboards">
               <p>Casual Keyboards</p>
               <ImageWrapper>
                 <Image

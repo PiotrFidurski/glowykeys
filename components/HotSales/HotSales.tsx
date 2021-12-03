@@ -5,8 +5,8 @@ import * as S from './styles';
 
 function HotSales() {
   return (
-    <S.PreviewSection role="region" aria-label="hot sales product preview">
-      <VisuallyHiddenH1>Hot Sales Product Preview</VisuallyHiddenH1>
+    <S.PreviewSection role="region" aria-labelledby="hot-sales-preview">
+      <VisuallyHiddenH1 id="hot-sales-preview">Hot Sales Product Preview</VisuallyHiddenH1>
       <S.Container>
         <ImageWrapper>
           <Image
@@ -30,8 +30,8 @@ function HotSales() {
           </button>
         </S.ButtonContainer>
       </S.Container>
-      <S.HotSalesSection role="region" aria-label="hot sales">
-        <h2>HOT SALES</h2>
+      <S.HotSalesSection role="region" aria-labelledby="bestseller">
+        <h2 id="bestseller">Bestseller</h2>
         <p>Cooler Master sk620 might be the option you’re looking for.</p>
         <S.BuyNowContainer>
           <p>299.99$</p>
