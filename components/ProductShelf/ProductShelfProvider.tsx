@@ -15,7 +15,10 @@ function ProductShelfProvider({ products, children }: Props) {
   const [state, dispatch] = React.useReducer(reducer, { ...initialState({ query, products }) });
 
   React.useEffect(() => {
-    push({ pathname, query: { ...state.activeFilters } }, null, { scroll: false, shallow: true });
+    push({ pathname, query: { ...state.activeFilters } }, undefined, {
+      scroll: false,
+      shallow: true,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.activeFilters]);
 
