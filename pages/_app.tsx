@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <CartProvider ui={<Cart />} reducer={reducer} initialItems={[]}>
           <GlobalStyles />
-          <NextNprogress color={theme.color.highlight} />
+          <NextNprogress showOnShallow={false} color={theme.color.highlight} />
           <Navbar />
           <Component {...pageProps} />
         </CartProvider>
