@@ -1,5 +1,11 @@
 describe('HomePage tests', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('has a link to "/keyboards"', () => {
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
     cy.visit('/');
 
     cy.findByRole('link', { name: /go to keyboards page/i }).click();
@@ -8,6 +14,8 @@ describe('HomePage tests', () => {
   });
 
   it('has a link to "/keycaps"', () => {
+    cy.mockServerData({ path: '/api/keycaps', fixture: 'keycaps.json' });
+
     cy.visit('/');
 
     cy.findByRole('link', { name: /go to keycaps page/i }).click();
@@ -16,6 +24,8 @@ describe('HomePage tests', () => {
   });
 
   it('has a link to "/switches"', () => {
+    cy.mockServerData({ path: '/api/switches', fixture: 'switches.json' });
+
     cy.visit('/');
 
     cy.findByRole('link', { name: /go to switches page/i }).click();
@@ -24,6 +34,8 @@ describe('HomePage tests', () => {
   });
 
   it('has a link to "/keyboards?variants=gaming"', () => {
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
     cy.visit('/');
 
     cy.findByRole('link', { name: /gaming keyboards/i }).click();
@@ -36,6 +48,8 @@ describe('HomePage tests', () => {
   });
 
   it('has a link to "/keyboards?variants=casual"', () => {
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
     cy.visit('/');
 
     cy.findByRole('link', { name: /casual keyboards/i }).click();

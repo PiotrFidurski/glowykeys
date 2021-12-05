@@ -1,6 +1,12 @@
 describe('Product Filters', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('can filter products by brand', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -10,7 +16,9 @@ describe('Product Filters', () => {
   });
 
   it('can filter products by color', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -20,7 +28,9 @@ describe('Product Filters', () => {
   });
 
   it('can filter products by connectivity', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -34,7 +44,9 @@ describe('Product Filters', () => {
   });
 
   it('can apply multiple filters to products', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -48,7 +60,9 @@ describe('Product Filters', () => {
   });
 
   it('can remove filters by clicking on filter buttons', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -62,7 +76,9 @@ describe('Product Filters', () => {
   });
 
   it('can remove filters by clicking the same checkbox twice', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -78,7 +94,9 @@ describe('Product Filters', () => {
   });
 
   it('can sort products by ascending and descending price', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 
@@ -98,7 +116,9 @@ describe('Product Filters', () => {
   it('displays filters inside a dialog on smaller screens', () => {
     cy.viewport('iphone-6');
 
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i }).as('productList');
 

@@ -1,5 +1,11 @@
 describe('Add to cart functionality', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('can add products to cart', () => {
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
     cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i });
@@ -12,6 +18,8 @@ describe('Add to cart functionality', () => {
   });
 
   it('cannot add the same products twice', () => {
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
     cy.visit('/keyboards');
 
     cy.findByRole('region', { name: /list of products/i });
