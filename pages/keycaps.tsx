@@ -46,7 +46,7 @@ function KeycapsPage({ keycaps }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  res.setHeader('Cache-Control', 'public, s-maxage=172800, stale-while-revalidate=59');
+  res.setHeader('Cache-Control', 'public, s-maxage=180, stale-while-revalidate=59');
 
   const response = await fetch(`${process.env.BASE_URL}/api/keycaps`);
 
