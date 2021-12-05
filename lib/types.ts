@@ -22,6 +22,10 @@ export interface ApiResponse<T> {
   data: Array<T>;
 }
 
+export interface ApiErrorResponse {
+  error: string;
+}
+
 export interface FilterFnProps {
   product: Product;
   variant?: Array<string>;
