@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StickyContainer = styled.div`
   position: sticky;
   top: 70px;
-  background: rgba(33 150 243 / 8%);
+  background: rgb(15, 29, 62);
   color: white;
   grid-area: filters;
   align-items: center;
@@ -11,11 +11,15 @@ export const StickyContainer = styled.div`
   display: flex;
   z-index: 100;
   padding: 1rem;
-  backdrop-filter: blur(10px);
   width: 100%;
 
   @media (min-width: 768px) {
     display: none;
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    background: rgba(33 150 243 / 8%);
   }
 `;
 

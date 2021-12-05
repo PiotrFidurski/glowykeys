@@ -157,7 +157,7 @@ export const PopularSection = styled.section`
     'casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards casual-keyboards'
     'popular-keycaps popular-keycaps popular-keycaps popular-keycaps popular-keycaps popular-keycaps'
     'popular-switches popular-switches popular-switches popular-switches popular-switches popular-switches '
-    'shop-all shop-all shop-all shop-all shop-all shop-all '
+    'shop-all shop-all shop-all shop-all shop-all shop-all'
     'gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards gaming-keyboards'
     'keycap-image keycap-image keycap-image keycap-image keycap-image keycap-image'
     'switches-image switches-image switches-image  switches-image switches-image switches-image';
