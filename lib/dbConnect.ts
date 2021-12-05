@@ -4,10 +4,18 @@ const username = process.env.DB_USER;
 const password = process.env.DB_PWD;
 
 const MONGODB_URI =
-  process.env.NODE_ENV === 'development' ? `mongodb://${username}:${password}@localhost:27017/glowykeys` : ``;
+  process.env.NODE_ENV === 'development'
+    ? `mongodb://${username}:${password}@localhost:27017/glowykeys`
+    : process.env.MONGOPROD_URI;
 
-if (!username || !password) {
-  throw new Error('Please make sure to define DB_USER and DB_PWD environment variables inside .env.local');
+if (process.env.NODE_ENV === 'development') {
+  if (!username || !password) {
+    throw new Error('Please make sure to define DB_USER and DB_PWD environment variables inside .env.local');
+  }
+}
+
+if (!MONGODB_URI) {
+  throw new Error('Please make sure to add MONGOPROD_URI environment variable to production build.');
 }
 
 interface CachedConnection {
