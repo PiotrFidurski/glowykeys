@@ -1,25 +1,19 @@
 // ***********************************************
 
-Cypress.Commands.add('visitAndControlNextData', ({ url = '/keyboards', type, fixture }) =>
-  // eslint-disable-next-line promise/always-return
-  cy.fixture(fixture).then((data) => {
-    cy.visit(url, {
-      onBeforeLoad: (win) => {
-        let nextData;
-
-        Object.defineProperty(win, '__NEXT_DATA__', {
-          set(o) {
-            // eslint-disable-next-line no-param-reassign
-            o.props.pageProps[type] = data.data;
-            nextData = o;
-          },
-          get() {
-            return nextData;
-          },
-        });
+Cypress.Commands.add('mockServerData', ({ path, fixture }) => {
+  // eslint-disable-next-line promise/catch-or-return
+  cy.fixture(fixture).then((data) =>
+    cy.task('nock', {
+      hostname: 'http://localhost:3000/',
+      method: 'GET',
+      path,
+      statusCode: 200,
+      body: {
+        data: data.data,
+        status: 200,
       },
-    });
-  })
-);
+    })
+  );
+});
 
 export {};

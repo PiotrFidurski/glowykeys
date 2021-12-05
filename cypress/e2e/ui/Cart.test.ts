@@ -1,6 +1,12 @@
 describe('Cart tests', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('can properly close', () => {
-    cy.visit('/keyboards');
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards', { failOnStatusCode: false });
 
     cy.findByRole('button', { name: /open cart/i }).click();
 
@@ -10,7 +16,9 @@ describe('Cart tests', () => {
   });
 
   it('can increment and decrement product quantity', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -28,7 +36,9 @@ describe('Cart tests', () => {
   });
 
   it('can remove items from cart', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -40,7 +50,9 @@ describe('Cart tests', () => {
   });
 
   it('can remove items from cart by pressing decrement button twice', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 
@@ -54,7 +66,9 @@ describe('Cart tests', () => {
   });
 
   it('proper subtotal value and proper product price when incrementing and decrementing quantity', () => {
-    cy.visitAndControlNextData({ url: '/keyboards', type: 'keyboards', fixture: 'keyboards.json' });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards');
 
     cy.findByRole('button', { name: /add magma to cart/i }).click();
 

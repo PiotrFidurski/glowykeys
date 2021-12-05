@@ -1,10 +1,12 @@
 describe('Switches page tests', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('displays only filtered results if there are present in url query params', () => {
-    cy.visitAndControlNextData({
-      url: '/switches?brand=Idobao&color=white',
-      type: 'switches',
-      fixture: 'switches.json',
-    });
+    cy.mockServerData({ path: '/api/switches', fixture: 'switches.json' });
+
+    cy.visit('/switches?brand=Idobao&color=white');
 
     cy.findByRole('button', { name: /idobao filter/i });
 

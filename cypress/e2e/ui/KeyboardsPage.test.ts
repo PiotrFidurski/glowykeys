@@ -1,10 +1,12 @@
 describe('Keyboards page tests', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('displays only filtered results if there are present in url query params', () => {
-    cy.visitAndControlNextData({
-      url: '/keyboards?variant=casual&color=black',
-      type: 'keyboards',
-      fixture: 'keyboards.json',
-    });
+    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+
+    cy.visit('/keyboards?variant=casual&color=black');
 
     cy.findByRole('button', { name: /black filter/i });
 

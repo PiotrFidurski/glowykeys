@@ -1,10 +1,12 @@
 describe('Keycaps page tests', () => {
+  beforeEach(() => {
+    cy.task('clearNock');
+  });
+
   it('displays only filtered results if there are present in url query params', () => {
-    cy.visitAndControlNextData({
-      url: '/keycaps?brand=Razer&color=black',
-      type: 'keycaps',
-      fixture: 'keycaps.json',
-    });
+    cy.mockServerData({ path: '/api/keycaps', fixture: 'keycaps.json' });
+
+    cy.visit('/keycaps?brand=Razer&color=black');
 
     cy.findByRole('button', { name: /razer filter/i });
 
