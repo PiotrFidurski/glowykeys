@@ -6,7 +6,7 @@ const password = process.env.DB_PWD;
 const MONGODB_URI =
   process.env.NODE_ENV === 'development' ? `mongodb://${username}:${password}@localhost:27017/glowykeys` : ``;
 
-if (!username || password) {
+if (!username || !password) {
   throw new Error('Please make sure to define DB_USER and DB_PWD environment variables inside .env.local');
 }
 
@@ -32,9 +32,6 @@ async function dbConnect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       bufferCommands: false,
-      bufferMaxEntries: 0,
-      useFindAndModify: true,
-      useCreateIndex: true,
     };
 
     cached.promise = connect(MONGODB_URI, config).then((mongoose) => mongoose);
