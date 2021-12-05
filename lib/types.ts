@@ -1,3 +1,9 @@
+export interface Image {
+  thumbnail: string;
+  original: string;
+  placeholder: string;
+}
+
 export interface Product {
   type: 'Keyboard' | 'Keycap' | 'Switch';
   variant?: string;
@@ -9,11 +15,7 @@ export interface Product {
   id: string;
   brand: string;
   description?: Array<string>;
-  image: {
-    thumbnail: string;
-    original: string;
-    placeholder?: string;
-  };
+  image: Image;
 }
 
 export interface ApiResponse<T> {
