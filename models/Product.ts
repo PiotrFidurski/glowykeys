@@ -4,7 +4,7 @@ import { model, models, Schema } from 'mongoose';
 export interface ProductDocument {
   name: string;
   price: number;
-  quantity: number;
+  qty: number;
   type: 'keyboard' | 'keycap' | 'switch';
   connectivity?: string;
   variant?: string;
@@ -17,7 +17,7 @@ export interface ProductDocument {
 const schema = new Schema<ProductDocument>({
   name: { type: String, required: true },
   price: { type: Number, required: true },
-  quantity: { type: Number, required: true },
+  qty: { type: Number, required: true },
   type: { type: String, required: true },
   connectivity: { type: String },
   variant: { type: String },
