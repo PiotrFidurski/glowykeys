@@ -16,7 +16,43 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-export default (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+
+import http from 'http';
+import next from 'next';
+import nock from 'nock';
+
+module.exports = async (on, config) => {
+  const app = next({ dev: true });
+  const handleNextRequests = app.getRequestHandler();
+  await app.prepare();
+
+  const customServer = new http.Server(async (req, res) => handleNextRequests(req, res));
+
+  await new Promise((resolve) => {
+    customServer.listen(3000, () => {
+      resolve('resolved');
+      return null;
+    });
+  });
+
+  on('task', {
+    clearNock() {
+      nock.restore();
+      nock.cleanAll();
+
+      return null;
+    },
+
+    async nock({ hostname, method, path, statusCode, body }) {
+      nock.activate();
+
+      const lowerCaseMethod = method.toLowerCase();
+
+      nock(hostname)[lowerCaseMethod](path).reply(statusCode, body);
+
+      return null;
+    },
+  });
+
+  return config;
 };
