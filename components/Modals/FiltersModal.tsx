@@ -19,7 +19,6 @@ function FiltersModal({ isOpen, setOpen }: Props) {
 
   return (
     <Modal
-      id="filter-dialog"
       isOpen={isOpen}
       style={{
         ...customStyles,
