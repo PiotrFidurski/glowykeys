@@ -64,6 +64,19 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+export const SmallImageWrapper = styled.div`
+  max-width: 100px;
+  background: ${({ theme: { color } }) => color.accent};
+  width: 100%;
+  flex-shrink: 0;
+  min-height: 100px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    max-width: 150px;
+  }
+`;
+
 export const SquareButton = styled.button`
   ${ButtonStyles};
   padding: 1rem;
@@ -104,6 +117,7 @@ export const RoundButton = styled.button`
   position: relative;
   border-color: transparent;
   min-height: 50px;
+  max-height: 50px;
   height: 100%;
   width: 100%;
   min-width: 50px;
