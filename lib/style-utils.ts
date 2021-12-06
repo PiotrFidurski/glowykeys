@@ -64,6 +64,19 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+export const SmallImageWrapper = styled.div`
+  max-width: 100px;
+  background: ${({ theme: { color } }) => color.accent};
+  width: 100%;
+  flex-shrink: 0;
+  min-height: 100px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    max-width: 150px;
+  }
+`;
+
 export const SquareButton = styled.button`
   ${ButtonStyles};
   padding: 1rem;
@@ -97,30 +110,28 @@ export const SquareButton = styled.button`
   }
 `;
 
-export const RoundButton = styled.button<{ transformOn?: boolean }>`
+export const RoundButton = styled.button`
   ${ButtonStyles};
   color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
   position: relative;
   border-color: transparent;
   min-height: 50px;
+  max-height: 50px;
   height: 100%;
   width: 100%;
   min-width: 50px;
   max-width: 50px;
   transition: transform 0.5s ease, outline-color 0.5s ease;
-  transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
     outline-offset: 0px;
-    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
+    outline: 2px solid ${({ theme: { color } }) => color.highlight};
     background: ${({ theme: { color } }) => color.accent};
   }
 
   svg {
     transition: transform 0.5 ease, fill 0.5s ease;
-    transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
-    fill: ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : 'white')};
   }
 `;
 

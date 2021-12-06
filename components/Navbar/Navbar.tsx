@@ -1,11 +1,13 @@
 import { ItemsAmountContainer } from '@components/Cart/styles';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
+import SearchModal from '@components/Modals/SearchModal/SearchModal';
 import { RoundButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
+import Loupe from '../../public/assets/vector/loupe.svg';
 import { Header, Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
@@ -13,6 +15,8 @@ function Navbar() {
   const {
     state: { items },
   } = useCart();
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <Header>
@@ -42,8 +46,14 @@ function Navbar() {
               </VisuallyHiddenSpan>
             </RoundButton>
           </Li>
+          <Li>
+            <RoundButton onClick={() => setOpen(true)} type="button" aria-label="open search menu">
+              <Loupe width="25" height="25" fill="white" />
+            </RoundButton>
+          </Li>
         </Ul>
       </Nav>
+      {open ? <SearchModal isOpen={open} setOpen={setOpen} /> : null}
     </Header>
   );
 }

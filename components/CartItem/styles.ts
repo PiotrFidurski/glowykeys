@@ -24,23 +24,6 @@ export const Container = styled.div`
   gap: 0.5rem;
 `;
 
-export const ImageWrapper = styled.div`
-  max-width: 100px;
-  background: ${({ theme: { color } }) => color.accent};
-  width: 100%;
-  flex-shrink: 0;
-  min-height: 100px;
-  position: relative;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media (min-width: 768px) {
-    max-width: 150px;
-  }
-`;
-
 export const DetailsContainer = styled.div`
   width: 100%;
   display: flex;

@@ -1,7 +1,7 @@
 import { decrementQty, incrementQty } from '@components/Cart/CartContext';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { RoundButton } from '@utils/style-utils';
+import { RoundButton, SmallImageWrapper } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -30,9 +30,9 @@ function CartItem({ product }: Props) {
       layout
     >
       <S.Container>
-        <S.ImageWrapper>
+        <SmallImageWrapper>
           <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
-        </S.ImageWrapper>
+        </SmallImageWrapper>
         <S.DetailsContainer>
           <S.DetailsHeaderWrapper>
             <S.A href="/">{product.name}</S.A>
@@ -57,7 +57,6 @@ function CartItem({ product }: Props) {
               <S.QTY tabIndex={-1} aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
               <S.QuantityButton
                 reverseBorderRadius
-                transformOn={product.qty === 0}
                 type="button"
                 onClick={() => {
                   if (product.qty > 0) {

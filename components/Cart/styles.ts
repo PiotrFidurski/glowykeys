@@ -71,13 +71,6 @@ export const Paragraph = styled.p`
   letter-spacing: 0.2rem;
 `;
 
-export const HR = styled.hr`
-  width: 100%;
-  height: 1px;
-  border: 0;
-  background: ${({ theme: { color } }) => color.accent};
-`;
-
 export const ItemsAmountContainer = styled.div`
   width: 24px;
   background: ${({ theme: { color } }) => color.highlight};
