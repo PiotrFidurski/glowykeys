@@ -57,7 +57,6 @@ function CartItem({ product }: Props) {
               <S.QTY tabIndex={-1} aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
               <S.QuantityButton
                 reverseBorderRadius
-                transformOn={product.qty === 0}
                 type="button"
                 onClick={() => {
                   if (product.qty > 0) {

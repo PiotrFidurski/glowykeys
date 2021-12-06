@@ -97,7 +97,7 @@ export const SquareButton = styled.button`
   }
 `;
 
-export const RoundButton = styled.button<{ transformOn?: boolean }>`
+export const RoundButton = styled.button`
   ${ButtonStyles};
   color: ${({ theme: { color } }) => color.primary};
   border-radius: 9999px;
@@ -109,18 +109,15 @@ export const RoundButton = styled.button<{ transformOn?: boolean }>`
   min-width: 50px;
   max-width: 50px;
   transition: transform 0.5s ease, outline-color 0.5s ease;
-  transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
 
   &:focus {
     outline-offset: 0px;
-    outline: 2px solid ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : color.highlight)};
+    outline: 2px solid ${({ theme: { color } }) => color.highlight};
     background: ${({ theme: { color } }) => color.accent};
   }
 
   svg {
     transition: transform 0.5 ease, fill 0.5s ease;
-    transform: ${({ transformOn }) => (transformOn ? 'rotate(180deg)' : 'rotate(0)')};
-    fill: ${({ theme: { color }, transformOn }) => (transformOn ? color.danger : 'white')};
   }
 `;
 
