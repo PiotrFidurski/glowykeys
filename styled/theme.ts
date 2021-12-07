@@ -17,6 +17,7 @@ const theme: DefaultTheme = {
     accent: '#171e2d',
     highlight: '#0091ff',
     danger: '#F06071',
+    btnHover: '#0972c5',
   },
 };
 
