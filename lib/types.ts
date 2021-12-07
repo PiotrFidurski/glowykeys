@@ -19,7 +19,7 @@ export interface Product {
 }
 
 export interface ApiResponse<T> {
-  data: Array<T>;
+  data: Array<T> | T;
 }
 
 export interface ApiErrorResponse {
