@@ -21,7 +21,7 @@ function Result({ product }: Props) {
             </SmallImageWrapper>
             <ResultDetailsContainer>
               <p>{product.name}</p>
-              <p>{product.price}$</p>
+              <p>{product.price.toFixed(2)}$</p>
             </ResultDetailsContainer>
           </ResultContainer>
         </A>
