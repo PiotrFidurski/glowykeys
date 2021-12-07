@@ -1,4 +1,4 @@
-import Product from '@components/Product/Product';
+import ProductCard from '@components/ProductCard/ProductCard';
 import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import { compare } from '@utils/compare';
 import { possibleFilters } from '@utils/filters';
@@ -14,7 +14,7 @@ function ProductList() {
         .filter((product) => possibleFilters.every((filterFn) => filterFn({ product, ...activeFilters })))
         .sort((productA, productB) => compare({ productA, productB, ...sort }))
         .map((product) => (
-          <Product product={product} key={product.id} />
+          <ProductCard product={product} key={product.id} />
         ))}
     </ProductsContainer>
   );
