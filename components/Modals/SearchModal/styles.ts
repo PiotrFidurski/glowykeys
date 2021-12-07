@@ -41,12 +41,12 @@ export const Input = styled.input`
   padding: 1rem 0;
   border-bottom: 2px solid ${({ theme: { color } }) => color.primary};
   color: ${({ theme: { color } }) => color.primary};
-  transition: border-color 0.3s ease;
+  transition: border-bottom-color 0.2s ease-in-out;
 
   @supports selector(:focus-visible) {
     &:focus-visible {
       outline: none;
-      border-color: ${({ theme: { color } }) => color.highlight};
+      border-bottom-color: ${({ theme: { color } }) => color.highlight};
     }
   }
 `;
