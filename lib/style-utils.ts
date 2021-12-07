@@ -161,3 +161,11 @@ export const VisuallyHiddenH2 = styled.h2`
 export const VisuallyHiddenSpan = styled.span`
   ${HideVisually};
 `;
+
+export const Hr = styled.hr`
+  width: 100%;
+  border: 0;
+  margin: 1rem 0 1rem 0;
+  height: 1px;
+  background: ${({ theme: { color } }) => color.accent};
+`;

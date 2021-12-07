@@ -1,5 +1,4 @@
-import { Hr } from '@components/CartItem/styles';
-import { SmallImageWrapper } from '@utils/style-utils';
+import { Hr, SmallImageWrapper } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import Image from 'next/image';
 import Link from 'next/link';

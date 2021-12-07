@@ -108,11 +108,3 @@ export const QTY = styled.input`
     outline: none;
   }
 `;
-
-export const Hr = styled.hr`
-  width: 100%;
-  border: 0;
-  margin: 1rem 0 1rem 0;
-  height: 1px;
-  background: ${({ theme: { color } }) => color.accent};
-`;

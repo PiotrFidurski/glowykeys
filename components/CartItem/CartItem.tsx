@@ -1,7 +1,7 @@
 import { decrementQty, incrementQty } from '@components/Cart/CartContext';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { RoundButton, SmallImageWrapper } from '@utils/style-utils';
+import { Hr, RoundButton, SmallImageWrapper } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -80,7 +80,7 @@ function CartItem({ product }: Props) {
           </S.DetailsContentWrapper>
         </S.DetailsContainer>
       </S.Container>
-      <S.Hr />
+      <Hr />
     </S.Article>
   );
 }
