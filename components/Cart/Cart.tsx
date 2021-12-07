@@ -36,7 +36,7 @@ function Cart() {
   return (
     <CartContainer>
       <Header role="heading" aria-labelledby="cart-heading">
-        <H2 id="cart-heading">Shopping Cart ({items.length} items)</H2>
+        <H2 id="cart-heading">Shopping Cart with {items.length} items</H2>
         <RoundButton
           aria-expanded={open ? 'true' : 'false'}
           aria-label="close cart"
