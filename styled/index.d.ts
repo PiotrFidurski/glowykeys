@@ -14,6 +14,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       card: string;
+      modalOverlay: string;
     };
     color: {
       primary: string;

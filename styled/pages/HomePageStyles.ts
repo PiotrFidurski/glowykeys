@@ -89,10 +89,6 @@ export const Main = styled.main`
     'footer footer footer footer';
 `;
 
-export const H2 = styled.h2`
-  font-size: clamp(1.5rem, 2vw, 3rem);
-`;
-
 export const H3 = styled.h3`
   font-size: clamp(1.5rem, 2vw, 3rem);
 `;
@@ -233,9 +229,4 @@ export const PopularKeycaps = styled.a`
 export const PopularSwitches = styled.a`
   ${GridAreasStyles};
   grid-area: popular-switches;
-`;
-
-export const ImageWrapper = styled.a`
-  position: relative;
-  width: 100%;
 `;

@@ -29,7 +29,7 @@ export const Nav = styled.nav`
   align-items: center;
 `;
 
-export const LogoSectionList = styled.ul`
+export const LogoList = styled.ul`
   ${ListStyles};
   justify-content: flex-start;
   width: auto;

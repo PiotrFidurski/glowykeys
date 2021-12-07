@@ -65,15 +65,15 @@ test('items can be removed from cart by decrementing twice', () => {
   fireEvent.click(decrementBtn);
   fireEvent.click(decrementBtn);
 
-  expect(screen.getByRole('heading', { name: /shopping cart with/i })).toHaveTextContent('0 items');
+  expect(screen.getAllByRole('heading', { name: /shopping cart with/i })[0]).toHaveTextContent('0 items');
 });
 
 test('items can be removed by clicking remove from cart button', () => {
   render(<Cart />);
 
-  const removeBtn = screen.getByRole('button', { name: /remove vulcan pro from cart/i });
+  const removeBtn = screen.getAllByRole('button', { name: /remove vulcan pro from cart/i });
 
-  fireEvent.click(removeBtn);
+  fireEvent.click(removeBtn[0]);
 
-  expect(screen.getByRole('heading', { name: /shopping cart with/i })).toHaveTextContent('0 items');
+  expect(screen.getAllByRole('heading', { name: /shopping cart with/i })[0]).toHaveTextContent('0 items');
 });

@@ -12,7 +12,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /close cart/i }).click();
 
-    cy.findByRole('heading', { name: /shopping cart with 0 items/i }).should('not.match');
+    cy.findAllByRole('heading', { name: /shopping cart with 0 items/i }).should('not.match');
   });
 
   it('can increment and decrement product quantity', () => {
@@ -24,7 +24,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /open cart/i }).click();
 
-    cy.findByRole('heading', { name: /shopping cart with 1 items/i });
+    cy.findAllByRole('heading', { name: /shopping cart with 1 items/i });
 
     cy.findByRole('button', { name: /remove one magma from cart/i }).click();
 
@@ -46,7 +46,7 @@ describe('Cart tests', () => {
 
     cy.findByRole('button', { name: /remove magma from cart/i }).click();
 
-    cy.findByRole('heading', { name: /shopping cart with 0 items/i });
+    cy.findAllByRole('heading', { name: /shopping cart with 0 items/i });
   });
 
   it('can remove items from cart by pressing decrement button twice', () => {
@@ -62,7 +62,7 @@ describe('Cart tests', () => {
       .click()
       .click();
 
-    cy.findByRole('heading', { name: /shopping cart with 0 items/i });
+    cy.findAllByRole('heading', { name: /shopping cart with 0 items/i });
   });
 
   it('proper subtotal value and proper product price when incrementing and decrementing quantity', () => {

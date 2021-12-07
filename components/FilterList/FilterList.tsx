@@ -1,5 +1,5 @@
 import Filter from '@components/Filter/Filter';
-import FiltersModal from '@components/Modals/FiltersModal';
+import FiltersModal from '@components/Modals/FiltersModal/FiltersModal';
 import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import Sort from '@components/Sort/Sort';
 import { SquareButton } from '@utils/style-utils';

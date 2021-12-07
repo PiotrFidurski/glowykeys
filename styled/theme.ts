@@ -11,6 +11,7 @@ const theme: DefaultTheme = {
     primary: '#030408',
     secondary: '#000000',
     card: '#090c13',
+    modalOverlay: 'rgb(255  255  255 / 20%)',
   },
   color: {
     primary: '#ffffff',
