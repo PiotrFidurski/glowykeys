@@ -2,13 +2,13 @@ import { theme } from '@styled/theme';
 
 export const customStyles = {
   content: {
-    padding: '0',
-    margin: '0px',
+    padding: 0,
+    margin: 0,
     background: theme.background.secondary,
     border: 0,
   },
   overlay: {
-    zIndex: 10000,
-    background: 'rgba(255, 255, 255, 0.2)',
+    zIndex: 100000,
+    background: theme.background.modalOverlay,
   },
 };

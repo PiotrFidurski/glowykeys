@@ -16,6 +16,8 @@ export const Article = styled.article`
   }
 `;
 
+export const A = styled.a``;
+
 export const Heading = styled.header`
   padding-left: 1rem;
 `;

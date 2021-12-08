@@ -1,14 +1,13 @@
-import { decrementQty, incrementQty } from '@components/Cart/CartContext';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
-import { RoundButton, SmallImageWrapper } from '@utils/style-utils';
+import { Hr, RoundButton, SmallImageWrapper } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import Delete from '../../public/assets/vector/delete.svg';
-import Minus from '../../public/assets/vector/minus.svg';
-import Plus from '../../public/assets/vector/plus.svg';
+import QuantityButtons from './QuantityButtons';
 import * as S from './styles';
 
 interface Props {
@@ -16,10 +15,7 @@ interface Props {
 }
 
 function CartItem({ product }: Props) {
-  const {
-    state: { items },
-    dispatch,
-  } = useCart();
+  const { dispatch } = useCart();
 
   return (
     <S.Article
@@ -35,7 +31,9 @@ function CartItem({ product }: Props) {
         </SmallImageWrapper>
         <S.DetailsContainer>
           <S.DetailsHeaderWrapper>
-            <S.A href="/">{product.name}</S.A>
+            <Link href={`/${product.type}s/${product.id}`} passHref prefetch={false}>
+              <S.A>{product.name}</S.A>
+            </Link>
             <RoundButton
               style={{ minHeight: '30px', maxWidth: '30px', minWidth: '30px' }}
               type="button"
@@ -46,41 +44,12 @@ function CartItem({ product }: Props) {
             </RoundButton>
           </S.DetailsHeaderWrapper>
           <S.DetailsContentWrapper>
-            <S.QuantityContainer>
-              <S.QuantityButton
-                type="button"
-                onClick={() => incrementQty({ dispatch, updates: { items, product } })}
-                aria-label={`add one more ${product.name} to cart`}
-              >
-                <Plus width="15" height="15" fill="white" />
-              </S.QuantityButton>
-              <S.QTY tabIndex={-1} aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
-              <S.QuantityButton
-                reverseBorderRadius
-                type="button"
-                onClick={() => {
-                  if (product.qty > 0) {
-                    decrementQty({ dispatch, updates: { items, product } });
-                  } else {
-                    dispatch({ type: actionTypes.removeItem, payload: product });
-                  }
-                }}
-                aria-label={
-                  product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`
-                }
-              >
-                {product.qty === 0 ? (
-                  <Delete width="15" height="15" fill="white" />
-                ) : (
-                  <Minus width="15" height="15" fill="white" />
-                )}
-              </S.QuantityButton>
-            </S.QuantityContainer>
+            <QuantityButtons product={product} />
             <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
           </S.DetailsContentWrapper>
         </S.DetailsContainer>
       </S.Container>
-      <S.Hr />
+      <Hr />
     </S.Article>
   );
 }

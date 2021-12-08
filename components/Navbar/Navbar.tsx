@@ -8,7 +8,7 @@ import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
 import Loupe from '../../public/assets/vector/loupe.svg';
-import { Header, Li, Logo, LogoSectionList, Nav, SignInLink, Ul } from './styles';
+import { Header, Li, Logo, LogoList, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
   const { dispatch } = useCart();
@@ -21,7 +21,7 @@ function Navbar() {
   return (
     <Header>
       <Nav>
-        <LogoSectionList aria-hidden="true">
+        <LogoList aria-hidden="true">
           <Li>
             <Link href="/" passHref aria-label="go to homepage">
               <Logo>
@@ -30,7 +30,7 @@ function Navbar() {
               </Logo>
             </Link>
           </Li>
-        </LogoSectionList>
+        </LogoList>
         <Ul>
           <Li>
             <Link href="/signin" passHref>

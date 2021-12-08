@@ -14,12 +14,14 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       card: string;
+      modalOverlay: string;
     };
     color: {
       primary: string;
       accent: string;
       highlight: string;
       danger: string;
+      btnHover: string;
     };
   }
 }

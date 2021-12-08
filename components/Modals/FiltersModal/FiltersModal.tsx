@@ -5,8 +5,8 @@ import Sort from '@components/Sort/Sort';
 import { RoundButton } from '@utils/style-utils';
 import * as React from 'react';
 import Modal from 'react-modal';
-import Close from '../../public/assets/vector/close.svg';
-import { customStyles } from './customStyles';
+import Close from '../../../public/assets/vector/close.svg';
+import { customStyles } from '../customStyles';
 import { HeaderContainer } from './styles';
 
 interface Props {

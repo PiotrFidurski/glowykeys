@@ -1,6 +1,5 @@
-import { Hr } from '@components/CartItem/styles';
 import { debounce } from '@utils/debounce';
-import { RoundButton, SquareButton } from '@utils/style-utils';
+import { Hr, RoundButton, SquareButton } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { useSearch } from '@utils/useSearch';
 import * as React from 'react';

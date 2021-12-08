@@ -11,12 +11,14 @@ const theme: DefaultTheme = {
     primary: '#030408',
     secondary: '#000000',
     card: '#090c13',
+    modalOverlay: 'rgb(255  255  255 / 20%)',
   },
   color: {
     primary: '#ffffff',
     accent: '#171e2d',
     highlight: '#0091ff',
     danger: '#F06071',
+    btnHover: '#0972c5',
   },
 };
 

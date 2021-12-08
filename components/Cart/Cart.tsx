@@ -1,7 +1,6 @@
 import CartItem from '@components/CartItem/CartItem';
-import { Hr } from '@components/CartItem/styles';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
-import { RoundButton, SquareButton } from '@utils/style-utils';
+import { Hr, RoundButton, SquareButton } from '@utils/style-utils';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
@@ -36,8 +35,8 @@ function Cart() {
 
   return (
     <CartContainer>
-      <Header role="heading" aria-label={`Shopping cart with ${items.length} items`}>
-        <H2>Shopping Cart ({items.length} items)</H2>
+      <Header role="heading" aria-labelledby="cart-heading">
+        <H2 id="cart-heading">Shopping Cart with {items.length} items</H2>
         <RoundButton
           aria-expanded={open ? 'true' : 'false'}
           aria-label="close cart"

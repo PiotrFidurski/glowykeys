@@ -1,5 +1,4 @@
-import { Hr } from '@components/CartItem/styles';
-import { SmallImageWrapper } from '@utils/style-utils';
+import { Hr, SmallImageWrapper } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,7 +12,7 @@ interface Props {
 function Result({ product }: Props) {
   return (
     <Li>
-      <Link href="/" passHref>
+      <Link href={`/${product.type}s/${product.id}`} passHref prefetch={false}>
         <A>
           <ResultContainer>
             <SmallImageWrapper>
@@ -21,7 +20,7 @@ function Result({ product }: Props) {
             </SmallImageWrapper>
             <ResultDetailsContainer>
               <p>{product.name}</p>
-              <p>{product.price}$</p>
+              <p>{product.price.toFixed(2)}$</p>
             </ResultDetailsContainer>
           </ResultContainer>
         </A>

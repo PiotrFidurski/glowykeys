@@ -84,26 +84,16 @@ export const SquareButton = styled.button`
   grid-area: button;
   max-width: 300px;
   width: 100%;
+  background: ${({ theme: { color } }) => color.highlight};
   color: ${({ theme: { color } }) => color.primary};
-  border: 3px solid ${({ theme: { color } }) => color.highlight};
+  border: 0;
   min-width: 200px;
-  transition: border-color 0.3s linear;
-
-  &:before {
-    position: absolute;
-    width: 0%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    background: ${({ theme: { color } }) => color.highlight};
-    content: '';
-    transition: width 0.3s linear;
-  }
+  transition: background-color 0.2s ease;
 
   &:hover {
     cursor: pointer;
+
+    background: ${({ theme: { color } }) => color.btnHover};
     &:before {
       width: 100%;
     }
@@ -170,4 +160,12 @@ export const VisuallyHiddenH2 = styled.h2`
 
 export const VisuallyHiddenSpan = styled.span`
   ${HideVisually};
+`;
+
+export const Hr = styled.hr`
+  width: 100%;
+  border: 0;
+  margin: 1rem 0 1rem 0;
+  height: 1px;
+  background: ${({ theme: { color } }) => color.accent};
 `;
