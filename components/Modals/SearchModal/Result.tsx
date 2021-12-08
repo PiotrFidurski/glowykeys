@@ -12,7 +12,7 @@ interface Props {
 function Result({ product }: Props) {
   return (
     <Li>
-      <Link href="/" passHref>
+      <Link href={`/${product.type}s/${product.id}`} passHref prefetch={false}>
         <A>
           <ResultContainer>
             <SmallImageWrapper>
