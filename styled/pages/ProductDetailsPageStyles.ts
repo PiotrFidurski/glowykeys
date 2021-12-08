@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  margin-top: 4rem;
+  margin-top: 5rem;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(5, minmax(auto, 1fr));
@@ -19,20 +19,55 @@ export const Main = styled.main`
 
 export const ProductDescriptionSection = styled.section`
   grid-area: product-description;
-  min-height: 600px;
-  max-height: 600px;
+  padding: 2rem;
+  height: auto;
   background-color: ${({ theme: { background } }) => background.card};
+
+  span {
+    color: ${({ theme: { color } }) => color.highlight};
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    color: ${({ theme: { color } }) => color.highlight};
+  }
+
+  ul {
+    padding: 1rem;
+    line-height: 1.725rem;
+  }
+
+  p {
+    font-size: 2rem;
+    color: ${({ theme: { color } }) => color.highlight};
+  }
+`;
+
+export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ImageGalleryContainer = styled.div`
   grid-area: image-gallery;
   display: grid;
+  position: relative;
+  max-height: 900px;
+  overflow: hidden;
+  overflow-y: auto;
   gap: 0.5rem;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
     'image-one image-one image-one image-one'
     'image-two image-two image-three image-three'
     'image-four image-four image-four image-four';
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 `;
 
 export const ImageOneWrapper = styled.div`
