@@ -60,20 +60,44 @@ function Keyboard({ keyboard }: Props) {
           <S.ImageOneWrapper>
             <Image
               src="/assets/images/roccat-magma-review-1.png"
-              priority
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-1.png"
               layout="responsive"
               width={1200}
               height={800}
             />
           </S.ImageOneWrapper>
           <S.ImageTwoWrapper>
-            <Image src="/assets/images/roccat-magma-review-2.png" priority layout="fill" objectFit="cover" />
+            <Image
+              src="/assets/images/roccat-magma-review-2.png"
+              loading="lazy"
+              layout="fill"
+              blurDataURL="/assets/images/roccat-magma-review-2.png"
+              objectFit="cover"
+              placeholder="blur"
+            />
           </S.ImageTwoWrapper>
           <S.ImageThreeWrapper>
-            <Image src="/assets/images/roccat-magma-review-3.png" priority layout="fill" objectFit="cover" />
+            <Image
+              src="/assets/images/roccat-magma-review-3.png"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-3.png"
+              loading="lazy"
+              layout="fill"
+              objectFit="cover"
+            />
           </S.ImageThreeWrapper>
           <S.ImageFourWrapper>
-            <Image src="/assets/images/roccat-magma-review-4.png" layout="responsive" width={1200} height={800} />
+            <Image
+              src="/assets/images/roccat-magma-review-4.png"
+              layout="responsive"
+              width={1200}
+              height={800}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-4.png"
+            />
           </S.ImageFourWrapper>
         </S.ImageGalleryContainer>
         <Footer />
