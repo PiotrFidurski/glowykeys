@@ -5,10 +5,11 @@ import * as S from '@styled/pages/ProductDetailsPageStyles';
 import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
+import { useBreadcrumbs } from '@utils/useBreadcrumbs';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import * as React from 'react';
 import FilledHeart from '../../public/assets/vector/filledheart.svg';
 
@@ -17,9 +18,7 @@ interface Props {
 }
 
 function Keyboard({ keyboard }: Props) {
-  const router = useRouter();
-
-  const [, path] = router.pathname.split('/');
+  const { prevCrumb, currentCrumb } = useBreadcrumbs();
 
   const { dispatch } = useCart();
 
@@ -32,7 +31,7 @@ function Keyboard({ keyboard }: Props) {
       <S.Main>
         <S.ProductDescriptionSection role="region" aria-labelledby="product-description">
           <span>
-            {path} \ {keyboard.name.toLocaleLowerCase()}
+            <Link href={`/${prevCrumb}`}>{prevCrumb}</Link> \ {currentCrumb}
           </span>
           <S.Header role="heading" aria-label="product">
             <h1 id="product-description">{keyboard.name}</h1>
@@ -86,7 +85,7 @@ function Keyboard({ keyboard }: Props) {
 export const getServerSideProps: GetServerSideProps = async ({ res, params }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=604800, stale-while-revalidate=59');
 
-  const response = await fetch(`${process.env.BASE_URL}/api/keyboards/${params.id}`);
+  const response = await fetch(`${process.env.BASE_URL}/api/keyboards/${params.name}`);
 
   const { data }: { data: Product } = await response.json();
 

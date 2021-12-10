@@ -1,7 +1,6 @@
 import dbConnect from '@utils/dbConnect';
 import { ApiErrorResponse, ApiResponse } from '@utils/types';
 import Product, { ProductDocument } from 'models/Product';
-import { Types } from 'mongoose';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -12,11 +11,11 @@ export default async function handler(
     await dbConnect();
 
     const {
-      query: { id },
+      query: { name },
     } = req;
 
     const docs: Array<ProductDocument> = await Product.aggregate([
-      { $match: { _id: { $eq: new Types.ObjectId(id as string) } } },
+      { $match: { name: { $regex: new RegExp((name as string).replace(/-/g, ' '), 'i') } } },
       { $addFields: { id: '$_id' } },
     ]);
 
