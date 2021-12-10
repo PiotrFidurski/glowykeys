@@ -1,5 +1,6 @@
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
+import { slugify } from '@utils/slugify';
 import { SquareButton } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
@@ -18,9 +19,11 @@ function ProductCard({ product }: Props) {
 
   const { pathname } = useRouter();
 
+  const slug = slugify(product.name);
+
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
-      <Link href={`${pathname}/${product.id}`} prefetch={false} passHref>
+      <Link href={`${pathname}/${slug}`} prefetch={false} passHref>
         <A>
           <ProductImageContainer>
             <Image

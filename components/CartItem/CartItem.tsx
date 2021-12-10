@@ -1,5 +1,6 @@
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
+import { slugify } from '@utils/slugify';
 import { Hr, RoundButton, SmallImageWrapper } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { motion } from 'framer-motion';
@@ -31,8 +32,8 @@ function CartItem({ product }: Props) {
         </SmallImageWrapper>
         <S.DetailsContainer>
           <S.DetailsHeaderWrapper>
-            <Link href={`/${product.type}s/${product.id}`} passHref prefetch={false}>
-              <S.A>{product.name}</S.A>
+            <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
+              <S.A onClick={() => dispatch({ type: actionTypes.closeMenu })}>{product.name}</S.A>
             </Link>
             <RoundButton
               style={{ minHeight: '30px', maxWidth: '30px', minWidth: '30px' }}

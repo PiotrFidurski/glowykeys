@@ -1,3 +1,4 @@
+import { slugify } from '@utils/slugify';
 import { Hr, SmallImageWrapper } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import Image from 'next/image';
@@ -12,7 +13,7 @@ interface Props {
 function Result({ product }: Props) {
   return (
     <Li>
-      <Link href={`/${product.type}s/${product.id}`} passHref prefetch={false}>
+      <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
         <A>
           <ResultContainer>
             <SmallImageWrapper>

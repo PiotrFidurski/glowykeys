@@ -42,6 +42,11 @@ export const ProductDescriptionSection = styled.section`
     font-size: 2rem;
     color: ${({ theme: { color } }) => color.highlight};
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme: { color } }) => color.primary};
+  }
 `;
 
 export const Header = styled.header`

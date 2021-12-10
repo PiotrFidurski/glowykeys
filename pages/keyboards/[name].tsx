@@ -5,10 +5,11 @@ import * as S from '@styled/pages/ProductDetailsPageStyles';
 import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
+import { useBreadcrumbs } from '@utils/useBreadcrumbs';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import * as React from 'react';
 import FilledHeart from '../../public/assets/vector/filledheart.svg';
 
@@ -17,9 +18,7 @@ interface Props {
 }
 
 function Keyboard({ keyboard }: Props) {
-  const router = useRouter();
-
-  const [, path] = router.pathname.split('/');
+  const { prevCrumb, currentCrumb } = useBreadcrumbs();
 
   const { dispatch } = useCart();
 
@@ -32,7 +31,7 @@ function Keyboard({ keyboard }: Props) {
       <S.Main>
         <S.ProductDescriptionSection role="region" aria-labelledby="product-description">
           <span>
-            {path} \ {keyboard.name.toLocaleLowerCase()}
+            <Link href={`/${prevCrumb}`}>{prevCrumb}</Link> \ {currentCrumb}
           </span>
           <S.Header role="heading" aria-label="product">
             <h1 id="product-description">{keyboard.name}</h1>
@@ -61,20 +60,44 @@ function Keyboard({ keyboard }: Props) {
           <S.ImageOneWrapper>
             <Image
               src="/assets/images/roccat-magma-review-1.png"
-              priority
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-1.png"
               layout="responsive"
               width={1200}
               height={800}
             />
           </S.ImageOneWrapper>
           <S.ImageTwoWrapper>
-            <Image src="/assets/images/roccat-magma-review-2.png" priority layout="fill" objectFit="cover" />
+            <Image
+              src="/assets/images/roccat-magma-review-2.png"
+              loading="lazy"
+              layout="fill"
+              blurDataURL="/assets/images/roccat-magma-review-2.png"
+              objectFit="cover"
+              placeholder="blur"
+            />
           </S.ImageTwoWrapper>
           <S.ImageThreeWrapper>
-            <Image src="/assets/images/roccat-magma-review-3.png" priority layout="fill" objectFit="cover" />
+            <Image
+              src="/assets/images/roccat-magma-review-3.png"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-3.png"
+              loading="lazy"
+              layout="fill"
+              objectFit="cover"
+            />
           </S.ImageThreeWrapper>
           <S.ImageFourWrapper>
-            <Image src="/assets/images/roccat-magma-review-4.png" layout="responsive" width={1200} height={800} />
+            <Image
+              src="/assets/images/roccat-magma-review-4.png"
+              layout="responsive"
+              width={1200}
+              height={800}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="/assets/images/roccat-magma-review-4.png"
+            />
           </S.ImageFourWrapper>
         </S.ImageGalleryContainer>
         <Footer />
@@ -86,7 +109,7 @@ function Keyboard({ keyboard }: Props) {
 export const getServerSideProps: GetServerSideProps = async ({ res, params }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=604800, stale-while-revalidate=59');
 
-  const response = await fetch(`${process.env.BASE_URL}/api/keyboards/${params.id}`);
+  const response = await fetch(`${process.env.BASE_URL}/api/keyboards/${params.name}`);
 
   const { data }: { data: Product } = await response.json();
 
