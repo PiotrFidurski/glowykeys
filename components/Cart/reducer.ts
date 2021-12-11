@@ -3,6 +3,12 @@ import { Action, actionTypes, State } from './types';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
+    case actionTypes.initializeItems: {
+      return {
+        ...state,
+        items: action.payload as Product[],
+      };
+    }
     case actionTypes.openMenu:
       return {
         ...state,
