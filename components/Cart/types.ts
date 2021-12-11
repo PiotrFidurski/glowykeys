@@ -2,9 +2,17 @@ import { Product } from '@utils/types';
 
 export type Action = { type: string; payload?: unknown };
 
-type PossibleTypes = 'openMenu' | 'closeMenu' | 'addItem' | 'removeItem' | 'incrementQty' | 'decrementQty';
+type PossibleTypes =
+  | 'initializeItems'
+  | 'openMenu'
+  | 'closeMenu'
+  | 'addItem'
+  | 'removeItem'
+  | 'incrementQty'
+  | 'decrementQty';
 
 export const actionTypes: Record<PossibleTypes, string> = {
+  initializeItems: 'INITIALIZE_ITEMS',
   openMenu: 'OPEN_MENU',
   closeMenu: 'CLOSE_MENU',
   addItem: 'ADD_ITEM',
