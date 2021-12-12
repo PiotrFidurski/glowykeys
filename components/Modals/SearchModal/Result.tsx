@@ -8,13 +8,14 @@ import { A, Li, ResultContainer, ResultDetailsContainer } from './styles';
 
 interface Props {
   product: ProductType;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Result({ product }: Props) {
+function Result({ product, setOpen }: Props) {
   return (
     <Li>
       <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
-        <A>
+        <A onClick={() => setOpen(false)}>
           <ResultContainer>
             <SmallImageWrapper>
               <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
