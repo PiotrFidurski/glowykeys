@@ -75,30 +75,52 @@ export const ImageGalleryContainer = styled.div`
   }
 `;
 
-export const ImageOneWrapper = styled.div`
+export const ImageOneContainer = styled.div`
   width: 100%;
+  min-height: 600px;
+  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-one;
-  position: relative;
+  display: flex;
+  justify-content: center;
 `;
 
-export const ImageTwoWrapper = styled.div`
+export const ImageWrapper = styled.div`
+  position: relative;
   width: 100%;
-  max-height: 300px;
+  max-width: 800px;
+`;
+
+export const ImageSmallWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+`;
+
+export const ImageTwoContainer = styled.div`
+  width: 100%;
   min-height: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-two;
   position: relative;
 `;
 
-export const ImageThreeWrapper = styled.div`
+export const ImageThreeContainer = styled.div`
   width: 100%;
-  max-height: 300px;
   min-height: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-three;
-  position: relative;
 `;
 
-export const ImageFourWrapper = styled.div`
+export const ImageFourContainer = styled.div`
   width: 100%;
+  max-width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-four;
-  position: relative;
 `;

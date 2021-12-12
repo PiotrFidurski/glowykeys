@@ -59,7 +59,7 @@ function SearchModal({ isOpen, setOpen }: Props) {
               {isValidating ? (
                 <div>loading...</div>
               ) : (
-                data?.data?.map((product) => <Result product={product} key={product.id} />)
+                data?.data?.map((product) => <Result setOpen={setOpen} product={product} key={product.id} />)
               )}
               <SquareButton>All Products</SquareButton>
             </Ul>
