@@ -1,5 +1,5 @@
 export interface Image {
-  originalPlaceholder: string;
+  originalPlaceholder?: string;
   thumbnail: string;
   original: string;
   placeholder: string;
