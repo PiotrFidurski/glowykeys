@@ -5,7 +5,7 @@ export function useBreadcrumbs() {
 
   const { asPath } = router;
 
-  const [, prevCrumb, currentCrumb] = asPath.split('/');
+  const [, prevPath, currentPath] = asPath.split('/');
 
-  return { prevCrumb, currentCrumb };
+  return { prevPath, currentPath };
 }
