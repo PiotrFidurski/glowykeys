@@ -1,5 +1,5 @@
 import KeyboardsPage from '@pages/keyboards';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { render } from '@utils/test-utils';
 import { testData } from 'data';
 import Modal from 'react-modal';
@@ -17,17 +17,17 @@ beforeEach(() => {
 test('clicking on a search icon opens search modal', () => {
   render(<KeyboardsPage keyboards={testData} />);
 
-  const searchBtn = screen.getByRole('button', { name: /open search menu/i });
+  const searchBtn = screen.getByRole('button', { name: /open search dialog/i });
 
   fireEvent.click(searchBtn);
 
   expect(screen.getByRole('button', { name: /close search dialog/i })).toBeInTheDocument();
 });
 
-test('clicking on a close search dialog button closes search modal', () => {
+test('clicking on a close search dialog button closes dialog', async () => {
   render(<KeyboardsPage keyboards={testData} />);
 
-  const searchBtn = screen.getByRole('button', { name: /open search menu/i });
+  const searchBtn = screen.getByRole('button', { name: /open search dialog/i });
 
   fireEvent.click(searchBtn);
 
@@ -37,20 +37,25 @@ test('clicking on a close search dialog button closes search modal', () => {
 });
 
 test('users can search for products', async () => {
-  jest.useFakeTimers();
-
   render(<SearchModal isOpen setOpen={() => {}} />);
 
-  // const searchBtn = screen.getByRole('button', { name: /open search menu/i });
-
-  // fireEvent.click(searchBtn);
-
   const input = screen.getByLabelText('search');
-  act(() => {
-    jest.advanceTimersByTime(1000);
-    jest.runAllTimers();
-  });
+
   fireEvent.change(input, { target: { value: 'roccat' } });
 
-  screen.debug();
+  expect(await screen.findByRole('link', { name: /vulcan/i })).toBeInTheDocument();
+});
+
+test('each product can be linked to details page', async () => {
+  render(<SearchModal isOpen setOpen={() => {}} />);
+
+  const input = screen.getByLabelText('search');
+
+  fireEvent.change(input, { target: { value: 'roccat' } });
+
+  expect(await screen.findByRole('link', { name: /vulcan/i })).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('link', { name: /vulcan/i }));
+
+  expect(screen.getByRole('link', { name: /vulcan/i })).toHaveAttribute('href', '/keyboards/vulcan-pro');
 });
