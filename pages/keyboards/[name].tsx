@@ -18,20 +18,25 @@ interface Props {
 }
 
 function Keyboard({ keyboard }: Props) {
-  const { prevCrumb, currentCrumb } = useBreadcrumbs();
+  const { prevPath, currentPath } = useBreadcrumbs();
 
   const { dispatch } = useCart();
 
   return (
     <>
       <Head>
-        <title>{keyboard.name}</title>
-        <meta name="description" content="placeholder" />
+        <title>
+          {keyboard.brand.toUpperCase()} {keyboard.name}
+        </title>
+        <meta
+          name="description"
+          content={`Get ${keyboard.name} ${keyboard.variant} keyboard. Featuring a compact Tenkeyless form factor, AIMO lighting and aluminum plates for protection.`}
+        />
       </Head>
       <S.Main>
         <S.ProductDescriptionSection role="region" aria-labelledby="product-description">
           <span>
-            <Link href={`/${prevCrumb}`}>{prevCrumb}</Link> \ {currentCrumb}
+            <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
           <S.Header role="heading" aria-label="product">
             <h1 id="product-description">{keyboard.name}</h1>
@@ -62,10 +67,10 @@ function Keyboard({ keyboard }: Props) {
               <Image
                 src={keyboard.image.original}
                 loading="lazy"
-                sizes="75vw"
                 placeholder="blur"
                 blurDataURL={keyboard.image.originalPlaceholder}
                 layout="fill"
+                sizes="75vw"
                 objectFit="contain"
               />
             </S.ImageWrapper>
