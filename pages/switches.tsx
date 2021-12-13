@@ -15,7 +15,10 @@ function SwitchesPage({ switches }) {
     <>
       <Head>
         <title>Browse for Switches</title>
-        <meta name="description" content="Find the latest mechanical key switches" />
+        <meta
+          name="description"
+          content="Find the latest mechanical key switches, quiet switches, clicky switches, perfect switches for accurate typing and hardcore gaming."
+        />
       </Head>
       <Main>
         <Header>

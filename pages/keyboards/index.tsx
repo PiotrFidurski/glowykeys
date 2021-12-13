@@ -19,7 +19,10 @@ function KeyboardsPage({ keyboards }: Props) {
     <>
       <Head>
         <title>Browse for keyboards</title>
-        <meta name="description" content="find the best keyboard for your own needs" />
+        <meta
+          name="description"
+          content="Find the best keyboard for your own needs, whether you're a hardcore gamer or casual typer, we have you covered."
+        />
       </Head>
       <Main>
         <Header>

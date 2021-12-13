@@ -19,7 +19,10 @@ function KeycapsPage({ keycaps }: Props) {
     <>
       <Head>
         <title>Browse for Keycaps</title>
-        <meta name="description" content="Find all kinds of unique looking keycaps" />
+        <meta
+          name="description"
+          content="Find all kinds of unique looking keycaps, Select from the available keycap sets that we currently offer."
+        />
       </Head>
       <Main>
         <Header>
