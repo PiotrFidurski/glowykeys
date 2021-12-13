@@ -21,7 +21,7 @@ function SearchModal({ isOpen, setOpen }: Props) {
 
   const handleChange = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
-  }, 0);
+  }, 500);
 
   return (
     <Modal
