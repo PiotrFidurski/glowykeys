@@ -13,7 +13,7 @@ interface Props {
 
 function Result({ product, setOpen }: Props) {
   return (
-    <Li>
+    <Li aria-label={product.name} role="listitem">
       <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
         <A onClick={() => setOpen(false)}>
           <ResultContainer>

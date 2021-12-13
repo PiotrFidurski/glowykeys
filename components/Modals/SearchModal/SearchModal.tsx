@@ -17,15 +17,16 @@ interface Props {
 function SearchModal({ isOpen, setOpen }: Props) {
   const [query, setQuery] = React.useState('');
 
-  const { data, isValidating } = useSearch<{ data: ProductType[] }>(query);
+  const { data, isValidating, error } = useSearch<{ data: ProductType[] }>(query);
 
   const handleChange = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
-  }, 450);
+  }, 0);
 
   return (
     <Modal
       isOpen={isOpen}
+      aria-label="search"
       style={{
         ...customStyles,
         content: { ...customStyles.content, inset: 0, background: 'transparent' },
@@ -36,32 +37,37 @@ function SearchModal({ isOpen, setOpen }: Props) {
     >
       <Container>
         <Wrapper>
-          <RoundButton style={{ alignSelf: 'flex-end' }} type="button" onClick={() => setOpen(false)}>
+          <RoundButton
+            style={{ alignSelf: 'flex-end' }}
+            type="button"
+            onClick={() => setOpen(false)}
+            aria-label="close search dialog"
+          >
             <Close fill="white" width="25" height="25" />
           </RoundButton>
           <SearchContainer>
             <Form role="search" onSubmit={(e) => e.preventDefault()}>
-              <label htmlFor="search">
-                <Input
-                  autoFocus
-                  placeholder="Search"
-                  type="text"
-                  name="search"
-                  aria-label="Search"
-                  autoComplete="off"
-                  autoCorrect="off"
-                  onChange={handleChange}
-                />
+              <label hidden htmlFor="search">
+                search
               </label>
+              <Input
+                autoFocus
+                placeholder="Search"
+                type="text"
+                id="search"
+                aria-label="Search"
+                autoComplete="off"
+                autoCorrect="off"
+                onChange={handleChange}
+              />
             </Form>
             <Hr />
-            <Ul>
-              {isValidating ? (
-                <div>loading...</div>
-              ) : (
-                data?.data?.map((product) => <Result setOpen={setOpen} product={product} key={product.id} />)
-              )}
-              <SquareButton>All Products</SquareButton>
+            <Ul aria-label="search results">
+              {!data && !error && isValidating ? <div>loading...</div> : null}
+              {data && data.data
+                ? data?.data?.map((product) => <Result setOpen={setOpen} product={product} key={product.id} />)
+                : null}
+              <SquareButton role="button">All Products</SquareButton>
             </Ul>
           </SearchContainer>
         </Wrapper>
