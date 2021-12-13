@@ -47,7 +47,7 @@ function Navbar() {
             </RoundButton>
           </Li>
           <Li>
-            <RoundButton onClick={() => setOpen(true)} type="button" aria-label="open search menu">
+            <RoundButton onClick={() => setOpen(true)} type="button" aria-label="open search dialog">
               <Loupe width="25" height="25" fill="white" />
             </RoundButton>
           </Li>

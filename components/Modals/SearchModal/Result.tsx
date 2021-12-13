@@ -15,7 +15,7 @@ function Result({ product, setOpen }: Props) {
   return (
     <Li>
       <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
-        <A onClick={() => setOpen(false)}>
+        <A onClick={() => setOpen(false)} aria-label={product.name}>
           <ResultContainer>
             <SmallImageWrapper>
               <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
