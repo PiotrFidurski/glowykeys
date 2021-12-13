@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const ImageContainerStyles = css`
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme: { background } }) => background.card};
+  width: 100%;
+`;
 
 export const Main = styled.main`
   margin-top: 5rem;
@@ -76,12 +83,9 @@ export const ImageGalleryContainer = styled.div`
 `;
 
 export const ImageOneContainer = styled.div`
-  width: 100%;
+  ${ImageContainerStyles};
   min-height: 600px;
-  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-one;
-  display: flex;
-  justify-content: center;
 `;
 
 export const ImageWrapper = styled.div`
@@ -93,34 +97,23 @@ export const ImageWrapper = styled.div`
 export const ImageSmallWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
 `;
 
 export const ImageTwoContainer = styled.div`
-  width: 100%;
+  ${ImageContainerStyles};
   min-height: 300px;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-two;
-  position: relative;
 `;
 
 export const ImageThreeContainer = styled.div`
-  width: 100%;
+  ${ImageContainerStyles};
   min-height: 300px;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-three;
 `;
 
 export const ImageFourContainer = styled.div`
-  width: 100%;
-  max-width: 100%;
+  ${ImageContainerStyles};
   min-height: 600px;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme: { background } }) => background.card};
   grid-area: image-four;
 `;
