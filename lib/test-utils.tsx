@@ -10,6 +10,7 @@ import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { NextRouter } from 'next/router';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { SWRConfig } from 'swr';
 
 export const mockRouter = ({ query, ...props }: Partial<NextRouter> = {}): NextRouter => ({
   asPath: '/',
@@ -41,15 +42,17 @@ interface ProviderProps {
 }
 
 const Providers = ({ children, routerProps }: ProviderProps) => (
-  <RouterContext.Provider value={mockRouter(routerProps)}>
-    <ThemeProvider theme={theme}>
-      <CartProvider ui={<Cart />} reducer={reducer} initialItems={cartData}>
-        <GlobalStyles />
-        <Navbar />
-        {children}
-      </CartProvider>
-    </ThemeProvider>
-  </RouterContext.Provider>
+  <SWRConfig value={{ dedupingInterval: 0, provider: () => new Map() }}>
+    <RouterContext.Provider value={mockRouter(routerProps)}>
+      <ThemeProvider theme={theme}>
+        <CartProvider ui={<Cart />} reducer={reducer} initialItems={cartData}>
+          <GlobalStyles />
+          <Navbar />
+          {children}
+        </CartProvider>
+      </ThemeProvider>
+    </RouterContext.Provider>
+  </SWRConfig>
 );
 
 const customRender = (ui: React.ReactElement, options?: RenderOptions, routerProps?: Partial<NextRouter>) =>
