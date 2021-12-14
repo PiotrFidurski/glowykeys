@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   grid-template-areas:
     'header header header header'
     'products products products products'
     'footer footer footer footer';
+
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+  }
 `;
 
 export const Header = styled.header`

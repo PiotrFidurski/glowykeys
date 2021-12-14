@@ -79,7 +79,6 @@ const CategoryLink = css`
 `;
 
 export const Main = styled.main`
-  margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
   grid-template-areas:
@@ -87,6 +86,10 @@ export const Main = styled.main`
     'categories categories categories categories'
     'popular popular popular popular'
     'footer footer footer footer';
+
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+  }
 `;
 
 export const H3 = styled.h3`

@@ -6,9 +6,10 @@ import { RoundButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import Link from 'next/link';
 import * as React from 'react';
 import Cart from '../../public/assets/vector/cart.svg';
+import Hamburger from '../../public/assets/vector/hamburger.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
 import Loupe from '../../public/assets/vector/loupe.svg';
-import { Header, Li, Logo, LogoList, Nav, SignInLink, Ul } from './styles';
+import { Header, Li, Logo, LogoList, MenuToggleButton, Nav, SignInLink, Ul } from './styles';
 
 function Navbar() {
   const { dispatch } = useCart();
@@ -18,9 +19,20 @@ function Navbar() {
 
   const [open, setOpen] = React.useState(false);
 
+  const [expanded, setExpanded] = React.useState(false);
+
   return (
     <Header>
-      <Nav>
+      <MenuToggleButton
+        aria-controls="menubar"
+        onClick={() => setExpanded(!expanded)}
+        type="button"
+        aria-label={expanded ? 'close menu' : 'open menu'}
+        aria-expanded={expanded}
+      >
+        <Hamburger fill="white" width="24" height="24" />
+      </MenuToggleButton>
+      <Nav aria-label="menubar" id="menubar" isExpanded={expanded}>
         <LogoList aria-hidden="true">
           <Li>
             <Link href="/" passHref aria-label="go to homepage">

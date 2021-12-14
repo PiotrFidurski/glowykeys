@@ -8,7 +8,6 @@ const ImageContainerStyles = css`
 `;
 
 export const Main = styled.main`
-  margin-top: 5rem;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(5, minmax(auto, 1fr));
@@ -21,12 +20,13 @@ export const Main = styled.main`
     grid-template-areas:
       'image-gallery image-gallery image-gallery product-description product-description'
       'footer footer footer footer footer';
+    margin-top: 5rem;
   }
 `;
 
 export const ProductDescriptionSection = styled.section`
   grid-area: product-description;
-  padding: 2rem;
+  padding: 6rem 2rem;
   height: auto;
   background-color: ${({ theme: { background } }) => background.card};
 

@@ -4,5 +4,6 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 90,
   "editor.guides.bracketPairs": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true
 }
