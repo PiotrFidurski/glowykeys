@@ -6,7 +6,6 @@ import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import * as React from 'react';
 import { A, Article, H2, Heading, Paragraph, ProductImageContainer } from './styles';
 
@@ -17,13 +16,11 @@ interface Props {
 function ProductCard({ product }: Props) {
   const { dispatch } = useCart();
 
-  const { pathname } = useRouter();
-
   const slug = slugify(product.name);
 
   return (
     <Article as={motion.article} layout role="article" aria-label={product.name}>
-      <Link href={`${pathname}/${slug}`} prefetch={false} passHref>
+      <Link href={`${product.type}/${slug}`} prefetch={false} passHref>
         <A>
           <ProductImageContainer>
             <Image
