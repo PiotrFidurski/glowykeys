@@ -14,6 +14,8 @@ interface Props {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const categories = ['keyboards', 'switches', 'keycaps'];
+
 function SearchModal({ isOpen, setOpen }: Props) {
   const [query, setQuery] = React.useState('');
 
@@ -62,13 +64,26 @@ function SearchModal({ isOpen, setOpen }: Props) {
               />
             </Form>
             <Hr />
-            <Ul aria-label="search results">
-              {!data && !error && isValidating ? <div>loading...</div> : null}
-              {data && data.data
-                ? data?.data?.map((product) => <Result setOpen={setOpen} product={product} key={product.id} />)
-                : null}
-              <SquareButton role="button">All Products</SquareButton>
-            </Ul>
+
+            {!data && !error && isValidating ? <div>loading...</div> : null}
+            {data && !data.data.length ? (
+              <span style={{ textAlign: 'center' }}>No matches found, try searching for something else</span>
+            ) : null}
+            {data && data.data
+              ? categories
+                  .filter((category) => data.data.some((product) => product.type === category))
+                  .map((category) => (
+                    <Ul key={category} aria-label={category} role="list">
+                      <h2 id="category-name">{category.toUpperCase()}</h2>
+                      {data?.data
+                        ?.filter((product) => product.type === category)
+                        .map((product) => (
+                          <Result setOpen={setOpen} product={product} key={product.id} />
+                        ))}
+                    </Ul>
+                  ))
+              : null}
+            <SquareButton role="button">All Products</SquareButton>
           </SearchContainer>
         </Wrapper>
       </Container>
