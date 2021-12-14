@@ -1,4 +1,4 @@
-import { GradientText, LineOnHover } from '@utils/style-utils';
+import { GradientText, LineOnHover, RoundButton } from '@utils/style-utils';
 import styled, { css } from 'styled-components';
 
 const ListStyles = css`
@@ -20,24 +20,61 @@ export const Header = styled.header`
   width: 100%;
 `;
 
-export const Nav = styled.nav`
+export const MenuToggleButton = styled(RoundButton)`
+  z-index: 9999;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Nav = styled.nav<{ isExpanded: boolean }>`
   display: flex;
   max-height: 70px;
   min-height: 50px;
   padding: 0 2rem;
-  background: ${({ theme: { background } }) => background.primary};
-  align-items: center;
+  background: hsl(0 0% 0% / 100%);
+  min-height: 100vh;
+  padding: 4rem;
+  justify-content: flex-start;
+  inset: 0 0 0 30%;
+  position: absolute;
+  visibility: ${({ isExpanded }) => (isExpanded ? 'visible' : 'collapse')};
+  transform: ${({ isExpanded }) => (isExpanded ? 'translateX(0)' : 'translateX(100%)')};
+  transition: transform 0.3s ease, visibility 0.3s ease-in-out;
+
+  @supports (backdrop-filter: blur(10px)) {
+    background: hsl(0 0% 0% / 20%);
+    backdrop-filter: blur(10px);
+  }
+
+  @media (min-width: 768px) {
+    visibility: visible;
+    min-height: auto;
+    position: relative;
+    inset: unset;
+    padding: 0rem 1rem;
+    transform: translateX(0);
+  }
 `;
 
 export const LogoList = styled.ul`
   ${ListStyles};
   justify-content: flex-start;
   width: auto;
+  display: none;
 
   li {
     &:hover {
       cursor: pointer;
     }
+  }
+
+  @media (min-width: 768px) {
+    display: block;
   }
 `;
 
@@ -53,7 +90,12 @@ export const Logo = styled.a`
 
 export const Ul = styled.ul`
   ${ListStyles};
-  justify-content: flex-end;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    flex-direction: row;
+  }
 `;
 
 export const Li = styled.li`
