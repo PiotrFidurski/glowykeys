@@ -26,13 +26,15 @@ test('it closes cart menu when users clicks close button', async () => {
 
   fireEvent.click(screen.getByRole('button', { name: /open cart/ }));
 
-  expect(screen.getByText(/Subtotal/i)).toBeInTheDocument();
+  const subtotalText = screen.getByText(/Subtotal/i);
+
+  expect(subtotalText).toBeInTheDocument();
 
   expect(document.body.className).toBe('ReactModal__Body--open');
 
   fireEvent.click(screen.getByRole('button', { name: /close cart/i }));
 
-  await waitForElementToBeRemoved(() => screen.getByText(/Subtotal/i));
+  await waitForElementToBeRemoved(subtotalText);
 
   expect(document.body.className).toBe('');
 });
@@ -40,17 +42,13 @@ test('it closes cart menu when users clicks close button', async () => {
 test('cart items quantity can be incremented and decremented', () => {
   render(<Cart />);
 
-  const incrementBtn = screen.getByRole('button', { name: /add one more vulcan pro to cart/i });
-
-  const decrementBtn = screen.getByRole('button', { name: /remove one vulcan pro from cart/i });
-
   const price = screen.getAllByText(/199.99/);
 
-  fireEvent.click(incrementBtn);
+  fireEvent.click(screen.getByRole('button', { name: /add one more vulcan pro to cart/i }));
 
   expect(price[0]).toHaveTextContent('399.98$');
 
-  fireEvent.click(decrementBtn);
+  fireEvent.click(screen.getByRole('button', { name: /remove one vulcan pro from cart/i }));
 
   expect(price[0]).toHaveTextContent('199.99$');
 
