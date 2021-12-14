@@ -26,6 +26,9 @@ export const SearchContainer = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 100%;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
 export const Form = styled.form`
@@ -57,9 +60,6 @@ export const Ul = styled.ul`
   list-style: none;
   flex-direction: column;
   gap: 1rem;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
 `;
 
 export const Li = styled.li`
