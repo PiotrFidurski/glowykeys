@@ -11,7 +11,7 @@ export default async function handler(
     await dbConnect();
 
     const docs: Array<ProductDocument> = await Product.aggregate([
-      { $match: { type: { $eq: 'keyboard' } } },
+      { $match: { type: { $eq: 'keyboards' } } },
       { $project: { description: 0 } },
       { $addFields: { id: '$_id' } },
     ]);

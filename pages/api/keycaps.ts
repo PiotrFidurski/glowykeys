@@ -11,7 +11,7 @@ export default async function handler(
     await dbConnect();
 
     const docs = await Product.aggregate([
-      { $match: { type: { $eq: 'keycap' } } },
+      { $match: { type: { $eq: 'keycaps' } } },
       { $project: { description: 0 } },
       { $addFields: { id: '$_id' } },
     ]);

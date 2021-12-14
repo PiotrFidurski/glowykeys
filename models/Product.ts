@@ -5,7 +5,7 @@ export interface ProductDocument {
   name: string;
   price: number;
   qty: number;
-  type: 'keyboard' | 'keycap' | 'switch';
+  type: 'keyboards' | 'keycaps' | 'switches';
   connectivity?: string;
   variant?: string;
   color: string;

@@ -16,7 +16,7 @@ export const handlers = [
             qty: 1,
             brand: 'roccat',
             connectivity: 'wired',
-            type: 'keyboard',
+            type: 'keyboards',
             variant: 'casual',
             price: 199.99,
             name: 'Vulcan Pro',
