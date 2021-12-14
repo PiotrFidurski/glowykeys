@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -90,4 +90,27 @@ export const ResultDetailsContainer = styled.div`
       color: white;
     }
   }
+`;
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  } 
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled.div`
+  max-width: 40px;
+  min-height: 40px;
+  width: 100%;
+  border-radius: 9999px;
+  border-width: 3px;
+  border-style: solid;
+  align-self: center;
+  border-color: ${({ theme: { background } }) => background.modalOverlay};
+  border-top-color: ${({ theme: { color } }) => color.highlight};
+  animation: ${spin} 0.8s linear infinite;
 `;

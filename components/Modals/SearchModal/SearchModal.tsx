@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 import Close from '../../../public/assets/vector/close.svg';
 import { customStyles } from '../customStyles';
 import Result from './Result';
-import { Container, Form, Input, SearchContainer, Ul, Wrapper } from './styles';
+import { Container, Form, Input, SearchContainer, Spinner, Ul, Wrapper } from './styles';
 
 interface Props {
   isOpen: boolean;
@@ -65,7 +65,7 @@ function SearchModal({ isOpen, setOpen }: Props) {
             </Form>
             <Hr />
 
-            {!data && !error && isValidating ? <div>loading...</div> : null}
+            {!data && !error && isValidating ? <Spinner /> : null}
             {data && !data.data.length ? (
               <span style={{ textAlign: 'center' }}>No matches found, try searching for something else</span>
             ) : null}
