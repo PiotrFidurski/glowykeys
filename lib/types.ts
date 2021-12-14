@@ -6,7 +6,7 @@ export interface Image {
 }
 
 export interface Product {
-  type: 'Keyboard' | 'Keycap' | 'Switch';
+  type: 'keyboards' | 'keycaps' | 'switches';
   variant?: string;
   name: string;
   price: number;

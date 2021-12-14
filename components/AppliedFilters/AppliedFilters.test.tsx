@@ -16,13 +16,15 @@ test('when removed filters buttons are clicked filters are removed', () => {
     }
   );
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(1);
+  const productListRegion = screen.getByRole('region', { name: /list of products/i });
+
+  expect(productListRegion.children).toHaveLength(1);
 
   fireEvent.click(screen.getByRole('button', { name: /remove wired filter/i }));
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(2);
+  expect(productListRegion.children).toHaveLength(2);
 
   fireEvent.click(screen.getByRole('button', { name: /remove gaming filter/i }));
 
-  expect(screen.getByRole('region', { name: /list of products/i }).children).toHaveLength(4);
+  expect(productListRegion.children).toHaveLength(4);
 });

@@ -18,9 +18,7 @@ test('products can be filtered by connectivity or variant', () => {
 
   fireEvent.click(wiredFilter);
 
-  const gamingFilter = screen.getByRole('checkbox', { name: /gaming/i, hidden: true });
-
-  fireEvent.click(gamingFilter);
+  fireEvent.click(screen.getByRole('checkbox', { name: /gaming/i, hidden: true }));
   fireEvent.click(wiredFilter);
 
   expect(productList.children).toHaveLength(1);

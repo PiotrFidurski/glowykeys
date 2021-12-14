@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -26,6 +26,9 @@ export const SearchContainer = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 100%;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
 export const Form = styled.form`
@@ -57,9 +60,6 @@ export const Ul = styled.ul`
   list-style: none;
   flex-direction: column;
   gap: 1rem;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
 `;
 
 export const Li = styled.li`
@@ -90,4 +90,27 @@ export const ResultDetailsContainer = styled.div`
       color: white;
     }
   }
+`;
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  } 
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled.div`
+  max-width: 40px;
+  min-height: 40px;
+  width: 100%;
+  border-radius: 9999px;
+  border-width: 3px;
+  border-style: solid;
+  align-self: center;
+  border-color: ${({ theme: { background } }) => background.modalOverlay};
+  border-top-color: ${({ theme: { color } }) => color.highlight};
+  animation: ${spin} 0.8s linear infinite;
 `;

@@ -41,7 +41,9 @@ function SwitchesPage({ switches }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=59');
+
   const response = await fetch(`${process.env.BASE_URL}/api/switches`);
 
   const { data }: { data: Array<ProductType> } = await response.json();
