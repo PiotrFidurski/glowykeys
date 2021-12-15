@@ -10,6 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: E2E Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm run startci
+          wait-on: http://localhost:3001
+
       - name: Install
         run: npm install
 
@@ -21,9 +28,3 @@ jobs:
 
       - name: Integration Tests
         run: npm run test
-
-      - name: E2E Tests
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          wait-on: http://localhost:3000

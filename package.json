@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "startci": "next start -p 3001",
     "lint": "next lint",
     "test": "jest",
     "lint:eslint": "eslint .",
