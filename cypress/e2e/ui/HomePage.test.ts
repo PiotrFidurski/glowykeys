@@ -60,6 +60,25 @@ describe('HomePage tests', () => {
 
     cy.findByRole('button', { name: /casual filter/ });
   });
+
+  it('has a functioning hamburger menu on smaller viewports', () => {
+    cy.viewport('iphone-5');
+
+    cy.findByRole('button', { name: /open menu/i }).click();
+
+    cy.findByRole('navigation', { name: 'menubar' });
+
+    cy.findByRole('link', { name: /sign in/i });
+    cy.findByRole('button', { name: /open cart/i });
+    cy.findByRole('button', { name: /open search dialog/i });
+
+    cy.findByRole('button', { name: /close menu/i })
+      .should('have.attr', 'aria-expanded', 'true')
+      .click()
+      .as('toggleMenuButton');
+
+    cy.get('@toggleMenuButton').should('have.attr', 'aria-expanded', 'false');
+  });
 });
 
 // eslint-disable-next-line jest/no-export

@@ -23,8 +23,9 @@ export const Header = styled.header`
 export const MenuToggleButton = styled(RoundButton)`
   z-index: 9999;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 25px;
+  top: 1rem;
+  margin-bottom: 20px;
 
   @media (min-width: 768px) {
     display: none;

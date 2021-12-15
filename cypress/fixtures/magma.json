@@ -1,0 +1,20 @@
+{
+  "data": {
+    "id": 5,
+    "color": "black",
+    "qty": 1,
+    "brand": "roccat",
+    "connectivity": "wired",
+    "type": "keyboards",
+    "variant": "gaming",
+    "price": 59.99,
+    "name": "Magma",
+    "image": {
+      "placeholder": "https://res.cloudinary.com/chimson/image/upload/f_webp,e_blur:1000/v1639047835/glowykeys/roccat_magma.png",
+      "original": "https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,g_center/v1639318445/glowykeys/magma_original.png",
+      "originalPlaceholder": "https://res.cloudinary.com/chimson/image/upload/w_800,h_600,f_webp,e_blur:1000/v1639319946/glowykeys/magma_original.png",
+      "thumbnail": "https://res.cloudinary.com/chimson/image/upload/v1639047835/glowykeys/roccat_magma.png"
+    },
+    "description": ["Award Winning Design", "100 million keystroke life-cycle", "32-bit ARM Cortex-M0 based processor"]
+  }
+}
