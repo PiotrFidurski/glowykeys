@@ -29,7 +29,7 @@ module.exports = async (on, config) => {
   const customServer = new http.Server(async (req, res) => handleNextRequests(req, res));
 
   await new Promise((resolve) => {
-    customServer.listen(3000, () => {
+    customServer.listen(3000 || 8080, () => {
       resolve('resolved');
       return null;
     });
