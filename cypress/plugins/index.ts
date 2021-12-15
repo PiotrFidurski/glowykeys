@@ -44,15 +44,12 @@ module.exports = async (on, config) => {
     },
 
     async nock({ hostname, method, path, statusCode, body }) {
-      if (!nock.isActive()) {
-        nock.activate();
+      nock.activate();
 
-        const lowerCaseMethod = method.toLowerCase();
+      const lowerCaseMethod = method.toLowerCase();
 
-        nock(hostname)[lowerCaseMethod](path).reply(statusCode, body);
+      nock(hostname)[lowerCaseMethod](path).reply(statusCode, body);
 
-        return null;
-      }
       return null;
     },
   });

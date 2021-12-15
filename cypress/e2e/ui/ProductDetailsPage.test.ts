@@ -3,12 +3,16 @@ describe('Product details page', () => {
     cy.task('clearNock');
   });
 
-  it('displays only filtered results if there are present in url query params', () => {
-    cy.mockServerData({ path: '/api/keyboards', fixture: 'keyboards.json' });
+  it('products can be added to cart', () => {
+    cy.mockServerData({ path: '/api/keyboards/magma', fixture: 'magma.json' });
 
-    cy.visit('/keyboards');
+    cy.visit('/keyboards/magma');
 
-    cy.findByRole('link', { name: /magma/i }).click();
+    cy.findByRole('button', { name: /add magma to cart/i }).click();
+
+    cy.findByRole('button', { name: /open cart/i }).click();
+
+    cy.findByRole('article', { name: /cart item/i });
   });
 });
 
