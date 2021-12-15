@@ -1,0 +1,20 @@
+{
+  "data": {
+    "_id": "5",
+    "color": "black",
+    "qty": 1,
+    "brand": "Gigabyte",
+    "connectivity": "wired",
+    "type": "keyboards",
+    "variant": "casual",
+    "price": 169.99,
+    "name": "Gigabyte Force k81",
+    "image": {
+      "placeholder": "https://res.cloudinary.com/chimson/image/upload/w_300,h_300,f_webp,e_blur:1000,q_1/v1639047799/glowykeys/gigabyte_force_k81.png",
+      "originalPlaceholder": "https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,f_webp,e_blur:1000,q_1/v1639319946/glowykeys/gigabyte_original.png",
+      "original": "https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,g_center/v1639319899/glowykeys/gigabyte_original.png",
+      "thumbnail": "https://res.cloudinary.com/chimson/image/upload/v1639047799/glowykeys/gigabyte_force_k81.png"
+    },
+    "description": ["Award Winning Design", "100 million keystroke life-cycle", "32-bit ARM Cortex-M0 based processor"]
+  }
+}
