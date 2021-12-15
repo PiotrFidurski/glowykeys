@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "startci": "set PORT=3001 next start",
     "lint": "next lint",
     "test": "jest",
     "lint:eslint": "eslint .",
