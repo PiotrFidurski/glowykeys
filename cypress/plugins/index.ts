@@ -29,7 +29,7 @@ module.exports = async (on, config) => {
   const customServer = new http.Server(async (req, res) => handleNextRequests(req, res));
 
   await new Promise((resolve) => {
-    customServer.listen(3000 || 8080, () => {
+    customServer.listen(3000, () => {
       resolve('resolved');
       return null;
     });
@@ -44,12 +44,15 @@ module.exports = async (on, config) => {
     },
 
     async nock({ hostname, method, path, statusCode, body }) {
-      nock.activate();
+      if (!nock.isActive()) {
+        nock.activate();
 
-      const lowerCaseMethod = method.toLowerCase();
+        const lowerCaseMethod = method.toLowerCase();
 
-      nock(hostname)[lowerCaseMethod](path).reply(statusCode, body);
+        nock(hostname)[lowerCaseMethod](path).reply(statusCode, body);
 
+        return null;
+      }
       return null;
     },
   });
