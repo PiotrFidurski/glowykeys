@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StickyContainer = styled.div`
   position: sticky;
-  top: 70px;
+  top: 0;
   background: rgb(15, 29, 62);
   color: white;
   grid-area: filters;
