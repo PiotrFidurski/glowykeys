@@ -8,7 +8,7 @@
       "connectivity": "wired",
       "type": "keyboards",
       "variant": "casual",
-      "price": 169.99,
+      "price": 16999,
       "name": "Gigabyte Force k81",
       "image": {
         "placeholder": "/assets/images/gigabyte_force_k81.png",
@@ -28,7 +28,7 @@
       "type": "keycaps",
       "qty": 1,
       "name": "Razer Phantom Keycap White",
-      "price": 39.9,
+      "price": 3999,
       "image": {
         "placeholder": "/assets/images/razer_phantom_keycap_white.png",
         "original": "",
@@ -43,7 +43,7 @@
       "variant": "HyperX Red",
       "qty": 1,
       "name": "Alloy Origins Red",
-      "price": 39.9,
+      "price": 3999,
       "image": {
         "placeholder": "/assets/images/hyperx_alloy_origins_red.png",
         "original": "",
