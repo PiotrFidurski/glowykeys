@@ -2,7 +2,7 @@ import { fadeInUp } from '@animations/products';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import { slugify } from '@utils/slugify';
-import { SquareButton } from '@utils/style-utils';
+import { SquareButton, VisuallyHiddenSpan } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -22,7 +22,8 @@ function ProductCard({ product }: Props) {
   return (
     <Article as={motion.article} layout role="article" variants={fadeInUp} aria-label={product.name}>
       <Link href={`${product.type}/${slug}`} prefetch={false} passHref>
-        <A>
+        <A aria-label={product.name}>
+          <VisuallyHiddenSpan>{product.name}</VisuallyHiddenSpan>
           <ProductImageContainer>
             <Image
               src={product.image.thumbnail}

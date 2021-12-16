@@ -33,7 +33,14 @@ function KeyboardsPage({ keyboards }: Props) {
             <h2>equipped with speed, precision and your preferred typing experience.</h2>
           </HeaderTextContentContainer>
           <HeaderImageContainer>
-            <Image src="/assets/images/keyboards_banner.png" layout="responsive" width={600} height={600} priority />
+            <Image
+              src="/assets/images/keyboards_banner.png"
+              alt="white keyboard with black keys and rainbow lightning"
+              layout="responsive"
+              width={600}
+              height={600}
+              priority
+            />
           </HeaderImageContainer>
         </Header>
         <ProductShelfProvider products={keyboards}>
