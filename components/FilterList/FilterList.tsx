@@ -2,8 +2,9 @@ import Filter from '@components/Filter/Filter';
 import FiltersModal from '@components/Modals/FiltersModal/FiltersModal';
 import { useProductShelf } from '@components/ProductShelf/useProductShelf';
 import Sort from '@components/Sort/Sort';
-import { SquareButton } from '@utils/style-utils';
+import { RoundButton } from '@utils/style-utils';
 import * as React from 'react';
+import FilterIcon from '../../public/assets/vector/sort.svg';
 import * as S from './styles';
 
 function FilterList() {
@@ -46,9 +47,9 @@ function FilterList() {
       </S.Container>
       {open ? <FiltersModal setOpen={setOpen} isOpen={open} /> : null}
       <S.StickyContainer>
-        <SquareButton aria-label="open product filters" onClick={() => setOpen(true)}>
-          Product Filters
-        </SquareButton>
+        <RoundButton aria-label="open product filters" onClick={() => setOpen(true)}>
+          <FilterIcon fill="white" width="24" height="24" />
+        </RoundButton>
       </S.StickyContainer>
     </>
   );
