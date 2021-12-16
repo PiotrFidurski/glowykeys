@@ -96,6 +96,12 @@ export const Ul = styled.ul`
   @media (min-width: 768px) {
     justify-content: flex-end;
     flex-direction: row;
+
+    > li {
+      &:first-child {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -105,7 +111,7 @@ export const Li = styled.li`
   gap: 1rem;
 `;
 
-export const SignInLink = styled.a`
+export const A = styled.a`
   font-weight: 600;
   color: white;
   ${LineOnHover};

@@ -9,7 +9,7 @@ import Cart from '../../public/assets/vector/cart.svg';
 import Hamburger from '../../public/assets/vector/hamburger.svg';
 import LogoIcon from '../../public/assets/vector/logo.svg';
 import Loupe from '../../public/assets/vector/loupe.svg';
-import { Header, Li, Logo, LogoList, MenuToggleButton, Nav, SignInLink, Ul } from './styles';
+import { A, Header, Li, Logo, LogoList, MenuToggleButton, Nav, Ul } from './styles';
 
 function Navbar() {
   const { dispatch } = useCart();
@@ -45,8 +45,13 @@ function Navbar() {
         </LogoList>
         <Ul>
           <Li>
+            <Link href="/" passHref>
+              <A>Home</A>
+            </Link>
+          </Li>
+          <Li>
             <Link href="/signin" passHref>
-              <SignInLink>Sign in</SignInLink>
+              <A>Sign in</A>
             </Link>
           </Li>
           <Li>
