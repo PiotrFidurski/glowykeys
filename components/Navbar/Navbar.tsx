@@ -40,7 +40,7 @@ function Navbar() {
         <LogoList aria-hidden="true">
           <Li>
             <Link href="/" passHref aria-label="go to homepage">
-              <Logo>
+              <Logo tabIndex={-1}>
                 <LogoIcon fill="white" width="35" height="35" />
                 glowykeys
               </Logo>
