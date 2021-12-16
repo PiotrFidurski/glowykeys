@@ -2,7 +2,6 @@ import Cart from '@components/Cart/Cart';
 import CartProvider from '@components/Cart/CartProvider';
 import { reducer } from '@components/Cart/reducer';
 import Navbar from '@components/Navbar/Navbar';
-import { RouterScrollProvider } from '@moxy/next-router-scroll';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import { AnimatePresence } from 'framer-motion';
@@ -25,11 +24,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <GlobalStyles />
           <NextNprogress showOnShallow={false} options={{ showSpinner: false }} color={theme.color.highlight} />
           <Navbar />
-          <RouterScrollProvider disableNextLinkScroll>
-            <AnimatePresence exitBeforeEnter>
-              <Component {...pageProps} key={router.route} />
-            </AnimatePresence>
-          </RouterScrollProvider>
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
         </CartProvider>
       </ThemeProvider>
     </>

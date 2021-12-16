@@ -7,7 +7,6 @@ import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { useBreadcrumbs } from '@utils/useBreadcrumbs';
-import { useRestoreScroll } from '@utils/useRestoreScroll';
 import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -21,8 +20,6 @@ interface Props {
 }
 
 function Keyboard({ keyboard }: Props) {
-  useRestoreScroll();
-
   const { prevPath, currentPath } = useBreadcrumbs();
 
   const { dispatch } = useCart();

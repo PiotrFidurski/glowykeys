@@ -6,7 +6,6 @@ import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
-import { useRestoreScroll } from '@utils/useRestoreScroll';
 import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -18,8 +17,6 @@ interface Props {
 }
 
 function KeyboardsPage({ keyboards }: Props) {
-  useRestoreScroll();
-
   return (
     <>
       <Head>
