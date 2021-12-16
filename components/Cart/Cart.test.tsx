@@ -46,11 +46,11 @@ test('cart items quantity can be incremented and decremented', () => {
 
   fireEvent.click(screen.getByRole('button', { name: /add one more vulcan pro to cart/i }));
 
-  expect(price[0]).toHaveTextContent('399.98$');
+  expect(price[0]).toHaveTextContent('$399.98');
 
   fireEvent.click(screen.getByRole('button', { name: /remove one vulcan pro from cart/i }));
 
-  expect(price[0]).toHaveTextContent('199.99$');
+  expect(price[0]).toHaveTextContent('$199.99');
 
   expect(screen.getByRole('region', { name: /checkout/i })).toHaveTextContent('199.99');
 });
