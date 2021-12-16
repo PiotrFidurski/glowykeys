@@ -4,6 +4,7 @@ import { reducer } from '@components/Cart/reducer';
 import Navbar from '@components/Navbar/Navbar';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
+import { AnimatePresence } from 'framer-motion';
 import 'index.css';
 import type { AppProps } from 'next/app';
 import NextNprogress from 'nextjs-progressbar';
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <GlobalStyles />
           <NextNprogress showOnShallow={false} options={{ showSpinner: false }} color={theme.color.highlight} />
           <Navbar />
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} />
+          </AnimatePresence>
         </CartProvider>
       </ThemeProvider>
     </>
