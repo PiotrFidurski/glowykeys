@@ -436,7 +436,7 @@ export const cartData: Array<Product> = [
     connectivity: 'wireless',
     type: 'keyboards',
     variant: 'casual',
-    price: 199.99,
+    price: 19999,
     name: 'Vulcan Pro',
     image: {
       placeholder: '/assets/images/roccat_vulcan_pro.png',

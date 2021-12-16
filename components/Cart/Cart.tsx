@@ -1,6 +1,8 @@
 import CartItem from '@components/CartItem/CartItem';
+import { createCheckoutSession } from '@utils/createCheckoutSession';
 import { getSubTotalPrice } from '@utils/getTotalPrice';
 import { Hr, RoundButton, SquareButton } from '@utils/style-utils';
+import { useFormatCurrency } from '@utils/useFormatCurrency';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 import Close from '../../public/assets/vector/close.svg';
@@ -25,9 +27,11 @@ function Cart() {
 
   const subtotal = getSubTotalPrice(items);
 
+  const { priceInDollars } = useFormatCurrency(subtotal);
+
   const handleClick = () => {
     if (items.length) {
-      // checkout
+      createCheckoutSession(items);
     } else {
       dispatch({ type: actionTypes.closeMenu });
     }
@@ -54,7 +58,7 @@ function Cart() {
         {items.length ? (
           <CheckoutWrapper>
             <Paragraph>Subtotal</Paragraph>
-            <Paragraph>$ {subtotal.toFixed(2)}</Paragraph>
+            <Paragraph>{priceInDollars}</Paragraph>
           </CheckoutWrapper>
         ) : (
           <CenterContainer>

@@ -8,7 +8,7 @@
       "variant": "HyperX Red",
       "qty": 1,
       "name": "Alloy Origins - Red",
-      "price": 39.9,
+      "price": 3999,
       "image": {
         "placeholder": "/assets/images/hyperx_alloy_origins_red.png",
         "original": "",
@@ -23,7 +23,7 @@
       "variant": "CherryMx Red",
       "qty": 1,
       "name": "Cherry Set",
-      "price": 99.9,
+      "price": 9999,
       "image": {
         "placeholder": "/assets/images/idobao_cherry_switch.png",
         "original": "",
@@ -38,7 +38,7 @@
       "variant": "Gateron Pink",
       "qty": 1,
       "name": "Gateron - Pink",
-      "price": 139.9,
+      "price": 13999,
       "image": {
         "placeholder": "/assets/images/idobao_gateron_pink_switch.png",
         "original": "",
@@ -53,7 +53,7 @@
       "variant": "CherryMx Brown",
       "qty": 1,
       "name": "Kalih Brown",
-      "price": 299.9,
+      "price": 29999,
       "image": {
         "placeholder": "/assets/images/kalih_brown.png",
         "original": "",
@@ -68,7 +68,7 @@
       "variant": "CherryMx Blue",
       "qty": 1,
       "name": "Kalih Set",
-      "price": 19.9,
+      "price": 1999,
       "image": {
         "placeholder": "/assets/images/kalih_switch_set.png",
         "original": "",
@@ -83,7 +83,7 @@
       "variant": "Outemu Red",
       "qty": 1,
       "name": "Outemu Red",
-      "price": 399.9,
+      "price": 39999,
       "image": {
         "placeholder": "/assets/images/outemu_red_switch.png",
         "original": "",
