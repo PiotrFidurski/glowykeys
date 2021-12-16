@@ -1,3 +1,4 @@
+import { pageAnimation } from '@animations/products';
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
@@ -5,6 +6,8 @@ import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
+import { useRestoreScroll } from '@utils/useRestoreScroll';
+import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -15,6 +18,8 @@ interface Props {
 }
 
 function KeyboardsPage({ keyboards }: Props) {
+  useRestoreScroll();
+
   return (
     <>
       <Head>
@@ -24,7 +29,7 @@ function KeyboardsPage({ keyboards }: Props) {
           content="Find the best keyboard for your own needs, whether you're a hardcore gamer or casual typer, we have you covered."
         />
       </Head>
-      <Main>
+      <Main as={motion.main} {...pageAnimation}>
         <Header>
           <HeaderTextContentContainer>
             <h1>Discover the gaming keyboard for you.</h1>

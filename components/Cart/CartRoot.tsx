@@ -1,9 +1,9 @@
+import { contentAnimations, overlayAnimations } from '@animations/cart';
 import { customStyles } from '@components/Modals/customStyles';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HTMLMotionComponents } from 'framer-motion/types/render/html/types';
 import * as React from 'react';
 import Modal from 'react-modal';
-import { backgroundAnimations, menuAnimations } from './animations';
 import { CartContent, CartOverlay } from './styles';
 import { actionTypes } from './types';
 import { useCart } from './useCart';
@@ -31,12 +31,12 @@ function CartRoot({ cartUi }: Props) {
           style={customStyles}
           contentLabel="Shopping Cart"
           overlayElement={(props: MotionComponentPropsWithRef, contentElement) => (
-            <CartOverlay {...props} as={motion.div} {...backgroundAnimations}>
+            <CartOverlay {...props} as={motion.div} {...overlayAnimations}>
               {contentElement}
             </CartOverlay>
           )}
           contentElement={(props: MotionComponentPropsWithRef) => (
-            <CartContent {...props} as={motion.div} {...menuAnimations} style={{ ...customStyles.content }}>
+            <CartContent {...props} as={motion.div} {...contentAnimations} style={{ ...customStyles.content }}>
               {cartUi}
             </CartContent>
           )}
