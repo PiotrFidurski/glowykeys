@@ -15,6 +15,7 @@
     "cypress": "cypress run"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.22.0",
     "framer-motion": "^5.3.0",
     "mongoose": "^6.0.14",
     "next": "12.0.3",
@@ -22,6 +23,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-modal": "^3.14.4",
+    "stripe": "^8.194.0",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
     "swr": "^1.1.0",
