@@ -14,6 +14,7 @@ module.exports = {
   moduleNameMapper: {
     '@pages/(.*)': '<rootDir>/pages/$1',
     '@components/(.*)': '<rootDir>/components/$1',
+    '@animations/(.*)': '<rootDir>/animations/$1',
     '@styled/(.*)': '<rootDir>/styled/$1',
     '@utils/(.*)': '<rootDir>/lib/$1',
   },
