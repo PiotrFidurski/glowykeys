@@ -1,3 +1,4 @@
+import { fadeInUp, pageAnimation, slideLeft } from '@animations/products';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import Footer from '@components/Footer/Footer';
@@ -6,6 +7,7 @@ import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { useBreadcrumbs } from '@utils/useBreadcrumbs';
+import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -33,8 +35,13 @@ function Switch({ switches }: Props) {
           content={`Get ${switches.name} ${switches.variant} keyboard. Featuring a compact Tenkeyless form factor, AIMO lighting and aluminum plates for protection.`}
         />
       </Head>
-      <S.Main>
-        <S.ProductDescriptionSection role="region" aria-labelledby="product-description">
+      <S.Main as={motion.main} {...pageAnimation}>
+        <S.ProductDescriptionSection
+          as={motion.section}
+          variants={fadeInUp}
+          role="region"
+          aria-labelledby="product-description"
+        >
           <span>
             <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
@@ -63,7 +70,7 @@ function Switch({ switches }: Props) {
         </S.ProductDescriptionSection>
         <S.ImageGalleryContainer>
           <S.ImageOneContainer>
-            <S.ImageWrapper>
+            <S.ImageWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={switches.image.original}
                 loading="lazy"
@@ -76,7 +83,7 @@ function Switch({ switches }: Props) {
             </S.ImageWrapper>
           </S.ImageOneContainer>
           <S.ImageTwoContainer>
-            <S.ImageSmallWrapper>
+            <S.ImageSmallWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={switches.image.thumbnail}
                 loading="lazy"
@@ -89,7 +96,7 @@ function Switch({ switches }: Props) {
             </S.ImageSmallWrapper>
           </S.ImageTwoContainer>
           <S.ImageThreeContainer>
-            <S.ImageSmallWrapper>
+            <S.ImageSmallWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={switches.image.thumbnail}
                 placeholder="blur"

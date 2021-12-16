@@ -30,6 +30,10 @@ function Navbar() {
         aria-label={expanded ? 'close menu' : 'open menu'}
         aria-expanded={expanded}
       >
+        {items.length > 0 ? <ItemsAmountContainer>{items.length}</ItemsAmountContainer> : null}
+        <VisuallyHiddenSpan aria-atomic="true" aria-live="polite">
+          Your cart has {items.length} items
+        </VisuallyHiddenSpan>
         <Hamburger fill="white" width="24" height="24" />
       </MenuToggleButton>
       <Nav aria-label="menubar" id="menubar" isExpanded={expanded}>

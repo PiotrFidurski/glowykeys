@@ -1,3 +1,4 @@
+import { fadeInUp, pageAnimation, slideLeft } from '@animations/products';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import Footer from '@components/Footer/Footer';
@@ -6,6 +7,7 @@ import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { useBreadcrumbs } from '@utils/useBreadcrumbs';
+import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -33,8 +35,13 @@ function Keyboard({ keyboard }: Props) {
           content={`Get ${keyboard.name} ${keyboard.variant} keyboard. Featuring a compact Tenkeyless form factor, AIMO lighting and aluminum plates for protection.`}
         />
       </Head>
-      <S.Main>
-        <S.ProductDescriptionSection role="region" aria-labelledby="product-description">
+      <S.Main as={motion.main} {...pageAnimation}>
+        <S.ProductDescriptionSection
+          role="region"
+          as={motion.section}
+          variants={fadeInUp}
+          aria-labelledby="product-description"
+        >
           <span>
             <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
@@ -63,7 +70,7 @@ function Keyboard({ keyboard }: Props) {
         </S.ProductDescriptionSection>
         <S.ImageGalleryContainer>
           <S.ImageOneContainer>
-            <S.ImageWrapper>
+            <S.ImageWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={keyboard.image.original}
                 loading="lazy"
@@ -76,7 +83,7 @@ function Keyboard({ keyboard }: Props) {
             </S.ImageWrapper>
           </S.ImageOneContainer>
           <S.ImageTwoContainer>
-            <S.ImageSmallWrapper>
+            <S.ImageSmallWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={keyboard.image.thumbnail}
                 loading="lazy"
@@ -89,7 +96,7 @@ function Keyboard({ keyboard }: Props) {
             </S.ImageSmallWrapper>
           </S.ImageTwoContainer>
           <S.ImageThreeContainer>
-            <S.ImageSmallWrapper>
+            <S.ImageSmallWrapper as={motion.div} {...slideLeft}>
               <Image
                 src={keyboard.image.thumbnail}
                 placeholder="blur"

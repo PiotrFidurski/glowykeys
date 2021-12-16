@@ -1,4 +1,4 @@
-export const menuAnimations = {
+export const contentAnimations = {
   initial: {
     opacity: 0,
     x: 1000,
@@ -12,7 +12,7 @@ export const menuAnimations = {
   exit: { opacity: 0, x: 200, scale: 0.5 },
 };
 
-export const backgroundAnimations = {
+export const overlayAnimations = {
   initial: {
     opacity: 0,
   },

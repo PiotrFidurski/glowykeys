@@ -1,3 +1,4 @@
+import { pageAnimation } from '@animations/products';
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
@@ -5,6 +6,7 @@ import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
+import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -20,7 +22,7 @@ function SwitchesPage({ switches }) {
           content="Find the latest mechanical key switches, quiet switches, clicky switches, perfect switches for accurate typing and hardcore gaming."
         />
       </Head>
-      <Main>
+      <Main as={motion.main} {...pageAnimation}>
         <Header>
           <HeaderTextContentContainer>
             <h1>Level up your workflow with the best mechanical key switches</h1>

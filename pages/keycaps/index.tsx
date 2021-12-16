@@ -1,3 +1,4 @@
+import { pageAnimation } from '@animations/products';
 import AppliedFilters from '@components/AppliedFilters/AppliedFilters';
 import FilterList from '@components/FilterList/FilterList';
 import Footer from '@components/Footer/Footer';
@@ -5,6 +6,7 @@ import ProductList from '@components/ProductList/ProductList';
 import ProductShelfProvider from '@components/ProductShelf/ProductShelfProvider';
 import { Header, HeaderImageContainer, HeaderTextContentContainer, Main } from '@styled/pages/SharedStyles';
 import { Product as ProductType } from '@utils/types';
+import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -24,7 +26,7 @@ function KeycapsPage({ keycaps }: Props) {
           content="Find all kinds of unique looking keycaps, Select from the available keycap sets that we currently offer."
         />
       </Head>
-      <Main>
+      <Main as={motion.main} {...pageAnimation}>
         <Header>
           <HeaderTextContentContainer>
             <h1>Shop for most unique looking keycaps.</h1>

@@ -1,3 +1,4 @@
+import { fadeInUp } from '@animations/products';
 import { actionTypes } from '@components/Cart/types';
 import { useCart } from '@components/Cart/useCart';
 import { slugify } from '@utils/slugify';
@@ -19,7 +20,7 @@ function ProductCard({ product }: Props) {
   const slug = slugify(product.name);
 
   return (
-    <Article as={motion.article} layout role="article" aria-label={product.name}>
+    <Article as={motion.article} layout role="article" variants={fadeInUp} aria-label={product.name}>
       <Link href={`${product.type}/${slug}`} prefetch={false} passHref>
         <A>
           <ProductImageContainer>

@@ -21,7 +21,8 @@
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
       "@styled/*": ["styled/*"],
-      "@utils/*": ["lib/*"]
+      "@utils/*": ["lib/*"],
+      "@animations/*": ["animations/*"]
     },
     "incremental": true
   },
