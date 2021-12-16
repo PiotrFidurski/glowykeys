@@ -77,6 +77,7 @@ function Keyboard({ keycap }: Props) {
                 placeholder="blur"
                 blurDataURL={keycap.image.originalPlaceholder}
                 layout="fill"
+                alt=""
                 sizes="75vw"
                 objectFit="contain"
               />
@@ -88,6 +89,7 @@ function Keyboard({ keycap }: Props) {
                 src={keycap.image.thumbnail}
                 loading="lazy"
                 layout="fill"
+                alt=""
                 sizes="40vw"
                 blurDataURL={keycap.image.placeholder}
                 objectFit="contain"
@@ -103,6 +105,7 @@ function Keyboard({ keycap }: Props) {
                 blurDataURL={keycap.image.placeholder}
                 loading="lazy"
                 sizes="40vw"
+                alt=""
                 layout="fill"
                 objectFit="contain"
               />
@@ -114,6 +117,7 @@ function Keyboard({ keycap }: Props) {
                 src={keycap.image.original}
                 loading="lazy"
                 placeholder="blur"
+                alt=""
                 blurDataURL={keycap.image.originalPlaceholder}
                 layout="fill"
                 sizes="75vw"

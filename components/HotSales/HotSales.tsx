@@ -13,6 +13,7 @@ function HotSales() {
             src="/assets/images/saviotempest.png"
             loading="eager"
             quality={100}
+            alt="black mechanical keyboard with green lights"
             blurDataURL="/assets/images/saviotempest.png"
             placeholder="blur"
             layout="responsive"

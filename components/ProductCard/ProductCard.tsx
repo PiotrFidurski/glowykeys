@@ -28,6 +28,7 @@ function ProductCard({ product }: Props) {
               src={product.image.thumbnail}
               loading="lazy"
               sizes="30vw"
+              alt=""
               blurDataURL={product.image.placeholder}
               placeholder="blur"
               objectFit="contain"

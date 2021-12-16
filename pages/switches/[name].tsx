@@ -78,6 +78,7 @@ function Switch({ switches }: Props) {
                 blurDataURL={switches.image.originalPlaceholder}
                 layout="fill"
                 sizes="75vw"
+                alt=""
                 objectFit="contain"
               />
             </S.ImageWrapper>
@@ -88,6 +89,7 @@ function Switch({ switches }: Props) {
                 src={switches.image.thumbnail}
                 loading="lazy"
                 layout="fill"
+                alt=""
                 sizes="40vw"
                 blurDataURL={switches.image.placeholder}
                 objectFit="contain"
@@ -102,6 +104,7 @@ function Switch({ switches }: Props) {
                 placeholder="blur"
                 blurDataURL={switches.image.placeholder}
                 loading="lazy"
+                alt=""
                 sizes="40vw"
                 layout="fill"
                 objectFit="contain"
@@ -114,6 +117,7 @@ function Switch({ switches }: Props) {
                 src={switches.image.original}
                 loading="lazy"
                 placeholder="blur"
+                alt=""
                 blurDataURL={switches.image.originalPlaceholder}
                 layout="fill"
                 sizes="75vw"

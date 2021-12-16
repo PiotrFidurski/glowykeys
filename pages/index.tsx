@@ -65,6 +65,7 @@ function HomePage() {
                   placeholder="blur"
                   blurDataURL="/assets/images/razerornata.png"
                   quality={100}
+                  alt="black mechanical keyboard with green lights"
                   layout="responsive"
                   width={800}
                   height={600}
@@ -79,6 +80,7 @@ function HomePage() {
                 placeholder="blur"
                 blurDataURL="/assets/images/keycaps-black.png"
                 loading="lazy"
+                alt="four black keycaps next to each other"
                 layout="fill"
                 objectFit="cover"
               />
@@ -90,6 +92,7 @@ function HomePage() {
                 src="/assets/images/halfkeyboard.png"
                 loading="lazy"
                 quality={100}
+                alt="half keyboard if orange and white keys"
                 placeholder="blur"
                 blurDataURL="/assets/images/halfkeyboard.png"
                 layout="fill"
@@ -106,6 +109,7 @@ function HomePage() {
                   placeholder="blur"
                   blurDataURL="/assets/images/kbblue.png"
                   loading="lazy"
+                  alt="black mechanical keyboard with blue lights"
                   quality={100}
                   layout="responsive"
                   width={800}

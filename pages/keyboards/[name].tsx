@@ -75,6 +75,7 @@ function Keyboard({ keyboard }: Props) {
                 src={keyboard.image.original}
                 loading="lazy"
                 placeholder="blur"
+                alt=""
                 blurDataURL={keyboard.image.originalPlaceholder}
                 layout="fill"
                 sizes="75vw"
@@ -88,6 +89,7 @@ function Keyboard({ keyboard }: Props) {
                 src={keyboard.image.thumbnail}
                 loading="lazy"
                 layout="fill"
+                alt=""
                 sizes="40vw"
                 blurDataURL={keyboard.image.placeholder}
                 objectFit="contain"
@@ -103,6 +105,7 @@ function Keyboard({ keyboard }: Props) {
                 blurDataURL={keyboard.image.placeholder}
                 loading="lazy"
                 sizes="40vw"
+                alt=""
                 layout="fill"
                 objectFit="contain"
               />
@@ -116,6 +119,7 @@ function Keyboard({ keyboard }: Props) {
                 placeholder="blur"
                 blurDataURL={keyboard.image.originalPlaceholder}
                 layout="fill"
+                alt=""
                 sizes="75vw"
                 objectFit="contain"
               />
