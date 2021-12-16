@@ -3,6 +3,7 @@ import { useCart } from '@components/Cart/useCart';
 import { slugify } from '@utils/slugify';
 import { Hr, RoundButton, SmallImageWrapper } from '@utils/style-utils';
 import { Product } from '@utils/types';
+import { useFormatCurrency } from '@utils/useFormatCurrency';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,6 +19,8 @@ interface Props {
 function CartItem({ product }: Props) {
   const { dispatch } = useCart();
 
+  const { priceInDollars } = useFormatCurrency(product.price, product.qty);
+
   return (
     <S.Article
       id={`${product.name} article`}
@@ -32,7 +35,7 @@ function CartItem({ product }: Props) {
         </SmallImageWrapper>
         <S.DetailsContainer>
           <S.DetailsHeaderWrapper>
-            <Link href={`/${product.type}s/${slugify(product.name)}`} passHref prefetch={false}>
+            <Link href={`/${product.type}/${slugify(product.name)}`} passHref prefetch={false}>
               <S.A onClick={() => dispatch({ type: actionTypes.closeMenu })}>{product.name}</S.A>
             </Link>
             <RoundButton
@@ -46,7 +49,7 @@ function CartItem({ product }: Props) {
           </S.DetailsHeaderWrapper>
           <S.DetailsContentWrapper>
             <QuantityButtons product={product} />
-            <S.Paragraph>{(product.price * product.qty).toFixed(2)}$</S.Paragraph>
+            <S.Paragraph>{priceInDollars}</S.Paragraph>
           </S.DetailsContentWrapper>
         </S.DetailsContainer>
       </S.Container>

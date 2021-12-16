@@ -4,6 +4,7 @@ import { useCart } from '@components/Cart/useCart';
 import { slugify } from '@utils/slugify';
 import { SquareButton } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
+import { useFormatCurrency } from '@utils/useFormatCurrency';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,6 +19,8 @@ function ProductCard({ product }: Props) {
   const { dispatch } = useCart();
 
   const slug = slugify(product.name);
+
+  const { priceInDollars } = useFormatCurrency(product.price);
 
   return (
     <Article as={motion.article} layout role="article" variants={fadeInUp} aria-label={product.name}>
@@ -39,7 +42,7 @@ function ProductCard({ product }: Props) {
       </Link>
       <Heading>
         <H2>{product.name}</H2>
-        <Paragraph>{product.price.toFixed(2)}$</Paragraph>
+        <Paragraph>{priceInDollars}$</Paragraph>
       </Heading>
       <SquareButton
         aria-label={`add ${product.name} to cart`}
