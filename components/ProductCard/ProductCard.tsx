@@ -22,12 +22,13 @@ function ProductCard({ product }: Props) {
   return (
     <Article as={motion.article} layout role="article" variants={fadeInUp} aria-label={product.name}>
       <Link href={`${product.type}/${slug}`} prefetch={false} passHref>
-        <A>
+        <A aria-label={product.name}>
           <ProductImageContainer>
             <Image
               src={product.image.thumbnail}
               loading="lazy"
               sizes="30vw"
+              alt=""
               blurDataURL={product.image.placeholder}
               placeholder="blur"
               objectFit="contain"
