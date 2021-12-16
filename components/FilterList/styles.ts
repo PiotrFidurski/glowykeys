@@ -7,7 +7,7 @@ export const StickyContainer = styled.div`
   color: white;
   grid-area: filters;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
   z-index: 100;
   padding: 1rem;
