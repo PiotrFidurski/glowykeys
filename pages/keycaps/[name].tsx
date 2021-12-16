@@ -32,7 +32,7 @@ function Keyboard({ keycap }: Props) {
         </title>
         <meta
           name="description"
-          content={`Get ${keycap.name} ${keycap.variant} keyboard. Featuring a compact Tenkeyless form factor, AIMO lighting and aluminum plates for protection.`}
+          content={`Get ${keycap.name}. Custom keycaps, blank keycaps, 135 keys, cherry profile`}
         />
       </Head>
       <S.Main as={motion.main} {...pageAnimation}>
@@ -45,7 +45,7 @@ function Keyboard({ keycap }: Props) {
           <span>
             <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
-          <S.Header role="heading" aria-label="product">
+          <S.Header aria-level={1} role="heading" aria-label="product">
             <h1 id="product-description">{keycap.name}</h1>
             <RoundButton aria-label="add to liked products">
               <FilledHeart width="24" height="24" fill={theme.color.highlight} />

@@ -32,7 +32,7 @@ function Switch({ switches }: Props) {
         </title>
         <meta
           name="description"
-          content={`Get ${switches.name} ${switches.variant} keyboard. Featuring a compact Tenkeyless form factor, AIMO lighting and aluminum plates for protection.`}
+          content={`Get ${switches.name}, tactile and quiet, popular switches with no click, ${switches.brand} switches and more`}
         />
       </Head>
       <S.Main as={motion.main} {...pageAnimation}>
@@ -45,7 +45,7 @@ function Switch({ switches }: Props) {
           <span>
             <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
-          <S.Header role="heading" aria-label="product">
+          <S.Header aria-level={1} role="heading" aria-label="product">
             <h1 id="product-description">{switches.name}</h1>
             <RoundButton aria-label="add to liked products">
               <FilledHeart width="24" height="24" fill={theme.color.highlight} />

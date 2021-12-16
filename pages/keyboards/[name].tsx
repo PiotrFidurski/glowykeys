@@ -45,7 +45,7 @@ function Keyboard({ keyboard }: Props) {
           <span>
             <Link href={`/${prevPath}`}>{prevPath}</Link> \ {currentPath}
           </span>
-          <S.Header role="heading" aria-label="product">
+          <S.Header aria-level={1} role="heading" aria-label="product">
             <h1 id="product-description">{keyboard.name}</h1>
             <RoundButton aria-label="add to liked products">
               <FilledHeart width="24" height="24" fill={theme.color.highlight} />
