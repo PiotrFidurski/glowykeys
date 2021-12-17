@@ -12,7 +12,7 @@ describe('Product Filters', () => {
 
     cy.findByRole('checkbox', { name: /^YKB$/ }).click();
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'YKB 3600').should('contain.text', '499.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'YKB 3600').should('contain.text', '$499.99');
   });
 
   it('can filter products by color', () => {
@@ -24,7 +24,7 @@ describe('Product Filters', () => {
 
     cy.findByRole('checkbox', { name: /^white$/ }).click();
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'Vulcan 122 AIMO').should('contain.text', '159.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'Vulcan 122 AIMO').should('contain.text', '$159.99');
   });
 
   it('can filter products by connectivity', () => {
@@ -38,9 +38,9 @@ describe('Product Filters', () => {
 
     cy.get('@productList').children().should('have.length', 2);
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'Pyro').should('contain.text', '99.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'Pyro').should('contain.text', '$99.99');
 
-    cy.get('@productList').children().eq(1).should('contain.text', 'Vulcan 122 AIMO').should('contain.text', '159.99$');
+    cy.get('@productList').children().eq(1).should('contain.text', 'Vulcan 122 AIMO').should('contain.text', '$159.99');
   });
 
   it('can apply multiple filters to products', () => {
@@ -56,7 +56,7 @@ describe('Product Filters', () => {
 
     cy.get('@productList').children().should('have.length', 2);
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'Magma').should('contain.text', '59.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'Magma').should('contain.text', '$59.99');
   });
 
   it('can remove filters by clicking on filter buttons', () => {
@@ -104,13 +104,13 @@ describe('Product Filters', () => {
 
     cy.get('@productList').children().should('have.length', 7);
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'YKB 3600').should('contain.text', '499.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'YKB 3600').should('contain.text', '$499.99');
 
     cy.findByRole('checkbox', { name: /^ascending$/ }).click();
 
     cy.get('@productList').children().should('have.length', 7);
 
-    cy.get('@productList').children().eq(0).should('contain.text', 'Magma').should('contain.text', '59.99$');
+    cy.get('@productList').children().eq(0).should('contain.text', 'Magma').should('contain.text', '$59.99');
   });
 
   it('displays filters inside a dialog on smaller screens', () => {
