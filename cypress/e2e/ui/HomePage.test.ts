@@ -18,7 +18,7 @@ describe('HomePage tests', () => {
 
     cy.visit('/');
 
-    cy.findByRole('link', { name: /go to keycaps page/i }).click();
+    cy.findByRole('link', { name: /go to keycaps page/i }).click({ timeout: 10000 });
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/keycaps`);
   });
@@ -28,7 +28,7 @@ describe('HomePage tests', () => {
 
     cy.visit('/');
 
-    cy.findByRole('link', { name: /go to switches page/i }).click();
+    cy.findByRole('link', { name: /go to switches page/i }).click({ timeout: 10000 });
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/switches`);
   });

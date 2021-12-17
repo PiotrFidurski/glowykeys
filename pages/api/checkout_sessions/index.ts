@@ -2,7 +2,7 @@ import { transfromItemsToStrpe } from '@utils/tranformItemsToStripe';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIKE_SECRET_KEY, { apiVersion: '2020-08-27' });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2020-08-27' });
 
 const redirectUrl = process.env.BASE_URL;
 
