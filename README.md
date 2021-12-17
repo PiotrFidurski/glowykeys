@@ -69,7 +69,7 @@ Welcome to [Glowykeys](https://glowykeys.vercel.app/) where you can search for p
 
 - Run e2e tests
 
-  - `npm cypress:open`
+  - `npm run cypress:open`
 
 ## Credits
 
