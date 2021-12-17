@@ -7,6 +7,7 @@ import { theme } from '@styled/theme';
 import { RoundButton, SquareButton } from '@utils/style-utils';
 import { Product } from '@utils/types';
 import { useBreadcrumbs } from '@utils/useBreadcrumbs';
+import { useFormatCurrency } from '@utils/useFormatCurrency';
 import { motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -23,6 +24,8 @@ function Keyboard({ keycap }: Props) {
   const { prevPath, currentPath } = useBreadcrumbs();
 
   const { dispatch } = useCart();
+
+  const { priceInDollars } = useFormatCurrency(keycap.price);
 
   return (
     <>
@@ -57,7 +60,7 @@ function Keyboard({ keycap }: Props) {
               <li key={value}>{value}</li>
             ))}
           </ul>
-          <p>{keycap.price.toFixed(2)}</p>
+          <p>{priceInDollars}</p>
           <SquareButton
             onClick={() => {
               dispatch({ type: actionTypes.addItem, payload: keycap });
