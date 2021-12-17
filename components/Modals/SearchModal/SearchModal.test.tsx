@@ -1,41 +1,11 @@
 import KeyboardsPage from '@pages/keyboards';
 import { fireEvent, screen } from '@testing-library/react';
-import { render } from '@utils/test-utils';
-import { testData } from 'data';
+import { searchData, testData } from '@utils/test-utils/data';
+import { render } from '@utils/test-utils/test-utils';
 import { server } from 'mocks/server';
 import { rest } from 'msw';
 import Modal from 'react-modal';
 import SearchModal from './SearchModal';
-
-const data = [
-  {
-    id: '1',
-    type: 'keyboards',
-    price: 199.99,
-    name: 'Vulcan Pro',
-    image: {
-      thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
-    },
-  },
-  {
-    id: '2',
-    type: 'keycaps',
-    price: 59.99,
-    name: 'Razer Phantom Keycap - White',
-    image: {
-      thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
-    },
-  },
-  {
-    id: '3',
-    type: 'switches',
-    price: 99.99,
-    name: 'Alloy Origins - Red',
-    image: {
-      thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
-    },
-  },
-];
 
 const modalRoot = document.createElement('div');
 
@@ -100,7 +70,7 @@ test('search results are categorized', async () => {
         ctx.status(200),
         ctx.json({
           query,
-          data,
+          data: searchData,
         })
       );
     })

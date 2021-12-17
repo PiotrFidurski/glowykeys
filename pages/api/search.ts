@@ -1,18 +1,18 @@
 import dbConnect from '@utils/dbConnect';
-import { ApiErrorResponse, ApiResponse } from '@utils/types';
-import Product, { ProductDocument } from 'models/Product';
+import { ApiErrorResponse, ApiResponse, Product as ProductType } from '@utils/types';
+import Product from 'models/Product';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ApiResponse<ProductDocument> | ApiErrorResponse>
+  res: NextApiResponse<ApiResponse<ProductType> | ApiErrorResponse>
 ) {
   try {
     const { query: searchQuery } = req.query;
 
     await dbConnect();
 
-    const results = await Product.aggregate([
+    const results: Array<ProductType> = await Product.aggregate([
       {
         $match: {
           $or: [

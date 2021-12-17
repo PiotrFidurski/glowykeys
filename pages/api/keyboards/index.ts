@@ -1,16 +1,16 @@
 import dbConnect from '@utils/dbConnect';
-import { ApiErrorResponse, ApiResponse } from '@utils/types';
-import Product, { ProductDocument } from 'models/Product';
+import { ApiErrorResponse, ApiResponse, Product as ProductType } from '@utils/types';
+import Product from 'models/Product';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ApiResponse<ProductDocument> | ApiErrorResponse>
+  res: NextApiResponse<ApiResponse<ProductType> | ApiErrorResponse>
 ) {
   try {
     await dbConnect();
 
-    const docs: Array<ProductDocument> = await Product.aggregate([
+    const docs: Array<ProductType> = await Product.aggregate([
       { $match: { type: { $eq: 'keyboards' } } },
       { $project: { description: 0 } },
       { $addFields: { id: '$_id' } },

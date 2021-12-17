@@ -1,7 +1,7 @@
 import KeyboardsPage from '@pages/keyboards';
 import { screen } from '@testing-library/react';
-import { render } from '@utils/test-utils';
-import { testData } from 'data';
+import { testData } from '@utils/test-utils/data';
+import { render } from '@utils/test-utils/test-utils';
 
 test('when queryParams are "?variants=gaming" it renders only filtered results', () => {
   render(

@@ -1,6 +1,6 @@
 import HomePage from '@pages/index';
 import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
-import { render } from '@utils/test-utils';
+import { render } from '@utils/test-utils/test-utils';
 import Modal from 'react-modal';
 import Cart from './Cart';
 

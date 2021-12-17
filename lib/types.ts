@@ -1,5 +1,5 @@
 export interface Image {
-  originalPlaceholder?: string;
+  originalPlaceholder: string;
   thumbnail: string;
   original: string;
   placeholder: string;
@@ -11,11 +11,11 @@ export interface Product {
   name: string;
   price: number;
   color: string;
-  qty?: number;
+  qty: number;
   connectivity?: string;
   id: string;
   brand: string;
-  description?: Array<string>;
+  description: Array<string>;
   image: Image;
 }
 

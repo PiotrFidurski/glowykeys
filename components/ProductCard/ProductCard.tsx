@@ -42,7 +42,7 @@ function ProductCard({ product }: Props) {
       </Link>
       <Heading>
         <H2>{product.name}</H2>
-        <Paragraph>{priceInDollars}$</Paragraph>
+        <Paragraph>{priceInDollars}</Paragraph>
       </Heading>
       <SquareButton
         aria-label={`add ${product.name} to cart`}
