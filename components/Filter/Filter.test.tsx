@@ -1,7 +1,7 @@
 import KeyboardsPage from '@pages/keyboards';
 import { fireEvent, screen } from '@testing-library/react';
-import { render } from '@utils/test-utils';
-import { testData } from 'data';
+import { testData } from '@utils/test-utils/data';
+import { render } from '@utils/test-utils/test-utils';
 
 test('products can be filtered by connectivity or variant', () => {
   render(<KeyboardsPage keyboards={testData} />);

@@ -1,11 +1,11 @@
 import dbConnect from '@utils/dbConnect';
-import { ApiErrorResponse, ApiResponse } from '@utils/types';
-import Product, { ProductDocument } from 'models/Product';
+import { ApiErrorResponse, ApiResponse, Product as ProductType } from '@utils/types';
+import Product from 'models/Product';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ApiResponse<ProductDocument> | ApiErrorResponse>
+  res: NextApiResponse<ApiResponse<ProductType> | ApiErrorResponse>
 ) {
   try {
     await dbConnect();
@@ -14,7 +14,7 @@ export default async function handler(
       query: { name },
     } = req;
 
-    const docs: Array<ProductDocument> = await Product.aggregate([
+    const docs: Array<ProductType> = await Product.aggregate([
       { $match: { name: { $regex: new RegExp((name as string).replace(/-/g, ' '), 'i') } } },
       { $addFields: { id: '$_id' } },
     ]);

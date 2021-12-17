@@ -5,7 +5,7 @@ import Navbar from '@components/Navbar/Navbar';
 import { GlobalStyles } from '@styled/GlobalStyles';
 import { theme } from '@styled/theme';
 import { render, RenderOptions } from '@testing-library/react';
-import { cartData } from 'data';
+import { cartData } from '@utils/test-utils/data';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { NextRouter } from 'next/router';
 import React from 'react';
