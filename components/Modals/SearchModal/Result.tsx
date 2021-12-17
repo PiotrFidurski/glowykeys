@@ -1,6 +1,7 @@
 import { slugify } from '@utils/slugify';
 import { Hr, SmallImageWrapper } from '@utils/style-utils';
 import { Product as ProductType } from '@utils/types';
+import { useFormatCurrency } from '@utils/useFormatCurrency';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -12,6 +13,8 @@ interface Props {
 }
 
 function Result({ product, setOpen }: Props) {
+  const { priceInDollars } = useFormatCurrency(product.price);
+
   return (
     <Li>
       <Link href={`/${product.type}/${slugify(product.name)}`} passHref prefetch={false}>
@@ -22,7 +25,7 @@ function Result({ product, setOpen }: Props) {
             </SmallImageWrapper>
             <ResultDetailsContainer>
               <p>{product.name}</p>
-              <p>{product.price.toFixed(2)}$</p>
+              <p>{priceInDollars}</p>
             </ResultDetailsContainer>
           </ResultContainer>
         </A>
