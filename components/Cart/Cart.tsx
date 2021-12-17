@@ -25,13 +25,17 @@ function Cart() {
     dispatch,
   } = useCart();
 
+  const [loading, setLoading] = React.useState(false);
+
   const subtotal = getSubTotalPrice(items);
 
   const { priceInDollars } = useFormatCurrency(subtotal);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (items.length) {
-      createCheckoutSession(items);
+      setLoading(true);
+      await createCheckoutSession(items);
+      setLoading(false);
     } else {
       dispatch({ type: actionTypes.closeMenu });
     }
@@ -69,7 +73,9 @@ function Cart() {
       </CheckoutContainer>
       <CenterContainer as={motion.div} layout>
         <SquareButton aria-label={items.length ? 'Go to Checkout' : 'Continue Shopping'} onClick={handleClick}>
-          {items.length ? 'Checkout' : 'Shop Now'}
+          {!items.length && 'Shop now'}
+          {items.length && loading ? 'Processing...' : ''}
+          {items.length && !loading ? 'Checkout' : ''}
         </SquareButton>
       </CenterContainer>
     </CartContainer>
