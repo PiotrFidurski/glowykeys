@@ -24,7 +24,7 @@ function ProductCard({ product }: Props) {
 
   return (
     <Article as={motion.article} layout role="article" variants={fadeInUp} aria-label={product.name}>
-      <Link href={`${product.type}/${slug}`} prefetch={false} passHref>
+      <Link href={`/${product.type}/${slug}`} prefetch={false} passHref>
         <A aria-label={product.name}>
           <ProductImageContainer>
             <Image
