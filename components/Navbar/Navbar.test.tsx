@@ -15,7 +15,7 @@ test('clicking on sign in link links to sign in page', () => {
   expect(screen.getByText(/Sign in/i)).toHaveAttribute('href', '/signin');
 });
 
-test('clicking on a hamburger icon slides menu', () => {
+test('clicking on a hamburger icon opens menu', () => {
   render(<KeyboardsPage keyboards={testData} />);
 
   const openMenuBtn = screen.getByRole('button', { name: /open menu/i });

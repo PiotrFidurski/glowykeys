@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { testData } from '@utils/test-utils/data';
 import { render } from '@utils/test-utils/test-utils';
 
-test('when removed filters buttons are clicked filters are removed', () => {
+test('filters can be removed by pressing a button', () => {
   render(
     <KeyboardsPage keyboards={testData} />,
     {},

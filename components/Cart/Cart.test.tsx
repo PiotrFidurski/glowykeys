@@ -13,7 +13,7 @@ beforeEach(() => {
   Modal.setAppElement('#__next');
 });
 
-test('it opens cart menu when open cart button is clicked', () => {
+test('it opens cart menu when open cart button is pressed', () => {
   render(<HomePage />);
 
   fireEvent.click(screen.getByRole('button', { name: /open cart/i }));
@@ -21,7 +21,7 @@ test('it opens cart menu when open cart button is clicked', () => {
   expect(screen.getByText(/Subtotal/i)).toBeInTheDocument();
 });
 
-test('it closes cart menu when users clicks close button', async () => {
+test('it closes cart menu when users press close button', async () => {
   render(<HomePage />);
 
   fireEvent.click(screen.getByRole('button', { name: /open cart/ }));
@@ -66,7 +66,7 @@ test('items can be removed from cart by decrementing twice', () => {
   expect(screen.getAllByRole('heading', { name: /shopping cart with/i })[0]).toHaveTextContent('0 items');
 });
 
-test('items can be removed by clicking remove from cart button', () => {
+test('items can be removed by pressing a button', () => {
   render(<Cart />);
 
   const removeBtn = screen.getAllByRole('button', { name: /remove vulcan pro from cart/i });
