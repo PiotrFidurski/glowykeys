@@ -4,10 +4,8 @@ function variants({ product, variant }: FilterFnProps) {
   return variant && variant.length ? variant.includes(product.variant) : product;
 }
 
-function connectivity(props: FilterFnProps) {
-  return props.connectivity && props.connectivity.length
-    ? props.connectivity.includes(props.product.connectivity)
-    : props.product;
+function connectivity({ product, connectivity: connectivityProp }: FilterFnProps) {
+  return connectivityProp && connectivityProp.length ? connectivityProp.includes(product.connectivity) : product;
 }
 
 function brands({ product, brand }: FilterFnProps) {
