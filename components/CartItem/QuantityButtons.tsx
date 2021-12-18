@@ -18,26 +18,28 @@ function QuantityButtons({ product }: Props) {
     dispatch,
   } = useCart();
 
+  const handleIncrement = () => {
+    incrementQty({ dispatch, updates: { items, product } });
+  };
+
+  const handleDecrement = () => {
+    if (product.qty > 0) {
+      decrementQty({ dispatch, updates: { items, product } });
+    } else {
+      dispatch({ type: actionTypes.removeItem, payload: product });
+    }
+  };
+
   return (
     <S.QuantityContainer>
-      <S.QuantityButton
-        type="button"
-        onClick={() => incrementQty({ dispatch, updates: { items, product } })}
-        aria-label={`add one more ${product.name} to cart`}
-      >
+      <S.QuantityButton type="button" onClick={handleIncrement} aria-label={`add one more ${product.name} to cart`}>
         <Plus width="15" height="15" fill="white" />
       </S.QuantityButton>
       <S.QTY tabIndex={-1} aria-label="Quantity" inputMode="numeric" readOnly value={product.qty} />
       <S.QuantityButton
         reverseBorderRadius
         type="button"
-        onClick={() => {
-          if (product.qty > 0) {
-            decrementQty({ dispatch, updates: { items, product } });
-          } else {
-            dispatch({ type: actionTypes.removeItem, payload: product });
-          }
-        }}
+        onClick={handleDecrement}
         aria-label={product.qty > 0 ? `remove one ${product.name} from cart` : `remove ${product.name} from cart`}
       >
         {product.qty === 0 ? (
