@@ -41,15 +41,15 @@ function FiltersModal({ isOpen, setOpen }: Props) {
         <S.Nav aria-label="filter menu">
           {Object.entries(filters)
             .filter(([, value]) => value.length)
-            .map(([by, options]) => (
-              <div key={by}>
+            .map(([type, options]) => (
+              <div key={type}>
                 <S.Separator />
-                <S.H3>{by.toUpperCase()}</S.H3>
-                <S.List aria-label={`${by} filter options`} role="list">
+                <S.H3>{type.toUpperCase()}</S.H3>
+                <S.List aria-label={`${type} filter options`} role="list">
                   {options.map((filter) => {
-                    const isActive = activeFilters[by].includes(filter);
+                    const isActive = activeFilters[type].includes(filter);
 
-                    return <Filter key={filter} isSelected={isActive} name={filter} type={by} />;
+                    return <Filter key={filter} isSelected={isActive} name={filter} type={type} />;
                   })}
                 </S.List>
               </div>
