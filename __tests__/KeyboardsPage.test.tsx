@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { testData } from '@utils/test-utils/data';
 import { render } from '@utils/test-utils/test-utils';
 
-test('when queryParams are "?variants=gaming" it renders only filtered results', () => {
+test('it renders only filtered results based on "?variants=gaming" queryParams', () => {
   render(
     <KeyboardsPage keyboards={testData} />,
     {},
@@ -20,7 +20,7 @@ test('when queryParams are "?variants=gaming" it renders only filtered results',
   expect(productList.children).toHaveLength(2);
 });
 
-test('when queryParams are "?connectivity=wired" it renders only filtered results', () => {
+test('it renders only filtered results based on "?connectivity=wired" queryParams', () => {
   render(
     <KeyboardsPage keyboards={testData} />,
     {},
