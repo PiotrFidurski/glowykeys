@@ -7,6 +7,12 @@ export const searchData = [
     price: 199.99,
     name: 'Vulcan Pro',
     image: {
+      placeholder:
+        'https://res.cloudinary.com/chimson/image/upload/f_webp,e_blur:1000/v1639047869/glowykeys/roccat_vulcan_pro.png',
+      original:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,g_center/v1639318445/glowykeys/roccat_vulcan.png',
+      originalPlaceholder:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,f_webp,e_blur:1000/v1639319946/glowykeys/roccat_vulcan.png',
       thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
     },
   },
@@ -16,6 +22,12 @@ export const searchData = [
     price: 59.99,
     name: 'Razer Phantom Keycap - White',
     image: {
+      placeholder:
+        'https://res.cloudinary.com/chimson/image/upload/f_webp,e_blur:1000/v1639047869/glowykeys/roccat_vulcan_pro.png',
+      original:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,g_center/v1639318445/glowykeys/roccat_vulcan.png',
+      originalPlaceholder:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,f_webp,e_blur:1000/v1639319946/glowykeys/roccat_vulcan.png',
       thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
     },
   },
@@ -25,6 +37,12 @@ export const searchData = [
     price: 99.99,
     name: 'Alloy Origins - Red',
     image: {
+      placeholder:
+        'https://res.cloudinary.com/chimson/image/upload/f_webp,e_blur:1000/v1639047869/glowykeys/roccat_vulcan_pro.png',
+      original:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,c_fit,g_center/v1639318445/glowykeys/roccat_vulcan.png',
+      originalPlaceholder:
+        'https://res.cloudinary.com/chimson/image/upload/w_800,h_600,f_webp,e_blur:1000/v1639319946/glowykeys/roccat_vulcan.png',
       thumbnail: 'https://res.cloudinary.com/chimson/image/upload/v1639047869/glowykeys/roccat_vulcan_pro.png',
     },
   },
