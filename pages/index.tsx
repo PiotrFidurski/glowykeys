@@ -64,9 +64,10 @@ function HomePage() {
                   loading="lazy"
                   placeholder="blur"
                   blurDataURL="/assets/images/razerornata.png"
-                  quality={100}
                   alt="black mechanical keyboard with green lights"
                   layout="responsive"
+                  sizes="40vw"
+                  quality={100}
                   width={800}
                   height={600}
                 />
@@ -80,6 +81,7 @@ function HomePage() {
                 placeholder="blur"
                 blurDataURL="/assets/images/keycaps-black.png"
                 loading="lazy"
+                sizes="20vw"
                 alt="four black keycaps next to each other"
                 layout="fill"
                 objectFit="cover"
@@ -91,9 +93,9 @@ function HomePage() {
               <Image
                 src="/assets/images/halfkeyboard.png"
                 loading="lazy"
-                quality={100}
                 alt="half keyboard if orange and white keys"
                 placeholder="blur"
+                sizes="20vw"
                 blurDataURL="/assets/images/halfkeyboard.png"
                 layout="fill"
                 objectFit="cover"
@@ -110,8 +112,9 @@ function HomePage() {
                   blurDataURL="/assets/images/kbblue.png"
                   loading="lazy"
                   alt="black mechanical keyboard with blue lights"
-                  quality={100}
                   layout="responsive"
+                  sizes="40vw"
+                  quality={100}
                   width={800}
                   height={600}
                 />
