@@ -11,14 +11,15 @@ function HotSales() {
         <ImageWrapper>
           <Image
             src="/assets/images/saviotempest.png"
-            loading="eager"
+            priority
             quality={100}
             alt="black mechanical keyboard with green lights"
             blurDataURL="/assets/images/saviotempest.png"
             placeholder="blur"
+            sizes="40vw"
             layout="responsive"
-            width="800"
-            height="600"
+            width={800}
+            height={600}
           />
         </ImageWrapper>
         <S.ButtonContainer>
@@ -33,7 +34,7 @@ function HotSales() {
       </S.Container>
       <S.HotSalesSection role="region" aria-labelledby="bestseller">
         <h2 id="bestseller">Bestseller</h2>
-        <p>Cooler Master sk620 might be the option you’re looking for.</p>
+        <p>Cooler Master sk620 might be the option you&apos;re looking for.</p>
         <S.BuyNowContainer>
           <p>299.99$</p>
           <button type="button">BUY NOW</button>
