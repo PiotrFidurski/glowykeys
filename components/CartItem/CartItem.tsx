@@ -31,7 +31,16 @@ function CartItem({ product }: Props) {
     >
       <S.Container>
         <SmallImageWrapper>
-          <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
+          <Image
+            src={product.image.thumbnail}
+            layout="fill"
+            objectFit="contain"
+            sizes="20vw"
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL={product.image.placeholder}
+          />
         </SmallImageWrapper>
         <S.DetailsContainer>
           <S.DetailsHeaderWrapper>
