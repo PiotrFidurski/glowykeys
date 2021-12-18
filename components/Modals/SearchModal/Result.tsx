@@ -21,7 +21,16 @@ function Result({ product, setOpen }: Props) {
         <A onClick={() => setOpen(false)} aria-label={product.name}>
           <ResultContainer>
             <SmallImageWrapper>
-              <Image src={product.image.thumbnail} layout="fill" objectFit="contain" />
+              <Image
+                src={product.image.thumbnail}
+                layout="fill"
+                objectFit="contain"
+                alt=""
+                sizes="20vw"
+                placeholder="blur"
+                loading="lazy"
+                blurDataURL={product.image.placeholder}
+              />
             </SmallImageWrapper>
             <ResultDetailsContainer>
               <p>{product.name}</p>
