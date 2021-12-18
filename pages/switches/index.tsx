@@ -29,7 +29,15 @@ function SwitchesPage({ switches }) {
             <h2>Quiet switches with tactile feedback, making it perfect for accurate typing</h2>
           </HeaderTextContentContainer>
           <HeaderImageContainer>
-            <Image src="/assets/images/switches_banner.png" layout="responsive" width={600} height={600} priority />
+            <Image
+              src="/assets/images/switches_banner.png"
+              layout="responsive"
+              width={600}
+              alt="black switch illustration with white casing"
+              height={600}
+              priority
+              sizes="30vw"
+            />
           </HeaderImageContainer>
         </Header>
         <ProductShelfProvider products={switches}>

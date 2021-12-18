@@ -15,7 +15,6 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
 
 import http from 'http';
 import next from 'next';

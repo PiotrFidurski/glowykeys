@@ -1,6 +1,6 @@
 import CartItem from '@components/CartItem/CartItem';
 import { createCheckoutSession } from '@utils/createCheckoutSession';
-import { getSubTotalPrice } from '@utils/getTotalPrice';
+import { getSubtotalPrice } from '@utils/getSubtotalPrice';
 import { Hr, RoundButton, SquareButton } from '@utils/style-utils';
 import { useFormatCurrency } from '@utils/useFormatCurrency';
 import { motion } from 'framer-motion';
@@ -27,7 +27,7 @@ function Cart() {
 
   const [loading, setLoading] = React.useState(false);
 
-  const subtotal = getSubTotalPrice(items);
+  const subtotal = getSubtotalPrice(items);
 
   const { priceInDollars } = useFormatCurrency(subtotal);
 

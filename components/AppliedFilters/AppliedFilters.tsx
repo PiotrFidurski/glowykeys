@@ -18,8 +18,8 @@ function AppliedFilters() {
 
   return (
     <AppliedFiltersContainer>
-      {Object.entries<Array<string>>(activeFilters as unknown as Record<string, string[]>).map(([type, filters]) =>
-        filters.map((filter) => (
+      {Object.entries(activeFilters).map(([type, options]) =>
+        options.map((filter) => (
           <SmallButton
             as={motion.button}
             layout

@@ -1,4 +1,4 @@
 import { Product } from '@utils/types';
 
-export const getSubTotalPrice = (data: Array<Product>) =>
+export const getSubtotalPrice = (data: Array<Product>) =>
   data.reduce((prevValue, { price, qty }) => prevValue + price * qty, 0);

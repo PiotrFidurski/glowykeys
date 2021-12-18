@@ -12,7 +12,7 @@ import * as React from 'react';
 import { A, Article, H2, Heading, Paragraph, ProductImageContainer } from './styles';
 
 interface Props {
-  product: ProductType & { image: { original: string; thumbnail: string; placeholder?: string } };
+  product: ProductType;
 }
 
 function ProductCard({ product }: Props) {

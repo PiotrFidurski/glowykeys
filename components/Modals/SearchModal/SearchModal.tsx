@@ -64,7 +64,6 @@ function SearchModal({ isOpen, setOpen }: Props) {
               />
             </Form>
             <Hr />
-
             {!data && !error && isValidating ? <Spinner /> : null}
             {data && !data.data.length ? (
               <span style={{ textAlign: 'center' }}>No matches found, try searching for something else</span>

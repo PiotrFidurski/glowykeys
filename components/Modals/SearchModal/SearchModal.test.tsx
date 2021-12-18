@@ -16,7 +16,7 @@ beforeEach(() => {
   Modal.setAppElement('#__next');
 });
 
-test('clicking on a search icon opens search modal', () => {
+test('dialog can be opened', () => {
   render(<KeyboardsPage keyboards={testData} />);
 
   const openDialogBtn = screen.getByRole('button', { name: /open search dialog/i });
@@ -26,7 +26,7 @@ test('clicking on a search icon opens search modal', () => {
   expect(screen.getByRole('button', { name: /close search dialog/i })).toBeInTheDocument();
 });
 
-test('clicking on a close search dialog button closes dialog', async () => {
+test('dialog can be closed', async () => {
   render(<KeyboardsPage keyboards={testData} />);
 
   const openDialogBtn = screen.getByRole('button', { name: /open search dialog/i });
@@ -48,7 +48,7 @@ test('users can search for products', async () => {
   expect(await screen.findByRole('link', { name: /vulcan/i })).toBeInTheDocument();
 });
 
-test('each product can be linked to details page', async () => {
+test('each product has a link to desired details page', async () => {
   render(<SearchModal isOpen setOpen={() => {}} />);
 
   const input = screen.getByLabelText('search');
@@ -91,7 +91,7 @@ test('search results are categorized', async () => {
   expect(switchesCategory.children[1]).toHaveTextContent('Alloy Origins - Red');
 });
 
-test('when there are no results found the message is displayed to the user', async () => {
+test('shows users a message if there are no results', async () => {
   server.use(
     rest.get(`${process.env.BASE_URL}/api/search`, (req, res, ctx) => {
       const query = req.url.searchParams.get('query');
