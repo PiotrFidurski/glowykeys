@@ -31,14 +31,10 @@ function Cart() {
 
   const { priceInDollars } = useFormatCurrency(subtotal);
 
-  React.useEffect(() => {
-    setLoading(false);
-  }, []);
-
   const handleClick = async () => {
     if (items.length) {
       setLoading(true);
-      await createCheckoutSession(items);
+      createCheckoutSession({ items, callback: () => setLoading(false) });
     } else {
       dispatch({ type: actionTypes.closeMenu });
     }
