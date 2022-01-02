@@ -38,7 +38,7 @@ function Cart() {
   const handleClick = async () => {
     if (items.length) {
       setLoading(true);
-      await createCheckoutSession(items);
+      createCheckoutSession({ items, callback: () => setLoading(false) });
     } else {
       dispatch({ type: actionTypes.closeMenu });
     }

@@ -1,7 +1,12 @@
 import getStripe from './getStripe';
 import { Product } from './types';
 
-async function createCheckoutSession(items: Array<Product>) {
+interface CreateCheckout {
+  items: Array<Product>;
+  callback: () => void;
+}
+
+async function createCheckoutSession({ items, callback }: CreateCheckout) {
   const stripe = await getStripe();
 
   const checkoutSession = await fetch(`${process.env.BASE_URL}/api/checkout_sessions`, {
@@ -13,6 +18,8 @@ async function createCheckoutSession(items: Array<Product>) {
   });
 
   const { sessionId } = await checkoutSession.json();
+
+  if (checkoutSession.ok) callback();
 
   const result = await stripe.redirectToCheckout({
     sessionId,
